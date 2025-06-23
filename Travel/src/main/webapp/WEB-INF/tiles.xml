@@ -5,7 +5,7 @@
        
 <tiles-definitions>
 
-	<!-- 일반사용자. -->
+	<!-- USER -->
 	<definition name="user" template="/WEB-INF/layout/user/template.jsp">
 		<put-attribute name="title" value="YEDAM 1조" />
 		<put-attribute name="header" value="/WEB-INF/layout/user/header.jsp" />
@@ -14,7 +14,7 @@
 		<put-attribute name="footer" value="/WEB-INF/layout/user/footer.jsp" />
 	</definition>
 
-	<!-- 관리사용자. -->
+	<!-- ADMIN -->
 	<definition name="admin" template="/WEB-INF/layout/admin/template.jsp">
 		<put-attribute name="title" value="YEDAM 1조 | ADMIN" />
 		<put-attribute name="header" value="/WEB-INF/layout/admin/header.jsp" />
@@ -23,7 +23,6 @@
 		<put-attribute name="footer" value="/WEB-INF/layout/admin/footer.jsp" />
 	</definition>
 
-	<!-- 추가 definition. -->
 	<definition name="WILDCARD:user/*" extends="user">
 		<put-attribute name="body" value="/WEB-INF/jsp/user/{1}.jsp" />
 	</definition>
@@ -32,7 +31,6 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/admin/{1}.jsp" />
 	</definition>
 
-	<!-- 마지막. -->
 	<definition name="WILDCARD:*/*" extends="user">
 		<put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}.jsp" />
 	</definition>
