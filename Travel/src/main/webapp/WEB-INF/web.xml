@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Travel</display-name>
+  
+    <!-- 서블릿과 url 패턴을 지정. -->
+  <servlet>
+    <servlet-name>front</servlet-name>
+    <servlet-class>com.groupone.common.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>front</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+</web-app>
