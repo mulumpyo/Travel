@@ -1,6 +1,8 @@
 package com.groupone.service;
 
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.groupone.common.DataSource;
@@ -10,27 +12,62 @@ import com.groupone.vo.UserVO;
 public class UserServiceImpl implements UserService {
 	SqlSession sqlSession = DataSource.getInstance().openSession();
 	UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+	
 	@Override
-	public UserVO login(String id, String pw) {
+	public boolean userIdCheck(String id) {
+		UserVO user = mapper.selectUserInfo(id);
+		if (user != null) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public UserVO userLogin(String id, String pw) {
 		return mapper.selectUser(id, pw);
 	}
-
+	
 	@Override
-	public boolean addUser(UserVO User) {
-		int r=mapper.insertUser(User);
-		if(r==1) {
+	public boolean userRegister(UserVO user) {
+		int r = mapper.insertUser(user);
+		if (r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean userModify(UserVO user) {
+		int r = mapper.updateUser(user);
+		if (r == 1) {
 			sqlSession.commit();
 			return true;
 		}
 		return false;
 	}
 	@Override
-	public boolean getUserInfo(String id) {
-		UserVO user = mapper.selectUserInfo(id);
-		if(user != null) {
+	public boolean userRemove(int userNo) {
+		int r = mapper.deleteUser(userNo);
+		if (r == 1) {
+			sqlSession.commit();
 			return true;
 		}
 		return false;
-	
-}
 	}
+	
+	@Override
+	public boolean isAdmin(int userNo) {
+		UserVO user = mapper.selectIsAdmin(userNo);
+		if(user.getIsAdmin() == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public List<UserVO> getUserList() {
+		return mapper.selectUserList();
+	}
+
+}

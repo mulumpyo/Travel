@@ -3,6 +3,7 @@ package com.groupone.vo;
 import java.util.Date;
 
 import lombok.Data;
+
 @Data
 public class UserVO {
 
@@ -13,4 +14,5 @@ public class UserVO {
 	private Date userbirth;
 	private String userphone;
 	private int isAdmin;
+	
 }

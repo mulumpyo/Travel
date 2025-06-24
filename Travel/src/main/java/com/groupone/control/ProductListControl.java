@@ -17,10 +17,10 @@ public class ProductListControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		ProductService svc = new ProductServiceImpl();
-		List<ProductVO> list = svc.productList();
-		
-		req.setAttribute("productList", list);
+//		ProductService svc = new ProductServiceImpl();
+//		List<ProductVO> list = svc.productList();
+//		
+//		req.setAttribute("productList", list);
 		
 		req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
 

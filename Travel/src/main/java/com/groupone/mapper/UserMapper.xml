@@ -10,5 +10,6 @@
 	WHERE user_id = #{id} 
 	  AND user_pw = #{pw}
 	</select>
+	
 </mapper>
 
