@@ -9,7 +9,7 @@
   </settings>
 
   <typeAliases>
-
+ 	<typeAlias alias="User" type="com.groupone.vo.UserVO"/>
   </typeAliases>
 
   <environments default="development">
@@ -29,8 +29,8 @@
   <mappers>
 
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
-    <mapper resource="com/groupone/mapper/ProductMapper.xml"/>
-
+   <!--  <mapper resource="com/groupone/mapper/ProductMapper.xml"/> -->
+	
   </mappers>
 
 </configuration>
