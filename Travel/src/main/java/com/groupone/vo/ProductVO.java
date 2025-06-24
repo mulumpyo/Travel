@@ -17,7 +17,7 @@ public class ProductVO {
 	private Date endDay; // 끝나는 날
 	private int maxQty; // 최대 구매 가능 수량
 	private int status; // 등록 상태	/* 0: 미노출, 1: 노출 */
-	private Date created_at; // 등록 일자
+	private Date createdAt; // 등록 일자
 }
 
 
