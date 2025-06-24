@@ -5,10 +5,9 @@
 <mapper namespace="com.groupone.mapper.UserMapper">
 
 	<select id="selectUser" resultType="User">
-	SELECT * 
-	FROM tbl_user
-	WHERE user_id = #{id} 
-	  AND user_pw = #{pw}
+		SELECT * 
+		FROM tbl_user
+		WHERE user_id = #{id} 
 	</select>
 	
 </mapper>
