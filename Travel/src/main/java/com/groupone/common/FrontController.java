@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.groupone.control.FaqControl;
+import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
+import com.groupone.control.ProductListControl;
 import com.groupone.control.TestControl;
 
 
@@ -35,10 +37,11 @@ public class FrontController extends HttpServlet {
 		/* 해민 */
 		// 06/24 ERD Cloud 기준으로 OracleDB 테이블 생성 부탁드리겠습니다.  --> db 생성 완료.
 		// 상세목록페이지
-		map.put("/main.do", new MainControl());
+		map.put("/productList.do", new ProductListControl());
 		
 		/* 유경 */
 		// 06/24 LoginControl, JSP 파일 구현 부탁드리겠습니다. (작업이 끝나면 Service 및 Mapper 구현)
+		map.put("/login.do", new LoginControl());
 		
 		/* 이영 */
 		// 06/24 고객센터 페이지 FAQ (자주묻는 질문) 페이지 JSP 작성 후 시간 여유가 있으시면 QNA 페이지 천천히 부탁드려요.
