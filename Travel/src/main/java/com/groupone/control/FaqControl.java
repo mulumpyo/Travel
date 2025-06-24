@@ -11,8 +11,10 @@ import com.groupone.common.Control;
 public class FaqControl implements Control {
 
 	@Override
-	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	public void exec(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
 		
+		req.getRequestDispatcher("user/faq.tiles").forward(req, res);
 
 	}
 
