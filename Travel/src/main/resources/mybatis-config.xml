@@ -8,9 +8,12 @@
     <setting name="jdbcTypeForNull" value="NULL"/>
   </settings>
 
-  <typeAliases>
 
+  <typeAliases>
+	<typeAlias alias="Product" type="com.groupone.vo.ProductVO"/>
   </typeAliases>
+  
+  
 
   <environments default="development">
     <environment id="development">
@@ -30,7 +33,7 @@
 
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
     <mapper resource="com/groupone/mapper/ProductMapper.xml"/>
-
+	<mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
   </mappers>
 
 </configuration>
