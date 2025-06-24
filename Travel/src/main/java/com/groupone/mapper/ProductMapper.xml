@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <mapper namespace="com.groupone.mapper.ProductMapper">
 
 <select id="selectProductList">
@@ -21,4 +22,10 @@
 
 
 
+=======
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.groupone.mapper.ProductMapper">
+>>>>>>> branch 'master' of https://github.com/mulumpyo/Travel.git
 </mapper>

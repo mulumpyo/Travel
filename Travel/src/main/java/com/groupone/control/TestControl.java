@@ -14,7 +14,7 @@ public class TestControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 
-		req.getRequestDispatcher("admin/test.tiles").forward(req, res);
+		req.getRequestDispatcher("user/product_template.tiles").forward(req, res);
 
 	}
 
