@@ -41,7 +41,7 @@ public class LoginControl implements Control {
 
 		}else {
 			req.setAttribute("msg", "ID와 PW를 확인하세요.");
-			req.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(req, res);
+			req.getRequestDispatcher("user/login.tiles").forward(req, res);
 		}
 	}
 }
