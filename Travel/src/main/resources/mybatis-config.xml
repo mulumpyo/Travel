@@ -29,7 +29,7 @@
   <mappers>
 
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
-   <!--  <mapper resource="com/groupone/mapper/ProductMapper.xml"/> -->
+		<mapper resource="com/groupone/mapper/ProductMapper.xml"/>
 	
   </mappers>
 
