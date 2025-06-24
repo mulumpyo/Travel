@@ -1,20 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.groupone.mapper.ProductMapper">
 
 <select id="selectProductList">
-	select p_code as pCode
-	       , user_no as userNo
-	       , title as title
-	       , description as description
-	       , theme as theme
-	       , country as price
-	       , price as price
-	       , start_day as startDay
-	       , end_day as endDay
-	       , max_qty as maxQty
-	       , status as status
-	       , created_at as createdAt
+	select *
 	from tbl_product
 	
 	
@@ -22,10 +13,4 @@
 
 
 
-=======
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.groupone.mapper.ProductMapper">
->>>>>>> branch 'master' of https://github.com/mulumpyo/Travel.git
 </mapper>

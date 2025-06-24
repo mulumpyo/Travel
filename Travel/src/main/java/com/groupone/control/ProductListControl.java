@@ -22,7 +22,7 @@ public class ProductListControl implements Control {
 		
 		req.setAttribute("productList", list);
 		
-		req.getRequestDispatcher("admin/productList.tiles").forward(req, res);
+		req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
 
 		
 		
