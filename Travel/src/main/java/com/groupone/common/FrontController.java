@@ -32,7 +32,9 @@ public class FrontController extends HttpServlet {
 		// 06/24 ProductDetailControl, JSP 파일 구현 부탁드리겠습니다. (작업이 끝나면 Service 및 Mapper 구현)
 		
 		/* 해민 */
-		// 06/24 ERD Cloud 기준으로 OracleDB 테이블 생성 부탁드리겠습니다.
+		// 06/24 ERD Cloud 기준으로 OracleDB 테이블 생성 부탁드리겠습니다.  --> db 생성 완료.
+		// 상세목록페이지
+		map.put("/main.do", new MainControl());
 		
 		/* 유경 */
 		// 06/24 LoginControl, JSP 파일 구현 부탁드리겠습니다. (작업이 끝나면 Service 및 Mapper 구현)
