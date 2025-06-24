@@ -28,23 +28,30 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		/* 대환 */
+		// 06/25 오전 중 화면설계 PDF 작성 후 파일 제출
+		// main.do 기능 구현, faq 사이드메뉴
 		map.put("/test.do", new TestControl()); // 타일즈 테스트
 		map.put("/main.do", new MainControl()); // 메인페이지
 		
 		/* 은경 */
-		// 06/24 ProductDetailControl, JSP 파일 구현 부탁드리겠습니다. (작업이 끝나면 Service 및 Mapper 구현)
+		// 06/25 detailPage.do 기능 구현
+		// map.put("/detailPage.do", new DetailPageControl()); 
+		
+		// 해민님하고 은경 누나는 같이 mapper 파일 sql 쿼리도 이야기 나누어보시고
+		// 필요한 기능들 미리 구상해두시면 좋을거 같아요
 		
 		/* 해민 */
-		// 06/24 ERD Cloud 기준으로 OracleDB 테이블 생성 부탁드리겠습니다.  --> db 생성 완료.
-		// 상세목록페이지
+		// 06/25 productList.do 카드리스트 구현해두었습니다. 계속 진행 부탁드릴게요.
 		map.put("/productList.do", new ProductListControl());
 		
 		/* 유경 */
-		// 06/24 LoginControl, JSP 파일 구현 부탁드리겠습니다. (작업이 끝나면 Service 및 Mapper 구현)
+		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요
+		// login_password.jsp, register.jsp 파일 만들고 작업하시면 될거 같아요.
 		map.put("/login.do", new LoginControl());
 		
 		/* 이영 */
-		// 06/24 고객센터 페이지 FAQ (자주묻는 질문) 페이지 JSP 작성 후 시간 여유가 있으시면 QNA 페이지 천천히 부탁드려요.
+		// 06/25 1:1 문의 기능 구현 부탁드려요. 최대한 자신감 가지고 막 눌러주세요.
+		// 늦어져도 괜찮으니 천천히 작업해주세요.
 		map.put("/faq.do", new FaqControl());   // FAQ 메인페이지
 		
 	}
