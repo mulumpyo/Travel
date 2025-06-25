@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.groupone.common.Control;
+import com.groupone.common.SearchDTO;
 import com.groupone.service.ProductService;
 import com.groupone.service.ProductServiceImpl;
 import com.groupone.vo.ProductVO;
@@ -16,16 +17,29 @@ public class ProductListControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
-//		ProductService svc = new ProductServiceImpl();
-//		List<ProductVO> list = svc.productList();
-//		
-//		req.setAttribute("productList", list);
-		
+		ProductService svc = new ProductServiceImpl();
+
+		String theme = req.getParameter("theme");
+		String country = req.getParameter("country");
+		SearchDTO search = new SearchDTO();
+		search.setTheme(theme);
+		search.setCountry(country);
+		System.out.println(search);
+
+		List<ProductVO> list = svc.productList(search);
+		List<String> tlist = svc.themeList();
+		List<String> clist = svc.countryList();
+
+		req.setAttribute("productList", list);
+		req.setAttribute("themeList", tlist);
+		req.setAttribute("countryList", clist);
+
+		// theme, country를 parameter로 사용하기 위해서 attribute에 지정.
+		req.setAttribute("theme", theme);
+		req.setAttribute("country", country);
+
 		req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
 
-		
-		
 	}
 
 }

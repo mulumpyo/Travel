@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.groupone.vo.ProductVO;
 import com.groupone.vo.UserVO;
 
 
@@ -22,5 +23,7 @@ public interface UserMapper {
 	public UserVO selectIsAdmin(int userNo);
 
 	public List<UserVO> selectUserList();
+	
+	public List<ProductVO> selectWishList(int userNo);
 
 }

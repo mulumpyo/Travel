@@ -2,6 +2,7 @@ package com.groupone.service;
 
 import java.util.List;
 
+import com.groupone.vo.ProductVO;
 import com.groupone.vo.UserVO;
 
 public interface UserService {
@@ -10,7 +11,7 @@ public interface UserService {
 	boolean userIdCheck(String id);
 	
 	// 로그인 기능
-	UserVO userLogin(String id, String pw);
+	boolean userLogin(String id, String pw);
 
 	// 회원 등록
 	boolean userRegister(UserVO user);
@@ -27,4 +28,6 @@ public interface UserService {
 	// 회원 목록 조회
 	List<UserVO> getUserList();
 	
+	// 회원 찜리스트 조회
+	List<ProductVO> getWishList(int userNo);
 }

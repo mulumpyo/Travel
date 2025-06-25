@@ -5,6 +5,16 @@
        
 <tiles-definitions>
 
+	<!-- MAIN -->
+	<definition name="main" template="/WEB-INF/layout/main/template.jsp">
+		<put-attribute name="title" value="YEDAM 1조 | 환영합니다" />
+		<put-attribute name="nav" value="/WEB-INF/layout/user/main.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/main/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/layout/main/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/layout/main/body.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/layout/main/footer.jsp" />
+	</definition>
+
 	<!-- USER -->
 	<definition name="user" template="/WEB-INF/layout/user/template.jsp">
 		<put-attribute name="title" value="YEDAM 1조" />
@@ -30,6 +40,10 @@
 
 	<definition name="WILDCARD:admin/*" extends="admin">
 		<put-attribute name="body" value="/WEB-INF/jsp/admin/{1}.jsp" />
+	</definition>
+	
+		<definition name="WILDCARD:main/*" extends="main">
+		<put-attribute name="body" value="/WEB-INF/jsp/main/{1}.jsp" />
 	</definition>
 
 	<definition name="WILDCARD:*/*" extends="user">
