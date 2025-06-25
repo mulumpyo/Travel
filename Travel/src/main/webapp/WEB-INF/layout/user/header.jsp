@@ -1,18 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-      
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-left">
-                    <a href="#" class="navbar-logo">LOGO</a>
-                    <div class="search-bar">
-                        <input id="search-box" type="text" placeholder="어디로 가볼까요?"/>
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
-                </div>
-                <div class="navbar-right">
-                    <i class="fas fa-user navbar-icon"></i>
-                    <i class="fas fa-headset navbar-icon"></i>
-                </div>
-            </div>
-        </nav>
+	pageEncoding="UTF-8"%>
+<div class="container px-4 px-lg-5 my-5">
+	<div class="text-center text-white">
+		<h1 class="display-4 fw-bolder">Shop in style</h1>
+		<p class="lead fw-normal text-white-50 mb-0">With this shop
+			hompeage template</p>
+	</div>
+</div>

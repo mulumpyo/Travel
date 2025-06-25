@@ -1,10 +1,11 @@
 package com.groupone.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.groupone.common.DataSource;
 import com.groupone.mapper.ProductMapper;
-import com.groupone.mapper.UserMapper;
 import com.groupone.vo.ProductVO;
 
 public class ProductServiceImpl implements ProductService {
@@ -16,4 +17,9 @@ public class ProductServiceImpl implements ProductService {
     public ProductVO getProduct(int pcode) {
     	return mapper.selectProduct(pcode);
     }
+  
+  	@Override
+	  public List<ProductVO> productList() {
+		  return mapper.selectProductList();
+	  }
 }

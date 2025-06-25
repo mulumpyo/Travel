@@ -8,6 +8,7 @@
 	<!-- USER -->
 	<definition name="user" template="/WEB-INF/layout/user/template.jsp">
 		<put-attribute name="title" value="YEDAM 1조" />
+		<put-attribute name="nav" value="/WEB-INF/layout/user/nav.jsp" />
 		<put-attribute name="header" value="/WEB-INF/layout/user/header.jsp" />
 		<put-attribute name="menu" value="/WEB-INF/layout/user/menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/layout/user/body.jsp" />

@@ -8,9 +8,9 @@
     <setting name="jdbcTypeForNull" value="NULL"/>
   </settings>
 
-
   <typeAliases>
-	<typeAlias alias="Product" type="com.groupone.vo.ProductVO"/>
+ 	  <typeAlias alias="User" type="com.groupone.vo.UserVO"/>
+ 	  <typeAlias alias="Product" type="com.groupone.vo.ProductVO"/>
   </typeAliases>
   
   
@@ -32,8 +32,9 @@
   <mappers>
 
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
-    <mapper resource="com/groupone/mapper/ProductMapper.xml"/>
-	<mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
+	  <mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
+	  <mapper resource="com/groupone/mapper/ProductMapper.xml"/>
+	
   </mappers>
 
 </configuration>
