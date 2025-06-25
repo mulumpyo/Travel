@@ -10,7 +10,7 @@ public interface UserService {
 	boolean userIdCheck(String id);
 	
 	// 로그인 기능
-	UserVO userLogin(String id, String pw);
+	boolean userLogin(String id, String pw);
 
 	// 회원 등록
 	boolean userRegister(UserVO user);
