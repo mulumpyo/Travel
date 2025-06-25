@@ -15,7 +15,7 @@
       star,
       created_at
     FROM tbl_review
-    WHERE p_code = #{p_code}
+    WHERE p_code = #{pCode}
     ORDER BY created_at DESC
   </select>
 

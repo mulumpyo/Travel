@@ -6,6 +6,6 @@ import com.groupone.vo.ProductVO;
 public interface ProductService {
   
     ProductVO getProduct(int pcode);
-	  List<ProductVO> productList();
+	List<ProductVO> productList();
   
 }

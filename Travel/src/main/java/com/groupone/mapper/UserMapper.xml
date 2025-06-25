@@ -10,5 +10,14 @@
 		WHERE user_id = #{id} 
 	</select>
 	
+	<select id="selectWishList" parameterType="int" resultType="Product">
+		SELECT *
+		FROM tbl_product
+		WHERE p_code
+		IN (SELECT p_code
+			FROM tbl_wish
+			WHERE user_no = #{userNo})
+	</select>
+	
 </mapper>
 
