@@ -9,9 +9,11 @@
   </settings>
 
   <typeAliases>
- 	<typeAlias alias="User" type="com.groupone.vo.UserVO"/>
- 	<typeAlias alias="Product" type="com.groupone.vo.ProductVO"/>
+ 	  <typeAlias alias="User" type="com.groupone.vo.UserVO"/>
+ 	  <typeAlias alias="Product" type="com.groupone.vo.ProductVO"/>
   </typeAliases>
+  
+  
 
   <environments default="development">
     <environment id="development">
@@ -30,7 +32,8 @@
   <mappers>
 
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
-	<mapper resource="com/groupone/mapper/ProductMapper.xml"/>
+	  <mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
+	  <mapper resource="com/groupone/mapper/ProductMapper.xml"/>
 	
   </mappers>
 
