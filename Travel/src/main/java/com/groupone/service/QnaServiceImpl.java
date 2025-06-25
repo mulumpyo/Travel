@@ -1,0 +1,41 @@
+package com.groupone.service;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.groupone.common.DataSource;
+import com.groupone.mapper.QnaMapper;
+import com.groupone.vo.QnaVO;
+
+public class QnaServiceImpl implements QnaService{
+	SqlSession sqlSession = DataSource.getInstance().openSession();
+	QnaMapper mapper = sqlSession.getMapper(QnaMapper.class);
+	
+	
+	@Override
+	public List<QnaVO> selectEvent() {
+		
+		return null;
+	}
+	@Override
+	public boolean addQna(QnaVO bno) {
+		int r = mapper.insertBoard(bno);
+		if( r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public List<QnaVO> qnaList(int bno) {
+		return null;
+	}
+	
+	@Override
+	public QnaVO getqna(int rno) {
+		
+		return null;
+	}
+
+}
