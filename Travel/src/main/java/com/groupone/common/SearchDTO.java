@@ -1,7 +1,12 @@
 package com.groupone.common;
 
+import lombok.Data;
+
+@Data
 public class SearchDTO {
 	//FAQ 검색조건
 	private int keyword;
+	private String theme;
+	private String country;
 	
 }

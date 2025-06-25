@@ -11,8 +11,8 @@ public class UserVO {
 	private String userId;
 	private String userPw;
 	private String userName;
-	private Date userbirth;
-	private String userphone;
+	private Date userBirth;
+	private String userPhone;
 	private int isAdmin;
 	
 }

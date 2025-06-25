@@ -11,5 +11,34 @@
     WHERE p_code = #{pCode}
   </select>
 
+	<select id="selectProductList" parameterType="com.groupone.common.SearchDTO">
+		select p_code as "pCode"
+		     , user_no as "userNo"
+		     , title as "title"
+		     , description as "description"
+		     , theme as "theme"
+		     , country as "country"
+		     , price as "price"
+		     , start_day as "startDay"
+		     , end_day as "endDay"
+		     , max_qty as "maxQty"
+		     , created_at as "createdAt"
+		from tbl_product
+		where 1 = 1
+        and   theme = nvl(#{theme}, theme)
+	    and   country = nvl(#{country}, country)
+		order by p_code
+	</select>
+
+	<select id="selectthemeList" resultType="String">
+		select theme from tbl_product
+		group by theme
+	</select>
+
+	<select id="selectcountryList" resultType="String">
+		select country from tbl_product
+		group by country
+	</select>
+
 
 </mapper>

@@ -14,7 +14,10 @@ public class MainControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
 		
-		req.getRequestDispatcher("user/test.tiles").forward(req, res);
+		
+		
+		
+		req.getRequestDispatcher("main/main.tiles").forward(req, res);
 	}
 
 }

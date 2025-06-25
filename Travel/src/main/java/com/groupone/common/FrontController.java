@@ -16,8 +16,11 @@ import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
 import com.groupone.control.ProductListControl;
 import com.groupone.control.ReservationListControl;
-import com.groupone.control.TestControl;
 import com.groupone.control.WishListPageControl;
+import com.groupone.control.RealLoginControl;
+import com.groupone.control.RegisterControl;
+import com.groupone.control.TestControl;
+import com.groupone.control.UserInfoControl;
 
 
 public class FrontController extends HttpServlet {
@@ -55,7 +58,9 @@ public class FrontController extends HttpServlet {
 		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요
 		// login_password.jsp, register.jsp 파일 만들고 작업하시면 될거 같아요.
 		map.put("/login.do", new LoginControl());
-		
+		map.put("/realLogin.do", new RealLoginControl());
+		map.put("/register.do", new RegisterControl());
+		map.put("/userInfo.do", new UserInfoControl());
 		/* 이영 */
 		// 06/25 1:1 문의 기능 구현 부탁드려요. 최대한 자신감 가지고 막 눌러주세요.
 		// 늦어져도 괜찮으니 천천히 작업해주세요.
