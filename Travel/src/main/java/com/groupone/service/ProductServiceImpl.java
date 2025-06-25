@@ -9,11 +9,22 @@ import com.groupone.common.SearchDTO;
 import com.groupone.mapper.ProductMapper;
 import com.groupone.vo.ProductVO;
 
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
 	SqlSession sqlSession = DataSource.getInstance().openSession();
 	ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 	
+  @Override
+  public ProductVO getProduct(int pcode) {
+    return mapper.selectProduct(pcode);
+  }
+
+  @Override
+  public List<ProductVO> productList() {
+  //return mapper.selectProductList();
+    return (List<ProductVO>) mapper.selectProduct(1);
+  }
+  
 	@Override
 	public List<ProductVO> productList(SearchDTO search) {
 		return mapper.selectProductList(search);
@@ -28,6 +39,5 @@ public class ProductServiceImpl implements ProductService{
 	public List<String> countryList() {
 		return mapper.selectcountryList();
 	}
-
 
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.groupone.common.DataSource;
 import com.groupone.mapper.UserMapper;
+import com.groupone.vo.ProductVO;
 import com.groupone.vo.UserVO;
 
 public class UserServiceImpl implements UserService {
@@ -72,6 +73,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<UserVO> getUserList() {
 		return mapper.selectUserList();
+	}
+
+	@Override
+	public List<ProductVO> getWishList(int userNo) {
+		return mapper.selectWishList(userNo);
 	}
 
 }

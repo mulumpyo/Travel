@@ -29,10 +29,19 @@
 		, #{userName},#{userId},#{userPhone},#{userBirth},#{userPw})
 	</insert>
 	
+	<select id="selectWishList" parameterType="int" resultType="Product">
+		SELECT *
+		FROM tbl_product
+		WHERE p_code
+		IN (SELECT p_code
+			FROM tbl_wish
+			WHERE user_no = #{userNo})
+	</select>
+	
 	<delete id="deleteUser" parameterType="int">
     DELETE FROM tbl_user
     WHERE user_no = #{userNo}
-</delete>
+  </delete>
 
 </mapper>
 

@@ -10,10 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
 import com.groupone.control.ProductListControl;
+import com.groupone.control.ReservationListControl;
+import com.groupone.control.WishListPageControl;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
 import com.groupone.control.TestControl;
@@ -37,11 +40,15 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainControl()); // 메인페이지
 		
 		/* 은경 */
+		map.put("/detailpage.do", new DetailPageControl()); // 상세페이지
 		// 06/25 detailPage.do 기능 구현
-		// map.put("/detailPage.do", new DetailPageControl()); 
+		map.put("/wishlistpage.do", new WishListPageControl()); // 찜목록페이지
+		map.put("/reservationList.do", new ReservationListControl()); // 찜목록페이지
+
 		
 		// 해민님하고 은경 누나는 같이 mapper 파일 sql 쿼리도 이야기 나누어보시고
 		// 필요한 기능들 미리 구상해두시면 좋을거 같아요
+
 		
 		/* 해민 */
 		// 06/25 productList.do 카드리스트 구현해두었습니다. 계속 진행 부탁드릴게요.
