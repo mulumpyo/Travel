@@ -17,7 +17,7 @@
         <!-- Font Awesome CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/main/styles.css" rel="stylesheet" />
     </head>
     <body>
         <tiles:insertAttribute name="header" />
