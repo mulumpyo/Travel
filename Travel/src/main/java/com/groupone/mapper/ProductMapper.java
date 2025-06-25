@@ -1,6 +1,9 @@
 package com.groupone.mapper;
 
 import com.groupone.vo.ProductVO;
+
+import java.util.List;
+
 import com.groupone.common.SearchDTO;
 
 public interface ProductMapper {
