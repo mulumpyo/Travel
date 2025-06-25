@@ -11,6 +11,7 @@
   <typeAliases>
  	<typeAlias alias="User" type="com.groupone.vo.UserVO"/>
  	<typeAlias alias="Product" type="com.groupone.vo.ProductVO"/>
+ 	<typeAlias alias="Qna" type="com.groupone.vo.QnaVO"/>
   </typeAliases>
 
   <environments default="development">
@@ -31,6 +32,7 @@
 
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
 	<mapper resource="com/groupone/mapper/ProductMapper.xml"/>
+	<mapper resource="com/groupone/mapper/QnaMapper.xml"/>
 	
   </mappers>
 

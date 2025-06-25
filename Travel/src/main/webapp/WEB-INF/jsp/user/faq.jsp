@@ -15,10 +15,7 @@
 		<thead>
 			<tr>
 				<th>
-					<input type="search" id="search" name="search" placeholder="검색하고싶은 내용을 입력하세요">
-				</th>
-				<th>
-					<button>🔍</button>
+					<h2>자주묻는 질문</h2>
 				</th>
 			</tr>
 		</thead>

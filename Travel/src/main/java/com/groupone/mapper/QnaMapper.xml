@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.groupone.mapper.QnaMapper">
+
+  <insert id="insertBoard" parameterType="Qna">
+	insert into tbl_qna(
+		q_code
+		, user_no
+        , type
+        , title
+        , question
+   	)
+	values (
+		qna_seq.nextval
+		, #{userNo}
+		, #{type}
+		, #{title}
+		, #{question}
+	
+	)
+  </insert>
+	
+	<!-- qnaList 목록보기 -->
+	<select id="qnaList">
+	  select q_code as code,
+	  		 type,
+	         title,
+	         q_date as date,
+	         status
+	  from tbl_qna 
+	</select>
+
+
+</mapper>
