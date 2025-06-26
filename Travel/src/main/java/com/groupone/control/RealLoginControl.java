@@ -20,16 +20,17 @@ public class RealLoginControl implements Control {
 		String pw = req.getParameter("loginPw");
 
 		UserService svc = new UserServiceImpl();
-		UserVO loginUser = svc.userNo(id, pw); // 사용자 전체 정보 가져오기
-		
 		
 		if (svc.userLogin(id, pw)) {
-			// 로그인 성공
 
-			UserVO userNo = svc.userNo(id, pw);
+			UserVO user = svc.getUserInfo(svc.getUserNo(id));
 
 			HttpSession session = req.getSession();
-			session.setAttribute("userNo", userNo);
+			session.setAttribute("userNo", user.getUserNo());
+			session.setAttribute("userId", user.getUserId());
+			session.setAttribute("userName", user.getUserName());
+			session.setAttribute("isLogin", true);
+			session.setAttribute("isAdmin", user.getIsAdmin() == 1 ? true : false);
 			res.sendRedirect("main.do");
 
 		} else {

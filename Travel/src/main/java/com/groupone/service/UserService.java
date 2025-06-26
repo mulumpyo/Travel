@@ -7,8 +7,12 @@ import com.groupone.vo.UserVO;
 
 public interface UserService {
 	
-	//로그인 정보
-    UserVO loginInfo(String id, String pw);
+	
+	// 유저 고유 번호 조회
+    int getUserNo(String id);
+
+    // 유저 단건 조회
+    UserVO getUserInfo(int userNo);
 	
 	// 회원 유무 체크, 아이디 중복 체크
 	boolean userIdCheck(String id);
@@ -24,9 +28,6 @@ public interface UserService {
 	
 	// 회원 삭제
 	boolean userRemove(int userNo);
-	
-	// 회원 권한 조회
-	boolean isAdmin(int userNo);
 	
 	// 회원 목록 조회
 	List<UserVO> getUserList();

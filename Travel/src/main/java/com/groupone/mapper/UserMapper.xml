@@ -7,7 +7,7 @@
 	<select id="selectUserInfo" resultType="User">
 		SELECT *
 		FROM tbl_user
-		WHERE user_id = #{id}
+		WHERE user_no = #{userNo}
 	</select>
 
 	<select id="selectUser" resultType="User">
@@ -16,6 +16,12 @@
 		WHERE
 		user_id = #{id}
 		AND user_pw = #{pw}
+	</select>
+	
+	<select id="selectUserWithId" parameterType="String" resultType="User">
+		SELECT *
+		FROM tbl_user
+		WHERE user_id = #{userId}
 	</select>
 
 	<insert id="insertUser" parameterType="User">
@@ -48,6 +54,6 @@
 		WHERE user_no = #{userNo}
 	</delete>
 	
-	
+
 </mapper>
 

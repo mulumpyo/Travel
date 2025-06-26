@@ -5,8 +5,8 @@
 <aside>
   <div id="subnav">
     <ul>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">문의하기</a></li>
+      <li><a href="faq.do">FAQ</a></li>
+      <li><a href="q">문의하기</a></li>
       <li><a href="#">문의목록</a></li>
     </ul>
   </div>
