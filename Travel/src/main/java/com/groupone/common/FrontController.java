@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.groupone.control.AddProductControl;
+
 import com.groupone.control.AdminControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
@@ -44,7 +44,6 @@ public class FrontController extends HttpServlet {
 		map.put("/test.do", new TestControl()); // 타일즈 테스트
 		map.put("/main.do", new MainControl()); // 메인페이지
 		map.put("/admin.do", new AdminControl()); // 어드민페이지
-		map.put("/addproduct.do", new AddProductControl());
 		
 		
 		

@@ -120,8 +120,8 @@
 			<form id="reserveForm" action="Reservation.do" method="post">
 			  <input type="hidden" name="p_code" value="${product.PCode}" />
 			  <input type="hidden" name="title" value="${product.title}" />
-			  <input type="hidden" id="adultInput" name="adult" /> <!-- 총 인원 수 -->
-			  <input type="hidden" id="totalPriceInput" name="t_price" />
+			  <input type="hidden" id="adultInput" name="totalAmount" /> <!-- 총 인원 수 -->
+			  <input type="hidden" id="totalPriceInput" name="totalPrice" />
 			  <button class="reserve-btn" type="button">예약하기</button>
 			</form>
 						 
@@ -200,10 +200,10 @@
 	    const childPrice = parseInt(document.getElementById("childPrice").value);
 	    const infantPrice = parseInt(document.getElementById("infantPrice").value);
 	
-	    const totalPerson = adult + child + infant;
+	    const totalAmount = adult + child + infant;
 	    const total = adultPrice * adult + childPrice * child + infantPrice * infant;
 	
-	    document.getElementById("adultInput").value = totalPerson;
+	    document.getElementById("adultInput").value = totalAmount;
 	    document.getElementById("totalPriceInput").value = total;
 	
 	    document.getElementById("reserveForm").submit();

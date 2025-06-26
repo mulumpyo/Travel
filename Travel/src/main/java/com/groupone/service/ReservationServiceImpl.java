@@ -19,9 +19,12 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public boolean insertReservation(ReservationVO vo) {
-        int result = mapper.insert(vo);
-        sqlSession.commit(); // 중요!
-        return result == 1;
+    public boolean insertReservation(ReservationVO reservation) {
+        int result = mapper.insertReservation(reservation);
+        if (result > 0) {
+            sqlSession.commit();
+            return true;
+        } 
+        return false;
     }
 }

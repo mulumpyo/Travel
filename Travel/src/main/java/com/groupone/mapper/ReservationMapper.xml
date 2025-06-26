@@ -12,9 +12,9 @@
     WHERE r.user_no = #{userNo}
   </select>
 
-  <insert id="insert" parameterType="com.groupone.vo.ReservationVO">
-    INSERT INTO tbl_reservation (user_no, p_code, amount, t_price, status, created_at)
-    VALUES (#{userNo}, #{pCode}, #{amount}, #{totalPrice}, 1, SYSDATE)
+  <insert id="insertReservation" parameterType="Reservation">
+    INSERT INTO tbl_reservation (r_code, user_no, p_code, amount, t_price, status)
+    VALUES (#{rCode}, #{userNo}, #{pCode}, #{amount}, #{tPrice}, 1)
   </insert>
 
 </mapper>
