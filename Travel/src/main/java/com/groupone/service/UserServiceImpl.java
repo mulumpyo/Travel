@@ -1,6 +1,8 @@
 package com.groupone.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -15,7 +17,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean userIdCheck(String id) {
-		UserVO user = mapper.selectUserInfo(id);
+		UserVO user = mapper.selectUserWithId(id);
 		if (user != null) {
 			return true;
 		}
@@ -23,9 +25,19 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public int getUserNo(String id) {
+		UserVO user = mapper.selectUserWithId(id);
+		return user.getUserNo();
+	}
+
+	@Override
+	public UserVO getUserInfo(int userNo) {
+		return mapper.selectUserInfo(userNo);
+	}
+
+	@Override
 	public boolean userLogin(String id, String pw) {
-		UserVO user = mapper.selectUser(id, pw);
-		if (user != null) {
+		if (mapper.selectUser(id, pw) != null) {
 			return true;
 		}
 		return false;
@@ -34,7 +46,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean userRegister(UserVO user) {
 		int r = mapper.insertUser(user);
-		if (r == 1) {
+		if(r == 1) {
 			sqlSession.commit();
 			return true;
 		}
@@ -44,7 +56,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean userModify(UserVO user) {
 		int r = mapper.updateUser(user);
-		if (r == 1) {
+		if(r == 1) {
 			sqlSession.commit();
 			return true;
 		}
@@ -54,17 +66,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean userRemove(int userNo) {
 		int r = mapper.deleteUser(userNo);
-		if (r == 1) {
+		if(r == 1) {
 			sqlSession.commit();
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public boolean isAdmin(int userNo) {
-		UserVO user = mapper.selectIsAdmin(userNo);
-		if (user.getIsAdmin() == 1) {
 			return true;
 		}
 		return false;
@@ -80,10 +83,5 @@ public class UserServiceImpl implements UserService {
 		return mapper.selectWishList(userNo);
 	}
 
-	@Override
-	public int userNo(String id, String pw) {
-		UserVO user = mapper.selectUser(id, pw);
-		return user.getUserNo();
-	}
 
 }

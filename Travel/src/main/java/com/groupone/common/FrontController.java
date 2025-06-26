@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.groupone.control.AdminControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
 import com.groupone.control.LoginControl;
@@ -40,6 +41,7 @@ public class FrontController extends HttpServlet {
 		// main.do 기능 구현, faq 사이드메뉴
 		map.put("/test.do", new TestControl()); // 타일즈 테스트
 		map.put("/main.do", new MainControl()); // 메인페이지
+		map.put("/admin.do", new AdminControl()); //
 		
 		/* 은경 */
 		map.put("/detailpage.do", new DetailPageControl()); // 상세페이지
