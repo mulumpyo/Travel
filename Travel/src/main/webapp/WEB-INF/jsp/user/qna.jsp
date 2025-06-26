@@ -14,9 +14,9 @@
 <main>
   <label for="select">분류</label>
   <select id="select">
-    <option value="#">상품문의</option>
-    <option value="#">예약문의</option>
-    <option value="#">기타문의</option>
+    <option value="상품문의">상품문의</option>
+    <option value="예약문의">예약문의</option>
+    <option value="기타문의">기타문의</option>
   </select>
   
   <li>

@@ -13,6 +13,6 @@ public class QnaVO {
 	private String title;
 	private String question;
 	private int status;
-	private Date qdate;
+	private Date qDate;
 
 }
