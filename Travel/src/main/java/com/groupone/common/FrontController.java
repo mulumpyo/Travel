@@ -15,6 +15,8 @@ import com.groupone.control.FaqControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
 import com.groupone.control.ProductListControl;
+import com.groupone.control.QnaControl;
+import com.groupone.control.QnaListControl;
 import com.groupone.control.ReservationListControl;
 import com.groupone.control.WishListPageControl;
 import com.groupone.control.RealLoginControl;
@@ -63,8 +65,12 @@ public class FrontController extends HttpServlet {
 		map.put("/userInfo.do", new UserInfoControl());
 		/* 이영 */
 		// 06/25 1:1 문의 기능 구현 부탁드려요. 최대한 자신감 가지고 막 눌러주세요.
+		// 기억해. faq에 검색기능 추가하기! 
 		// 늦어져도 괜찮으니 천천히 작업해주세요.
 		map.put("/faq.do", new FaqControl());   // FAQ 메인페이지
+		map.put("/qna.do", new QnaControl());   // QnA
+		map.put("/qnaList.do", new QnaListControl());  // QnaList
+  		
 		
 	}
 
