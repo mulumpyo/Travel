@@ -48,6 +48,6 @@
 		WHERE user_no = #{userNo}
 	</delete>
 	
-
+	
 </mapper>
 

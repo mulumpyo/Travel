@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.groupone.common.Control;
 import com.groupone.service.UserService;
 import com.groupone.service.UserServiceImpl;
+import com.groupone.vo.UserVO;
 
 public class RealLoginControl implements Control {
 
@@ -19,17 +20,18 @@ public class RealLoginControl implements Control {
 		String pw = req.getParameter("loginPw");
 
 		UserService svc = new UserServiceImpl();
-
+		UserVO loginUser = svc.userNo(id, pw); // 사용자 전체 정보 가져오기
+		
+		
 		if (svc.userLogin(id, pw)) {
 			// 로그인 성공
-			
-			int userNo = svc.userNo(id, pw);
-			
+
+			UserVO userNo = svc.userNo(id, pw);
+
 			HttpSession session = req.getSession();
 			session.setAttribute("userNo", userNo);
-
 			res.sendRedirect("main.do");
-			
+
 		} else {
 			// 로그인 실패 (비밀번호 틀림)
 			req.setAttribute("errorMsg", "비밀번호가 틀렸습니다.");
