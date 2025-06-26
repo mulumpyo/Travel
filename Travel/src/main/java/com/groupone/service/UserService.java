@@ -7,6 +7,9 @@ import com.groupone.vo.UserVO;
 
 public interface UserService {
 	
+	//유저 고유번호 반환
+	int userNo(String id, String pw);
+	
 	// 회원 유무 체크, 아이디 중복 체크
 	boolean userIdCheck(String id);
 	

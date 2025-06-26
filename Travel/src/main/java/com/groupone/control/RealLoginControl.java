@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.groupone.common.Control;
 import com.groupone.service.UserService;
@@ -21,8 +22,14 @@ public class RealLoginControl implements Control {
 
 		if (svc.userLogin(id, pw)) {
 			// 로그인 성공
-//	            req.getSession().setAttribute("loginId", id);
+			
+			int userNo = svc.userNo(id, pw);
+			
+			HttpSession session = req.getSession();
+			session.setAttribute("userNo", userNo);
+
 			res.sendRedirect("main.do");
+			
 		} else {
 			// 로그인 실패 (비밀번호 틀림)
 			req.setAttribute("errorMsg", "비밀번호가 틀렸습니다.");
