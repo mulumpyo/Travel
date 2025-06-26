@@ -12,7 +12,9 @@ public interface ProductMapper {
 	public List<ProductVO> selectProductList(SearchDTO search);
 	public List<String> selectthemeList();
 	public List<String> selectcountryList();
-	public int deleteProduct(@Param("pCode") int pCode);
-	public int updateProduct(@Param("pCode") int pCode);
+	public int deleteProduct(int pCode);
+	public int updateProduct(ProductVO pCode);
+	int insertProduct(ProductVO product);
+
 
 }

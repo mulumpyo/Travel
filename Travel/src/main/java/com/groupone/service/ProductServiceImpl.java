@@ -62,4 +62,14 @@ public class ProductServiceImpl implements ProductService {
 		return false;	
 		}
 
+	@Override
+	public boolean addProduct(ProductVO product) {
+		
+		int r = mapper.insertProduct(product);
+		if (r == 1) {
+			return true;
+		}
+		return false;
+	}
+
 }

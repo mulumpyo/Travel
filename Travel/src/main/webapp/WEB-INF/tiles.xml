@@ -28,8 +28,8 @@
 	<!-- ADMIN -->
 	<definition name="admin" template="/WEB-INF/layout/admin/template.jsp">
 		<put-attribute name="title" value="YEDAM 1조 | ADMIN" />
-		<put-attribute name="header" value="/WEB-INF/layout/admin/header.jsp" />
 		<put-attribute name="menu" value="/WEB-INF/layout/admin/menu.jsp" />
+		<put-attribute name="side" value="/WEB-INF/layout/admin/side.jsp" />
 		<put-attribute name="body" value="/WEB-INF/layout/admin/body.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/layout/admin/footer.jsp" />
 	</definition>

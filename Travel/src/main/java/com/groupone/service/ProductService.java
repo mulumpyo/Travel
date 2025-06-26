@@ -19,4 +19,8 @@ public interface ProductService {
 	public boolean removeProduct(int pCode);
 
 	public boolean modifyProduct(int pCode);
+  
+	// 상품 등록 기능 구현 (성공여부 반환)
+	boolean addProduct(ProductVO product);
+  
 }
