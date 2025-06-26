@@ -8,5 +8,6 @@ public class SearchDTO {
 	private int keyword;
 	private String theme;
 	private String country;
+	private int pCode;
 	
 }

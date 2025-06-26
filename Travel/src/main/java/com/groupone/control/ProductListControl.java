@@ -20,11 +20,24 @@ public class ProductListControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ProductService svc = new ProductServiceImpl();
 
+		HttpSession session = req.getSession();
+		String isAdmin = (String) session.getAttribute("isAdmin");
+
 		String theme = req.getParameter("theme");
 		String country = req.getParameter("country");
+		
+		
+		int pCode = 0;
+		if (req.getParameter("pCode")!=null) {
+			pCode = Integer.parseInt(req.getParameter("pCode"));
+			svc.removeProduct(pCode);
+			
+		}
+		
 		SearchDTO search = new SearchDTO();
 		search.setTheme(theme);
 		search.setCountry(country);
+		
 		System.out.println(search);
 
 		List<ProductVO> list = svc.productList(search);
@@ -39,30 +52,17 @@ public class ProductListControl implements Control {
 		req.setAttribute("theme", theme);
 		req.setAttribute("country", country);
 		
-//		HttpSession session = req.getSession();
-//		String auth = (String) session.getAttribute("auth");
-//		
-//		if(auth != null && auth.equals("User")/*일반사용자*/) {
-//			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-//			
-//		} else if(auth != null && auth.equals("Admin")/*관리자*/) {
-//			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
-//			
-//		} else {
-//			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-//		}
 		
-		int isAdmin = 1;
-		if(isAdmin == 0) {
+		if(isAdmin == false/*일반사용자*/) {
 			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
 			
-		} else if(isAdmin == 1) {
+		} else if(isAdmin == true/*관리자*/) {
 			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
 			
 		} else {
 			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
 		}
-
+		
 
 
 	}

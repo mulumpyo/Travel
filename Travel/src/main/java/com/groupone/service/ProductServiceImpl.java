@@ -40,4 +40,9 @@ public class ProductServiceImpl implements ProductService {
 		return mapper.selectcountryList();
 	}
 
+	@Override
+	public boolean removeProduct(int pcode) {
+		return mapper.deleteProduct(pcode);
+	}
+
 }

@@ -13,6 +13,8 @@
 <div class="product-list">
 
 <div class="filter" width=200>
+<table>
+</table>
 	<nav>
 		<p> 😍 키워드를 선택하세요 </p>
 		<p> 👀 테마 </p>
@@ -32,27 +34,30 @@
 </div>
 
 
-<c:forEach var="product" items="${productList}">
-<div>
-	<div class="product-card">
 
-	  <a href="detailpage.do?pcode=${product.PCode}" class="card-link">
-	    <img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg" alt="팀 프로젝트 이미지" />
+<table align="center">
+  	<thead>
+  		<th style="text-align: center">상품코드</th>
+  		<th style="text-align: center">상품명</th>
+  		<th style="text-align: center">출력상태</th>
+  		<th style="text-align: center">등록날짜</th>
+  		<th style="text-align: center"></th>
+  	</thead>
+  	
+  <c:forEach var="product" items="${productList}">
+  	<tr>
+  		<td>${product.PCode}</td>
+  		<td>${product.title}</td>
+  		<td>${product.status}</td>
+  		<td>${product.createdAt}</td>
+		<td><button class="btn-delete" type="button" >삭제</button></td>
+		<td><button class="btn-modify" type="button" >수정</button></td>
+  	</tr>
+  </c:forEach>
+</table>
 
-	    <div class="card-content">
-	      
-	      <div class="country">${product.country}<span class="badge"> ${product.theme}</span></div>
-	      
-	      <div class="title">${product.title}</div>
-	      <div class="price">${product.price}<span class="won">원</span></div>
-	      <div class="date">${product.startDay} ~ ${product.endDay}</div>
-	    </div>
-	  </a>
-	<!-- <i>heart icon</i> -->
-	</div>
-	<button class="btn-delete" type="button">delete</button>
-</div>
-</c:forEach>
+
+
 </div>
 
 
@@ -80,4 +85,4 @@
   ];
 </script>
 
-<script src="js/productlist.js"></script>
+<script src="js/productlist_a.js"></script>
