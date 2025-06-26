@@ -4,12 +4,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
-ProductVO product = (ProductVO) request.getAttribute("product");
+  ProductVO product = (ProductVO) request.getAttribute("product");
 %>
 
 <div class="container">
 
-	<div class="thumbnail"></div>
+	<div class="thumbnail">
+			<img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg"/>
+	</div>
 
 	<div class="info">
 		<div class="share" onclick="copyCurrentUrl()" style="cursor: pointer;">
@@ -20,6 +22,8 @@ ProductVO product = (ProductVO) request.getAttribute("product");
 		<div id="toast" class="toast">URL이 복사되었습니다!</div>
 
 		<div class="breadcrumbs">continent > country &nbsp;&nbsp; theme</div>
+		
+
 		<div class="title">${product.title}</div>
 		<div class="description">${product.description}</div>
 		<div class="price">가격 : ${product.price} 원</div>
@@ -38,19 +42,8 @@ ProductVO product = (ProductVO) request.getAttribute("product");
 		<div class="detail-review">
 			<div class="detail-title">${product.description}</div>
 			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
-			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
-			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
-			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
-			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
-			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
-			<div class="detail-image"
-				style="background-image: url('/img/스위스1.avif');"></div>
+				style="background-image: url('images/product/detail/detail_${product.PCode}.jpg');">
+			</div>
 
 
 			<div class="review-title">review</div>
@@ -124,15 +117,24 @@ ProductVO product = (ProductVO) request.getAttribute("product");
 				<option>무이자할부/결제혜택</option>
 			</select>
 
-			<form id="reserveForm" action="insertReservation.do" method="post">
-
-			<button class="reserve-btn" type="button">예약하기</button>
+			<form id="reserveForm" action="Reservation.do" method="post">
+			  <input type="hidden" name="p_code" value="${product.PCode}" />
+			  <input type="hidden" name="title" value="${product.title}" />
+			  <input type="hidden" id="adultInput" name="adult" /> <!-- 총 인원 수 -->
+			  <input type="hidden" id="totalPriceInput" name="t_price" />
+			  <button class="reserve-btn" type="button">예약하기</button>
+			</form>
+						 
+	
+			
+	
 
 			<div class="like-btn" onclick="toggleLike()" id="likeBtn">♡</div>
 		</div>
 		<div class="chat-icon" onclick="alert('상담창 오픈!')">💬</div>
 	</div>
-
+</div>
+	
 	<script>
 		function updatePrice() {
 		  const adultPrice = parseInt(document.getElementById("adultPrice").value);
@@ -189,20 +191,21 @@ ProductVO product = (ProductVO) request.getAttribute("product");
 		}
 	</script>
 	<script>
-	document.querySelector(".reserve-btn").addEventListener("click", function (e) {
-	  e.preventDefault(); // 기본 동작 중단
+	  	document.querySelector(".reserve-btn").addEventListener("click", function () {
+	    const adult = parseInt(document.getElementById("adultCount").innerText);
+	    const child = parseInt(document.getElementById("childCount").innerText);
+	    const infant = parseInt(document.getElementById("infantCount").innerText);
 	
-	  // 인원 수 가져오기
-	  const adult = document.getElementById("adultCount").innerText;
-	  const child = document.getElementById("childCount").innerText;
-	  const infant = document.getElementById("infantCount").innerText;
+	    const adultPrice = parseInt(document.getElementById("adultPrice").value);
+	    const childPrice = parseInt(document.getElementById("childPrice").value);
+	    const infantPrice = parseInt(document.getElementById("infantPrice").value);
 	
-	  // 폼에 값 넣기
-	  document.getElementById("adultInput").value = adult;
-	  document.getElementById("childInput").value = child;
-	  document.getElementById("infantInput").value = infant;
+	    const totalPerson = adult + child + infant;
+	    const total = adultPrice * adult + childPrice * child + infantPrice * infant;
 	
-	  // 전송
-	  document.getElementById("reserveForm").submit();
-	});
-	</script>
+	    document.getElementById("adultInput").value = totalPerson;
+	    document.getElementById("totalPriceInput").value = total;
+	
+	    document.getElementById("reserveForm").submit();
+	  });
+</script>

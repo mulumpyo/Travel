@@ -10,6 +10,7 @@ public class ReservationVO {
     private int pCode;
     private int status;
     private int amount;
+    private int tPrice;
 
     private String title;
     private Date startDay;

@@ -29,6 +29,7 @@ public class DetailPageControl implements Control {
         
         // 3. 해당 상품 상세 정보 조회
         ProductVO product = service.getProduct(pcode);
+       
         List<ReviewVO> reviewList = reviewService.getReview(pcode);
         
         
