@@ -1,0 +1,27 @@
+package com.groupone.service;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.groupone.common.DataSource;
+import com.groupone.mapper.ReservationMapper;
+import com.groupone.vo.ReservationVO;
+
+public class ReservationServiceImpl implements ReservationService {
+
+    SqlSession sqlSession = DataSource.getInstance().openSession();
+    ReservationMapper mapper = sqlSession.getMapper(ReservationMapper.class);
+
+    @Override
+    public List<ReservationVO> getReservation(int userNo) {
+        return mapper.selectReservation(userNo);
+    }
+
+    @Override
+    public boolean insertReservation(ReservationVO vo) {
+        int result = mapper.insert(vo);
+        sqlSession.commit(); // 중요!
+        return result == 1;
+    }
+}

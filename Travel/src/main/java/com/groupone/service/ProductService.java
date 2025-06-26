@@ -12,4 +12,7 @@ public interface ProductService {
 	public List<ProductVO> productList(SearchDTO search);
 	public List<String> themeList();
 	public List<String> countryList();
+	
+	// 상품 등록 기능 구현 (성공여부 반환)
+	boolean addProduct(ProductVO product);
 }

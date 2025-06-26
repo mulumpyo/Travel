@@ -11,5 +11,7 @@ public interface ProductMapper {
 	public List<ProductVO> selectProductList(SearchDTO search);
 	public List<String> selectthemeList();
 	public List<String> selectcountryList();
+	
+	int insertProduct(ProductVO product);
 
 }

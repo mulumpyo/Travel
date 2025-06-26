@@ -5,4 +5,6 @@ import com.groupone.vo.ReservationVO;
 
 public interface ReservationMapper {
     List<ReservationVO> selectReservation(int userNo);
+
+	int insert(ReservationVO vo);
 }
