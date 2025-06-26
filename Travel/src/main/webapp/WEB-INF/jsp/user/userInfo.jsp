@@ -11,37 +11,38 @@
     }
 %>
 
-
-
 <body>
-  <div id="container">
-  
-  <h2>회원정보</h2>
-  <form action="updateUser.do" method="post">
-  <table>
-    <tr>
-      <td>이름</td>
-      <td>${user.userName}</td>
-    </tr>
-    <tr>
-      <td>아이디</td>
-      <td>${user.userId}</td>
-    </tr>
-    <tr>
-      <td>휴대폰 번호</td>
-      <td><input type="text" name="userPhone" value="<%= user.getUserPhone() %>"></td>    
-    </tr>
-    <tr>
-      <td>생년월일</td>
-      <td>${user.userBirth}</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><button type="button">비밀번호 변경</button></td>
-    </tr>
-  </table>
-  <button type="submit">정보수정</button>
-  <button type="submit">회원탈퇴</button>
-  </form>
+
+<div id="container">
+  <h2>회원 정보</h2>
+<!-- 회원정보 수정 폼 -->
+<form action="userInfo.do" method="post">
+   <input type="hidden" name="action" value="update">
+    <input type="hidden" name="userNo" value="<%= user.getUserNo() %>">
+    <table>
+      <tr>
+        <td>이름</td>
+        <td><%= user.getUserName() %></td>
+      </tr>
+      <tr>
+        <td>아이디</td>
+        <td><%= user.getUserId() %></td>
+      </tr>
+      <tr>
+        <td>휴대폰 번호</td>
+        <td><input type="text" name="userPhone" value="<%= user.getUserPhone() %>"></td>
+      </tr>
+      <tr>
+        <td>생년월일</td>
+        <td><%= user.getUserBirth() %></td>
+      </tr>
+    </table>
+
+  <button type="submit">정보 수정</button>
+</form>
 </div>
+<!-- 회원탈퇴 폼 -->
+<form action="userInfo.do" method="post" onsubmit="return confirm('정말 탈퇴하시겠습니까?');">
+  <button type="submit">회원 탈퇴</button>
+</form>
 </body>

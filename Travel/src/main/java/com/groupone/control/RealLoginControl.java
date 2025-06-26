@@ -5,10 +5,12 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.groupone.common.Control;
 import com.groupone.service.UserService;
 import com.groupone.service.UserServiceImpl;
+import com.groupone.vo.UserVO;
 
 public class RealLoginControl implements Control {
 
@@ -18,11 +20,19 @@ public class RealLoginControl implements Control {
 		String pw = req.getParameter("loginPw");
 
 		UserService svc = new UserServiceImpl();
-
+		
 		if (svc.userLogin(id, pw)) {
-			// 로그인 성공
-//	            req.getSession().setAttribute("loginId", id);
+
+			UserVO user = svc.getUserInfo(svc.getUserNo(id));
+
+			HttpSession session = req.getSession();
+			session.setAttribute("userNo", user.getUserNo());
+			session.setAttribute("userId", user.getUserId());
+			session.setAttribute("userName", user.getUserName());
+			session.setAttribute("isLogin", true);
+			session.setAttribute("isAdmin", user.getIsAdmin() == 1 ? true : false);
 			res.sendRedirect("main.do");
+
 		} else {
 			// 로그인 실패 (비밀번호 틀림)
 			req.setAttribute("errorMsg", "비밀번호가 틀렸습니다.");

@@ -7,41 +7,53 @@
 	<select id="selectUserInfo" resultType="User">
 		SELECT *
 		FROM tbl_user
-		WHERE user_id = #{id}
+		WHERE user_no = #{userNo}
 	</select>
 
 	<select id="selectUser" resultType="User">
 		SELECT *
 		FROM tbl_user
-		WHERE user_id = #{id}
+		WHERE
+		user_id = #{id}
 		AND user_pw = #{pw}
+	</select>
+	
+	<select id="selectUserWithId" parameterType="String" resultType="User">
+		SELECT *
+		FROM tbl_user
+		WHERE user_id = #{userId}
 	</select>
 
 	<insert id="insertUser" parameterType="User">
-		INSERT INTO tbl_user (user_no
+		INSERT INTO tbl_user
+		(user_no
 		,user_name
 		,user_id
 		,user_phone
 		,user_birth
 		,user_pw
 		)
-		VALUES (user_seq.nextval
-		, #{userName},#{userId},#{userPhone},#{userBirth},#{userPw})
+		VALUES
+		(user_seq.nextval
+		,
+		#{userName},#{userId},#{userPhone},#{userBirth},#{userPw})
 	</insert>
-	
-	<select id="selectWishList" parameterType="int" resultType="Product">
+
+	<select id="selectWishList" parameterType="int"
+		resultType="Product">
 		SELECT *
 		FROM tbl_product
 		WHERE p_code
 		IN (SELECT p_code
-			FROM tbl_wish
-			WHERE user_no = #{userNo})
+		FROM tbl_wish
+		WHERE user_no = #{userNo})
 	</select>
-	
+
 	<delete id="deleteUser" parameterType="int">
-    DELETE FROM tbl_user
-    WHERE user_no = #{userNo}
-  </delete>
+		DELETE FROM tbl_user
+		WHERE user_no = #{userNo}
+	</delete>
+	
 
 </mapper>
 
