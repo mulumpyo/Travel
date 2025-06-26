@@ -80,4 +80,10 @@ public class UserServiceImpl implements UserService {
 		return mapper.selectWishList(userNo);
 	}
 
+	@Override
+	public int userNo(String id, String pw) {
+		UserVO user = mapper.selectUser(id, pw);
+		return user.getUserNo();
+	}
+
 }
