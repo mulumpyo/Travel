@@ -34,13 +34,10 @@
 
 <c:forEach var="product" items="${productList}">
 <div class="product-card">
-<<<<<<< HEAD
+
 	  <a href="detailpage.do?pcode=${product.PCode}" class="card-link">
 	    <img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg" alt="팀 프로젝트 이미지" />
-=======
-	  <a href="detailpage?pcode=1" class="card-link">
-	    <img src="images/product/thumbnail/thumbnail_${product.PCode }.jpg" alt="팀 프로젝트 이미지" />
->>>>>>> refs/heads/productList0625
+
 	    <div class="card-content">
 	      
 	      <div class="country">${product.country}<span class="badge"> ${product.theme}</span></div>
