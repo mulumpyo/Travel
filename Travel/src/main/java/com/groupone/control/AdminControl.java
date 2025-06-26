@@ -24,13 +24,15 @@ public class AdminControl implements Control {
 		// int userNo = (int) session.getAttribute("userNo");
 		
 
-		// 임시 유저 고유번호
-		int userNo = 0;
 		
-		UserService svc = new UserServiceImpl();
+		boolean isLogin = session.getAttribute("isLogin") != null ? (boolean) session.getAttribute("isLogin") : false;
+		boolean isAdmin = session.getAttribute("isAdmin") != null ? (boolean) session.getAttribute("isAdmin") : false;
 		
-		
-		// User 
+		if(isLogin && isAdmin) {
+			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
+		} else {
+			res.sendRedirect("main.do");
+		}
 
 
 	}

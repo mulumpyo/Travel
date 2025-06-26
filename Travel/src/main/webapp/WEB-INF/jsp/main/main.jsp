@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%
-
-%>
-
 <h1>지금 바로 떠나볼까요?</h1>
 <button>여행 떠나기</button>
 
@@ -13,4 +9,7 @@
 
 <h4>추천여행지</h4>
 
-<h4>${userNo}님께서 찜한 여행</h4>
+<h4>${userName}님께서 찜한 여행</h4>
+${userId}
+${isAdmin}
+${isLogin}
