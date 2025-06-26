@@ -21,7 +21,7 @@ public class ProductListControl implements Control {
 		ProductService svc = new ProductServiceImpl();
 
 		HttpSession session = req.getSession();
-		String isAdmin = (String) session.getAttribute("isAdmin");
+		boolean isAdmin = (boolean) session.getAttribute("isAdmin");
 
 		String theme = req.getParameter("theme");
 		String country = req.getParameter("country");
