@@ -44,11 +44,28 @@
 	</select>
 	
 	<delete id="deleteProduct" parameterType="int">
-		delete *
-		from tbl_product
+		delete 
+		from tbl_product 
 		where p_code = #{pCode}
+			
 	
 	</delete>
+	
+	<update id="updateProduct" parameterType="int">
+		update tbl_product
+		set title = #{title}
+			, description = #{description}
+			, theme = #{theme}
+			, country = #{country}
+			, price = #{price}
+			, start_day = to_date(#{startDay}, 'YYYY-MM-DD')
+			, end_day = to_date(#{startDay}, 'YYYY-MM-DD')
+			, max_qty = #{maxQty}
+			, status = #{status}
+		where p_code = #{pCode}
+	
+	
+	</update>
 
 
 </mapper>

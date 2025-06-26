@@ -16,6 +16,7 @@ import com.groupone.control.FaqControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
 import com.groupone.control.ProductListControl;
+import com.groupone.control.ProductModifyControl;
 import com.groupone.control.QnaControl;
 import com.groupone.control.QnaListControl;
 import com.groupone.control.ReservationListControl;
@@ -57,6 +58,7 @@ public class FrontController extends HttpServlet {
 		/* 해민 */
 		// 06/25 productList.do 카드리스트 구현해두었습니다. 계속 진행 부탁드릴게요.
 		map.put("/productList.do", new ProductListControl());
+		map.put("/productModify.do", new ProductModifyControl());
 		
 		/* 유경 */
 		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요

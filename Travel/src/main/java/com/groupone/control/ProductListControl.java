@@ -30,9 +30,11 @@ public class ProductListControl implements Control {
 		int pCode = 0;
 		if (req.getParameter("pCode")!=null) {
 			pCode = Integer.parseInt(req.getParameter("pCode"));
+			System.out.println("pCode는"+pCode);
 			svc.removeProduct(pCode);
 			
 		}
+		
 		
 		SearchDTO search = new SearchDTO();
 		search.setTheme(theme);

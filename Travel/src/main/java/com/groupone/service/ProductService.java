@@ -16,5 +16,7 @@ public interface ProductService {
 
 	public List<String> countryList();
 	
-	public boolean removeProduct(int pcode);
+	public boolean removeProduct(int pCode);
+
+	public boolean modifyProduct(int pCode);
 }
