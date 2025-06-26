@@ -39,6 +39,35 @@
 		select country from tbl_product
 		group by country
 	</select>
+	
+	<insert id="insertProduct" parameterType="Product">
+		insert into tbl_product(
+			p_code
+			, user_no
+			, title
+			, description
+			, theme
+			, country
+			, price                
+			, start_day
+			, end_day
+			, max_qty
+			, status
+    )
+		values(
+			pro_seq.nextval
+			, #{userNo}
+			, #{title}
+			, #{description}
+			, #{theme}
+			, #{country}
+			, #{price}
+			, #{startDay}
+			, #{endDay}
+			, #{maxQty}
+			, #{status}
+		)
+	</insert>
 
 
 </mapper>

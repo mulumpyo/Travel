@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.groupone.control.AddProductControl;
 import com.groupone.control.AdminControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
@@ -42,7 +43,10 @@ public class FrontController extends HttpServlet {
 		// main.do 기능 구현, faq 사이드메뉴
 		map.put("/test.do", new TestControl()); // 타일즈 테스트
 		map.put("/main.do", new MainControl()); // 메인페이지
-		map.put("/admin.do", new AdminControl()); //
+		map.put("/admin.do", new AdminControl()); // 어드민페이지
+		map.put("/addproduct.do", new AddProductControl());
+		
+		
 		
 		/* 은경 */
 		map.put("/detailpage.do", new DetailPageControl()); // 상세페이지
@@ -67,6 +71,7 @@ public class FrontController extends HttpServlet {
 		map.put("/realLogin.do", new RealLoginControl());
 		map.put("/register.do", new RegisterControl());
 		map.put("/userInfo.do", new UserInfoControl());
+		
 		/* 이영 */
 		// 06/25 1:1 문의 기능 구현 부탁드려요. 최대한 자신감 가지고 막 눌러주세요.
 		// 기억해. faq에 검색기능 추가하기! 
@@ -74,8 +79,7 @@ public class FrontController extends HttpServlet {
 		map.put("/faq.do", new FaqControl());   // FAQ 메인페이지
 		map.put("/qna.do", new QnaControl());   // QnA
 		map.put("/qnaList.do", new QnaListControl());  // QnaList
-  		
-		
+  	
 	}
 
 	@Override

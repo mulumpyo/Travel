@@ -40,4 +40,14 @@ public class ProductServiceImpl implements ProductService {
 		return mapper.selectcountryList();
 	}
 
+	@Override
+	public boolean addProduct(ProductVO product) {
+		
+		int r = mapper.insertProduct(product);
+		if (r == 1) {
+			return true;
+		}
+		return false;
+	}
+
 }
