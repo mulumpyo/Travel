@@ -26,6 +26,9 @@ public interface UserService {
 	// 회원 수정
 	boolean userModify(UserVO user);
 	
+	// 비밀번호 수정
+	boolean passwordUpdate(UserVO user);
+
 	// 회원 삭제
 	boolean userRemove(int userNo);
 	
