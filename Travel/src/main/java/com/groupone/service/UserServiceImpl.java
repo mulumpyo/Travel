@@ -1,6 +1,8 @@
 package com.groupone.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -81,9 +83,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int userNo(String id, String pw) {
-		UserVO user = mapper.selectUser(id, pw);
-		return user.getUserNo();
-	}
-
+	public UserVO loginInfo(String id, String pw) {
+	     Map<String, Object> param = new HashMap<>();
+	        param.put("id", id);
+	        param.put("pw", pw);
+	        return mapper.loginInfo(param); // 로그인 쿼리 실행
+	    }
 }
