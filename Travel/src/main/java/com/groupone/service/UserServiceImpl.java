@@ -83,5 +83,14 @@ public class UserServiceImpl implements UserService {
 		return mapper.selectWishList(userNo);
 	}
 
+	@Override
+	public boolean passwordUpdate(UserVO user) {
+		int r = mapper.passwordUpdate(user);
+		if(r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
+	}
 
 }
