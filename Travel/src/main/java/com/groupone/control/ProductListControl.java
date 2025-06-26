@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.groupone.common.Control;
 import com.groupone.common.SearchDTO;
@@ -37,8 +38,32 @@ public class ProductListControl implements Control {
 		// theme, country를 parameter로 사용하기 위해서 attribute에 지정.
 		req.setAttribute("theme", theme);
 		req.setAttribute("country", country);
+		
+//		HttpSession session = req.getSession();
+//		String auth = (String) session.getAttribute("auth");
+//		
+//		if(auth != null && auth.equals("User")/*일반사용자*/) {
+//			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+//			
+//		} else if(auth != null && auth.equals("Admin")/*관리자*/) {
+//			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
+//			
+//		} else {
+//			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+//		}
+		
+		int isAdmin = 1;
+		if(isAdmin == 0) {
+			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+			
+		} else if(isAdmin == 1) {
+			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
+			
+		} else {
+			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+		}
 
-		req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+
 
 	}
 

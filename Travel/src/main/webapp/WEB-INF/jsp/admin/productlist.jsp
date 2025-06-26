@@ -33,7 +33,8 @@
 
 
 <c:forEach var="product" items="${productList}">
-<div class="product-card">
+<div>
+	<div class="product-card">
 
 	  <a href="detailpage.do?pcode=${product.PCode}" class="card-link">
 	    <img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg" alt="팀 프로젝트 이미지" />
@@ -49,7 +50,8 @@
 	  </a>
 	<!-- <i>heart icon</i> -->
 	</div>
-
+	<button class="btn-delete" type="button">delete</button>
+</div>
 </c:forEach>
 </div>
 
