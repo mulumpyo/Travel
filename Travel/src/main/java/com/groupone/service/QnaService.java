@@ -12,5 +12,9 @@ public interface QnaService {
 	//list
 	public List<QnaVO> qnaList();
 	
-	public List<QnaVO> getqna(String kw);   //단건조회
+	public List<QnaVO> getqna(String kw);   
+	
+	//단건조회
+	QnaVO getQnaOne(int pCode);
+	
 }
