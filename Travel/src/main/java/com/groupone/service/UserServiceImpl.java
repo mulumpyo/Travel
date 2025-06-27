@@ -93,4 +93,8 @@ public class UserServiceImpl implements UserService {
 		return false;
 	}
 
+	@Override // 비밀번호 찾기
+	public UserVO findPw(String id, String name, String phone) {
+		return mapper.findPw(id, name, phone);
+	}
 }

@@ -10,12 +10,12 @@
 				<c:choose>
 			<c:when test="${isLogin == true}">
 				<a href="productList.do">
-					<button>여행 떠나기</button>
+					<button type="button">여행 떠나기</button>
 				</a>
 			</c:when>
 			<c:otherwise>
 				<a href="login.do">
-					<button>여행 떠나기 ></button>
+					<button type="button">여행 떠나기 ></button>
 				</a>
 			</c:otherwise>
 		</c:choose>

@@ -35,6 +35,9 @@ public interface UserService {
 	// 회원 목록 조회
 	List<UserVO> getUserList();
 	
-	// 회원 찜리스트 조회
 	List<ProductVO> getWishList(int userNo);
+	
+	// 비밀번호 조회
+	UserVO findPw(String id, String name, String phone); 
+	
 }

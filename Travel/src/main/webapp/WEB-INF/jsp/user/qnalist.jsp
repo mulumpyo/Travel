@@ -19,7 +19,7 @@
   <main>
         <input type="search" id="search" name="search" placeholder="검색하고싶은 내용을 입력하세요">
          <button id='btn'>🔍</button>
-	<table>
+	<table id="target">
 
 	   <tr>
 	     <th>순서</th>
@@ -33,15 +33,17 @@
 	   <tr>
 	   	 <td>${qna.QCode }</td>
 		 <td>${qna.type }</td>	     
-	     <td>${qna.title }</td>
-	     <td><fmt:formatDate value="${qna.QDate }" pattern="yyyy/MM/dd"/></td>
+	     <td><a href="myqna.do?qCode=${qna.QCode}">${qna.title }</a></td>
+	     <td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd"/></td>
 	     <td>${qna.status }</td>
 	   </tr>
-	   
 	 </c:forEach>
+    
 	</table>
     
   </main>
 
     
-    <script src="js/qnalist.js"></script>
+  <script src="js/qnalist.js"></script>
+
+    

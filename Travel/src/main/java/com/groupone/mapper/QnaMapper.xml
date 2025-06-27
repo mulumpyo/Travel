@@ -30,6 +30,7 @@
 	         q_date as "qDate",
 	         status
 	  from tbl_qna 
+	  order by q_code desc
 	</select>
 	
 	<select id="selectKeyword" parameterType="String" resultType="Qna">
@@ -40,5 +41,17 @@
 	         status
 	  from tbl_qna 
 	  where title like '%'||#{keyword}||'%' 
+	  order by q_code
 	</select>
+	
+	<select id="selectMyQna" parameterType="int" resultType="Qna">
+	  select status,
+	         title,
+	         question,
+	         q_date as "qDate"
+	  from tbl_qna
+	  where q_code= #{qcode }   
+	</select>
+	
+	
 </mapper>
