@@ -11,6 +11,14 @@ if (user != null) {
 }
 %>
 
+<c:if test="${not empty sessionScope.msg}">
+	<script>
+		alert("${sessionScope.msg}");
+	</script>
+	<c:remove var="msg" scope="session" />
+</c:if>
+
+
 <c:if test="${not empty errorMsg}">
 	<script>
 		alert("${errorMsg}");
