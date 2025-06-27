@@ -49,7 +49,6 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainControl()); // 메인페이지
 		map.put("/admin.do", new AdminControl()); // 어드민페이지
 		map.put("/signout.do", new SignOutControl()); // 로그아웃 기능
-
 		
 		
 		/* 은경 */
