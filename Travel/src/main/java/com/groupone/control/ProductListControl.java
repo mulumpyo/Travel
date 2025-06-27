@@ -20,11 +20,33 @@ public class ProductListControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ProductService svc = new ProductServiceImpl();
 
+		HttpSession session = req.getSession();
+		
+	    Object adminAttr = session.getAttribute("isAdmin");
+	    boolean isAdmin = false;
+	    if (adminAttr != null && adminAttr instanceof Boolean) {
+	        isAdmin = (Boolean) adminAttr;
+	    }
+
 		String theme = req.getParameter("theme");
 		String country = req.getParameter("country");
+		String keyword = req.getParameter("keyword");
+		
+		
+		int pCode = 0;
+		if (req.getParameter("pCode")!=null) {
+			pCode = Integer.parseInt(req.getParameter("pCode"));
+			System.out.println("pCode는"+pCode);
+			svc.removeProduct(pCode);
+			
+		}
+		
+		
 		SearchDTO search = new SearchDTO();
 		search.setTheme(theme);
 		search.setCountry(country);
+		search.setKeyword(keyword);
+		
 		System.out.println(search);
 
 		List<ProductVO> list = svc.productList(search);
@@ -39,30 +61,13 @@ public class ProductListControl implements Control {
 		req.setAttribute("theme", theme);
 		req.setAttribute("country", country);
 		
-//		HttpSession session = req.getSession();
-//		String auth = (String) session.getAttribute("auth");
-//		
-//		if(auth != null && auth.equals("User")/*일반사용자*/) {
-//			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-//			
-//		} else if(auth != null && auth.equals("Admin")/*관리자*/) {
-//			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
-//			
-//		} else {
-//			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-//		}
 		
-		int isAdmin = 1;
-		if(isAdmin == 0) {
-			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-			
-		} else if(isAdmin == 1) {
-			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
-			
-		} else {
-			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-		}
-
+	    if (isAdmin) {
+	        req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
+	    } else {
+	        req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+	    }
+		
 
 
 	}

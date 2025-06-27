@@ -9,6 +9,7 @@ import com.groupone.common.SearchDTO;
 import com.groupone.mapper.ProductMapper;
 import com.groupone.vo.ProductVO;
 
+
 public class ProductServiceImpl implements ProductService {
 
 	SqlSession sqlSession = DataSource.getInstance().openSession();
@@ -39,6 +40,27 @@ public class ProductServiceImpl implements ProductService {
 	public List<String> countryList() {
 		return mapper.selectcountryList();
 	}
+	
+	@Override
+	public boolean removeProduct(int pCode) {
+		
+		int r = mapper.deleteProduct(pCode);
+		if (r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean modifyProduct(ProductVO product) {
+		int r = mapper.updateProduct(product);
+		if (r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;	
+		}
 
 	@Override
 	public boolean addProduct(ProductVO product) {
@@ -49,5 +71,12 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return false;
 	}
+
+	@Override
+	public List<ProductVO> getWishList(int userNo) {
+		
+		return mapper.selectWishList(userNo);
+	}
+
 
 }

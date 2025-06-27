@@ -1,45 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.groupone.mapper.ProductMapper">
 
-  <select id="selectProduct" resultType="Product" parameterType="int">
-    SELECT *
-    FROM tbl_product
-    WHERE p_code = #{pCode}
-  </select>
+	<select id="selectProduct" resultType="Product"
+		parameterType="int">
+		SELECT *
+		FROM tbl_product
+		WHERE p_code = #{pCode}
+	</select>
 
-	<select id="selectProductList" parameterType="com.groupone.common.SearchDTO">
+	<select id="selectProductList"
+		parameterType="com.groupone.common.SearchDTO">
 		select p_code as "pCode"
-		     , user_no as "userNo"
-		     , title as "title"
-		     , description as "description"
-		     , theme as "theme"
-		     , country as "country"
-		     , price as "price"
-		     , start_day as "startDay"
-		     , end_day as "endDay"
-		     , max_qty as "maxQty"
-		     , created_at as "createdAt"
+		, user_no as "userNo"
+		, title as "title"
+		, description as "description"
+		, theme as "theme"
+		, country as "country"
+		, price as "price"
+		, start_day as "startDay"
+		, end_day as "endDay"
+		, max_qty as "maxQty"
+		, status as "status"
+		, created_at as "createdAt"
 		from tbl_product
 		where 1 = 1
-        and   theme = nvl(#{theme}, theme)
-	    and   country = nvl(#{country}, country)
+		and(title like '%'||#{keyword}||'%'
+        or description like '%'||#{keyword}||'%'
+        or theme like '%'||#{keyword}||'%'
+        or country like '%'||#{keyword}||'%'
+        or price like '%'||#{keyword}||'%'
+        or start_day like '%'||#{keyword}||'%'
+        or end_day like '%'||#{keyword}||'%')
+		and theme = nvl(#{theme}, theme)
+		and country = nvl(#{country}, country)
 		order by p_code
+	</select>
+	
+	<select id="selectKeword" parameterType="com.groupone.common.SearchDTO">
+		select p_code as "pCode"
+		, user_no as "userNo"
+		, title as "title"
+		, description as "description"
+		, theme as "theme"
+		, country as "country"
+		, price as "price"
+		, start_day as "startDay"
+		, end_day as "endDay"
+		, max_qty as "maxQty"
+		, status as "status"
+		, created_at as "createdAt"
+		from tbl_product
+		where title like '%'||#{keyword}||'%'
+        or description like '%'||#{keyword}||'%'
+        or theme like '%'||#{keyword}||'%'
+        or country like '%'||#{keyword}||'%'
+        or price like '%'||#{keyword}||'%'
+        or start_day like '%'||#{keyword}||'%'
+        or end_day like '%'||#{keyword}||'%'
+		order by p_code
+	
+	
+	
 	</select>
 
 	<select id="selectthemeList" resultType="String">
-		select theme from tbl_product
+		select theme from
+		tbl_product
 		group by theme
 	</select>
-
+	
 	<select id="selectcountryList" resultType="String">
-		select country from tbl_product
+		select country from
+		tbl_product
 		group by country
 	</select>
 	
+	<delete id="deleteProduct" parameterType="int">
+		delete 
+		from tbl_product 
+		where p_code = #{pCode}
+			
+	
+	</delete>
+	
+	<update id="updateProduct" parameterType="Product">
+		update tbl_product
+		set title = #{title}
+			, description = #{description}
+			, theme = #{theme}
+			, country = #{country}
+			, price = #{price}
+			, start_day = #{startDay}
+			, end_day = #{endDay}
+			, max_qty = #{maxQty}
+			, status = #{status}
+		where p_code = #{pCode}
+	
+	</update>
+
 	<insert id="insertProduct" parameterType="Product">
 		insert into tbl_product(
 			p_code
@@ -68,6 +129,13 @@
 			, #{status}
 		)
 	</insert>
-
+	
+	<select id="selectWishList" parameterType="int">
+		select *
+		from tbl_product
+		where p_code in (select p_code
+										 from tbl_wish
+										 where user_no = #{userNo})
+	</select>
 
 </mapper>
