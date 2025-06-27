@@ -8,6 +8,7 @@ const div = document.querySelector('div.product-list');
 
 const btnResetTheme = document.getElementById('btnResetTheme');
 const btnResetCountry = document.getElementById('btnResetCountry');
+const liKeyword = document.getElementById('checkKeyword');
 
 
 const ftheme = document.querySelector('ul.theme-ul');
@@ -16,6 +17,7 @@ const fcountry = document.querySelector('ul.country-ul');
 
 document.querySelectorAll('li.filter-theme').forEach(event => {
 	event.addEventListener('click', function(e) {
+		liKeyword.remove();
 		theme = e.target.innerHTML;
 		theme = theme.trim()
 		e.currentTarget.classList.add('active');
@@ -26,6 +28,7 @@ document.querySelectorAll('li.filter-theme').forEach(event => {
 
 document.querySelectorAll('li.filter-country').forEach(event => {
 	event.addEventListener('click', function(e) {
+		liKeyword.remove();
 		country = e.target.innerHTML;
 		country = country.trim()
 		location.href = 'productList.do?theme=' + theme + '&country=' + country;
@@ -67,3 +70,5 @@ if(btnResetCountry){
 	})
 	
 }
+
+

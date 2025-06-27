@@ -56,11 +56,12 @@ public class ProductListControl implements Control {
 		req.setAttribute("productList", list);
 		req.setAttribute("themeList", tlist);
 		req.setAttribute("countryList", clist);
-
+		
+		
 		// theme, country를 parameter로 사용하기 위해서 attribute에 지정.
 		req.setAttribute("theme", theme);
 		req.setAttribute("country", country);
-		
+		req.setAttribute("keyword", keyword);
 		
 	    if (isAdmin) {
 	        req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);

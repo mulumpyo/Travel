@@ -30,7 +30,7 @@
 		
 		
 		<!-- 필터링이 적용된다면 나오는 코드 -->
-		<c:if test="${!empty theme or !empty country}">
+		<c:if test="${!empty theme or !empty country or !empty keyword}">
 		<p> ✔ 선택된 검색 키워드 </p>
 		</c:if>
 		<ul>
@@ -48,6 +48,13 @@
 			  <button id="btnResetCountry">✖</button>
 			  
 			</c:if>
+		
+			<c:if test="${!empty keyword}">
+			  <li class="filter-keyword" style="display:inline-block">
+			    <span id="checkKeyword" class="badge" style="cursor: pointer;">${keyword}</span>
+			  </li>			  
+			</c:if>
+
 		</ul>
 		<!-- 필터링이 적용된다면 나오는 코드 -->
 
@@ -117,3 +124,5 @@
 </script>
 
 <script src="js/productlist.js"></script>
+
+
