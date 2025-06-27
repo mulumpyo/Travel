@@ -14,7 +14,10 @@
 
 	
 	<h2>어디로 갈까요?</h2>
+	<form action="productList.do" method="get">
 	<input name="keyword" placeholder="가고싶은 곳을 입력해주세요 :)"/>
+	<button type="submit">검색 <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+	</form>
 	
 	<h2>추천여행지</h2>
 	
