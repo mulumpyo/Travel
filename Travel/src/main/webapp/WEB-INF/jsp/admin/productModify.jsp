@@ -11,39 +11,44 @@
 <body>
 
 <div id="container" align="center">
-<form action="productList.do" method="post">
+<form action="productModifySuccess.do" method="post">
    <input type="hidden" name="action" value="update">
     <table>
       <tr>
         <td>상품번호</td>
-        <td><input type="text" name="pcode" value="${product.PCode }" size=100 readonly></td>
+        <td><input type="text" name="pCode" id="pCode" value="${product.PCode }" size=100 readonly></td>
       </tr>
       <tr>
         <td>상품명</td>
-        <td><input type="text" name="title" value="${product.title }" size=100></td>
+        <td><input type="text" name="title" id="title" value="${product.title }" size=100></td>
       </tr>
       <tr>
         <td>상품설명</td>
-        <td><input type="text" name="description" value="${product.description}" size=100></td>
+        <td>
+        <textarea name="description" id="description" cols="60" rows="5" value="${product.description}">${product.description}</textarea>
       </tr>
       <tr>
         <td>테마</td>
         <td>
-        <input type='checkbox' name='theme' value='문화' onclick='checkOnlyOne(this)'/>문화
-        <input type='checkbox' name='theme' value='힐링' onclick='checkOnlyOne(this)'/>힐링
-        <input type='checkbox' name='theme' value='탐험' onclick='checkOnlyOne(this)'/>탐험
-        <input type='checkbox' name='theme' value='휴양' onclick='checkOnlyOne(this)'/>휴양
-        <input type='checkbox' name='theme' value='미식' onclick='checkOnlyOne(this)'/>미식
+        <input type='radio' name='theme' value='문화' />문화
+        <input type='radio' name='theme' value='힐링' />힐링
+        <input type='radio' name='theme' value='탐험' />탐험
+        <input type='radio' name='theme' value='휴양' />휴양
+        <input type='radio' name='theme' value='미식' />미식
         </td>
       </tr>
       <tr>
         <td>나라</td>
         <td><input type="text" name="country" value="${product.country}" size=100></td>
       </tr>
+      <tr>
+        <td>가격</td>
+        <td><input type="text" name="price" value="${product.price}" size=100></td>
+      </tr>
 	  <tr>
 		  <td>시작날짜</td>
 		  <td>
-		    <input type="date" name="start-day"
+		    <input type="date" name="startDay" 
 		           value="<fmt:formatDate value='${product.startDay}' pattern='yyyy-MM-dd'/>"
 		           style="width: 200px;">
 		  </td>
@@ -51,26 +56,30 @@
 	  <tr>
 		  <td>종료날짜</td>
 		  <td>
-		    <input type="date" name="end-day"
+		    <input type="date" name="endDay" 
 		           value="<fmt:formatDate value='${product.endDay}' pattern='yyyy-MM-dd'/>"
 		           style="width: 200px;">
 		  </td>
 	  </tr>
       <tr>
         <td>판매가능인원</td>
-        <td><input type="number" name="max-qty" value="${product.maxQty}" size=100 min=0></td>
+        <td><input type="number" name="maxQty" value="${product.maxQty}" size=100 min=0></td>
       </tr>
-      <tr>
-        <td>사용자 노출 여부</td>
-        <td><select>
-        	<option name="status-true">상품 노출</option>
-       		<option name="status-false">상품 숨김</option>
-        </select>
-      </tr>
+      
+      
+	  <tr>
+		  <td>사용자 노출 여부</td>
+		  <td>
+		    <select name="status">
+		      <option value="1">상품 노출</option>
+		      <option value="0">상품 숨김</option>
+		    </select>
+		  </td>
+	  </tr>
     </table>
    <div>
-  <button class="button btnSubmit" type="submit">수정</button>
-  <button class="button btnReset" type="reset">취소</button>
+   <button type="submit" class="btnSubmit">수정</button>
+   <button type="reset" class="btnReset" >취소</button>
 	</div>
 </form>
 
@@ -83,5 +92,4 @@
 
 </body>
 
-<script src="js/producModify_a.js"></script>
 

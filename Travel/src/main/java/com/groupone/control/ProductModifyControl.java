@@ -23,7 +23,6 @@ public class ProductModifyControl implements Control {
 		HttpSession session = req.getSession();
 
 		
-		
 		int pCode = 0;
 		if (req.getParameter("pCode")!=null) {
 			pCode = Integer.parseInt(req.getParameter("pCode"));

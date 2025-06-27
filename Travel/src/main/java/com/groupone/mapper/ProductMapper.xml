@@ -23,12 +23,47 @@
 		, start_day as "startDay"
 		, end_day as "endDay"
 		, max_qty as "maxQty"
+		, status as "status"
 		, created_at as "createdAt"
 		from tbl_product
 		where 1 = 1
+		and(title like '%'||#{keyword}||'%'
+        or description like '%'||#{keyword}||'%'
+        or theme like '%'||#{keyword}||'%'
+        or country like '%'||#{keyword}||'%'
+        or price like '%'||#{keyword}||'%'
+        or start_day like '%'||#{keyword}||'%'
+        or end_day like '%'||#{keyword}||'%')
 		and theme = nvl(#{theme}, theme)
 		and country = nvl(#{country}, country)
 		order by p_code
+	</select>
+	
+	<select id="selectKeword" parameterType="com.groupone.common.SearchDTO">
+		select p_code as "pCode"
+		, user_no as "userNo"
+		, title as "title"
+		, description as "description"
+		, theme as "theme"
+		, country as "country"
+		, price as "price"
+		, start_day as "startDay"
+		, end_day as "endDay"
+		, max_qty as "maxQty"
+		, status as "status"
+		, created_at as "createdAt"
+		from tbl_product
+		where title like '%'||#{keyword}||'%'
+        or description like '%'||#{keyword}||'%'
+        or theme like '%'||#{keyword}||'%'
+        or country like '%'||#{keyword}||'%'
+        or price like '%'||#{keyword}||'%'
+        or start_day like '%'||#{keyword}||'%'
+        or end_day like '%'||#{keyword}||'%'
+		order by p_code
+	
+	
+	
 	</select>
 
 	<select id="selectthemeList" resultType="String">
@@ -58,8 +93,8 @@
 			, theme = #{theme}
 			, country = #{country}
 			, price = #{price}
-			, start_day = to_date(#{startDay}, 'YYYY-MM-DD')
-			, end_day = to_date(#{startDay}, 'YYYY-MM-DD')
+			, start_day = #{startDay}
+			, end_day = #{endDay}
 			, max_qty = #{maxQty}
 			, status = #{status}
 		where p_code = #{pCode}
