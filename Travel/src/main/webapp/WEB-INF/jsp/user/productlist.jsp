@@ -4,6 +4,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 
 
@@ -83,7 +85,8 @@
 			      <div class="country">${product.country}<span class="badge"> ${product.theme}</span></div>
 			      
 			      <div class="title">${product.title}</div>
-			      <div class="price">${product.price}<span class="won">원</span></div>
+			      <div class="price">
+				  <div class="price"><fmt:formatNumber value="${product.price}" pattern="#,##0"/><span class="won">원</span></div>
 			      <div class="date">${product.startDay} ~ ${product.endDay}</div>
 			    </div>
 			  </a>
