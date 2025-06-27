@@ -26,6 +26,7 @@ public class MyQnaControl implements Control {
 		QnaVO qna = svc.getQnaOne(Integer.parseInt(qcode));
 		
 		req.setAttribute("qna", qna);
+		
 		System.out.println(qcode);
 	
 		req.getRequestDispatcher("user/myqna.tiles").forward(req, res);

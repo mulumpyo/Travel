@@ -53,5 +53,12 @@
 	  where q_code= #{qcode }   
 	</select>
 	
-	
+	<update id="updateQna" parameterType="Qna">
+	  update tbl_qna
+	  set title = #{title},
+	      question = #{question}
+	  where q_code = #{qcode}
+	      
+	               
+	</update>
 </mapper>

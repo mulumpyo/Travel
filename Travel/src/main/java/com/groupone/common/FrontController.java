@@ -18,6 +18,7 @@ import com.groupone.control.ReservationControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
 import com.groupone.control.MyQnaControl;
+import com.groupone.control.MyQnaModifySuccessControl;
 import com.groupone.control.ProductListControl;
 import com.groupone.control.ProductModifyControl;
 import com.groupone.control.ProductModifySuccessControl;
@@ -87,6 +88,8 @@ public class FrontController extends HttpServlet {
 		map.put("/qnasearch.do", new QnaSearchControl());  // QnaList
 		
 		map.put("/myqna.do", new MyQnaControl());  // 문의내역
+		map.put("/myqnaModifySuccess.do", new MyQnaModifySuccessControl());  // 문의내역
+		
   		
 		
 
