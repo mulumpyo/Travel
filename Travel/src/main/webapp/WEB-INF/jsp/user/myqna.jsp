@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
   <aside>
    <div id="subnav">
@@ -11,16 +11,34 @@
       </ul>
     </div>
   </aside>
-  
-  <main> <!-- 데이터베이스에서 내용 가지고오기 -->
-	<div>답변완료</div>
-	<div>제목</div>
-	<div>문의내용</div>
-	<div>등록일 2025/06/23</div>
-	<div>답변내용</div>
-	<div>접기</div>
+
+<main>
+
+	<form action="myqna.do" method="post">
+	<table>
+		<tr>
+			<td>제목</td>
+			<td><input type="text" name="title" value="${qna.title }"></td>
+		</tr>
+		<tr>
+			<td>문의 내용</td>
+			<td><textarea>${qna.question }</textarea></td>
+		</tr>
+		<tr>
+			<td>답변내용</td>
+			<td><textarea>답변내용 들어가야됨</textarea></td>
+		</tr>
+		<tr>
+			<td>등록일</td>
+			<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd"/></td>
+		</tr>
+	</table>
+</form>
 	<li>
-	<button>수정</button>
-	<button>삭제</button>
+		<button>수정</button>
+		<button>삭제</button>
 	</li>
-  </main>
+</main>
+
+
+<script src="js/myqna.js"></script>

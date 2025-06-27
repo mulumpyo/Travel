@@ -38,6 +38,10 @@ public class QnaServiceImpl implements QnaService{
 	public List<QnaVO> qnaList() {
 		return mapper.selectQnaList();
 	}
+	@Override
+	public QnaVO getQnaOne(int pCode) {
+		return mapper.selectMyQna(pCode);
+	}
 	
 
 }
