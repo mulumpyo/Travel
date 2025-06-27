@@ -9,28 +9,9 @@
 	List<ProductVO> wishlist = (List<ProductVO>) request.getAttribute("wishlist");
 %>
 
-
-<div class="header-bg">
-	<div class="container">
-		<h1>지금 바로 떠나볼까요?</h1>
-		
-		<c:choose>
-			<c:when test="${isLogin == true}">
-				<a href="productList.do">
-					<button>여행 떠나기</button>
-				</a>
-			</c:when>
-			<c:otherwise>
-				<a href="login.do">
-					<button>여행 떠나기</button>
-				</a>
-			</c:otherwise>
-		</c:choose>
-	</div>
-</div>
 <div class="container">
 	<a href="signout.do"><button>logout test</button></a>
-	
+
 	
 	<h2>어디로 갈까요?</h2>
 	<input name="keyword" placeholder="가고싶은 곳을 입력해주세요 :)"/>
