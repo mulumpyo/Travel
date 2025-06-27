@@ -24,8 +24,9 @@ if (user != null) {
 			<h3>
 				아이디를 입력하여<br>로그인 또는 회원가입
 			</h3>
-			<input type="text" id="loginId" name="loginId" value="${loginId}" required><br> <input type="password"
-				id="loginPw" name="loginPw" autofocus placeholder="비밀번호입력" required><br>
+			<input type="text" id="loginId" name="loginId" value="${loginId}"
+				required><br> <input type="password" id="loginPw"
+				name="loginPw" autofocus placeholder="비밀번호입력" required><br>
 			<p>
 				<a href="#" onclick="openModal()">비밀번호 찾기</a>
 			</p>
@@ -44,14 +45,37 @@ if (user != null) {
 			<form action="findPw.do" method="post" onsubmit="return findPw()">
 				<input type="hidden" name="action" value="findPw"> <label>아이디</label><br>
 				<input type="text" name="id" value="${loginId}" required><br>
-				<br> <label>이름</label><br> <input type="text" id="name" name="name" required autofocus><br> <br> <label>휴대폰
+				<br> <label>이름</label><br> <input type="text" id="name"
+					name="name" required autofocus><br> <br> <label>휴대폰
 					번호</label><br> <input type="text" id="phone" name="phone" required><br>
 				<br>
 
-				<button type="submit">비밀번호 찾기</button>
+				<button type="submit" onclick="openModal1('changeModal')">비밀번호
+					찾기</button>
 			</form>
 		</div>
 	</div>
+
+	<!-- 모달창 비밀번호 변경 -->
+	<div id="changeModal" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="closeModal1()">X</span>
+			<h3>비밀번호 변경</h3>
+			<form action="changeLoginPw.do" method="post"
+				onsubmit="return changePw()">
+				<input type="hidden" name="userNo" value="${userNo}"> <label>새
+					비밀번호</label><br> <input type="password" id="newPw" name="newPw"
+					required><br> <br> <label>새 비밀번호 확인</label><br>
+				<input type="password" id="confirmPw" name="confirmPw" required><br>
+				<br>
+				<button type="submit">비밀번호 변경</button>
+			</form>
+		</div>
+	</div>
+
+
+
+
 
 	<script>
 		function openModal() {
@@ -62,18 +86,32 @@ if (user != null) {
 			document.getElementById("findModal").style.display = "none";
 		}
 
-		// 모달 외부 클릭 시 닫기
-		window.onclick = function (event) {
-			const modal = document.getElementById("findModal");
-			if (event.target == modal) {
+		function openModal1() {
+			document.getElementById("changeModal").style.display = "block";
+		}
+
+		function closeModal1() {
+			document.getElementById("changeModal").style.display = "none";
+		}
+
+		// 모달 외부 클릭 시 닫기 (필요하다면 두 모달을 구분해 처리)
+		window.onclick = function(event) {
+			const findModal = document.getElementById("findModal");
+			const changeModal = document.getElementById("changeModal");
+
+			if (event.target == findModal) {
 				closeModal();
 			}
+			if (event.target == changeModal) {
+				closeModal1();
+			}
 		};
-
 	</script>
 
-
-
-
-
-</body>
+	<c:if test="${showChangeModal}">
+		<script>
+			window.addEventListener('load', function() {
+				openModal1();
+			});
+		</script>
+	</c:if>
