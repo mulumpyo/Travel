@@ -26,7 +26,7 @@
 	<div class="section">
 		<h2 class="section-title">추천여행지</h2>
 		<div class="recommend-list">
-			<a><div class="country"></a>
+			<a class="country">일본</a>
 		</div>
 	</div>
 	

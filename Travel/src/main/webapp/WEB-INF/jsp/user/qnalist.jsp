@@ -33,7 +33,7 @@
 	   <tr>
 	   	 <td>${qna.QCode }</td>
 		 <td>${qna.type }</td>	     
-	     <td>${qna.title }</td>
+	     <td><a href="myqna.do?qCode=${qna.QCode}">${qna.title }</a></td>
 	     <td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd"/></td>
 	     <td>${qna.status }</td>
 	   </tr>

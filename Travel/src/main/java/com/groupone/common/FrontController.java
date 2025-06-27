@@ -15,7 +15,6 @@ import com.groupone.control.ChangePwControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
 import com.groupone.control.FindPwControl;
-import com.groupone.control.LoginChangePwControl;
 import com.groupone.control.ReservationControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;

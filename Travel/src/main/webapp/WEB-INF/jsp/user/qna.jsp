@@ -18,7 +18,7 @@
     <option value="예약문의">예약문의</option>
     <option value="기타문의">기타문의</option>
   </select>
-  
+  <form>
   <li>
   	<label for="title">제목</label>
     <input type="title" id="title" size="60">
