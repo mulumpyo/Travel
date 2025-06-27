@@ -69,5 +69,14 @@
 		WHERE user_no = #{userNo}
 	</update>
 
+	<select id="findPw" resultType="User">
+		SELECT *
+		FROM tbl_user
+		WHERE
+		    user_id = #{id}
+		AND user_phone = #{phone}
+		AND user_name = #{name}
+	</select>
+	
 </mapper>
 

@@ -55,7 +55,7 @@ if (msg != null) { %>
 				<tr>
 					<td></td>
 					<td><button type="button" value="pwUpdate"
-							onclick="openModal()">비밀번호 변경</button></td>
+							onclick="openModal('pwModal')">비밀번호 변경</button></td>
 				</tr>
 			</table>
 			<button type="submit" name="action" value="update">정보 수정</button>
