@@ -24,12 +24,12 @@ import com.groupone.control.QnaControl;
 import com.groupone.control.QnaListControl;
 import com.groupone.control.QnaSearchControl;
 import com.groupone.control.ReservationListControl;
+import com.groupone.control.SignOutControl;
 import com.groupone.control.WishListPageControl;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
 import com.groupone.control.TestControl;
 import com.groupone.control.UserInfoControl;
-
 
 public class FrontController extends HttpServlet {
 	Map<String, Control> map;
@@ -47,7 +47,8 @@ public class FrontController extends HttpServlet {
 		map.put("/test.do", new TestControl()); // 타일즈 테스트
 		map.put("/main.do", new MainControl()); // 메인페이지
 		map.put("/admin.do", new AdminControl()); // 어드민페이지
-		
+		map.put("/signout.do", new SignOutControl()); // 로그아웃 기능
+
 		
 		
 		/* 은경 */

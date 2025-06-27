@@ -15,6 +15,8 @@ public interface ProductMapper {
 	public int deleteProduct(int pCode);
 	public int updateProduct(ProductVO product);
 	int insertProduct(ProductVO product);
-
+	
+	// 유저의 찜리스트
+	List<ProductVO> selectWishList(int userNo);
 
 }

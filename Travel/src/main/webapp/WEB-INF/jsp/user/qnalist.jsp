@@ -20,6 +20,7 @@
         <input type="search" id="search" name="search" placeholder="검색하고싶은 내용을 입력하세요">
          <button id='btn'>🔍</button>
 	<table>
+
 	   <tr>
 	     <th>순서</th>
 	     <th>유형</th>
@@ -27,7 +28,7 @@
 	     <th>작성일</th>
 	     <th>답변상태</th>
 	   </tr>
-	   
+
 	 <c:forEach var="qna" items="${qnaList }">
 	   <tr>
 	   	 <td>${qna.QCode }</td>
