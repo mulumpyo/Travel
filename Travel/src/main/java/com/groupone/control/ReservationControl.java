@@ -1,6 +1,7 @@
 package com.groupone.control;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +19,8 @@ public class ReservationControl implements Control {
 		HttpSession session = req.getSession();
 		req.setCharacterEncoding("UTF-8");
 
-		boolean isLogin = session.getAttribute("isLogin").equals("true") ? true : false;
-
+		boolean isLogin = (boolean) session.getAttribute("isLogin") == true && session.getAttribute("isLogin") != null ? true : false;
+		
 		// ✅ 로그인 안 되어 있으면 로그인 페이지로 리다이렉트
 		if (!isLogin) {
 			res.sendRedirect("login.do");
@@ -27,30 +28,30 @@ public class ReservationControl implements Control {
 		}
 
 		if (req.getMethod().equals("POST")) {
-			try {
-				int pCode = Integer.parseInt(req.getParameter("pCode"));
+
+				int pCode = Integer.parseInt(req.getParameter("p_code"));
 				int amount = Integer.parseInt(req.getParameter("totalAmount"));
 				int price = Integer.parseInt(req.getParameter("totalPrice"));
 				int userNo = (int) session.getAttribute("userNo");
 
-				ReservationVO vo = new ReservationVO();
-				vo.setPCode(pCode);
-				vo.setAmount(amount);
-				vo.setTPrice(price);
-				vo.setUserNo(userNo);
+				ReservationVO reservation = new ReservationVO();
+				reservation.setPCode(pCode);
+				reservation.setAmount(amount);
+				reservation.setTPrice(price);
+				reservation.setUserNo(userNo);
 
 				ReservationService svc = new ReservationServiceImpl();
-				boolean success = svc.insertReservation(vo);
-
+				boolean success = svc.insertReservation(reservation);
+				
 				if (success) {
 					res.sendRedirect("reservationList.do");
 				} else {
 					res.sendRedirect("detailpage.do?pcode=" + pCode + "&error=insertfail");
 				}
-			} catch (Exception e) {
-				e.printStackTrace();
-				res.sendRedirect("detailpage.do?pcode=" + req.getParameter("pCode") + "&error=exception");
-			}
 		}
 	}
+	
+
 }
+
+

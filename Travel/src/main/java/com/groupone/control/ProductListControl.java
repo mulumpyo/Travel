@@ -21,10 +21,16 @@ public class ProductListControl implements Control {
 		ProductService svc = new ProductServiceImpl();
 
 		HttpSession session = req.getSession();
-		boolean isAdmin = (boolean) session.getAttribute("isAdmin");
+		
+	    Object adminAttr = session.getAttribute("isAdmin");
+	    boolean isAdmin = false;
+	    if (adminAttr != null && adminAttr instanceof Boolean) {
+	        isAdmin = (Boolean) adminAttr;
+	    }
 
 		String theme = req.getParameter("theme");
 		String country = req.getParameter("country");
+		String keyword = req.getParameter("keyword");
 		
 		
 		int pCode = 0;
@@ -39,6 +45,7 @@ public class ProductListControl implements Control {
 		SearchDTO search = new SearchDTO();
 		search.setTheme(theme);
 		search.setCountry(country);
+		search.setKeyword(keyword);
 		
 		System.out.println(search);
 
@@ -55,15 +62,11 @@ public class ProductListControl implements Control {
 		req.setAttribute("country", country);
 		
 		
-		if(isAdmin == false/*일반사용자*/) {
-			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-			
-		} else if(isAdmin == true/*관리자*/) {
-			req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
-			
-		} else {
-			req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
-		}
+	    if (isAdmin) {
+	        req.getRequestDispatcher("admin/productlist.tiles").forward(req, res);
+	    } else {
+	        req.getRequestDispatcher("user/productlist.tiles").forward(req, res);
+	    }
 		
 
 
