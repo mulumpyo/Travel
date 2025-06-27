@@ -10,16 +10,27 @@
 %>
 
 <div class="container">
-	<a href="signout.do"><button>logout test</button></a>
 
+	<div class="section">
+		<h2 class="section-title">어디로 갈까요?</h2>
+
+			<form action="productList.do" method="get">
+			<div class="search-grid">
+				<input id="search" name="keyword" placeholder="가고싶은 곳을 입력해주세요 :)" required/>
+				<button id="search-btn" type="submit"> <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+			</div>
+			</form>
+		
+	</div>
 	
-	<h2>어디로 갈까요?</h2>
-	<form action="productList.do" method="get">
-	<input name="keyword" placeholder="가고싶은 곳을 입력해주세요 :)"/>
-	<button type="submit">검색 <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
-	</form>
+	<div class="section">
+		<h2 class="section-title">추천여행지</h2>
+		<div class="recommend-list">
+		
+		</div>
+	</div>
 	
-	<h2>추천여행지</h2>
+
 	
 	<a href="productList.do?theme=&country=일본">일본</a>
 	
@@ -32,6 +43,9 @@
 			<p>${product.description}</p>
 		</c:if>
 	</c:forEach>
+	
+	
+		<a href="signout.do"><button>logout test</button></a>
 </div>
 
 <script src="js/main.js"></script>

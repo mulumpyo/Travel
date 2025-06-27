@@ -9,15 +9,15 @@ body {
 
 
 button {
-	padding: 8px 16px;
-	background-color: #0c5dc6;
-	color: #fff;
-	letter-spacing: -0.04em;
-	font-size: 18px;
-	font-weight: 300;
-	border-radius: 36px;
-	border: none;
-	cursor: pointer;
+		padding: 8px 16px;
+		background-color: #0c5dc6;
+		color: #fff;
+		letter-spacing: -0.04em;
+		font-size: 14px;
+		font-weight: 400;
+		border-radius: 36px;
+		border: none;
+		cursor: pointer;
 }
 
 .header-bg {
@@ -26,6 +26,8 @@ button {
     height: 560px;
     position: relative;
     overflow: hidden;
+    margin: 0 0 72px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-bg::before {
@@ -43,11 +45,55 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
+	color: #1d1d1f;
+}
+
+.section {
+	margin: 0 0 24px 0;
+}
+
+.section-title {
+	font-weight: 800;
+	margin: 0 0 12px 0;
+}
+
+.search-grid {
+  display: grid; 
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+
+#search {
+	box-sizing: border-box;
+	grid-column: span 11;
+  width: 100%;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 24px;
+	padding: 20px 32px;
+}
+
+#search:focus {
+	border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+#search-btn {
+	grid-column: span 1;
+  width: 100%;
+  height: 55px;
+}
+
+#search-btn > i {
+	color: #fff;
+	font-size: 16px;
 }
 
 .header-title {
 	padding: 192px 0 0 72px;
-	
 }
 
 #main-title {
