@@ -53,8 +53,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public boolean modifyProduct(int pCode) {
-		int r = mapper.updateProduct(pCode);
+	public boolean modifyProduct(ProductVO product) {
+		int r = mapper.updateProduct(product);
 		if (r == 1) {
 			sqlSession.commit();
 			return true;
@@ -71,5 +71,6 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return false;
 	}
+
 
 }

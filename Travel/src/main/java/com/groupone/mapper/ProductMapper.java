@@ -13,7 +13,7 @@ public interface ProductMapper {
 	public List<String> selectthemeList();
 	public List<String> selectcountryList();
 	public int deleteProduct(int pCode);
-	public int updateProduct(ProductVO pCode);
+	public int updateProduct(ProductVO product);
 	int insertProduct(ProductVO product);
 
 
