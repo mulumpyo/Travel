@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.groupone.common.DataSource;
+import com.groupone.common.SearchDTO;
 import com.groupone.mapper.QnaMapper;
 import com.groupone.vo.QnaVO;
 
@@ -27,15 +28,16 @@ public class QnaServiceImpl implements QnaService{
 		}
 		return false;
 	}
+
 	@Override
-	public List<QnaVO> qnaList(int bno) {
-		return null;
+	public List<QnaVO> getqna(String kw) {
+		return mapper.selectKeyword(kw);
 	}
 	
 	@Override
-	public QnaVO getqna(int rno) {
-		
-		return null;
+	public List<QnaVO> qnaList() {
+		return mapper.selectQnaList();
 	}
+	
 
 }

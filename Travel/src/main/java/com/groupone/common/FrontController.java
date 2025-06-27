@@ -17,10 +17,12 @@ import com.groupone.control.FaqControl;
 import com.groupone.control.ReservationControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
+import com.groupone.control.MyQnaControl;
 import com.groupone.control.ProductListControl;
 import com.groupone.control.ProductModifyControl;
 import com.groupone.control.QnaControl;
 import com.groupone.control.QnaListControl;
+import com.groupone.control.QnaSearchControl;
 import com.groupone.control.ReservationListControl;
 import com.groupone.control.WishListPageControl;
 import com.groupone.control.RealLoginControl;
@@ -80,8 +82,17 @@ public class FrontController extends HttpServlet {
 		// 늦어져도 괜찮으니 천천히 작업해주세요.
 		map.put("/faq.do", new FaqControl());   // FAQ 메인페이지
 		map.put("/qna.do", new QnaControl());   // QnA
+
 		map.put("/qnaList.do", new QnaListControl());  // QnaList
   	
+
+		map.put("/qnalist.do", new QnaListControl());  // QnaList
+		map.put("/qnasearch.do", new QnaSearchControl());  // QnaList
+		
+		map.put("/myqna.do", new MyQnaControl());  // 문의내역
+  		
+		
+
 	}
 
 	@Override

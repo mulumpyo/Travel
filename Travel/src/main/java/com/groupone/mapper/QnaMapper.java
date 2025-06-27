@@ -9,6 +9,9 @@ public interface QnaMapper {
 	public int insertBoard(QnaVO bno);
 	
 	//qnaList
-	public int selectTotal(int bno);
+	public int selectTotal();
+	public List<QnaVO> selectQnaList();
+
+	public List<QnaVO> selectKeyword(String kw);
 	
 }
