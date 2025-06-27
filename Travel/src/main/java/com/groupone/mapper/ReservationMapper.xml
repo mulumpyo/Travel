@@ -15,7 +15,7 @@
 
   <insert id="insertReservation" parameterType="Reservation">
     INSERT INTO tbl_reservation (r_code, user_no, p_code, amount, t_price, status)
-    VALUES (#{rCode}, #{userNo}, #{pCode}, #{amount}, #{tPrice}, 1)
+    VALUES (res_seq.nextval, #{userNo}, #{pCode}, #{amount}, #{tPrice}, 1)
   </insert>
 
 </mapper>
