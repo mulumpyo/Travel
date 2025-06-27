@@ -4,6 +4,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 
 
@@ -30,7 +32,7 @@
 		
 		
 		<!-- 필터링이 적용된다면 나오는 코드 -->
-		<c:if test="${!empty theme or !empty country}">
+		<c:if test="${!empty theme or !empty country or !empty keyword}">
 		<p> ✔ 선택된 검색 키워드 </p>
 		</c:if>
 		<ul>
@@ -48,6 +50,13 @@
 			  <button id="btnResetCountry">✖</button>
 			  
 			</c:if>
+		
+			<c:if test="${!empty keyword}">
+			  <li class="filter-keyword" style="display:inline-block">
+			    <span id="checkKeyword" class="badge" style="cursor: pointer;">${keyword}</span>
+			  </li>			  
+			</c:if>
+
 		</ul>
 		<!-- 필터링이 적용된다면 나오는 코드 -->
 
@@ -76,7 +85,8 @@
 			      <div class="country">${product.country}<span class="badge"> ${product.theme}</span></div>
 			      
 			      <div class="title">${product.title}</div>
-			      <div class="price">${product.price}<span class="won">원</span></div>
+			      <div class="price">
+				  <div class="price"><fmt:formatNumber value="${product.price}" pattern="#,##0"/><span class="won">원</span></div>
 			      <div class="date">${product.startDay} ~ ${product.endDay}</div>
 			    </div>
 			  </a>
@@ -117,3 +127,5 @@
 </script>
 
 <script src="js/productlist.js"></script>
+
+

@@ -27,14 +27,3 @@ btnDelete.forEach(event => {
 })
 
 
-const btnModify = document.querySelectorAll('button.btn-modify');
-console.log(btnModify);
-
-btnModify.forEach(event => {
-	event.addEventListener('click', function(b) {
-	pCode = b.target.parentElement.parentElement.firstElementChild.innerHTML;
-	console.log(pCode);
-	location.href = 'productModify.do?pCode=' + pCode;
-		})
-	
-})

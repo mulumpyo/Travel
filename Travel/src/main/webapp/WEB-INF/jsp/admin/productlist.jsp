@@ -61,7 +61,7 @@
         description: "${p.description}",
         theme: "${p.theme}",
         country: "${p.country}",
-        price: "${p.price}",
+        price: "<fmt:formatNumber value='${p.price}' pattern='#,##0'/>",
         startDay: "${p.startDay}",
         endDay: "${p.endDay}",
         maxQty: "${p.maxQty}",
@@ -71,5 +71,6 @@
     </c:forEach>
   ];
 </script>
+
 
 <script src="js/productlist_a.js"></script>

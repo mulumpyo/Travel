@@ -50,6 +50,18 @@
 		tbl_wish
 		WHERE user_no = #{userNo})
 	</select>
+	
+	<select id="selectUserList">
+		select user_no as "userNo"
+		     , user_id as "userId"
+		     , user_pw as "userPw"
+		     , user_name as "userName"
+		     , user_birth as "userBirth"
+		     , user_phone as "userPhone"
+		     , isadmin as "isAdmin"
+		from tbl_user
+	</select>
+
 
 	<delete id="deleteUser" parameterType="int">
 		DELETE FROM tbl_user
@@ -58,10 +70,16 @@
 	</delete>
 
 	<update id="updateUser" parameterType="User">
-		UPDATE tbl_user
-		SET user_phone = #{userPhone}
-		WHERE user_no = #{userNo}
+	  UPDATE tbl_user
+	  <set>
+	    <if test="userPhone != null">user_phone = #{userPhone},</if>
+	    <if test="userId != null">user_id = #{userId},</if>
+	    <if test="userPw != null">user_pw = #{userPw},</if>
+	    <if test="userName != null">user_name = #{userName},</if>
+	  </set>
+	  WHERE user_no = #{userNo}
 	</update>
+
 
 	<update id="passwordUpdate" parameterType="User">
 		UPDATE tbl_user

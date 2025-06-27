@@ -28,6 +28,8 @@ import com.groupone.control.QnaSearchControl;
 import com.groupone.control.ReservationListControl;
 import com.groupone.control.SignOutControl;
 import com.groupone.control.WishListPageControl;
+import com.groupone.control.userInfoModifyControl;
+import com.groupone.control.userInfoSuccessControl;
 import com.groupone.control.ChangeLoginPw;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
@@ -70,6 +72,8 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 		map.put("/productModify.do", new ProductModifyControl());
 		map.put("/productModifySuccess.do", new ProductModifySuccessControl());
+		map.put("/userInfoModify.do", new userInfoModifyControl());
+		map.put("/userInfoSuccess.do", new userInfoSuccessControl());
 		
 		/* 유경 */
 		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요

@@ -1,17 +1,15 @@
-<%@page import="com.groupone.vo.ProductVO"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-    
-    
 
-	  
-	<h2> 😎 ${user.userName }님의 정보 수정 완료</h2>
-	<form action="userInfoSuccess.do" method="post">
+
+
+<body>
+
+<div id="container" align="center">
+<form action="userInfoSuccess.do" method="post">
    <input type="hidden" name="action" value="update">
     <table>
       <tr>
@@ -55,7 +53,15 @@
         </td>
 	  </tr>
     </table>
-
+   <div>
+   <button type="submit" class="btnSubmit">수정</button>
+   <button type="reset" class="btnReset" >취소</button>
+	</div>
 </form>
-	<td><a href="userInfo.do" class="card-link"><button class="btn-modify" type="button" > 전체 사용자 정보 보기</button></a></td>
-	
+
+
+
+
+</div>
+
+</body>

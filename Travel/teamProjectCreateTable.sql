@@ -16,6 +16,7 @@ DROP TABLE tbl_reservation;
 DROP TABLE tbl_wish;
 
 
+
 -- 유저 테이블
 CREATE SEQUENCE user_seq;
 
@@ -730,7 +731,3 @@ SELECT * FROM tbl_product ORDER BY p_code;
 SELECT * FROM tbl_review;
 SELECT * FROM tbl_reservation;
 SELECT * FROM tbl_wish;
-
-select q_code, type, title, q_date, status
-from tbl_qna
-where title like '%예약%';

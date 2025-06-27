@@ -5,12 +5,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
   ProductVO product = (ProductVO) request.getAttribute("product");
+  int adultPrice = product.getPrice(); // 성인 가격
+  int childPrice = (int) (adultPrice * 0.6); // 아동 60%
+  int infantPrice = (int) (adultPrice * 0.4); // 유아 40%
 %>
 
 <div class="container">
 
 	<div class="thumbnail">
-			<img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg"/>
+		<img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg"/>
 	</div>
 
 	<div class="info">
@@ -23,10 +26,12 @@
 
 		<div class="breadcrumbs">continent > country &nbsp;&nbsp; theme</div>
 		
-
 		<div class="title">${product.title}</div>
 		<div class="description">${product.description}</div>
-		<div class="price">가격 : ${product.price} 원</div>
+
+		<!-- 상품 가격에 천 단위 콤마 적용 -->
+		<div class="price">가격 : <fmt:formatNumber value="${product.price}" pattern="#,##0" /> 원</div>
+
 		<div class="date">
 			여행 날짜 :
 			<div class="date">
@@ -38,13 +43,13 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="sidebar">
 		<div class="detail-review">
 			<div class="detail-title">${product.description}</div>
 			<div class="detail-image"
 				style="background-image: url('images/product/detail/detail_${product.PCode}.jpg');">
 			</div>
-
 
 			<div class="review-title">review</div>
 
@@ -67,12 +72,8 @@
 					</div>
 				</div>
 			</c:forEach>
-			<%
-			int adultPrice = product.getPrice(); // 성인 가격
-			int childPrice = (int) (adultPrice * 0.6); // 아동 60%
-			int infantPrice = (int) (adultPrice * 0.4); // 유아 40%
-			%>
 
+			<!-- 가격 정보 숨겨진 input에 그대로 숫자만 넣음 (포맷 불필요) -->
 			<input type="hidden" id="adultPrice" value="<%=adultPrice%>">
 			<input type="hidden" id="childPrice" value="<%=childPrice%>">
 			<input type="hidden" id="infantPrice" value="<%=infantPrice%>">
@@ -80,8 +81,7 @@
 			<h3>인원선택</h3>
 
 			<div class="price-row">
-				성인 :
-				<%=adultPrice%>원
+				성인 : <fmt:formatNumber value="<%=adultPrice%>" pattern="#,##0" />원
 				<div class="counter">
 					<button onclick="changeCount('adult', -1)">-</button>
 					<span id="adultCount">1</span>
@@ -90,8 +90,7 @@
 			</div>
 
 			<div class="price-row">
-				아동 :
-				<%=childPrice%>원
+				아동 : <fmt:formatNumber value="<%=childPrice%>" pattern="#,##0" />원
 				<div class="counter">
 					<button onclick="changeCount('child', -1)">-</button>
 					<span id="childCount">0</span>
@@ -100,8 +99,7 @@
 			</div>
 
 			<div class="price-row">
-				유아 :
-				<%=infantPrice%>원
+				유아 : <fmt:formatNumber value="<%=infantPrice%>" pattern="#,##0" />원
 				<div class="counter">
 					<button onclick="changeCount('infant', -1)">-</button>
 					<span id="infantCount">0</span>
@@ -124,88 +122,81 @@
 			  <input type="hidden" id="totalPriceInput" name="totalPrice" />
 			  <button class="reserve-btn" type="button">예약하기</button>
 			</form>
-						 
-	
-			
-	
 
 			<div class="like-btn" onclick="toggleLike()" id="likeBtn">♡</div>
 		</div>
+
 		<div class="chat-icon" onclick="alert('상담창 오픈!')">💬</div>
 	</div>
 </div>
-	
-	<script>
-		function updatePrice() {
-		  const adultPrice = parseInt(document.getElementById("adultPrice").value);
-		  const childPrice = parseInt(document.getElementById("childPrice").value);
-		  const infantPrice = parseInt(document.getElementById("infantPrice").value);
 
-		  const adultCount = parseInt(document.getElementById("adultCount").textContent);
-		  const childCount = parseInt(document.getElementById("childCount").textContent);
-		  const infantCount = parseInt(document.getElementById("infantCount").textContent);
+<script>
+	function updatePrice() {
+		const adultPrice = parseInt(document.getElementById("adultPrice").value);
+		const childPrice = parseInt(document.getElementById("childPrice").value);
+		const infantPrice = parseInt(document.getElementById("infantPrice").value);
 
-		  console.log("adultCount:", adultCount, "childCount:", childCount, "infantCount:", infantCount);
+		const adultCount = parseInt(document.getElementById("adultCount").textContent);
+		const childCount = parseInt(document.getElementById("childCount").textContent);
+		const infantCount = parseInt(document.getElementById("infantCount").textContent);
 
-		  const total = adultPrice * adultCount + childPrice * childCount + infantPrice * infantCount;
-		  const deposit = Math.floor(total * 0.10);
+		console.log("adultCount:", adultCount, "childCount:", childCount, "infantCount:", infantCount);
 
-		  document.getElementById("totalPrice").innerText = total.toLocaleString()+ '원';
-		  console.log("총 가격 계산 결과:", total);
-		  document.getElementById("depositInfo").innerText = `예약금(10%) ${deposit.toLocaleString()}원 결제`;
-		}
+		const total = adultPrice * adultCount + childPrice * childCount + infantPrice * infantCount;
+		const deposit = Math.floor(total * 0.10);
 
-		function changeCount(type, delta) {
-			const countSpan = document.getElementById(type + 'Count');
-			let count = parseInt(countSpan.innerText);
-			count += delta;
-			if (count < 0)
-				count = 0;
-			countSpan.innerText = count;
-			updatePrice();
-		}
-	</script>
-	<script>
-	  document.addEventListener("DOMContentLoaded", function () {
-    	updatePrice();
-  		});
-	</script>
+		// 숫자에 천 단위 콤마 추가해서 화면에 표시
+		document.getElementById("totalPrice").innerText = total.toLocaleString() + '원';
+		console.log("총 가격 계산 결과:", total);
+		document.getElementById("depositInfo").innerText = `예약금(10%) ${deposit.toLocaleString()}원 결제`;
+	}
 
-	<script>
+	function changeCount(type, delta) {
+		const countSpan = document.getElementById(type + 'Count');
+		let count = parseInt(countSpan.innerText);
+		count += delta;
+		if (count < 0)
+			count = 0;
+		countSpan.innerText = count;
+		updatePrice();
+	}
 
-		function showToast(message) {
-		 const toast = document.getElementById("toast");
-		  toast.textContent = message;
-		  toast.classList.add("show");
+	document.addEventListener("DOMContentLoaded", function () {
+		updatePrice();
+	});
 
-		  setTimeout(() => {
-		    toast.classList.remove("show");
-		  }, 1000); // 1초 후 사라짐
-		}
+	function showToast(message) {
+		const toast = document.getElementById("toast");
+		toast.textContent = message;
+		toast.classList.add("show");
 
-		function copyCurrentUrl() {
-		  const url = window.location.href;
-		  navigator.clipboard.writeText(url)
-		    .then(() => showToast("URL이 복사되었습니다!"))
-		    .catch(() => showToast("복사에 실패했습니다."));
-		}
-	</script>
-	<script>
-	  	document.querySelector(".reserve-btn").addEventListener("click", function () {
-	    const adult = parseInt(document.getElementById("adultCount").innerText);
-	    const child = parseInt(document.getElementById("childCount").innerText);
-	    const infant = parseInt(document.getElementById("infantCount").innerText);
-	
-	    const adultPrice = parseInt(document.getElementById("adultPrice").value);
-	    const childPrice = parseInt(document.getElementById("childPrice").value);
-	    const infantPrice = parseInt(document.getElementById("infantPrice").value);
-	
-	    const totalAmount = adult + child + infant;
-	    const total = adultPrice * adult + childPrice * child + infantPrice * infant;
-	
-	    document.getElementById("adultInput").value = totalAmount;
-	    document.getElementById("totalPriceInput").value = total;
-	
-	    document.getElementById("reserveForm").submit();
-	  });
+		setTimeout(() => {
+			toast.classList.remove("show");
+		}, 1000); // 1초 후 사라짐
+	}
+
+	function copyCurrentUrl() {
+		const url = window.location.href;
+		navigator.clipboard.writeText(url)
+			.then(() => showToast("URL이 복사되었습니다!"))
+			.catch(() => showToast("복사에 실패했습니다."));
+	}
+
+	document.querySelector(".reserve-btn").addEventListener("click", function () {
+		const adult = parseInt(document.getElementById("adultCount").innerText);
+		const child = parseInt(document.getElementById("childCount").innerText);
+		const infant = parseInt(document.getElementById("infantCount").innerText);
+
+		const adultPrice = parseInt(document.getElementById("adultPrice").value);
+		const childPrice = parseInt(document.getElementById("childPrice").value);
+		const infantPrice = parseInt(document.getElementById("infantPrice").value);
+
+		const totalAmount = adult + child + infant;
+		const total = adultPrice * adult + childPrice * child + infantPrice * infant;
+
+		document.getElementById("adultInput").value = totalAmount;
+		document.getElementById("totalPriceInput").value = total;
+
+		document.getElementById("reserveForm").submit();
+	});
 </script>

@@ -30,11 +30,11 @@
       <tr>
         <td>테마</td>
         <td>
-        <input type='radio' name='theme' value='문화' />문화
-        <input type='radio' name='theme' value='힐링' />힐링
-        <input type='radio' name='theme' value='탐험' />탐험
-        <input type='radio' name='theme' value='휴양' />휴양
-        <input type='radio' name='theme' value='미식' />미식
+			<input type='radio' name='theme' value='문화' <c:if test="${product.theme == '문화'}">checked</c:if> />문화
+			<input type='radio' name='theme' value='힐링' <c:if test="${product.theme == '힐링'}">checked</c:if> />힐링
+			<input type='radio' name='theme' value='탐험' <c:if test="${product.theme == '탐험'}">checked</c:if> />탐험
+			<input type='radio' name='theme' value='휴양' <c:if test="${product.theme == '휴양'}">checked</c:if> />휴양
+			<input type='radio' name='theme' value='미식' <c:if test="${product.theme == '미식'}">checked</c:if> />미식
         </td>
       </tr>
       <tr>
