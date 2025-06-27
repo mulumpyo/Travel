@@ -39,7 +39,8 @@
     <mapper resource="com/groupone/mapper/QnaMapper.xml"/>
 	<mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
    	<mapper resource="com/groupone/mapper/ReservationMapper.xml"/>
-  
+  	<mapper resource="com/groupone/mapper/WishListMapper.xml" />
+
   </mappers>
 
 </configuration>

@@ -40,7 +40,7 @@
 	</div>
 	<div class="sidebar">
 		<div class="detail-review">
-			<div class="detail-title">${product.description}</div>
+			<div class="detail-title">${product.title}</div>
 			<div class="detail-image"
 				style="background-image: url('images/product/detail/detail_${product.PCode}.jpg');">
 			</div>
@@ -127,11 +127,11 @@
 						 
 	
 			
-	
 
-			<div class="like-btn" onclick="toggleLike()" id="likeBtn">♡</div>
+
 		</div>
-		<div class="chat-icon" onclick="alert('상담창 오픈!')">💬</div>
+			<div><button id="likeBtn" data-pcode="<%= product.getPCode() %>" onclick="toggleLike(this)">♡</button></div>	
+			<div class="chat-icon" onclick="alert('상담창 오픈!')">💬</div>
 	</div>
 </div>
 	
@@ -208,4 +208,37 @@
 	
 	    document.getElementById("reserveForm").submit();
 	  });
-</script>
+	</script>
+	
+
+	<script>
+	function toggleLike(pCode) {
+	    console.log("찜 추가 요청 p_code:", pCode); // 디버깅
+
+	    const likeBtn = document.getElementById("likeBtn");
+	    const isLiked = likeBtn.textContent === "♥";
+
+	    likeBtn.textContent = isLiked ? "♡" : "♥";
+	    likeBtn.style.color = isLiked ? "black" : "red";
+
+	    if (!isLiked) {
+	        fetch("addWishList.do", {
+	            method: "POST",
+	            headers: {
+	                "Content-Type": "application/x-www-form-urlencoded"
+	            },
+	            body: "p_code=" + encodeURIComponent(pCode)
+	        })
+	        .then(res => {
+	            if (!res.ok) alert("찜 추가 실패 (status: " + res.status + ")");
+	        })
+	        .catch(err => {
+	            console.error("fetch 오류:", err);
+	            alert("서버 연결 실패");
+	        });
+	    }
+	}
+	</script>
+	
+	
+	

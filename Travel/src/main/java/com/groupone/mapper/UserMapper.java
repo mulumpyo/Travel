@@ -28,4 +28,7 @@ public interface UserMapper {
 	
 	public List<ProductVO> selectWishList(int userNo);
 
+	
+	public int selectWish(@Param("userNo") int userNo, @Param("pCode") int pCode);
+
 }

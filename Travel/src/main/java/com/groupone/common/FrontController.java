@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.groupone.control.AddWishListControl;
 import com.groupone.control.AdminControl;
 import com.groupone.control.ChangePwControl;
 import com.groupone.control.DetailPageControl;
@@ -57,6 +58,7 @@ public class FrontController extends HttpServlet {
 		map.put("/wishlistpage.do", new WishListPageControl()); // 찜목록페이지
 		map.put("/reservationList.do", new ReservationListControl()); // 예약목록페이지
 		map.put("/Reservation.do", new ReservationControl());
+		map.put("/addWishList.do", new AddWishListControl());
 
 		
 		// 해민님하고 은경 누나는 같이 mapper 파일 sql 쿼리도 이야기 나누어보시고

@@ -68,6 +68,13 @@
 		SET user_pw = #{userPw}
 		WHERE user_no = #{userNo}
 	</update>
+	
+	<select id="selectWish" parameterType="com.groupone.common.WishDTO">
+		SELECT *
+		FROM tbl_wish
+		WHERE user_no = #{userNo}
+		AND p_code = #{pCode}
+	</select>
 
 </mapper>
 
