@@ -12,6 +12,8 @@ public interface UserMapper {
 	
 	public UserVO selectUser(@Param("id") String id, @Param("pw") String pw);
 	
+	public UserVO findPw(@Param("id") String id,@Param("name") String name, @Param("phone") String phone);
+	
 	public UserVO selectUserWithId(String id);
 	
 	public UserVO selectUserInfo(int userNo);
