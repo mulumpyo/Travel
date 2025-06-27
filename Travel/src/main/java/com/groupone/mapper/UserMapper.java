@@ -21,6 +21,8 @@ public interface UserMapper {
 	public int updateUser(UserVO user);
 
 	public int deleteUser(int userNo);
+	
+	public int passwordUpdate(UserVO user);
 
 	public List<UserVO> selectUserList();
 	

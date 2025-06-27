@@ -23,14 +23,22 @@
   </insert>
 	
 	<!-- qnaList 목록보기 -->
-	<select id="qnaList">
-	  select q_code as code,
+	<select id="selectQnaList" parameterType="Qna">
+	  select q_code as "qCode",
 	  		 type,
 	         title,
-	         q_date as date,
+	         q_date as "qDate",
 	         status
 	  from tbl_qna 
 	</select>
-
-
+	
+	<select id="selectKeyword" parameterType="String" resultType="Qna">
+	  select  q_code as "qCode",
+	  		 type,
+	         title,
+	         q_date as "qDate",
+	         status
+	  from tbl_qna 
+	  where title like '%'||#{keyword}||'%' 
+	</select>
 </mapper>

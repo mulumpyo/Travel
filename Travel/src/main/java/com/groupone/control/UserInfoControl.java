@@ -16,54 +16,60 @@ public class UserInfoControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
 		req.setCharacterEncoding("UTF-8");
 
-		HttpSession session = req.getSession();
-		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		HttpSession session = req.getSession(false);
+		if (session == null || session.getAttribute("userNo") == null) {
+			res.sendRedirect("login.do");
+			return;
+		}
+
+		int userNo = (int) session.getAttribute("userNo");
+		String action = req.getParameter("action");
+
+		UserService userService = new UserServiceImpl();
+		UserVO loginUser = userService.getUserInfo(userNo);
 
 		if (loginUser == null) {
 			res.sendRedirect("login.do");
 			return;
 		}
 
-		UserService userService = new UserServiceImpl();
+	
+		
+		// 요청 구분
 
-		String update = req.getParameter("update");
-		String delete = req.getParameter("delete");
+		if ("update".equals(action)) {// 정보 수정
 
-		try {
-			if (update != null) {
-				String newPhone = req.getParameter("userPhone");
-				loginUser.setUserPhone(newPhone);
+			String newPhone = req.getParameter("userPhone");
+			loginUser.setUserPhone(newPhone);
 
-				boolean success = userService.userModify(loginUser);
-				if (success) {
-					session.setAttribute("loginUser", loginUser);
-					res.sendRedirect("userInfo.do");
-				} else {
-					req.setAttribute("errorMsg", "회원 정보 수정에 실패했습니다.");
-					req.getRequestDispatcher("userInfo.jsp").forward(req, res);
-				}
-
-			} else if (delete != null) {
-				boolean success = userService.userRemove(loginUser.getUserNo());
-				if (success) {
-					session.invalidate();
-					res.sendRedirect("main.do");
-				} else {
-					req.setAttribute("errorMsg", "회원 탈퇴에 실패했습니다.");
-					req.getRequestDispatcher("userInfo.jsp").forward(req, res);
-				}
-
+			boolean success = userService.userModify(loginUser);
+			if (success) {
+				session.setAttribute("loginUser", loginUser);
+				session.setAttribute("msg", "회원 정보가 수정되었습니다."); // 세션에 메시지 저장
+				res.sendRedirect("userInfo.do"); // 리다이렉트
+				return; // 꼭 리다이렉트 후 종료
 			} else {
-				// 아무 동작도 선택되지 않은 경우
-				res.sendRedirect("userInfo.do");
+				req.setAttribute("errorMsg", "수정 실패");
+				req.getRequestDispatcher("/user/userInfo.tiles").forward(req, res);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			req.setAttribute("errorMsg", "처리 중 오류 발생: " + e.getMessage());
-			req.getRequestDispatcher("error.jsp").forward(req, res);
+
+		} else if ("delete".equals(action)) {// 회원 탈퇴
+
+			boolean success = userService.userRemove(userNo);
+			if (success) {
+				session.invalidate();
+				res.sendRedirect("main.do");
+			} else {
+				req.setAttribute("errorMsg", "회원 탈퇴 실패");
+				req.getRequestDispatcher("/user/userInfo.tiles").forward(req, res);
+			}
+
+		} else {
+			// 단순 조회
+			req.setAttribute("loginUser", loginUser); // JSP에서 사용할 수 있도록
+			req.getRequestDispatcher("/user/userInfo.tiles").forward(req, res);
 		}
 	}
 }

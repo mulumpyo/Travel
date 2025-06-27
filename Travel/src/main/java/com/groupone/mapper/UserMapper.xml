@@ -17,8 +17,9 @@
 		user_id = #{id}
 		AND user_pw = #{pw}
 	</select>
-	
-	<select id="selectUserWithId" parameterType="String" resultType="User">
+
+	<select id="selectUserWithId" parameterType="String"
+		resultType="User">
 		SELECT *
 		FROM tbl_user
 		WHERE user_id = #{userId}
@@ -45,15 +46,28 @@
 		FROM tbl_product
 		WHERE p_code
 		IN (SELECT p_code
-		FROM tbl_wish
+		FROM
+		tbl_wish
 		WHERE user_no = #{userNo})
 	</select>
 
 	<delete id="deleteUser" parameterType="int">
 		DELETE FROM tbl_user
-		WHERE user_no = #{userNo}
+		WHERE
+		user_no = #{userNo}
 	</delete>
-	
+
+	<update id="updateUser" parameterType="User">
+		UPDATE tbl_user
+		SET user_phone = #{userPhone}
+		WHERE user_no = #{userNo}
+	</update>
+
+	<update id="passwordUpdate" parameterType="User">
+		UPDATE tbl_user
+		SET user_pw = #{userPw}
+		WHERE user_no = #{userNo}
+	</update>
 
 </mapper>
 
