@@ -11,9 +11,9 @@ if (user != null) {
 }
 %>
 
-<c:if test="${not empty sessionScope.msg}">
+<c:if test="${not empty msg}">
 	<script>
-		alert("${sessionScope.msg}");
+		alert("${msg}");
 	</script>
 	<c:remove var="msg" scope="session" />
 </c:if>
@@ -25,7 +25,7 @@ if (user != null) {
 	</script>
 </c:if>
 
-<body>
+<body>s
 
 	<div id="container">
 		<form action="realLogin.do" method="post">
