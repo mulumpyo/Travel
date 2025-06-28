@@ -18,6 +18,7 @@ public class RealLoginControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String id = req.getParameter("loginId");
 		String pw = req.getParameter("loginPw");
+		String toUrl = req.getParameter("to");
 
 		UserService svc = new UserServiceImpl();
 		
@@ -31,13 +32,12 @@ public class RealLoginControl implements Control {
 			session.setAttribute("userName", user.getUserName());
 			session.setAttribute("isLogin", true);
 			session.setAttribute("isAdmin", user.getIsAdmin() == 1 ? true : false);
-			res.sendRedirect("main.do");
+			res.sendRedirect(toUrl);
 
 		} else {
-			// 로그인 실패 (비밀번호 틀림)
-			req.setAttribute("errorMsg", "비밀번호가 틀렸습니다.");
+			req.setAttribute("retCode", "Fail");
 			req.setAttribute("loginId", id);
-			req.getRequestDispatcher("user/login_password.tiles").forward(req, res);
+			req.getRequestDispatcher("login/login_password.tiles").forward(req, res);
 		}
 	}
 

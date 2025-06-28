@@ -10,16 +10,20 @@
 		<put-attribute name="title" value="YEDAM 1조 | 환영합니다" />
 		<put-attribute name="nav" value="/WEB-INF/layout/user/main.jsp" />
 		<put-attribute name="header" value="/WEB-INF/layout/main/header.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/layout/main/menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/layout/main/body.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/layout/main/footer.jsp" />
+	</definition>
+
+	<!-- LOGIN -->
+	<definition name="login" template="/WEB-INF/layout/login/template.jsp">
+		<put-attribute name="title" value="YEDAM 1조 | 로그인" />
+		<put-attribute name="body" value="/WEB-INF/layout/main/body.jsp" />
 	</definition>
 
 	<!-- USER -->
 	<definition name="user" template="/WEB-INF/layout/user/template.jsp">
 		<put-attribute name="title" value="YEDAM 1조" />
 		<put-attribute name="nav" value="/WEB-INF/layout/user/nav.jsp" />
-		<put-attribute name="header" value="/WEB-INF/layout/user/header.jsp" />
 		<put-attribute name="menu" value="/WEB-INF/layout/user/menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/layout/user/body.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/layout/user/footer.jsp" />
@@ -47,8 +51,12 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/admin/{1}.jsp" />
 	</definition>
 	
-		<definition name="WILDCARD:main/*" extends="main">
+	<definition name="WILDCARD:main/*" extends="main">
 		<put-attribute name="body" value="/WEB-INF/jsp/main/{1}.jsp" />
+	</definition>
+	
+		<definition name="WILDCARD:login/*" extends="login">
+		<put-attribute name="body" value="/WEB-INF/jsp/login/{1}.jsp" />
 	</definition>
 
 	<definition name="WILDCARD:*/*" extends="user">

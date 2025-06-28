@@ -10,12 +10,12 @@
 
 
 
-
+<div class="container">
 
 <div class="product-list">
 
 <div class="filter" width=200>
-	<nav>
+	<div>
 		<p> 😍 키워드를 선택하세요 </p>
 		<p> 👀 테마 </p>
 		<ul class="theme-ul">
@@ -62,8 +62,7 @@
 
 
 
-	</nav>
-	
+	</div>
 </div>
 
 
@@ -99,6 +98,7 @@
 	</c:otherwise>
 </c:choose>
 
+</div>
 </div>
 
 

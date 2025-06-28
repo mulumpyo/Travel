@@ -1,31 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<a class="navbar-brand" href="#!">Start Bootstrap</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-	data-bs-target="#navbarSupportedContent"
-	aria-controls="navbarSupportedContent" aria-expanded="false"
-	aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-		<li class="nav-item"><a class="nav-link active"
-			aria-current="page" href="#!">Home</a></li>
-		<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-			id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-			aria-expanded="false">Shop</a>
-			<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" href="#!">All Products</a></li>
-				<li><hr class="dropdown-divider" /></li>
-				<li><a class="dropdown-item" href="#!">Popular Items</a></li>
-				<li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-			</ul></li>
-	</ul>
-	<form class="d-flex">
-		<button class="btn btn-outline-dark" type="submit">
-			<i class="bi-cart-fill me-1"></i> Cart <span
-				class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-		</button>
-	</form>
-</div>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <header class="navbar">
+        <div class="navbar-container">
+        
+            <div class="navbar-left">
+                <h1 class="logo"><a href="main.do">GROUPONE</a></h1>
+                <div class="search-box">
+	                <form action="productList.do" method="get">
+	                    <input type="text" placeholder="가고싶은 곳을 입력하세요">
+	                    <button class="search-btn"><i class="fas fa-search search-icon"></i></button>
+                	</form>
+                </div>
+            </div>
+ 
+            <div class="navbar-right">
+            	<c:choose>
+            		<c:when test="${isLogin == true}">
+            			<a href="#" class="icon-link" title="회원 정보"><i class="fas fa-user"></i></a>
+            			<a href="#" class="icon-link" title="찜리스트"><i class="fas fa-heart"></i></a>
+            		</c:when>
+            		<c:otherwise>
+            		    <a href="#" class="icon-link" title="로그인"><i class="fas fa-right-to-bracket"></i></a>
+            		</c:otherwise>
+            	</c:choose>
+            
+            	<a href="#" class="icon-link" title="고객센터"><i class="fas fa-headset"></i></a>
+            </div>
+        </div>
+    </header>

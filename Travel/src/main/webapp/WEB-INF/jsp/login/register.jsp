@@ -20,12 +20,12 @@
 			<table>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" id="name" name="name" autofocus></td>
+					<td><input type="text" id="name" name="name" autofocus required></td>
 				</tr>
 				<tr>
 					<td>아이디</td>
 					<td><input type="text" id="id" value="<%=id%>"
-						disabled required></td>
+						readonly></td>
 
 				</tr>
 				<tr>
@@ -36,7 +36,7 @@
 				<tr>
 					<td>생년월일</td>
 					<td><input type="date" id="birth" name="birth"
-						max="2077-06-20" min="1500-06-05" value="2025-06-25"></td>
+						max="2077-06-20" min="1500-06-05" value="2025-06-25" required></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>

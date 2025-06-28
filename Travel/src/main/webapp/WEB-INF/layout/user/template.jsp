@@ -20,40 +20,21 @@
         
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-       
-        <!-- Core theme CSS (includes Bootstrap)-->
+
+
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/nav.css" rel="stylesheet" />
+        <link href="css/footer.css" rel="stylesheet" />
         
     </head>
     <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-              
-              <tiles:insertAttribute name="nav" />
-              
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="bg-dark py-5">
-           
-           <tiles:insertAttribute name="header" />
-           
-        </header>
-        <!-- Section-->
-        <section>
-            <div class="product-container">
-       
-                 
-						<tiles:insertAttribute name="body" />
-										
 
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <tiles:insertAttribute name="footer" />
-        </footer>
+        <tiles:insertAttribute name="nav" />
+
+			<tiles:insertAttribute name="body" />
+
+        <tiles:insertAttribute name="footer" />
+         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

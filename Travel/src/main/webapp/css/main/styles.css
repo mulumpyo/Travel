@@ -13,15 +13,15 @@ a {
 }
 
 button {
-		padding: 8px 16px;
-		background-color: #0c5dc6;
-		color: #fff;
-		letter-spacing: -0.04em;
-		font-size: 14px;
-		font-weight: 400;
-		border-radius: 36px;
-		border: none;
-		cursor: pointer;
+	padding: 8px 16px;
+	background-color: #0c5dc6;
+	color: #fff;
+	letter-spacing: -0.04em;
+	font-size: 14px;
+	font-weight: 400;
+	border-radius: 36px;
+	border: none;
+	cursor: pointer;
 }
 
 .header-bg {
