@@ -1,0 +1,119 @@
+.main-footer {
+    background-color: #6e6e73;
+    color: #f5f5f7;
+    padding: 60px 20px 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+
+.footer-brand .brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer-brand .brand-motto {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icon {
+    color: #e0e0e0;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+    color: #007bff;
+    transform: translateY(-3px);
+}
+
+.footer-contact p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+
+.footer-contact .customer-service-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+
+.customer-service-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.customer-service-links li {
+    margin-bottom: 10px;
+}
+
+.customer-service-links li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.customer-service-links li a:hover {
+    color: #007bff;
+}
+
+/* 푸터 하단 (저작권) */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    color: #909090;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .main-footer {
+        padding: 40px 15px 20px;
+    }
+}
