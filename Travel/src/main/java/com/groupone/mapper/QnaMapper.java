@@ -14,5 +14,6 @@ public interface QnaMapper {
 
 	public List<QnaVO> selectKeyword(String kw);
 	public QnaVO selectMyQna(int pCode);
+	public int updateQna(QnaVO qna);
 	
 }

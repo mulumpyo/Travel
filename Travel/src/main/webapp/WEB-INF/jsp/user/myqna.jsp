@@ -15,7 +15,7 @@
 <main>
 
 	<form action="myqna.do" method="post">
-	<table>
+	<table id="target">
 		<tr>
 			<td>제목</td>
 			<td><input type="text" name="title" value="${qna.title }"></td>
@@ -26,17 +26,17 @@
 		</tr>
 		<tr>
 			<td>답변내용</td>
-			<td><textarea>답변내용 들어가야됨</textarea></td>
+			<td><textarea readonly>답변내용 들어가야됨</textarea></td>
 		</tr>
 		<tr>
 			<td>등록일</td>
-			<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd"/></td>
+			<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd" /></td>
 		</tr>
 	</table>
 </form>
 	<li>
-		<button>수정</button>
-		<button>삭제</button>
+		<button type="submit">수정</button>
+		<a href="qnalist.do"><button>취소</button></a>
 	</li>
 </main>
 

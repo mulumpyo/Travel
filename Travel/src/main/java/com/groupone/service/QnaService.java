@@ -17,4 +17,6 @@ public interface QnaService {
 	//단건조회
 	QnaVO getQnaOne(int pCode);
 	
+	public boolean modifyqna(QnaVO qna);
+	
 }

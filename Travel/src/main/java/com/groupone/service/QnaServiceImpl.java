@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.groupone.common.DataSource;
-import com.groupone.common.SearchDTO;
 import com.groupone.mapper.QnaMapper;
 import com.groupone.vo.QnaVO;
 
@@ -41,6 +40,15 @@ public class QnaServiceImpl implements QnaService{
 	@Override
 	public QnaVO getQnaOne(int pCode) {
 		return mapper.selectMyQna(pCode);
+	}
+	@Override
+	public boolean modifyqna(QnaVO qna) {
+		int r = mapper.updateQna(qna);
+		if(r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
 	}
 	
 
