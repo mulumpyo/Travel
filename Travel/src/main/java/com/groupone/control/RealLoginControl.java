@@ -18,12 +18,12 @@ public class RealLoginControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String id = req.getParameter("loginId");
 		String pw = req.getParameter("loginPw");
-		String toUrl = req.getParameter("to");
+		String toUrl = req.getParameter("toUrl");
 
 		UserService svc = new UserServiceImpl();
 		
 		if (svc.userLogin(id, pw)) {
-
+			
 			UserVO user = svc.getUserInfo(svc.getUserNo(id));
 
 			HttpSession session = req.getSession();

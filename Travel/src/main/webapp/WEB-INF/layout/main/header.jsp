@@ -14,7 +14,7 @@
 				</a>
 			</c:when>
 			<c:otherwise>
-				<a href="login.do?to=productList.do">
+				<a href="login.do?toUrl=productList.do">
 					<button type="button">여행 떠나기 ></button>
 				</a>
 			</c:otherwise>

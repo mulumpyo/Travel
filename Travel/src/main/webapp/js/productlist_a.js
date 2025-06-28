@@ -17,7 +17,7 @@ btnDelete.forEach(event => {
 		//b.target.parentElement.parentElement.remove();
 		pCode = b.target.parentElement.parentElement.firstElementChild.innerHTML;
 		console.log(pCode);
-		location.href = 'productList.do?pCode=' + pCode;
+		location.href = 'admin.do?pCode=' + pCode;
 		
 	} else{
 		return;

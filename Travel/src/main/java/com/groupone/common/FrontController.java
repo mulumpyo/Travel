@@ -75,6 +75,7 @@ public class FrontController extends HttpServlet {
 		map.put("/productModifySuccess.do", new ProductModifySuccessControl());
 		map.put("/userInfoModify.do", new userInfoModifyControl());
 		map.put("/userInfoSuccess.do", new userInfoSuccessControl());
+		map.put("/admin.do", new AdminControl());
 		
 		/* 유경 */
 		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요

@@ -7,14 +7,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
+<div class="product-container">
 
 
-
-<div class="container">
 
 <div class="product-list">
 
-<div class="filter" width=200>
+<div class="filter">
 	<div>
 		<p> 😍 키워드를 선택하세요 </p>
 		<p> 👀 테마 </p>
@@ -84,13 +83,13 @@
 			      <div class="country">${product.country}<span class="badge"> ${product.theme}</span></div>
 			      
 			      <div class="title">${product.title}</div>
-			      <div class="price">
 				  <div class="price"><fmt:formatNumber value="${product.price}" pattern="#,##0"/><span class="won">원</span></div>
 			      <div class="date">${product.startDay} ~ ${product.endDay}</div>
 			    </div>
 			  </a>
 			<!-- <i>heart icon</i> -->
 			</div>
+			
 		
 		</c:forEach>
 	
@@ -100,6 +99,7 @@
 
 </div>
 </div>
+
 
 
 

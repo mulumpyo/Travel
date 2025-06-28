@@ -5,7 +5,7 @@
 
 <%
 UserVO user = (UserVO) request.getAttribute("loginUser");
-String toUrl = (String) request.getAttribute("to");
+String toUrl = (String) request.getAttribute("toUrl");
 String retCode = (String) request.getAttribute("retCode");
 %>
 
@@ -15,7 +15,7 @@ String retCode = (String) request.getAttribute("retCode");
 
         <div class="login-form-section">
             <form action="realLogin.do" method="post">
-            	<input type="hidden" name="to" value="${toUrl}">
+            	<input type="hidden" name="toUrl" value="${toUrl}">
                 <h1>
                    거의 다 왔어요!<br>비밀번호만 입력하면 돼요.
                 </h1>

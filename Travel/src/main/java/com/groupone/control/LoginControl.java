@@ -16,14 +16,7 @@ public class LoginControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
-		
-		String toUrl = req.getParameter("to");
-		
-		if (toUrl == null || toUrl.isEmpty()) {
-			toUrl = "main.do";
-		}
-
-		req.setAttribute("to", toUrl);
+		String toUrl = null;
 		
 		switch (req.getMethod().toString()) {
 
@@ -37,21 +30,45 @@ public class LoginControl implements Control {
 				res.sendRedirect("main.do");
 				return;
 			}
+			
+			String paramToUrl = req.getParameter("toUrl");
+			
+			if (paramToUrl != null && !paramToUrl.isEmpty()) {
+				toUrl = paramToUrl;
+			} else {
+				String referer = req.getHeader("Referer");
+				
+				if (referer != null && !referer.isEmpty()) {
+					if (!referer.contains("login.do")) {
+						toUrl = referer; 
+					}
+					toUrl = referer; 
+				} else {
+					toUrl = "main.do";
+				}
+			}
+			
+			req.setAttribute("toUrl", toUrl);
 			req.getRequestDispatcher("login/login.tiles").forward(req, res);
 			break;
 
 		case "POST":
 
 			String id = req.getParameter("loginId");
+			toUrl = req.getParameter("toUrl");
 
 			UserService svc = new UserServiceImpl();
-			req.setAttribute("to", toUrl);
+			req.setAttribute("toUrl", toUrl);
+			if (toUrl == null || toUrl.isEmpty()) {
+				toUrl = "main.do";
+			}
 			if (svc.userIdCheck(id)) {
 				
+				req.setAttribute("loginId", id);
 				req.getRequestDispatcher("login/login_password.tiles").forward(req, res);
 
 			} else {
-				
+				req.setAttribute("registerId", id);
 				req.getRequestDispatcher("login/register.tiles").forward(req, res);
 
 			}
