@@ -41,6 +41,7 @@ public class ChangeLoginPw implements Control {
 			return;
 		}
 
+
 		// 비밀번호 업데이트
 		loginUser.setUserPw(newPw);
 		boolean success = userService.passwordUpdate(loginUser);
