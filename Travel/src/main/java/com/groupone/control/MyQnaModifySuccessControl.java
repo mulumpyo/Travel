@@ -3,6 +3,7 @@ package com.groupone.control;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,23 +33,25 @@ public class MyQnaModifySuccessControl implements Control {
 		Date endDate = null;
 		
 		
-		String qcode = req.getParameter("qcode");
+		int qCode = Integer.parseInt(req.getParameter("qCode"));
 		String title = req.getParameter("title");
 		String question = req.getParameter("question");
+	
 		
 		QnaVO qna = new QnaVO();
+		
+		qna.setQCode(qCode);
 		qna.setTitle(title);
 		qna.setQuestion(question);
 		
 		svc.modifyqna(qna);
 		
 		req.setAttribute("qna", qna);
-		System.out.println(qna); 
+		System.out.println("폼에서 받은 qCode: " + req.getParameter("qCode")); 
 		
 		req.getRequestDispatcher("admin/myQnaModifySuccess.tiles").forward(req, res);
 
 		
-
 	}
 
 }
