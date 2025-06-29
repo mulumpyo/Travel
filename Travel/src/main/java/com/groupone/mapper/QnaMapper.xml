@@ -50,14 +50,14 @@
 	         question,
 	         q_date as "qDate"
 	  from tbl_qna
-	  where q_code= #{qcode }   
+	  where q_code= #{qCode}   
 	</select>
 	
 	<update id="updateQna" parameterType="Qna">
 	  update tbl_qna
 	  set title = #{title},
 	      question = #{question}
-	  where q_code = #{qcode}
+	  where q_code = #{qCode}
 	      
 	               
 	</update>

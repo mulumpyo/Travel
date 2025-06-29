@@ -14,7 +14,9 @@
 
 <main>
 
-	<form action="myqna.do" method="post">
+	<form action="MyqnaModifySuccess.do" method="post">
+	<input type="hidden" name="qCode" value="${qna.QCode }"/>
+	
 	<table id="target">
 		<tr>
 			<td>제목</td>
@@ -22,7 +24,7 @@
 		</tr>
 		<tr>
 			<td>문의 내용</td>
-			<td><textarea>${qna.question }</textarea></td>
+			<td><textarea name="">${qna.question }</textarea></td>
 		</tr>
 		<tr>
 			<td>답변내용</td>
@@ -33,12 +35,14 @@
 			<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd" /></td>
 		</tr>
 	</table>
-</form>
 	<li>
 		<button type="submit">수정</button>
-		<a href="qnalist.do"><button>취소</button></a>
+		<a href="qnalist.do"><button type="button">취소</button></a>
 	</li>
+</form>
 </main>
 
-
+<%-- 디버깅용 --%>
+<p>QCode 값: ${qna.QCode}</p>
+<input type="hidden" name="qcode" value="${qna.QCode}" />
 <script src="js/myqna.js"></script>
