@@ -12,14 +12,14 @@ body {
 .product-container {
   display: flex;
   width: 1200px;
-  margin: 128px auto 48px auto;
+  margin: 96px auto 48px auto;
   gap: 24px;
 }
 
 .filter-section {
   width: 282px;
   position: sticky;
-  top: 128px;
+  top: 96px;
   align-self: flex-start;
   background-color: #fff;
   border-radius: 16px;
@@ -29,16 +29,16 @@ body {
 }
 
 .filter p {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   color: #1d1d1f;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .filter p:first-child {
-  font-size: 18px;
-  margin-bottom: 25px;
+  font-size: 16px;
+  margin-bottom: 24px;
 }
 
 .filter ul {
@@ -56,7 +56,7 @@ body {
   justify-content: center;
   padding: 8px 15px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -71,7 +71,7 @@ body {
 
 .filter .theme-ul .badge {
   background-color: #e9c1fd;
-  color: #605758;
+  color: #fff;
 }
 
 .filter .theme-ul .badge:hover {
@@ -80,7 +80,7 @@ body {
 
 .filter .country-ul .badge {
   background-color: #fdcae9;
-  color: #605758;
+  color: #fff;
 }
 
 .filter .country-ul .badge:hover {

@@ -19,12 +19,6 @@ public class ProductServiceImpl implements ProductService {
   public ProductVO getProduct(int pcode) {
     return mapper.selectProduct(pcode);
   }
-
-  @Override
-  public List<ProductVO> productList() {
-  //return mapper.selectProductList();
-    return (List<ProductVO>) mapper.selectProduct(1);
-  }
   
 	@Override
 	public List<ProductVO> productList(SearchDTO search) {
@@ -76,6 +70,11 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductVO> getWishList(int userNo) {
 		
 		return mapper.selectWishList(userNo);
+	}
+
+	@Override
+	public List<ProductVO> newProductList() {
+		return mapper.selectNewProductList();
 	}
 
 

@@ -35,14 +35,14 @@
                       <li class="filter-theme" style="display:inline-block">
                         <span id="checkTheme" class="badge" style="cursor: pointer;">${theme}</span>
                       </li>
-                    <button id="btnResetTheme">✖</button>
+                    <button id="btnResetTheme"><i class="fas fa-xmark"></i></button>
                     </c:if>
                     
                     <c:if test="${!empty country}">
                       <li class="filter-country" style="display:inline-block">
                         <span id="checkCountry" class="badge" style="cursor: pointer;">${country}</span>
                       </li>
-                      <button id="btnResetCountry">✖</button>
+                      <button id="btnResetCountry"><i class="fas fa-xmark"></i></button>
                       
                     </c:if>
                 
@@ -84,11 +84,14 @@
                                 <div class="title">${product.title}</div>
                                 <div class="description">${product.description}</div>
                                 <div class="price"><fmt:formatNumber value="${product.price}" pattern="#,##0"/><span class="won">원</span></div>
-                                <div class="date">${product.startDay} ~ ${product.endDay}</div>
+                                <div class="date">
+                                	<fmt:formatDate value="${product.startDay}" pattern="yyyy-MM-dd"/> ~ 
+                                	<fmt:formatDate value="${product.endDay}" pattern="yyyy-MM-dd"/>
+                            	</div>
                             </div>
                         </a>
                         <div class="wish-button">
-                            <span class="heart-icon">❤️</span>
+                            <i class="fas fa-heart"></i>
                         </div>
                     </div>
                     </c:forEach>

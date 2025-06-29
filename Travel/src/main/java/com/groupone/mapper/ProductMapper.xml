@@ -138,4 +138,10 @@
 										 where user_no = #{userNo})
 	</select>
 
+	<select id="selectNewProductList" resultType="Product">
+		select *
+		from tbl_product
+		order by 1 desc
+	</select>
+
 </mapper>

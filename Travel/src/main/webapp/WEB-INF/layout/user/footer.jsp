@@ -17,6 +17,7 @@
 	        </div>
 	
 	        <div class="footer-section footer-contact">
+	        	<h4 class="customer-contact">회사</h4>
 	            <p>대구광역시 중구 중앙대로 403 5층 1조</p>
 	            <p>전화: 하지마세요</p>
 	            
@@ -24,11 +25,12 @@
 	            <ul class="customer-service-links">
 	                <li><a href="faq.do">자주하는 질문</a></li>
 	                <li><a href="qna.do">1:1 문의</a></li>
+	                <li><a href="qnalist.do">문의 내역</a></li>
 	            </ul>
 	        </div>
 	    </div>
 	
 	    <div class="footer-bottom">
-	        <p>&copy; 2024 지금이라도 당장 떠나버릴 1조. All rights reserved.</p>
+	        <p>&copy; 2025 지금이라도 당장 떠나버릴 1조. All rights reserved.</p>
 	    </div>
 	</footer>

@@ -22,6 +22,9 @@ public class MainControl implements Control {
 		
 		ProductService svc = new ProductServiceImpl();
 		
+		List<ProductVO> newlist = svc.newProductList();
+		req.setAttribute("newlist", newlist);
+		
 		HttpSession session = req.getSession();
 		
 		if (session.getAttribute("isLogin") != null) {

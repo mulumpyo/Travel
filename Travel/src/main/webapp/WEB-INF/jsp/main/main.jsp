@@ -5,10 +5,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>   
 
-<%
-	List<ProductVO> wishlist = (List<ProductVO>) request.getAttribute("wishlist");
-%>
-
 <div class="container">
 
 	<div class="section">
@@ -40,7 +36,7 @@
 	<c:if test="${isLogin == true && !empty wishlist}">
 		<div class="section">
 			<h2 class="section-title">${userName}님께서 콕! 찜한 여행</h2>
-			<div class="wish-list">
+			<div class="card-list">
 			
 			<c:forEach var="product" items="${wishlist}" varStatus="cnt">
 			    <c:if test="${cnt.index < 3}">
@@ -55,6 +51,11 @@
 			            <div class="card-text-content">
 			                <h3 class="card-title">${product.title}</h3>
 			                <p class="card-description">${product.description}</p>
+                            <div class="price"><fmt:formatNumber value="${product.price}" pattern="#,##0"/><span class="won">원</span></div>
+                            <div class="date">
+                                <fmt:formatDate value="${product.startDay}" pattern="yyyy-MM-dd"/> ~ 
+                                <fmt:formatDate value="${product.endDay}" pattern="yyyy-MM-dd"/>
+                            </div>
 			            </div>
 			        </div>
 			    </c:if>
@@ -71,8 +72,43 @@
 			</div>
 		</div>
 	</c:if>
+	
+		<div class="section">
+			<h2 class="section-title">새롭게 출시된 패키지 여행</h2>
+			<div class="card-list">
+			
+			<c:forEach var="product" items="${newlist}" varStatus="cnt">
+			    <c:if test="${cnt.index < 3}">
+			        <div class="product-card" style="--card-bg-image: url('../../images/product/thumbnail/thumbnail_${product.PCode}.jpg');">
+			            <a href="detailpage.do?pcode=${product.PCode}" class="card-link"></a>
+			            
+			            <div class="badge-container">
+			                <span class="badge theme-badge">${product.theme}</span> 
+			                <span class="badge country-badge">${product.country}</span>
+			            </div>
+			
+			            <div class="card-text-content">
+			                <h3 class="card-title">${product.title}</h3>
+			                <p class="card-description">${product.description}</p>
+                            <div class="price"><fmt:formatNumber value="${product.price}" pattern="#,##0"/><span class="won">원</span></div>
+                            <div class="date">
+                                <fmt:formatDate value="${product.startDay}" pattern="yyyy-MM-dd"/> ~ 
+                                <fmt:formatDate value="${product.endDay}" pattern="yyyy-MM-dd"/>
+                            </div>
+			            </div>
+			        </div>
+			    </c:if>
+			</c:forEach>
+
+        <div class="product-card product-card-more">
+            <a href="productList.do" class="card-link"></a>
+            <div class="more-content">
+                <i class="fas fa-plus"></i>
+                <span>더 보기</span>
+            </div>
+        </div>
+				
+			</div>
+	</div>
 
 </div>
-
-
-

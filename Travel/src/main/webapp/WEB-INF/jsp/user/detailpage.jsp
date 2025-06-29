@@ -11,124 +11,134 @@
 %>
 
 <div class="container">
+    <!-- 왼쪽 상품 메인 정보 섹션 -->
+    <div class="product-main-content">
+        <div class="thumbnail-section">
+            <img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg" alt="${product.title} 썸네일"/>
+        </div>
 
-	<div class="thumbnail">
-		<img src="images/product/thumbnail/thumbnail_${product.PCode}.jpg"/>
-	</div>
+        <div class="product-info-section">
+            <div class="info-header">
+                <div class="breadcrumbs">continent > country &nbsp;&nbsp; theme</div>
+                <div class="share" onclick="copyCurrentUrl()">
+                    <i class="fa-solid fa-share-nodes"></i> 공유
+                </div>
+            </div>
 
-	<div class="info">
-		<div class="share" onclick="copyCurrentUrl()" style="cursor: pointer;">
-			<i class="fa-solid fa-share-nodes"></i> 공유
-		</div>
+            <h1 class="title">${product.title}</h1>
+            <p class="description">${product.description}</p>
 
-		<!-- 토스트 메시지 영역 추가 -->
-		<div id="toast" class="toast">URL이 복사되었습니다!</div>
+            <div class="price-info">
+                <span class="price-label">가격 :</span>
+                <span class="price-value"><fmt:formatNumber value="${product.price}" pattern="#,##0" /></span>
+                <span class="price-currency">원</span>
+            </div>
 
-		<div class="breadcrumbs">continent > country &nbsp;&nbsp; theme</div>
-		
-		<div class="title">${product.title}</div>
-		<div class="description">${product.description}</div>
+            <div class="date-info">
+                <span class="date-label">여행 날짜 :</span>
+                <span class="date-range">
+                    <fmt:formatDate value="${product.startDay}" pattern="yy-MM-dd" /> ~
+                    <fmt:formatDate value="${product.endDay}" pattern="yy-MM-dd" />
+                </span>
+            </div>
+        </div>
+    </div>
 
-		<!-- 상품 가격에 천 단위 콤마 적용 -->
-		<div class="price">가격 : <fmt:formatNumber value="${product.price}" pattern="#,##0" /> 원</div>
+    <!-- 오른쪽 사이드바 섹션 -->
+    <div class="product-sidebar">
+        <!-- 상품 상세 설명 섹션 -->
+        <div class="product-detail-description-section">
+            <h3 class="section-sub-title">상품 상세 설명</h3>
+            <div class="detail-image" style="background-image: url('images/product/detail/detail_${product.PCode}.jpg');"></div>
+            <p class="detail-description-text">${product.description}</p>
+        </div>
 
-		<div class="date">
-			여행 날짜 :
-			<div class="date">
-				<fmt:formatDate value="${product.startDay}" pattern="yy-MM-dd" />
-			</div>
-			~
-			<div class="date">
-				<fmt:formatDate value="${product.endDay}" pattern="yy-MM-dd" />
-			</div>
-		</div>
-	</div>
+        <!-- 리뷰 섹션 -->
+        <div class="review-section">
+            <h3 class="section-sub-title">리뷰</h3>
+            <c:forEach var="review" items="${reviewList}">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="review-user">ID - ${review.userNo}</span>
+                        <div class="stars">
+                            <c:forEach begin="1" end="5" var="i">
+                                <c:choose>
+                                    <c:when test="${i <= review.star}">⭐</c:when>
+                                    <c:otherwise>☆</c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </div>
+                    </div>
+                    <h4 class="review-title">${review.title}</h4>
+                    <p class="review-content">${review.content}</p>
+                    <p class="review-date">작성일 : <fmt:formatDate value="${review.createdAt}" pattern="yyyy-MM-dd" /></p>
+                </div>
+            </c:forEach>
+        </div>
 
-	<div class="sidebar">
-		<div class="detail-review">
-			<div class="detail-title">${product.description}</div>
-			<div class="detail-image"
-				style="background-image: url('images/product/detail/detail_${product.PCode}.jpg');">
-			</div>
+        <!-- 예약 및 인원 선택 섹션 -->
+        <div class="reservation-section">
+            <h3 class="section-sub-title">인원 선택</h3>
+            <!-- 가격 정보 숨겨진 input -->
+            <input type="hidden" id="adultPrice" value="<%=adultPrice%>">
+            <input type="hidden" id="childPrice" value="<%=childPrice%>">
+            <input type="hidden" id="infantPrice" value="<%=infantPrice%>">
 
-			<div class="review-title">review</div>
+            <div class="person-selector-row">
+                <span class="person-type">성인 : <fmt:formatNumber value="<%=adultPrice%>" pattern="#,##0" />원</span>
+                <div class="counter">
+                    <button type="button" onclick="changeCount('adult', -1)">-</button>
+                    <span id="adultCount">1</span>
+                    <button type="button" onclick="changeCount('adult', 1)">+</button>
+                </div>
+            </div>
 
-			<c:forEach var="review" items="${reviewList}">
-				<div class="review">
-					ID - ${review.userNo}<br />
-					<div class="stars">
-						<c:forEach begin="1" end="5" var="i">
-							<c:choose>
-								<c:when test="${i <= review.star}">⭐</c:when>
-								<c:otherwise>☆</c:otherwise>
-							</c:choose>
-						</c:forEach>
-					</div>
-					<div class="rev-title">${review.title}</div>
-					<div class="rev-content">${review.content}</div>
-					<div class="rev-date">
-						작성일 :
-						<fmt:formatDate value="${review.createdAt}" pattern="yyyy-MM-dd" />
-					</div>
-				</div>
-			</c:forEach>
+            <div class="person-selector-row">
+                <span class="person-type">아동 : <fmt:formatNumber value="<%=childPrice%>" pattern="#,##0" />원</span>
+                <div class="counter">
+                    <button type="button" onclick="changeCount('child', -1)">-</button>
+                    <span id="childCount">0</span>
+                    <button type="button" onclick="changeCount('child', 1)">+</button>
+                </div>
+            </div>
 
-			<!-- 가격 정보 숨겨진 input에 그대로 숫자만 넣음 (포맷 불필요) -->
-			<input type="hidden" id="adultPrice" value="<%=adultPrice%>">
-			<input type="hidden" id="childPrice" value="<%=childPrice%>">
-			<input type="hidden" id="infantPrice" value="<%=infantPrice%>">
+            <div class="person-selector-row">
+                <span class="person-type">유아 : <fmt:formatNumber value="<%=infantPrice%>" pattern="#,##0" />원</span>
+                <div class="counter">
+                    <button type="button" onclick="changeCount('infant', -1)">-</button>
+                    <span id="infantCount">0</span>
+                    <button type="button" onclick="changeCount('infant', 1)">+</button>
+                </div>
+            </div>
 
-			<h3>인원선택</h3>
+            <hr class="divider" />
+            <div class="total-price-display">
+                <div class="total-price-label">총 가격:</div>
+                <div class="total-price-value" id="totalPrice"></div>
+            </div>
+            <div class="reserve-info-text" id="depositInfo"></div>
 
-			<div class="price-row">
-				성인 : <fmt:formatNumber value="<%=adultPrice%>" pattern="#,##0" />원
-				<div class="counter">
-					<button onclick="changeCount('adult', -1)">-</button>
-					<span id="adultCount">1</span>
-					<button onclick="changeCount('adult', 1)">+</button>
-				</div>
-			</div>
+            <select class="payment-option-select">
+                <option>무이자할부/결제혜택</option>
+            </select>
 
-			<div class="price-row">
-				아동 : <fmt:formatNumber value="<%=childPrice%>" pattern="#,##0" />원
-				<div class="counter">
-					<button onclick="changeCount('child', -1)">-</button>
-					<span id="childCount">0</span>
-					<button onclick="changeCount('child', 1)">+</button>
-				</div>
-			</div>
+            <form id="reserveForm" action="Reservation.do" method="post">
+              <input type="hidden" name="p_code" value="${product.PCode}" />
+              <input type="hidden" name="title" value="${product.title}" />
+              <input type="hidden" id="adultInput" name="totalAmount" />
+              <input type="hidden" id="totalPriceInput" name="totalPrice" />
+              <button class="reserve-btn" type="button">예약하기</button>
+            </form>
 
-			<div class="price-row">
-				유아 : <fmt:formatNumber value="<%=infantPrice%>" pattern="#,##0" />원
-				<div class="counter">
-					<button onclick="changeCount('infant', -1)">-</button>
-					<span id="infantCount">0</span>
-					<button onclick="changeCount('infant', 1)">+</button>
-				</div>
-			</div>
-
-			<hr />
-			<div class="total-price" id="totalPrice"></div>
-			<div class="reserve-info" id="depositInfo"></div>
-
-			<select style="width: 100%; margin-top: 15px; padding: 5px;">
-				<option>무이자할부/결제혜택</option>
-			</select>
-
-			<form id="reserveForm" action="Reservation.do" method="post">
-			  <input type="hidden" name="p_code" value="${product.PCode}" />
-			  <input type="hidden" name="title" value="${product.title}" />
-			  <input type="hidden" id="adultInput" name="totalAmount" /> <!-- 총 인원 수 -->
-			  <input type="hidden" id="totalPriceInput" name="totalPrice" />
-			  <button class="reserve-btn" type="button">예약하기</button>
-			</form>
-
-			<div class="like-btn" onclick="toggleLike()" id="likeBtn">♡</div>
-		</div>
-
-		<div class="chat-icon" onclick="alert('상담창 오픈!')">💬</div>
-	</div>
+            <div class="like-btn-wrapper">
+                <div class="like-btn" onclick="toggleLike()" id="likeBtn">♡</div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- 토스트 메시지 영역 -->
+<div id="toast" class="toast">URL이 복사되었습니다!</div>
 
 <script>
 	function updatePrice() {

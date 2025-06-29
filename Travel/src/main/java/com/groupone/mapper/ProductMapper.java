@@ -18,5 +18,8 @@ public interface ProductMapper {
 	
 	// 유저의 찜리스트
 	List<ProductVO> selectWishList(int userNo);
+	
+	// 최신순 상품리스트
+	public List<ProductVO> selectNewProductList();
 
 }

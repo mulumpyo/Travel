@@ -25,13 +25,13 @@
 	            <ul class="customer-service-links">
 	                <li><a href="faq.do">자주하는 질문</a></li>
 	                <li><a href="qna.do">1:1 문의</a></li>
-	                <li><a href="#">문의 내역</a></li>
+	                <li><a href="qnalist.do">문의 내역</a></li>
 	            </ul>
 	        </div>
 	    </div>
 	
 	    <div class="footer-bottom">
-	        <p>&copy; 2024 지금이라도 당장 떠나버릴 1조. All rights reserved.</p>
+	        <p>&copy; 2025 지금이라도 당장 떠나버릴 1조. All rights reserved.</p>
 	    </div>
 	</footer>
 

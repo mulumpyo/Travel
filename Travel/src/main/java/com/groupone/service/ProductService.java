@@ -8,8 +8,6 @@ public interface ProductService {
 
 	public ProductVO getProduct(int pcode);
 
-	public List<ProductVO> productList();
-
 	public List<ProductVO> productList(SearchDTO search);
 
 	public List<String> themeList();
@@ -25,5 +23,7 @@ public interface ProductService {
 
 	// 찜리스트
 	List<ProductVO> getWishList(int userNo);
+
+	public List<ProductVO> newProductList();
   
 }

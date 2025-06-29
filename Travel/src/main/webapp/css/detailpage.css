@@ -1,0 +1,440 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  letter-spacing: -0.04em;
+  margin: 0;
+  background-color: #f8f8f8;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  letter-spacing: -0.04em;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: #1d1d1f;
+}
+
+/* 메인 컨테이너 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 96px auto 48px auto; /* 상단 마진은 네비바 높이 고려 */
+  gap: 40px; /* 주요 섹션 간 간격 */
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* 왼쪽 상품 메인 콘텐츠 (썸네일 + 기본 정보) */
+.product-main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* 썸네일과 정보 섹션 간 간격 */
+}
+
+.thumbnail-section {
+  width: 100%; /* 부모 너비에 맞춤 */
+  height: 500px; /* 고정 높이 */
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.thumbnail-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info-section {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  color: #999;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6e6e73;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.share:hover {
+  color: #1d1d1f;
+}
+
+.share i {
+  font-size: 16px;
+}
+
+.product-info-section .title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.product-info-section .description {
+  font-size: 16px;
+  color: #6e6e73;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.price-info {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.price-info .price-label {
+  color: #1d1d1f;
+  font-size: 18px;
+}
+
+.price-info .price-currency {
+  font-size: 18px;
+  color: #1d1d1f;
+}
+
+.date-info {
+  font-size: 14px;
+  color: #1d1d1f;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.date-info .date-label {
+  color: #6e6e73;
+}
+
+.date-info .date-range {
+  font-weight: 500;
+}
+
+/* 오른쪽 사이드바 (상세 설명, 리뷰, 예약) */
+.product-sidebar {
+  flex-shrink: 0;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* 사이드바 내부 섹션 간 간격 */
+}
+
+.product-detail-description-section,
+.review-section,
+.reservation-section {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.section-sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1d1d1f;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.product-detail-description-section .detail-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-description-section .detail-description-text {
+  font-size: 15px;
+  color: #6e6e73;
+  line-height: 1.6;
+}
+
+/* 리뷰 스타일 */
+.review-card {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+.review-card:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.review-user {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+.review-card .stars {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.review-card .review-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1d1d1f;
+  margin-bottom: 5px;
+}
+
+.review-card .review-content {
+  font-size: 14px;
+  color: #6e6e73;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.review-card .review-date {
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+}
+
+/* 인원 선택 및 예약 스타일 */
+.person-selector-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #1d1d1f;
+}
+
+.person-selector-row .person-type {
+  font-weight: 500;
+}
+
+.person-selector-row .counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.person-selector-row .counter button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f2f5;
+  color: #1d1d1f;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.person-selector-row .counter button:hover {
+  background-color: #e0e2e5;
+}
+
+.person-selector-row .counter span {
+  min-width: 25px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 25px 0;
+}
+
+.total-price-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.total-price-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1d1d1f;
+}
+
+.total-price-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.reserve-info-text {
+  font-size: 14px;
+  font-weight: normal;
+  color: #6e6e73;
+  text-align: right;
+  margin-top: -5px; /* 총 가격과의 간격 조절 */
+  margin-bottom: 15px;
+}
+
+.payment-option-select {
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1d1d1f;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%236e6e73" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.payment-option-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.reserve-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.like-btn-wrapper {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  margin-top: 20px;
+}
+
+.like-btn {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.like-btn.liked {
+  color: #ff4d4d;
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+/* 토스트 메시지 */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 채팅 아이콘 */
+.chat-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #28a745;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.chat-icon:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+}
