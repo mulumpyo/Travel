@@ -67,9 +67,10 @@
 	</select>
 
 	<select id="selectthemeList" resultType="String">
-		select theme from
-		tbl_product
+		select theme 
+		from tbl_product
 		group by theme
+		
 	</select>
 	
 	<select id="selectcountryList" resultType="String">
@@ -134,14 +135,16 @@
 		select *
 		from tbl_product
 		where p_code in (select p_code
-										 from tbl_wish
-										 where user_no = #{userNo})
+						 from tbl_wish
+						 where user_no = #{userNo})
+		and status = 1
 	</select>
 
 	<select id="selectNewProductList" resultType="Product">
 		select *
 		from tbl_product
 		order by 1 desc
+		where status = 1
 	</select>
 
 </mapper>
