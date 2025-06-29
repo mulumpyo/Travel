@@ -50,6 +50,11 @@ public class QnaServiceImpl implements QnaService{
 		}
 		return false;
 	}
+	@Override
+	public List<QnaVO> qnaListWithUserNo(int userNo) {
+		
+		return mapper.selectListWithUserNo(userNo);
+	}
 	
 
 }

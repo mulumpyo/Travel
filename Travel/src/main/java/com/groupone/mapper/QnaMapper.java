@@ -16,4 +16,6 @@ public interface QnaMapper {
 	public QnaVO selectMyQna(int pCode);
 	public int updateQna(QnaVO qna);
 	
+	public List<QnaVO> selectListWithUserNo(int userNo);
+	
 }

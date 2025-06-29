@@ -18,40 +18,27 @@ import com.groupone.vo.QnaVO;
 public class MyQnaModifySuccessControl implements Control {
 
 	@Override
-	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	public void exec(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException, IOException {
+		
 		req.setCharacterEncoding("utf-8");
-		
-		QnaService svc = new QnaServiceImpl();
-		
-		HttpSession session = req.getSession();
-		
-		String startDayStr = req.getParameter("startDay");
-		String endDayStr = req.getParameter("endDay");
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-		Date startDate = null;
-		Date endDate = null;
-		
 		
 		int qCode = Integer.parseInt(req.getParameter("qCode"));
 		String title = req.getParameter("title");
 		String question = req.getParameter("question");
-	
 		
-		QnaVO qna = new QnaVO();
+		QnaVO modify = new QnaVO();
+		modify.setQCode(qCode);
+		modify.setTitle(title);
+		modify.setQuestion(question);
 		
-		qna.setQCode(qCode);
-		qna.setTitle(title);
-		qna.setQuestion(question);
+		QnaService svc = new QnaServiceImpl();
 		
-		svc.modifyqna(qna);
-		
-		req.setAttribute("qna", qna);
-		System.out.println("폼에서 받은 qCode: " + req.getParameter("qCode")); 
-		
-		req.getRequestDispatcher("admin/myQnaModifySuccess.tiles").forward(req, res);
+		if(svc.modifyqna(modify)) {
+			res.sendRedirect("myqna.do?qCode=" + qCode + "&msg=success");
+		} else {
+			res.sendRedirect("myqna.do?qCode=" + qCode + "&msg=fail");
+		}
 
-		
 	}
-
 }

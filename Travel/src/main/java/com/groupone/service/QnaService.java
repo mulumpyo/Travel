@@ -19,4 +19,7 @@ public interface QnaService {
 	
 	public boolean modifyqna(QnaVO qna);
 	
+	// UserNo의 Qna List를 반환
+	public List<QnaVO> qnaListWithUserNo(int userNo);
+	
 }

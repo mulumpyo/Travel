@@ -28,11 +28,13 @@
 	     <th>작성일</th>
 	     <th>답변상태</th>
 	   </tr>
-
-	 <c:forEach var="qna" items="${qnaList }">
+	
+	 <c:forEach var="qna" items="${qnaList}">
 	   <tr>
 	   	 <td>${qna.QCode }</td>
-		 <td>${qna.type }</td>	     
+		 <td>${qna.type }</td>
+		 
+		 <!-- myqna.do?qCode={qCode} 링크로 사용자가 클릭시 이동 -->
 	     <td><a href="myqna.do?qCode=${qna.QCode}">${qna.title }</a></td>
 	     <td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd"/></td>
 	     <td>${qna.status }</td>

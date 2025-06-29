@@ -32,9 +32,3 @@
 	        <p>&copy; 2024 지금이라도 당장 떠나버릴 1조. All rights reserved.</p>
 	    </div>
 	</footer>
-
-    <c:if test="${isLogin == true}">
-	    <button class="logout-button" onclick="location.href='signout.do'">
-	    	<i class="fas fa-sign-out-alt"></i>
-	    </button>
-    </c:if>

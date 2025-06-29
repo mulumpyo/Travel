@@ -23,7 +23,7 @@
   </insert>
 	
 	<!-- qnaList 목록보기 -->
-	<select id="selectQnaList" parameterType="Qna">
+	<select id="selectQnaList" resultType="Qna">
 	  select q_code as "qCode",
 	  		 type,
 	         title,
@@ -45,7 +45,9 @@
 	</select>
 	
 	<select id="selectMyQna" parameterType="int" resultType="Qna">
-	  select status,
+	  select q_code,
+	  		 user_no,
+	  		 status,
 	         title,
 	         question,
 	         q_date as "qDate"
@@ -57,8 +59,14 @@
 	  update tbl_qna
 	  set title = #{title},
 	      question = #{question}
-	  where q_code = #{qCode}
-	      
-	               
+	  where q_code = #{qCode}          
 	</update>
+	
+	<select id="selectListWithUserNo" parameterType="int" resultType="Qna">
+		select *
+		from tbl_qna
+		where user_no = #{userNo}
+		and	relation_qcode is null
+	</select>
+	
 </mapper>
