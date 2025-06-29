@@ -24,5 +24,8 @@
                     <input type="submit" value="다음">
                 </p>
             </form>
+             <p class="back-link-container">
+                <a href="main.do">메인으로 돌아가기</a>
+            </p>
         </div>
     </div>
