@@ -26,4 +26,3 @@ btnDelete.forEach(event => {
 	
 })
 
-

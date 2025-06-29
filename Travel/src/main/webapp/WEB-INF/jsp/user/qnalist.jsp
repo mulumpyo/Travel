@@ -19,31 +19,33 @@
   <main>
         <input type="search" id="search" name="search" placeholder="검색하고싶은 내용을 입력하세요">
          <button id='btn'>🔍</button>
-	<table id="target">
+		<table id="target">
 
-	   <tr>
-	     <th>순서</th>
-	     <th>유형</th>
-	     <th>제목</th>
-	     <th>작성일</th>
-	     <th>답변상태</th>
-	   </tr>
-	
-	 <c:forEach var="qna" items="${qnaList}">
-	   <tr>
-	   	 <td>${qna.QCode }</td>
-		 <td>${qna.type }</td>
-		 
-		 <!-- myqna.do?qCode={qCode} 링크로 사용자가 클릭시 이동 -->
-	     <td><a href="myqna.do?qCode=${qna.QCode}">${qna.title }</a></td>
-	     <td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd"/></td>
-	     <td>${qna.status }</td>
-	   </tr>
-	 </c:forEach>
-    
-	</table>
-    
-  </main>
+			<tr>
+				<th>순서</th>
+				<th>유형</th>
+				<th>제목</th>
+				<th>작성일</th>
+				<th>답변상태</th>
+				<th>삭제</th>
+			</tr>
+
+			<c:forEach var="qna" items="${qnaList}">
+				<tr>
+					<td>${qna.QCode }</td>
+					<td>${qna.type }</td>
+
+					<!-- myqna.do?qCode={qCode} 링크로 사용자가 클릭시 이동 -->
+					<td><a href="myqna.do?qCode=${qna.QCode}">${qna.title }</a></td>
+					<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd" /></td>
+					<td>${qna.status }</td>
+					<td><button class="btn-delete" type="button">삭제</button></td>
+				</tr>
+			</c:forEach>
+
+		</table>
+
+	</main>
 
     
   <script src="js/qnalist.js"></script>
