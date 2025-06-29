@@ -45,3 +45,24 @@ document.getElementById("btn").addEventListener("click", function() {
 		})
 })
 
+
+const btnDelete = document.querySelectorAll('button.btn-delete');
+console.log(btnDelete);
+
+let pCode = "";
+
+btnDelete.forEach(event => {
+	event.addEventListener('click', function(e){
+	const isdelete = confirm("삭제하시겠습니까?");
+	console.log(isdelete);
+	if(isdelete == true) {
+		const tr = e.target.closest('tr');
+		console.log(tr);
+		tr.remove();
+		
+	} else {
+		return;
+	}
+		
+	})
+})
