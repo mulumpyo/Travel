@@ -1,7 +1,6 @@
 package com.groupone.control;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +19,8 @@ public class UserInfoControl implements Control {
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession(false);
 		
-	    Object adminAttr = session.getAttribute("isAdmin");
-	    boolean isAdmin = false;
-	    if (adminAttr != null && adminAttr instanceof Boolean) {
-	        isAdmin = (Boolean) adminAttr;
-	    }
-
+	  
+		//로그인 확인
 		if (session == null || session.getAttribute("userNo") == null) {
 			res.sendRedirect("login.do");
 			return;
@@ -46,7 +41,6 @@ public class UserInfoControl implements Control {
 		
 		// 요청 구분
 
-		if (!isAdmin) {
 			if ("update".equals(action)) {// 정보 수정
 	
 				String newPhone = req.getParameter("userPhone");
@@ -77,18 +71,8 @@ public class UserInfoControl implements Control {
 			} else {
 				// 단순 조회
 				req.setAttribute("loginUser", loginUser); // JSP에서 사용할 수 있도록
-				req.getRequestDispatcher("/user/userList.tiles").forward(req, res);
+				req.getRequestDispatcher("/user/userInfo.tiles").forward(req, res);
 			}
 		}
-	else {
-		String userNo2 = req.getParameter("userNo");
-		if (userNo2 != null) {
-			int userno = Integer.parseInt(userNo2);
-			userService.userRemove(userno);
-		}
-		List<UserVO> userList = userService.getUserList();
-		req.setAttribute("userList", userList);
-		req.getRequestDispatcher("admin/userList.tiles").forward(req, res);
-	}
 	
-}}
+}

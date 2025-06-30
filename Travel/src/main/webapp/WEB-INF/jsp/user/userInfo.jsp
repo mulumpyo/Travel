@@ -115,5 +115,4 @@ if (msg != null) { %>
 			return true; //허용
 		}
 	</script>
-
 </body>
