@@ -56,13 +56,14 @@ btnDelete.forEach(event => {
 	event.addEventListener('click', function(e){
 	qCode = e.target.parentElement.parentElement.firstElementChild.innerHTML;
 	console.log(e.target.parentElement.parentElement.firstElementChild.innerHTML);
-	
-	
 
-	 
 	const isdelete = confirm("삭제하시겠습니까?");
 
 	if(isdelete == true) {
+		
+		
+		location.href = "removeQna.do?qCode=" + qCode;
+		
 		const tr = e.target.closest('tr');
 
 		tr.remove();

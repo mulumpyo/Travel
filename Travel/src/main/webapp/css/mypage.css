@@ -1,0 +1,602 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    background-color: #f5f5f7;
+    letter-spacing: -0.04em;
+    color: #1d1d1f;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0c5dc6;
+    color: #fff;
+    letter-spacing: -0.04em;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 36px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0a4aa1;
+}
+
+.page-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 96px auto 48px auto;
+    padding: 0 24px;
+}
+
+.sidebar {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: fixed;
+    top: 96px;
+    width: calc( (1200px - 24px * 11) / 12 * 3 + 24px * 2 );
+    left: calc( (100vw - 1200px) / 2 + 24px );
+    z-index: 100;
+}
+
+#subnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#subnav li {
+    margin-bottom: 12px;
+}
+
+#subnav a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#subnav a:hover {
+    background-color: #e0f0ff;
+    color: #0c5dc6;
+}
+
+#subnav a.active-nav-item {
+    background-color: #0c5dc6;
+    color: #fff;
+    font-weight: 700;
+}
+
+#subnav a.active-nav-item:hover {
+    background-color: #0c5dc6;
+    color: #fff;
+}
+
+.main-content {
+    grid-column: 4 / span 9;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#search {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#search:focus {
+    border-color: #0c5dc6;
+}
+
+#btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #0c5dc6;
+    color: #fff;
+    border: none;
+}
+
+#target {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#target th, #target td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#target th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+    color: #555;
+    font-size: 15px;
+}
+
+#target tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+#target td {
+    font-size: 14px;
+    color: #333;
+}
+
+#target td a {
+    color: #0c5dc6;
+    font-weight: 500;
+}
+
+#target td a:hover {
+    text-decoration: underline;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+#target td a[href="answer.do"] {
+    color: #28a745;
+    font-weight: bold;
+}
+
+#target td a[href="qnalist.do"] {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.main-content form #target {
+    margin-bottom: 20px;
+}
+
+.main-content form input[type="text"],
+.main-content form textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.main-content form input[type="text"]:focus,
+.main-content form textarea:focus {
+    border-color: #0c5dc6;
+}
+
+.main-content form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.form-actions li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.form-actions li button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.form-actions li .cancel-button {
+    background-color: #6c757d;
+}
+
+.form-actions li .cancel-button:hover {
+    background-color: #5a6268;
+}
+
+#faq-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    text-align: left;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+#faq-table thead th {
+    text-align: left;
+    padding: 25px 20px;
+    background: linear-gradient(to right, #0c5dc6, #0a4aa1);
+    color: #fff;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#faq-table thead h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#faq-table tbody tr:not(.faq-answer-row) {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#faq-table tbody tr:not(.faq-answer-row):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#faq-table tbody tr:not(.faq-answer-row) td {
+    padding: 18px 20px;
+    border-bottom: none;
+}
+
+#faq-table tbody tr:not(.faq-answer-row) td:first-child {
+    font-weight: 600;
+    color: #333;
+}
+
+#faq-table .faq-answer-row td {
+    background-color: #f8f9fa;
+    padding: 20px 30px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+#faq-table .faq-btn {
+    background-color: #e0f0ff;
+    color: #0c5dc6;
+    font-size: 18px;
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #0c5dc6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#faq-table .faq-btn:hover {
+    background-color: #0c5dc6;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+#faq-table .faq-btn i {
+    transition: transform 0.3s ease;
+}
+
+#faq-table .faq-btn.active i {
+    transform: rotate(45deg);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+    font-size: 16px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fcfcfc;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0c5dc6;
+    box-shadow: 0 0 0 3px rgba(12, 93, 198, 0.2);
+}
+
+.form-group textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 10px;
+    color: #333;
+    font-size: 14.5px;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-message p {
+    margin: 0;
+}
+
+.form-actions {
+    text-align: right;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.form-actions button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.form-actions .cancel-button {
+    background-color: #6c757d;
+}
+
+.form-actions .cancel-button:hover {
+    background-color: #5a6268;
+}
+
+/* MyPage Specific Styles */
+.mypage-main-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1d1d1f;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.mypage-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px; /* 프로필 카드와의 간격 */
+}
+
+.mypage-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mypage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 48px;
+    color: #0c5dc6;
+    margin-bottom: 20px;
+}
+
+.card-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #0c5dc6;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-button:hover {
+    background-color: #0a4aa1;
+    transform: translateY(-2px);
+}
+
+/* User Profile Card Styles */
+.user-profile-card {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 40px; /* 아래 마이페이지 카드 그리드와의 간격 */
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid #0c5dc6; /* 테두리 추가 */
+    box-shadow: 0 0 0 5px rgba(12, 93, 198, 0.1); /* 은은한 외곽 그림자 */
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 비율 유지하며 채우기 */
+}
+
+.profile-info {
+    margin-bottom: 25px;
+}
+
+.profile-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+.profile-email {
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-actions {
+    width: 100%; /* 버튼이 부모 너비를 차지하도록 */
+}
+
+.profile-edit-button {
+    display: inline-flex; /* 아이콘과 텍스트 정렬 */
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* 배경색 변경 */
+    color: #555; /* 글자색 변경 */
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.profile-edit-button i {
+    margin-right: 8px; /* 아이콘과 텍스트 사이 간격 */
+    font-size: 16px;
+}
+
+.profile-edit-button:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 1200px) {
+    .sidebar {
+        position: static;
+        grid-column: span 12;
+        width: auto;
+        left: auto;
+        top: auto;
+        margin-bottom: 24px;
+    }
+
+    .main-content {
+        grid-column: span 12;
+        margin-left: 0;
+    }
+
+    #faq-table thead th {
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .sidebar, .main-content {
+        grid-column: 1 / -1;
+    }
+
+    .sidebar {
+        padding: 16px;
+    }
+
+    .main-content {
+        padding: 24px;
+    }
+
+    #faq-table thead h2 {
+        font-size: 22px;
+    }
+
+    .mypage-main-title {
+        font-size: 24px;
+    }
+
+    .mypage-card-grid {
+        grid-template-columns: 1fr;
+    }
+}

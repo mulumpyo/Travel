@@ -21,6 +21,7 @@ import com.groupone.control.InsertProductControl;
 import com.groupone.control.ReservationControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
+import com.groupone.control.MyPageControl;
 import com.groupone.control.MyQnaControl;
 import com.groupone.control.MyQnaModifySuccessControl;
 import com.groupone.control.ProductInsertFormControl;
@@ -39,6 +40,7 @@ import com.groupone.control.AddWishControl;
 import com.groupone.control.ChangeLoginPw;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
+import com.groupone.control.RemoveQnaControl;
 import com.groupone.control.TestControl;
 import com.groupone.control.UserInfoControl;
 
@@ -61,6 +63,7 @@ public class FrontController extends HttpServlet {
 		map.put("/signout.do", new SignOutControl()); // 로그아웃 기능
 		map.put("/addwish.do", new AddWishControl());
 		map.put("/removewish.do", new RemoveWishControl());
+		map.put("/mypage.do", new MyPageControl());
 		
 		
 		/* 은경 */
@@ -108,6 +111,7 @@ public class FrontController extends HttpServlet {
 		map.put("/qnasearch.do", new QnaSearchControl());  // QnaList
 		map.put("/myqna.do", new MyQnaControl());  // 문의내역
 		map.put("/myqnaModifySuccess.do", new MyQnaModifySuccessControl());  // 문의내역
+		map.put("/removeQna.do", new RemoveQnaControl());
 	}
 
 	@Override
