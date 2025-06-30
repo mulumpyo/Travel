@@ -2,7 +2,7 @@ package com.groupone.service;
 
 import java.util.List;
 
-
+import com.groupone.vo.AnswerVO;
 import com.groupone.vo.QnaVO;
 
 public interface QnaService {
@@ -25,5 +25,7 @@ public interface QnaService {
 	//삭제
 	public boolean removeQna(int qCode);
 	
+	
+	public boolean addAnswer(List<AnswerVO> answer);
 	
 }

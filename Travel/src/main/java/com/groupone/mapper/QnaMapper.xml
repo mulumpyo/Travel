@@ -73,5 +73,10 @@
 	  delete from tbl_qna
 	  where q_code = #{qCode}
 	</delete>
+
+	<insert id="insertAnswer" parameterType="Answer">
+		insert into tbl_answer
+		values (#{qCode}, #{userNo}, #{writer}, #{answer}, #{aDate})
+	</insert>
 	
 </mapper>

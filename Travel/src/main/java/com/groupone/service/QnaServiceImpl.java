@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.groupone.common.DataSource;
 import com.groupone.mapper.QnaMapper;
+import com.groupone.vo.AnswerVO;
 import com.groupone.vo.QnaVO;
 
 public class QnaServiceImpl implements QnaService{
@@ -55,9 +56,21 @@ public class QnaServiceImpl implements QnaService{
 		
 		return mapper.selectListWithUserNo(userNo);
 	}
+	
 	@Override
 	public boolean removeQna(int qCode) {
 		int r = mapper.deleteList(qCode);
+		if(r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
+		
+	}
+	
+	@Override
+	public boolean addAnswer(List<AnswerVO> answer) {
+		int r = mapper.insertAnswer(answer);
 		if(r == 1) {
 			sqlSession.commit();
 			return true;
