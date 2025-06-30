@@ -20,6 +20,7 @@ document.getElementById("btn").addEventListener("click", function() {
 	     <th>제목</th>
 	     <th>작성일</th>
 	     <th>답변상태</th>
+		 <th>삭제</th>
 	   </tr>`;
 	fetch('qnasearch.do?keyword=' + keyword)
 		.then(json => json.json())
