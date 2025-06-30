@@ -95,7 +95,6 @@ public class FrontController extends HttpServlet {
 		map.put("/qna.do", new QnaControl());   // QnA
 		map.put("/qnalist.do", new QnaListControl());  // QnaList
 		map.put("/qnasearch.do", new QnaSearchControl());  // QnaList
-		
 		map.put("/myqna.do", new MyQnaControl());  // 문의내역
 		map.put("/myqnaModifySuccess.do", new MyQnaModifySuccessControl());  // 문의내역
 		
