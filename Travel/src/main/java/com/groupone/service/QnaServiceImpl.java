@@ -55,6 +55,15 @@ public class QnaServiceImpl implements QnaService{
 		
 		return mapper.selectListWithUserNo(userNo);
 	}
+	@Override
+	public boolean removeQna(int qCode) {
+		int r = mapper.deleteList(qCode);
+		if(r == 1) {
+			sqlSession.commit();
+			return true;
+		}
+		return false;
+	}
 	
 
 }

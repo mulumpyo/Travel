@@ -67,7 +67,11 @@
 		select *
 		from tbl_qna
 		where user_no = #{userNo}
-		and	relation_qcode is null
 	</select>
+	
+	<delete id="deleteList" parameterType="int">
+	  delete from tbl_qna
+	  where q_code = #{qCode}
+	</delete>
 	
 </mapper>

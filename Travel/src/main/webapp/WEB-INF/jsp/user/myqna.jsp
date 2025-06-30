@@ -33,8 +33,9 @@
 		</tr>
 	</table>
 	<ul>
-		<li>
-			<button type="submit">수정</button>
+		<li style="list-style:none;">
+			<button type="submit" onclick="alert('수정되었습니다')">수정</button>
+			
 			<a href="qnalist.do"><button type="button">취소</button></a>
 		</li>
 	</ul>
