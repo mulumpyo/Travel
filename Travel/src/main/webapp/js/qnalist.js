@@ -58,7 +58,7 @@ btnDelete.forEach(event => {
 	console.log(e.target.parentElement.parentElement.firstElementChild.innerHTML);
 	
 	
-	location.href = 'qnalist.do?qCode=' + qCode;
+
 	 
 	const isdelete = confirm("삭제하시겠습니까?");
 	console.log(isdelete);
