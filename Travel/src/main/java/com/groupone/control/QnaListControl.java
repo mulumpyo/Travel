@@ -40,7 +40,6 @@ public class QnaListControl implements Control {
 		}
 		
 		
-		
 		// 값이 null이 아니고 값이 true이면 true 아니면 false 
 		boolean isLogin = session.getAttribute("isLogin") != null 
 				? (boolean) session.getAttribute("isLogin") : false;

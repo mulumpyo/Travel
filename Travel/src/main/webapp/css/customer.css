@@ -234,6 +234,175 @@ button:hover {
     background-color: #5a6268;
 }
 
+#faq-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    text-align: left;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+#faq-table thead th {
+    text-align: left;
+    padding: 25px 20px;
+    background: linear-gradient(to right, #0c5dc6, #0a4aa1);
+    color: #fff;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#faq-table thead h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#faq-table tbody tr:not(.faq-answer-row) {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#faq-table tbody tr:not(.faq-answer-row):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#faq-table tbody tr:not(.faq-answer-row) td {
+    padding: 18px 20px;
+    border-bottom: none;
+}
+
+#faq-table tbody tr:not(.faq-answer-row) td:first-child {
+    font-weight: 600;
+    color: #333;
+}
+
+#faq-table .faq-answer-row td {
+    background-color: #f8f9fa;
+    padding: 20px 30px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+#faq-table .faq-btn {
+    background-color: #e0f0ff;
+    color: #0c5dc6;
+    font-size: 18px;
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #0c5dc6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#faq-table .faq-btn:hover {
+    background-color: #0c5dc6;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+#faq-table .faq-btn i {
+    transition: transform 0.3s ease;
+}
+
+#faq-table .faq-btn.active i {
+    transform: rotate(45deg);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+    font-size: 16px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fcfcfc;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0c5dc6;
+    box-shadow: 0 0 0 3px rgba(12, 93, 198, 0.2);
+}
+
+.form-group textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 10px;
+    color: #333;
+    font-size: 14.5px;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-message p {
+    margin: 0;
+}
+
+.form-actions {
+    text-align: right;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.form-actions button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.form-actions .cancel-button {
+    background-color: #6c757d;
+}
+
+.form-actions .cancel-button:hover {
+    background-color: #5a6268;
+}
+
 @media (max-width: 1200px) {
     .sidebar {
         position: static;
@@ -247,6 +416,10 @@ button:hover {
     .main-content {
         grid-column: span 12;
         margin-left: 0;
+    }
+
+    #faq-table thead th {
+        border-radius: 12px 12px 0 0;
     }
 }
 
@@ -267,5 +440,9 @@ button:hover {
 
     .main-content {
         padding: 24px;
+    }
+
+    #faq-table thead h2 {
+        font-size: 22px;
     }
 }

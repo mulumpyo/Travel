@@ -61,11 +61,13 @@ btnDelete.forEach(event => {
 
 	 
 	const isdelete = confirm("삭제하시겠습니까?");
-	console.log(isdelete);
+
 	if(isdelete == true) {
 		const tr = e.target.closest('tr');
-		console.log(tr);
+
 		tr.remove();
+		
+		
 		
 	} else {
 		return;

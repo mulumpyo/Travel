@@ -44,10 +44,10 @@
                         <td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd" /></td>
                         <c:choose>
                             <c:when test="${qna.status != 1}">
-                                <td><a href ="answer.do">답변완료</a></td>
+                                <td><a href="answer.do">답변완료</a></td>
                             </c:when>
                             <c:otherwise>
-                                <td><a href ="qnalist.do">답변대기</a></td>
+                                <td><a href="qnalist.do">답변대기</a></td>
                             </c:otherwise>
                         </c:choose>
                         <td><button class="btn-delete" type="button">삭제</button></td>
