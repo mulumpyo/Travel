@@ -31,7 +31,7 @@
 				<tr>
 					<td><label for="id">아이디</label></td>
 					<td><input type="text" id="id" value="<%=id%>"
-						readonly></td>
+						readonly></td><!-- 서버에서 받은값 readonly -->
 
 				</tr>
 				<tr>
@@ -66,7 +66,7 @@
 		</form>
 	</div>
 
-	<script>
+	<script><!--비밀번호 두개가 같지않을시 알림-->
 		function checkPasswordMatch() {
 			const pw1 = document.getElementById('pw1').value;
 			const pw2 = document.getElementById('pw2').value;
@@ -74,9 +74,9 @@
 			if (pw1 !== pw2) {
 				alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
 				document.getElementById('pw2').focus();
-				return false;
+				return false;//폼제출 막음
 			}
-			return true;
+			return true;//폼제출
 		}
 	</script>
 </body>

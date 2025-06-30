@@ -18,24 +18,24 @@ public class RealLoginControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String id = req.getParameter("loginId");
 		String pw = req.getParameter("loginPw");
-		String toUrl = req.getParameter("toUrl");
+		String toUrl = req.getParameter("toUrl");//로그인후 돌아갈 페이지
 
 		UserService svc = new UserServiceImpl();
 		
-		if (svc.userLogin(id, pw)) {
+		if (svc.userLogin(id, pw)) {//로그인 검증 (true 로그인 성공)
 			
-			UserVO user = svc.getUserInfo(svc.getUserNo(id));
+			UserVO user = svc.getUserInfo(svc.getUserNo(id));//유저번호로 유저정보 가져오기
 
-			HttpSession session = req.getSession();
+			HttpSession session = req.getSession();//세션에 저장
 			session.setAttribute("userNo", user.getUserNo());
 			session.setAttribute("userId", user.getUserId());
 			session.setAttribute("userName", user.getUserName());
 			session.setAttribute("isLogin", true);
-			session.setAttribute("isAdmin", user.getIsAdmin() == 1 ? true : false);
+			session.setAttribute("isAdmin", user.getIsAdmin() == 1 ? true : false);//1일때 어드민
 			res.sendRedirect(toUrl);
 
 		} else {
-			req.setAttribute("retCode", "Fail");
+			req.setAttribute("retCode", "Fail");//로그인 실패
 			req.setAttribute("toUrl", toUrl);
 			req.setAttribute("loginId", id);
 			req.getRequestDispatcher("login/login_password.tiles").forward(req, res);

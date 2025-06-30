@@ -22,7 +22,7 @@ public class RegisterControl implements Control {
 			throws ServletException, IOException {
 
 		req.setCharacterEncoding("UTF-8");
-
+		//Request에서 정보 받아옴 입력값 수집
 		String toUrl = req.getParameter("toUrl");
 		String id = req.getParameter("id");
 		String name = req.getParameter("name");
@@ -31,13 +31,13 @@ public class RegisterControl implements Control {
 		String pw1 = req.getParameter("pw1");
 		String pw2 = req.getParameter("pw2");
 
-		if (!pw1.equals(pw2)) {
+		if (!pw1.equals(pw2)) {//패스워드가 같지 않으면 회원가입 중단
 			req.setAttribute("errorMsg", "비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
 			req.setAttribute("registerId", id);
 			req.getRequestDispatcher("login/register.tiles").forward(req, res);
 			return;
 		}
-
+		//날짜 형식
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date birthDate;
 		try {
@@ -50,7 +50,7 @@ public class RegisterControl implements Control {
 		}
 
 		UserVO user = new UserVO();
-		
+		// 정보를 vo에 저장 생성
 		user.setUserId(id);
 		user.setUserName(name);
 		user.setUserPhone(phone);
@@ -60,7 +60,7 @@ public class RegisterControl implements Control {
 		UserService svc = new UserServiceImpl();
 
 		if (svc.userRegister(user)) {
-			
+			//세션에 사용자 정보를 저장
 			HttpSession session = req.getSession();
 			session.setAttribute("userNo", user.getUserNo());
 			session.setAttribute("userId", user.getUserId());

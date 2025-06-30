@@ -8,7 +8,7 @@ UserVO user = (UserVO) request.getAttribute("loginUser");
 String toUrl = (String) request.getAttribute("toUrl");
 String retCode = (String) request.getAttribute("retCode");
 %>
-
+<!-- 컨트롤러에서 저장한 값 꺼내기 -->
     <div class="login-container">
         <div class="login-image-section">
         </div>
@@ -19,7 +19,7 @@ String retCode = (String) request.getAttribute("retCode");
                 <h1>
                    거의 다 왔어요!<br>비밀번호만 입력하면 돼요.
                 </h1>
-                <input type="text" id="loginId" name="loginId" value="${loginId}" readonly><br>
+                <input type="text" id="loginId" name="loginId" value="${loginId}" readonly><br><!-- 아이디 자동입력 -->
 				<input type="password" id="loginPw" name="loginPw" placeholder="비밀번호 입력"autofocus required>
                 <p>
                     <input type="submit" value="로그인">
@@ -31,7 +31,7 @@ String retCode = (String) request.getAttribute("retCode");
         </div>
     </div>
 
-<script>
+<script><!--로그인 실패 여부-->
 	let retCode = "${retCode}"; 
 	
 	if(retCode != null && retCode === "Fail") { 
