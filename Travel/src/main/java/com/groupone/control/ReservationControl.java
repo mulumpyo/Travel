@@ -19,7 +19,7 @@ public class ReservationControl implements Control {
 		HttpSession session = req.getSession();
 		req.setCharacterEncoding("UTF-8");
 
-		boolean isLogin = session.getAttribute("isLogin") != null ? true : false ;
+		boolean isLogin = session.getAttribute("isLogin") != null ? (boolean) session.getAttribute("isLogin") : false ;
 		
 		// ✅ 로그인 안 되어 있으면 로그인 페이지로 리다이렉트
 		if (!isLogin) {
