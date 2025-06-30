@@ -25,7 +25,138 @@ if (msg != null) { %>
 		alert("${errorMsg}");
 	</script>
 </c:if>
+<style>
 
+/* 컨테이너 전체 */
+#container {
+
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 제목 */
+#container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* 테이블 */
+#container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#container td {
+    padding: 12px 0;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #555;
+}
+
+/* 입력 필드 */
+.modal input[type="text"],
+.modal input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#container input[type="text"]{
+   width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* 버튼 */
+#container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#container button:hover {
+    background-color: #0056b3;
+}
+
+/* 비밀번호 변경 버튼 (회색) */
+#container button[type="button"] {
+    background-color: #6c757d;
+}
+
+#container button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+.close:hover {
+    color: #000;
+    
+    
+    
+}
+.modal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+</style>
 
 <body>
 	<div id="container">
