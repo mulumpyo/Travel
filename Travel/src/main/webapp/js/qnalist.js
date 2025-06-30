@@ -29,13 +29,20 @@ document.getElementById("btn").addEventListener("click", function() {
 			for(let qna of result) {
 				let dateObj = new Date(qna.qDate);   // 문자열 → Date 객체
 				let formattedDate = dateObj.format();
+				let status = "";
+				
 				
 				str += "<tr>";
 				str += "<td>" + qna.qCode + "</td>";
 				str += "<td>" + qna.type + "</td>";
 				str += `<td><a href="myqna.do?qCode=${qna.qCode}">${qna.title}</a></td>`;
 				str += "<td>" + formattedDate + "</td>";
-				str += "<td>" + qna.status + "</td>";
+				
+				if(qna.status != 0) {
+					str += "<td><a href = '#'>답변대기</a></td>";
+				} else {
+					str += "<td><a href = 'answer.do'>답변완료</a></td>";
+				}
 				str += `<td><button class="btn-delete" type="button">삭제</button></td>`
 				str += "</tr>";
 			}
