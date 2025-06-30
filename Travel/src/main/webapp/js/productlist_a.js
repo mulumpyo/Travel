@@ -26,14 +26,12 @@ btnDelete.forEach(event => {
 	
 })
 
-const btnModify = document.querySelectorAll('button.btn-Modify');
-console.log(btnModify);
-
-
-btnModify.forEach(event => {
-	event.addEventListener('click', function(b) {
-		pCode = b.target.parentElement.parentElement.firstElementChild.innerHTML;
-		location.href = 'admin.do?pCode=' + pCode;
-		})
-})
+btnModify.forEach(button => {
+  button.addEventListener('click', function (e) {
+    const tr = e.target.closest('tr');
+    const pCode = tr.children[0].textContent.trim();
+    console.log("수정할 pCode:", pCode);
+    location.href = 'productModify.do?pCode=' + pCode;
+  });
+});
 
