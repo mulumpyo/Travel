@@ -25,7 +25,62 @@ if (msg != null) { %>
 		alert("${errorMsg}");
 	</script>
 </c:if>
+ 
+<style>
 
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 모달 컨텐츠 */
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+/* 닫기 버튼 */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 모달 내 입력 필드 */
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    /* 전체 레이아웃 설정 */
+}
+</style>
 
 <body>
 	<div id="container">
