@@ -1,9 +1,3 @@
-/**
- * 
- */
-
-
-
 const btnDelete = document.querySelectorAll('button.btn-delete');
 console.log(btnDelete);
 
@@ -26,3 +20,13 @@ btnDelete.forEach(event => {
 	
 })
 
+const btnModify = document.querySelectorAll('button.btn-Modify');
+console.log(btnModify);
+
+
+btnModify.forEach(event => {
+	event.addEventListener('click', function(b) {
+		pCode = b.target.parentElement.parentElement.firstElementChild.innerHTML;
+		location.href = 'admin.do?pCode=' + pCode;
+		})
+})
