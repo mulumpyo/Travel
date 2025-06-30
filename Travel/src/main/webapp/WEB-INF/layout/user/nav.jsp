@@ -21,7 +21,7 @@
             		<c:if test="${isAdmin == true}">
             			<button type="button"  onclick="location.href='admin.do'">어드민</button>
             		</c:if>
-                        <a href="userInfo.do" class="icon-link" title="회원 정보">
+                        <a href="mypage.do" class="icon-link" title="회원 정보">
                             <i class="fas fa-user"></i>
                         </a>
                         <a href="wishlistpage.do" class="icon-link" title="찜 리스트">

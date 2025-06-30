@@ -16,6 +16,7 @@
     <typeAlias alias="Review" type="com.groupone.vo.ReviewVO"/>
     <typeAlias alias="Answer" type="com.groupone.vo.AnswerVO"/>
     <typeAlias alias="Wish" type="com.groupone.vo.WishVO"/>
+    <typeAlias alias="SearchDTO" type="com.groupone.common.SearchDTO"/>
   </typeAliases>
   
   
@@ -27,7 +28,7 @@
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
         
         <!-- 해민씨 자리 아이피 -->
-        <property name="url" value="jdbc:oracle:thin:@192.168.0.190:1521:xe"/>
+        <property name="url" value="jdbc:oracle:thin:@192.168.0.9:1521:xe"/>
         <property name="username" value="jsp"/>
         <property name="password" value="jsp"/>
       </dataSource>
@@ -40,7 +41,7 @@
     <mapper resource="com/groupone/mapper/UserMapper.xml"/>
     <mapper resource="com/groupone/mapper/ProductMapper.xml"/>
     <mapper resource="com/groupone/mapper/QnaMapper.xml"/>
-		<mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
+	<mapper resource="com/groupone/mapper/ReviewMapper.xml"/>
    	<mapper resource="com/groupone/mapper/ReservationMapper.xml"/>
    	<mapper resource="com/groupone/mapper/WishMapper.xml"/>
   </mappers>

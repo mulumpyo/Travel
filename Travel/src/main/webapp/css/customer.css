@@ -13,6 +13,22 @@ a {
     color: inherit;
 }
 
+.wish-delete-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.wish-delete-btn:hover {
+  background-color: #d9363e;
+}
+
+
+
 button {
     padding: 8px 16px;
     background-color: #0c5dc6;
@@ -47,8 +63,8 @@ button:hover {
     height: fit-content;
     position: fixed;
     top: 96px;
-    width: calc( (1200px - 24px * 11) / 12 * 3 + 24px * 2 );
-    left: calc( (100vw - 1200px) / 2 + 24px );
+    width: calc((1200px - 24px * 11) / 12 * 3 + 24px * 2);
+    left: calc((100vw - 1200px) / 2 + 24px);
     z-index: 100;
 }
 
@@ -89,6 +105,7 @@ button:hover {
 }
 
 .main-content {
+	min-height: 600px;
     grid-column: 4 / span 9;
     background-color: #fff;
     border-radius: 12px;
@@ -244,21 +261,7 @@ button:hover {
 }
 
 #faq-table thead th {
-    text-align: left;
-    padding: 25px 20px;
-    background: linear-gradient(to right, #0c5dc6, #0a4aa1);
-    color: #fff;
-    border-bottom: none;
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-#faq-table thead h2 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #fff;
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    display: none;
 }
 
 #faq-table tbody tr:not(.faq-answer-row) {
@@ -284,6 +287,10 @@ button:hover {
     color: #333;
 }
 
+.faq-answer-row {
+    display: none;
+}
+
 #faq-table .faq-answer-row td {
     background-color: #f8f9fa;
     padding: 20px 30px;
@@ -293,36 +300,31 @@ button:hover {
     border-bottom: none;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+}
+
+.faq-btn-cell {
+    text-align: right;
+    width: 50px;
 }
 
 #faq-table .faq-btn {
-    background-color: #e0f0ff;
-    color: #0c5dc6;
+    background-color: transparent;
+    color: #000;
     font-size: 18px;
     padding: 0;
-    width: 38px;
-    height: 38px;
-    border: 1px solid #0c5dc6;
-    border-radius: 50%;
-    display: flex;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 #faq-table .faq-btn:hover {
-    background-color: #0c5dc6;
-    color: #fff;
-    transform: rotate(90deg);
-}
-
-#faq-table .faq-btn i {
-    transition: transform 0.3s ease;
-}
-
-#faq-table .faq-btn.active i {
-    transform: rotate(45deg);
+    background-color: transparent;
+    color: #000;
 }
 
 .form-group {
@@ -403,6 +405,147 @@ button:hover {
     background-color: #5a6268;
 }
 
+.mypage-main-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1d1d1f;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.mypage-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.mypage-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mypage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 48px;
+    color: #0c5dc6;
+    margin-bottom: 20px;
+}
+
+.card-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #0c5dc6;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-button:hover {
+    background-color: #0a4aa1;
+    transform: translateY(-2px);
+}
+
+.user-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid #0c5dc6;
+    box-shadow: 0 0 0 5px rgba(12, 93, 198, 0.1);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    margin-bottom: 25px;
+}
+
+.profile-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+.profile-email {
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-actions {
+    width: 100%;
+}
+
+.profile-edit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.profile-edit-button i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.profile-edit-button:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    transform: translateY(-2px);
+}
+
 @media (max-width: 1200px) {
     .sidebar {
         position: static;
@@ -442,7 +585,11 @@ button:hover {
         padding: 24px;
     }
 
-    #faq-table thead h2 {
-        font-size: 22px;
+    .mypage-main-title {
+        font-size: 24px;
+    }
+
+    .mypage-card-grid {
+        grid-template-columns: 1fr;
     }
 }

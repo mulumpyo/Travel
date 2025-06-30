@@ -95,14 +95,14 @@ body {
 }
 
 .filter ul:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .filter ul:last-of-type li {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
 }
 
 .filter ul:last-of-type .badge {
@@ -198,7 +198,6 @@ body {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.55) 100%);
 }
 
-
 .card-content {
   position: relative;
   z-index: 2;
@@ -209,7 +208,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .badges-wrapper {
@@ -257,7 +256,6 @@ body {
   min-height: calc(13px * 1.5 * 2);
 }
 
-
 .price {
   font-size: 20px;
   font-weight: bold;
@@ -300,12 +298,16 @@ body {
   transform: translateY(-5px);
 }
 
-.wish-button .heart-icon {
+.wish-button i {
   font-size: 20px;
   color: #fff;
   transition: color 0.2s ease;
 }
 
-.wish-button:hover .heart-icon {
+.wish-button.active i {
+  color: #ff4d4d;
+}
+
+.wish-button:hover i {
   color: #ff4d4d;
 }

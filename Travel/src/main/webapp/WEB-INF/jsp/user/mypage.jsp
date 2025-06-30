@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- Font Awesome 아이콘을 위해 head 태그에 아래 CDN 추가 필수! --%>
-<%-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> --%>
 
 <div class="page-container">
   <aside class="sidebar">

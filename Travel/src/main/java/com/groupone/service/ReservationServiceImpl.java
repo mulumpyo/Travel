@@ -17,6 +17,11 @@ public class ReservationServiceImpl implements ReservationService {
     public List<ReservationVO> getReservation(int userNo) {
         return mapper.selectReservation(userNo);
     }
+    
+	@Override
+	public List<ReservationVO> getReservationAdmin() {
+		return mapper.selectReservationAll();
+	}
 
     @Override
     public boolean insertReservation(ReservationVO reservation) {

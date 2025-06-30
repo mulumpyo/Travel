@@ -6,7 +6,11 @@ import com.groupone.vo.ProductVO;
 
 public interface ProductService {
 
+	// 노출 상품 조회
 	public ProductVO getProduct(int pcode);
+	
+	// 어드민 페이지 상품 단건조회
+	public ProductVO getProductAdmin(int pCode);
 
 	public List<ProductVO> productList(SearchDTO search);
 
@@ -22,5 +26,10 @@ public interface ProductService {
 	boolean addProduct(ProductVO product);
 
 	public List<ProductVO> newProductList();
+
+	// 조건 없이 모든 상품 조회 (어드민 페이지)
+	public List<ProductVO> productListAll(SearchDTO search);
+
+
   
 }

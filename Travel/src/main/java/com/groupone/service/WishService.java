@@ -16,4 +16,6 @@ public interface WishService {
 	// 찜 삭제
 	boolean removeWish(int userNo, int pCode);
 	
+	
+	
 }

@@ -15,11 +15,16 @@ public class ProductServiceImpl implements ProductService {
 	SqlSession sqlSession = DataSource.getInstance().openSession();
 	ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 	
-  @Override
-  public ProductVO getProduct(int pcode) {
-    return mapper.selectProduct(pcode);
-  }
+	  @Override
+	  public ProductVO getProduct(int pcode) {
+	    return mapper.selectProduct(pcode);
+	  }
   
+	@Override
+	public ProductVO getProductAdmin(int pCode) {
+		// TODO Auto-generated method stub
+		return mapper.selectProductAdmin(pCode);
+	}
 	@Override
 	public List<ProductVO> productList(SearchDTO search) {
 		return mapper.selectProductList(search);
@@ -70,6 +75,13 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductVO> newProductList() {
 		return mapper.selectNewProductList();
 	}
+
+	@Override
+	public List<ProductVO> productListAll(SearchDTO search) {
+
+		return mapper.selectAllProductList(search);
+	}
+
 
 
 }

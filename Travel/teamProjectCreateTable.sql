@@ -17,7 +17,7 @@ DROP TABLE tbl_wish;
 
 
 
--- À¯Àú Å×ÀÌºí
+-- ìœ ì € í…Œì´ë¸”
 CREATE SEQUENCE user_seq;
 
 CREATE TABLE tbl_user (user_no NUMBER NOT NULL PRIMARY KEY
@@ -28,85 +28,85 @@ CREATE TABLE tbl_user (user_no NUMBER NOT NULL PRIMARY KEY
                    , user_phone VARCHAR2(15)
                    , isadmin NUMBER default 0 NOT NULL );
 
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user00', '1111', '±è°ü¸®', TO_DATE('2002-01-02','YYYY-MM-DD'), '010-0000-1111', 1);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user01', '1111', '±è´ëÈ¯', TO_DATE('1965-03-12','YYYY-MM-DD'), '010-0000-1001', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user02', '1111', 'Á¦°¥Àº°æ', TO_DATE('1970-08-24','YYYY-MM-DD'), '010-0000-1002', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user03', '1111', '±èÀ¯°æ', TO_DATE('1982-11-03','YYYY-MM-DD'), '010-0000-1003', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user04', '1111', '¼ÕÀÌ¿µ', TO_DATE('1995-01-18','YYYY-MM-DD'), '010-0000-1004', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user05', '1111', '±èÇØ¹Î', TO_DATE('2000-05-25','YYYY-MM-DD'), '010-0000-1005', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user06', '1111', 'ÇÑÁö¿ø', TO_DATE('1968-08-30','YYYY-MM-DD'), '010-0000-1006', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user07', '1111', 'Á¶¹ÎÈ£', TO_DATE('1975-12-02','YYYY-MM-DD'), '010-0000-1007', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user08', '1111', 'À±Áö¿ì', TO_DATE('1988-09-14','YYYY-MM-DD'), '010-0000-1008', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user09', '1111', '¼­¿¹¸°', TO_DATE('1991-07-08','YYYY-MM-DD'), '010-0000-1009', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user10', '1111', '³²µµÇö', TO_DATE('2003-03-29','YYYY-MM-DD'), '010-0000-1010', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user11', '1111', '¿À³ª¿¬', TO_DATE('1963-10-21','YYYY-MM-DD'), '010-0000-1011', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user12', '1111', '¹éÁöÈÆ', TO_DATE('1972-06-15','YYYY-MM-DD'), '010-0000-1012', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user13', '1111', '°­À¯³ª', TO_DATE('1985-02-10','YYYY-MM-DD'), '010-0000-1013', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user14', '1111', '³ëÁöÈÆ', TO_DATE('1993-11-05','YYYY-MM-DD'), '010-0000-1014', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user15', '1111', '¹®ÅÂ¾ç', TO_DATE('2001-04-01','YYYY-MM-DD'), '010-0000-1015', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user16', '1111', 'À¯½ÃÇö', TO_DATE('1969-08-11','YYYY-MM-DD'), '010-0000-1016', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user17', '1111', '½ÉÀçÀ±', TO_DATE('1976-01-20','YYYY-MM-DD'), '010-0000-1017', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user18', '1111', 'ÇÏ¼Ò¿¬', TO_DATE('1981-05-19','YYYY-MM-DD'), '010-0000-1018', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user19', '1111', 'Àåµ¿Çö', TO_DATE('1997-10-28','YYYY-MM-DD'), '010-0000-1019', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user20', '1111', 'È«¿¹Áö', TO_DATE('2004-02-13','YYYY-MM-DD'), '010-0000-1020', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user21', '1111', '°í³ª¸®', TO_DATE('1966-06-06','YYYY-MM-DD'), '010-0000-1021', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user22', '1111', '¹èÁØÈ£', TO_DATE('1979-09-30','YYYY-MM-DD'), '010-0000-1022', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user23', '1111', '¼ÛÁöÀº', TO_DATE('1987-12-22','YYYY-MM-DD'), '010-0000-1023', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user24', '1111', 'ÀÓÇÏ´Ã', TO_DATE('1990-03-11','YYYY-MM-DD'), '010-0000-1024', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user25', '1111', 'Á¤ÅÂÈÆ', TO_DATE('2002-06-17','YYYY-MM-DD'), '010-0000-1025', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user26', '1111', 'ÃßÀ¯Á¤', TO_DATE('1962-11-29','YYYY-MM-DD'), '010-0000-1026', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user27', '1111', '°­¼­¿¬', TO_DATE('1974-04-04','YYYY-MM-DD'), '010-0000-1027', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user28', '1111', 'Àü¹Î¼®', TO_DATE('1989-08-09','YYYY-MM-DD'), '010-0000-1028', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user29', '1111', '¾çÁö¼ö', TO_DATE('1994-12-07','YYYY-MM-DD'), '010-0000-1029', 0);
-INSERT INTO tbl_user VALUES (user_seq.nextval, 'user30', '1111', '±Ç³ª¿¬', TO_DATE('2005-01-23','YYYY-MM-DD'), '010-0000-1030', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user00', '1111', 'ê¹€ê´€ë¦¬', TO_DATE('2002-01-02','YYYY-MM-DD'), '010-0000-1111', 1);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user01', '1111', 'ê¹€ëŒ€í™˜', TO_DATE('1965-03-12','YYYY-MM-DD'), '010-0000-1001', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user02', '1111', 'ì œê°ˆì€ê²½', TO_DATE('1970-08-24','YYYY-MM-DD'), '010-0000-1002', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user03', '1111', 'ê¹€ìœ ê²½', TO_DATE('1982-11-03','YYYY-MM-DD'), '010-0000-1003', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user04', '1111', 'ì†ì´ì˜', TO_DATE('1995-01-18','YYYY-MM-DD'), '010-0000-1004', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user05', '1111', 'ê¹€í•´ë¯¼', TO_DATE('2000-05-25','YYYY-MM-DD'), '010-0000-1005', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user06', '1111', 'í•œì§€ì›', TO_DATE('1968-08-30','YYYY-MM-DD'), '010-0000-1006', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user07', '1111', 'ì¡°ë¯¼í˜¸', TO_DATE('1975-12-02','YYYY-MM-DD'), '010-0000-1007', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user08', '1111', 'ìœ¤ì§€ìš°', TO_DATE('1988-09-14','YYYY-MM-DD'), '010-0000-1008', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user09', '1111', 'ì„œì˜ˆë¦°', TO_DATE('1991-07-08','YYYY-MM-DD'), '010-0000-1009', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user10', '1111', 'ë‚¨ë„í˜„', TO_DATE('2003-03-29','YYYY-MM-DD'), '010-0000-1010', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user11', '1111', 'ì˜¤ë‚˜ì—°', TO_DATE('1963-10-21','YYYY-MM-DD'), '010-0000-1011', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user12', '1111', 'ë°±ì§€í›ˆ', TO_DATE('1972-06-15','YYYY-MM-DD'), '010-0000-1012', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user13', '1111', 'ê°•ìœ ë‚˜', TO_DATE('1985-02-10','YYYY-MM-DD'), '010-0000-1013', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user14', '1111', 'ë…¸ì§€í›ˆ', TO_DATE('1993-11-05','YYYY-MM-DD'), '010-0000-1014', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user15', '1111', 'ë¬¸íƒœì–‘', TO_DATE('2001-04-01','YYYY-MM-DD'), '010-0000-1015', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user16', '1111', 'ìœ ì‹œí˜„', TO_DATE('1969-08-11','YYYY-MM-DD'), '010-0000-1016', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user17', '1111', 'ì‹¬ìž¬ìœ¤', TO_DATE('1976-01-20','YYYY-MM-DD'), '010-0000-1017', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user18', '1111', 'í•˜ì†Œì—°', TO_DATE('1981-05-19','YYYY-MM-DD'), '010-0000-1018', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user19', '1111', 'ìž¥ë™í˜„', TO_DATE('1997-10-28','YYYY-MM-DD'), '010-0000-1019', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user20', '1111', 'í™ì˜ˆì§€', TO_DATE('2004-02-13','YYYY-MM-DD'), '010-0000-1020', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user21', '1111', 'ê³ ë‚˜ë¦¬', TO_DATE('1966-06-06','YYYY-MM-DD'), '010-0000-1021', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user22', '1111', 'ë°°ì¤€í˜¸', TO_DATE('1979-09-30','YYYY-MM-DD'), '010-0000-1022', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user23', '1111', 'ì†¡ì§€ì€', TO_DATE('1987-12-22','YYYY-MM-DD'), '010-0000-1023', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user24', '1111', 'ìž„í•˜ëŠ˜', TO_DATE('1990-03-11','YYYY-MM-DD'), '010-0000-1024', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user25', '1111', 'ì •íƒœí›ˆ', TO_DATE('2002-06-17','YYYY-MM-DD'), '010-0000-1025', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user26', '1111', 'ì¶”ìœ ì •', TO_DATE('1962-11-29','YYYY-MM-DD'), '010-0000-1026', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user27', '1111', 'ê°•ì„œì—°', TO_DATE('1974-04-04','YYYY-MM-DD'), '010-0000-1027', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user28', '1111', 'ì „ë¯¼ì„', TO_DATE('1989-08-09','YYYY-MM-DD'), '010-0000-1028', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user29', '1111', 'ì–‘ì§€ìˆ˜', TO_DATE('1994-12-07','YYYY-MM-DD'), '010-0000-1029', 0);
+INSERT INTO tbl_user VALUES (user_seq.nextval, 'user30', '1111', 'ê¶Œë‚˜ì—°', TO_DATE('2005-01-23','YYYY-MM-DD'), '010-0000-1030', 0);
 
 SELECT * FROM tbl_user;
 
--- ±¹°¡ Å×ÀÌºí
+-- êµ­ê°€ í…Œì´ë¸”
 CREATE TABLE tbl_country(country VARCHAR2(30) NOT NULL PRIMARY KEY
                      , continent VARCHAR2(20) NOT NULL);
 
 --  Asia (code = 0)
-INSERT INTO tbl_country VALUES ('ÀÏº»', 0);
-INSERT INTO tbl_country VALUES ('Áß±¹', 0);
-INSERT INTO tbl_country VALUES ('ÅÂ±¹', 0);
-INSERT INTO tbl_country VALUES ('º£Æ®³²', 0);
-INSERT INTO tbl_country VALUES ('½Ì°¡Æ÷¸£', 0);
+INSERT INTO tbl_country VALUES ('ì¼ë³¸', 0);
+INSERT INTO tbl_country VALUES ('ì¤‘êµ­', 0);
+INSERT INTO tbl_country VALUES ('íƒœêµ­', 0);
+INSERT INTO tbl_country VALUES ('ë² íŠ¸ë‚¨', 0);
+INSERT INTO tbl_country VALUES ('ì‹±ê°€í¬ë¥´', 0);
 
 --  North America (code = 1)
-INSERT INTO tbl_country VALUES ('¹Ì±¹', 1);
-INSERT INTO tbl_country VALUES ('Ä³³ª´Ù', 1);
-INSERT INTO tbl_country VALUES ('¸ß½ÃÄÚ', 1);
+INSERT INTO tbl_country VALUES ('ë¯¸êµ­', 1);
+INSERT INTO tbl_country VALUES ('ìºë‚˜ë‹¤', 1);
+INSERT INTO tbl_country VALUES ('ë©•ì‹œì½”', 1);
 
 --  Africa (code = 2)
-INSERT INTO tbl_country VALUES ('³²¾ÆÇÁ¸®Ä«°øÈ­±¹', 2);
-INSERT INTO tbl_country VALUES ('ÀÌÁýÆ®', 2);
-INSERT INTO tbl_country VALUES ('¸ð·ÎÄÚ', 2);
-INSERT INTO tbl_country VALUES ('ÄÉ³Ä', 2);
-INSERT INTO tbl_country VALUES ('ÅºÀÚ´Ï¾Æ', 2);
+INSERT INTO tbl_country VALUES ('ë‚¨ì•„í”„ë¦¬ì¹´ê³µí™”êµ­', 2);
+INSERT INTO tbl_country VALUES ('ì´ì§‘íŠ¸', 2);
+INSERT INTO tbl_country VALUES ('ëª¨ë¡œì½”', 2);
+INSERT INTO tbl_country VALUES ('ì¼€ëƒ', 2);
+INSERT INTO tbl_country VALUES ('íƒ„ìžë‹ˆì•„', 2);
 
 --  South America (code = 3)
-INSERT INTO tbl_country VALUES ('ºê¶óÁú', 3);
-INSERT INTO tbl_country VALUES ('¾Æ¸£ÇîÆ¼³ª', 3);
-INSERT INTO tbl_country VALUES ('Æä·ç', 3);
-INSERT INTO tbl_country VALUES ('Ä¥·¹', 3);
-INSERT INTO tbl_country VALUES ('ÄÝ·Òºñ¾Æ', 3);
+INSERT INTO tbl_country VALUES ('ë¸Œë¼ì§ˆ', 3);
+INSERT INTO tbl_country VALUES ('ì•„ë¥´í—¨í‹°ë‚˜', 3);
+INSERT INTO tbl_country VALUES ('íŽ˜ë£¨', 3);
+INSERT INTO tbl_country VALUES ('ì¹ ë ˆ', 3);
+INSERT INTO tbl_country VALUES ('ì½œë¡¬ë¹„ì•„', 3);
 
 --  Europe (code = 4)
-INSERT INTO tbl_country VALUES ('ÇÁ¶û½º', 4);
-INSERT INTO tbl_country VALUES ('ÀÌÅ»¸®¾Æ', 4);
-INSERT INTO tbl_country VALUES ('½ºÆäÀÎ', 4);
-INSERT INTO tbl_country VALUES ('¿µ±¹', 4);
-INSERT INTO tbl_country VALUES ('½ºÀ§½º', 4);
+INSERT INTO tbl_country VALUES ('í”„ëž‘ìŠ¤', 4);
+INSERT INTO tbl_country VALUES ('ì´íƒˆë¦¬ì•„', 4);
+INSERT INTO tbl_country VALUES ('ìŠ¤íŽ˜ì¸', 4);
+INSERT INTO tbl_country VALUES ('ì˜êµ­', 4);
+INSERT INTO tbl_country VALUES ('ìŠ¤ìœ„ìŠ¤', 4);
 
 --  Oceania (code = 5)
-INSERT INTO tbl_country VALUES ('È£ÁÖ', 5);
-INSERT INTO tbl_country VALUES ('´ºÁú·£µå', 5);
-INSERT INTO tbl_country VALUES ('ÇÇÁö', 5);
+INSERT INTO tbl_country VALUES ('í˜¸ì£¼', 5);
+INSERT INTO tbl_country VALUES ('ë‰´ì§ˆëžœë“œ', 5);
+INSERT INTO tbl_country VALUES ('í”¼ì§€', 5);
 
 SELECT * FROM tbl_country;
 
--- ÆÐÅ°Áö »óÇ° Å×ÀÌºí
+-- íŒ¨í‚¤ì§€ ìƒí’ˆ í…Œì´ë¸”
 CREATE SEQUENCE pro_seq;
 
 CREATE TABLE tbl_product(p_code NUMBER NOT NULL PRIMARY KEY
@@ -125,545 +125,545 @@ CREATE TABLE tbl_product(p_code NUMBER NOT NULL PRIMARY KEY
         
                      
 
--- ?? ÀÏº»
+-- ?? ì¼ë³¸
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÀÏº»] ÀüÅë ¹®È­ Å½¹æ 6ÀÏ', 
-        '±³Åä¡¤³ª¶ó¡¤¿À»çÄ« Áß½ÉÀ¸·Î ÀÏº»ÀÇ ÀüÅë¹®È­¿Í °ÇÃà, »çÂûÀ» ´À³¢´Â Ç³¼ºÇÑ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'ÀÏº»', 3200000,
+        '[ì¼ë³¸] ì „í†µ ë¬¸í™” íƒë°© 6ì¼', 
+        'êµí† Â·ë‚˜ë¼Â·ì˜¤ì‚¬ì¹´ ì¤‘ì‹¬ìœ¼ë¡œ ì¼ë³¸ì˜ ì „í†µë¬¸í™”ì™€ ê±´ì¶•, ì‚¬ì°°ì„ ëŠë¼ëŠ” í’ì„±í•œ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì¼ë³¸', 3200000,
         TO_DATE('2025-08-10','YYYY-MM-DD'), TO_DATE('2025-08-15','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÀÏº»] ÈªÄ«ÀÌµµ ¿ÂÃµ Èú¸µ 5ÀÏ', 
-        '»ñÆ÷·Î¡¤³ëº¸¸®º£Ã÷ ¿ÂÃµ¿¡¼­ ´À±ßÇÑ ÈÞ½Ä°ú ÀÚ¿¬ ¼Ó Èú¸µÀ» Áñ±â´Â ¿Ïº®ÇÑ ÄÚ½ºÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ÀÏº»', 3400000,
+        '[ì¼ë³¸] í™‹ì¹´ì´ë„ ì˜¨ì²œ ížë§ 5ì¼', 
+        'ì‚¿í¬ë¡œÂ·ë…¸ë³´ë¦¬ë² ì¸  ì˜¨ì²œì—ì„œ ëŠê¸‹í•œ íœ´ì‹ê³¼ ìžì—° ì† ížë§ì„ ì¦ê¸°ëŠ” ì™„ë²½í•œ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì¼ë³¸', 3400000,
         TO_DATE('2025-09-01','YYYY-MM-DD'), TO_DATE('2025-09-05','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÀÏº»] µµÄì¡¤ÈÄÁö»ê Å½Çè 7ÀÏ', 
-        'µµÄìÀÇ µµ½É°ú ÈÄÁö»ê µî¹Ý, ½ÃÁî¿ÀÄ« ³ìÂ÷¹ç±îÁö ¸¸³ª´Â ¾×Æ¼ºê ¿©ÇàÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÀÏº»', 3600000,
+        '[ì¼ë³¸] ë„ì¿„Â·í›„ì§€ì‚° íƒí—˜ 7ì¼', 
+        'ë„ì¿„ì˜ ë„ì‹¬ê³¼ í›„ì§€ì‚° ë“±ë°˜, ì‹œì¦ˆì˜¤ì¹´ ë…¹ì°¨ë°­ê¹Œì§€ ë§Œë‚˜ëŠ” ì•¡í‹°ë¸Œ ì—¬í–‰ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì¼ë³¸', 3600000,
         TO_DATE('2025-09-10','YYYY-MM-DD'), TO_DATE('2025-09-16','YYYY-MM-DD'),
         12, 1);
 
--- ?? Áß±¹
+-- ?? ì¤‘êµ­
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Áß±¹] ºÏ°æ È²±Ã£¦¸¸¸®Àå¼º 6ÀÏ', 
-        'ÀÚ±Ý¼º Áß½ÉÀÇ ¹®È­Å½¹æ°ú ¸¸¸®Àå¼º ÁÖ¿ä ±¸¿ª Æ®·¹Å· Æ÷ÇÔ ÀüÀÏÁ¤ ÁøÇà.',
-        '¹®È­', 'Áß±¹', 3100000,
+        '[ì¤‘êµ­] ë¶ê²½ í™©ê¶ï¼†ë§Œë¦¬ìž¥ì„± 6ì¼', 
+        'ìžê¸ˆì„± ì¤‘ì‹¬ì˜ ë¬¸í™”íƒë°©ê³¼ ë§Œë¦¬ìž¥ì„± ì£¼ìš” êµ¬ì—­ íŠ¸ë ˆí‚¹ í¬í•¨ ì „ì¼ì • ì§„í–‰.',
+        'ë¬¸í™”', 'ì¤‘êµ­', 3100000,
         TO_DATE('2025-09-10','YYYY-MM-DD'), TO_DATE('2025-09-15','YYYY-MM-DD'),
         15, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Áß±¹] »óÇÏÀÌ¡¤ÀúÀå¼º Èú¸µ 5ÀÏ', 
-        '»óÇÏÀÌ ¸ð´øÅ¸¿î Ã¼Çè ¹× ÀúÀå¼º °íÁî³ËÇÑ ¸¶À»¿¡¼­ ¿©À¯·Î¿î Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'Áß±¹', 2950000,
+        '[ì¤‘êµ­] ìƒí•˜ì´Â·ì €ìž¥ì„± ížë§ 5ì¼', 
+        'ìƒí•˜ì´ ëª¨ë˜íƒ€ìš´ ì²´í—˜ ë° ì €ìž¥ì„± ê³ ì¦ˆë„‰í•œ ë§ˆì„ì—ì„œ ì—¬ìœ ë¡œìš´ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì¤‘êµ­', 2950000,
         TO_DATE('2025-10-01','YYYY-MM-DD'), TO_DATE('2025-10-05','YYYY-MM-DD'),
         15, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Áß±¹] ¾²ÃÓ ÆÇ´Ù Å½Çè 7ÀÏ', 
-        'Ã»µÎ ±¹¸³ º¸È£±¸¿ª ÆÇ´Ù °üÂû°ú »çÃµ ÀüÅëÀ½½Ä Ã¼Çè, Àý°æ Æ®·¹Å· Æ÷ÇÔ ÄÚ½ºÀÔ´Ï´Ù.',
-        'Å½Çè', 'Áß±¹', 3300000,
+        '[ì¤‘êµ­] ì“°ì´¨ íŒë‹¤ íƒí—˜ 7ì¼', 
+        'ì²­ë‘ êµ­ë¦½ ë³´í˜¸êµ¬ì—­ íŒë‹¤ ê´€ì°°ê³¼ ì‚¬ì²œ ì „í†µìŒì‹ ì²´í—˜, ì ˆê²½ íŠ¸ë ˆí‚¹ í¬í•¨ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì¤‘êµ­', 3300000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-16','YYYY-MM-DD'),
         15, 1);
 
--- ?? ÅÂ±¹
+-- ?? íƒœêµ­
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÅÂ±¹] ¹æÄÛ ¹®È­À¯»ê°ú »ç¿ø 5ÀÏ', 
-        '¿Õ±Ã¡¤¿¡¸Þ¶öµå»ç¿ø¡¤´ã³Í»çµÎ¾ï ¼ö»ó½ÃÀå µî ÅÂ±¹ ¹®È­ÀÇ Á¤¼ö¸¦ °æÇèÇÕ´Ï´Ù.',
-        '¹®È­', 'ÅÂ±¹', 2800000,
+        '[íƒœêµ­] ë°©ì½• ë¬¸í™”ìœ ì‚°ê³¼ ì‚¬ì› 5ì¼', 
+        'ì™•ê¶Â·ì—ë©”ëž„ë“œì‚¬ì›Â·ë‹´ë„Œì‚¬ë‘ì–µ ìˆ˜ìƒì‹œìž¥ ë“± íƒœêµ­ ë¬¸í™”ì˜ ì •ìˆ˜ë¥¼ ê²½í—˜í•©ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'íƒœêµ­', 2800000,
         TO_DATE('2025-10-15','YYYY-MM-DD'), TO_DATE('2025-10-19','YYYY-MM-DD'),
         20, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÅÂ±¹] Ä¡¾Ó¸¶ÀÌ Èú¸µ,½ºÆÄ 6ÀÏ', 
-        'Ä¡¾Ó¸¶ÀÌ ÀüÅë ¸¶»çÁö¿Í ÀÚ¿¬¸² ½ºÆÄ, »ê¸²¿åÀÌ Æ÷ÇÔµÈ ÈÞ½ÄÇü ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ÅÂ±¹', 3000000,
+        '[íƒœêµ­] ì¹˜ì•™ë§ˆì´ ížë§,ìŠ¤íŒŒ 6ì¼', 
+        'ì¹˜ì•™ë§ˆì´ ì „í†µ ë§ˆì‚¬ì§€ì™€ ìžì—°ë¦¼ ìŠ¤íŒŒ, ì‚°ë¦¼ìš•ì´ í¬í•¨ëœ íœ´ì‹í˜• ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'íƒœêµ­', 3000000,
         TO_DATE('2025-11-01','YYYY-MM-DD'), TO_DATE('2025-11-06','YYYY-MM-DD'),
         20, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÅÂ±¹] ÇÇÇÇ¼¶ Å½Çè + ÇØ¾ç ¾×Æ¼ºñÆ¼ 5ÀÏ', 
-        'ÇÇÇÇ¼¶ ½º³ëÅ¬¸µ, ¹«¸ªµµ¿ø ÇØº¯ Å½¹æ, ÇØ¾ç ¾×Æ¼ºñÆ¼ Áß½ÉÀÇ Å½Çè ÄÚ½ºÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÅÂ±¹', 3150000,
+        '[íƒœêµ­] í”¼í”¼ì„¬ íƒí—˜ + í•´ì–‘ ì•¡í‹°ë¹„í‹° 5ì¼', 
+        'í”¼í”¼ì„¬ ìŠ¤ë…¸í´ë§, ë¬´ë¦‰ë„ì› í•´ë³€ íƒë°©, í•´ì–‘ ì•¡í‹°ë¹„í‹° ì¤‘ì‹¬ì˜ íƒí—˜ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'íƒœêµ­', 3150000,
         TO_DATE('2025-11-10','YYYY-MM-DD'), TO_DATE('2025-11-14','YYYY-MM-DD'),
         20, 1);
 
--- ?? º£Æ®³²
+-- ?? ë² íŠ¸ë‚¨
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[º£Æ®³²] ÇÏ³ëÀÌ À¯¼­ ±íÀº ¹®È­ 5ÀÏ', 
-        'ÇÏ³ëÀÌ ±¸½Ã°¡Áö¿Í ¹®¹¦, È£¾È³¢¿¥ È£¼ö Áß½ÉÀÇ ¹®È­ Å½¹æ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'º£Æ®³²', 2700000,
+        '[ë² íŠ¸ë‚¨] í•˜ë…¸ì´ ìœ ì„œ ê¹Šì€ ë¬¸í™” 5ì¼', 
+        'í•˜ë…¸ì´ êµ¬ì‹œê°€ì§€ì™€ ë¬¸ë¬˜, í˜¸ì•ˆë¼ì—  í˜¸ìˆ˜ ì¤‘ì‹¬ì˜ ë¬¸í™” íƒë°© ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ë² íŠ¸ë‚¨', 2700000,
         TO_DATE('2025-11-15','YYYY-MM-DD'), TO_DATE('2025-11-19','YYYY-MM-DD'),
         18, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[º£Æ®³²] ´Ù³¶ Èú¸µ ºñÄ¡ 6ÀÏ', 
-        '´Ù³¶ ÇØº¯¿¡¼­ÀÇ ÀÚÀ¯½Ã°£, ¹Ù³ªÈúÁî Èú¸µ ½ºÆÄ ÄÚ½º Æ÷ÇÔ ¿©À¯ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'º£Æ®³²', 2900000,
+        '[ë² íŠ¸ë‚¨] ë‹¤ë‚­ ížë§ ë¹„ì¹˜ 6ì¼', 
+        'ë‹¤ë‚­ í•´ë³€ì—ì„œì˜ ìžìœ ì‹œê°„, ë°”ë‚˜ížì¦ˆ ížë§ ìŠ¤íŒŒ ì½”ìŠ¤ í¬í•¨ ì—¬ìœ  ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ë² íŠ¸ë‚¨', 2900000,
         TO_DATE('2025-12-01','YYYY-MM-DD'), TO_DATE('2025-12-06','YYYY-MM-DD'),
         18, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[º£Æ®³²] »çÆÄ »ê¾Ç Æ®·¹Å· 7ÀÏ', 
-        '»çÆÄ °í»ê ¸¶À» Æ®·¹Å· ¹× ¼Ò¼ö¹ÎÁ· ¹®È­ Ã¼Çè, Àå¾öÇÑ Ç³°æÀÌ ¸Å·ÂÀÔ´Ï´Ù.',
-        'Å½Çè', 'º£Æ®³²', 3050000,
+        '[ë² íŠ¸ë‚¨] ì‚¬íŒŒ ì‚°ì•… íŠ¸ë ˆí‚¹ 7ì¼', 
+        'ì‚¬íŒŒ ê³ ì‚° ë§ˆì„ íŠ¸ë ˆí‚¹ ë° ì†Œìˆ˜ë¯¼ì¡± ë¬¸í™” ì²´í—˜, ìž¥ì—„í•œ í’ê²½ì´ ë§¤ë ¥ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ë² íŠ¸ë‚¨', 3050000,
         TO_DATE('2025-12-10','YYYY-MM-DD'), TO_DATE('2025-12-16','YYYY-MM-DD'),
         18, 1);
 
--- ?? ½Ì°¡Æ÷¸£
+-- ?? ì‹±ê°€í¬ë¥´
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[½Ì°¡Æ÷¸£] ¸¶¸®³ªº£ÀÌ¡¤¹®È­ Ã¼Çè 5ÀÏ', 
-        '¸¶¸®³ªº£ÀÌ »÷Áî¡¤Â÷ÀÌ³ªÅ¸¿î¡¤¸®Æ²ÀÎµð¾Æ Áß½É ¹®È­Åõ¾î¿Í ¾ß°æ °¨»óÀÌ Æ÷ÇÔµË´Ï´Ù.',
-        '¹®È­', '½Ì°¡Æ÷¸£', 3800000,
+        '[ì‹±ê°€í¬ë¥´] ë§ˆë¦¬ë‚˜ë² ì´Â·ë¬¸í™” ì²´í—˜ 5ì¼', 
+        'ë§ˆë¦¬ë‚˜ë² ì´ ìƒŒì¦ˆÂ·ì°¨ì´ë‚˜íƒ€ìš´Â·ë¦¬í‹€ì¸ë””ì•„ ì¤‘ì‹¬ ë¬¸í™”íˆ¬ì–´ì™€ ì•¼ê²½ ê°ìƒì´ í¬í•¨ë©ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì‹±ê°€í¬ë¥´', 3800000,
         TO_DATE('2025-12-01','YYYY-MM-DD'), TO_DATE('2025-12-05','YYYY-MM-DD'),
         8, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[½Ì°¡Æ÷¸£] ¼¾Åä»ç Èú¸µ + ¸®Á¶Æ® 6ÀÏ', 
-        '¼¾Åä»ç ¼¶¿¡¼­ÀÇ ¸®Á¶Æ® ¼÷¹Ú°ú Èú¸µ ½ºÆÄ, ÇØº¯ ¾×Æ¼ºñÆ¼ Æ÷ÇÔ ¿©À¯ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', '½Ì°¡Æ÷¸£', 4000000,
+        '[ì‹±ê°€í¬ë¥´] ì„¼í† ì‚¬ ížë§ + ë¦¬ì¡°íŠ¸ 6ì¼', 
+        'ì„¼í† ì‚¬ ì„¬ì—ì„œì˜ ë¦¬ì¡°íŠ¸ ìˆ™ë°•ê³¼ ížë§ ìŠ¤íŒŒ, í•´ë³€ ì•¡í‹°ë¹„í‹° í¬í•¨ ì—¬ìœ  ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì‹±ê°€í¬ë¥´', 4000000,
         TO_DATE('2025-12-06','YYYY-MM-DD'), TO_DATE('2025-12-11','YYYY-MM-DD'),
         8, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[½Ì°¡Æ÷¸£] °¡µç½º¡¤³ªÀÌÆ® »çÆÄ¸® Å½Çè 5ÀÏ', 
-        '°¡µç½º ¹ÙÀÌ ´õ º£ÀÌ, ³ªÀÌÆ® »çÆÄ¸®, ÁÖ·Õ»õ°ø¿ø±îÁö Æ÷ÇÔÇÏ´Â ÀÚ¿¬¡¤Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', '½Ì°¡Æ÷¸£', 4150000,
+        '[ì‹±ê°€í¬ë¥´] ê°€ë“ ìŠ¤Â·ë‚˜ì´íŠ¸ ì‚¬íŒŒë¦¬ íƒí—˜ 5ì¼', 
+        'ê°€ë“ ìŠ¤ ë°”ì´ ë” ë² ì´, ë‚˜ì´íŠ¸ ì‚¬íŒŒë¦¬, ì£¼ë¡±ìƒˆê³µì›ê¹Œì§€ í¬í•¨í•˜ëŠ” ìžì—°Â·íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì‹±ê°€í¬ë¥´', 4150000,
         TO_DATE('2025-12-11','YYYY-MM-DD'), TO_DATE('2025-12-15','YYYY-MM-DD'),
         8, 1);
 
--- ?? ¹Ì±¹
+-- ?? ë¯¸êµ­
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¹Ì±¹] ¼­ºÎ ±¹¸³°ø¿ø ·ÎµåÆ®¸³ 8ÀÏ',
-        '±×·£µåÄ³´Ï¾ð, ¿ä¼¼¹ÌÆ¼, ¼¼ÄõÀÌ¾Æ µî ¼­ºÎ ±¹¸³°ø¿ø 3´ëÀåÀ» Æ÷ÇÔÇÑ Àå´ëÇÑ ·ÎµåÆ®¸³ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', '¹Ì±¹', 12990000,
+        '[ë¯¸êµ­] ì„œë¶€ êµ­ë¦½ê³µì› ë¡œë“œíŠ¸ë¦½ 8ì¼',
+        'ê·¸ëžœë“œìºë‹ˆì–¸, ìš”ì„¸ë¯¸í‹°, ì„¸ì¿¼ì´ì•„ ë“± ì„œë¶€ êµ­ë¦½ê³µì› 3ëŒ€ìž¥ì„ í¬í•¨í•œ ìž¥ëŒ€í•œ ë¡œë“œíŠ¸ë¦½ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ë¯¸êµ­', 12990000,
         TO_DATE('2025-09-01','YYYY-MM-DD'), TO_DATE('2025-09-08','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¹Ì±¹] ´ºÀ×±Û·£µå ¹®È­¡¤¿ª»ç Åõ¾î 7ÀÏ',
-        'ÇÊ¶óµ¨ÇÇ¾Æ¡¤º¸½ºÅÏ¡¤ÇÏ¹öµå µî ¹Ì±¹ ÃÊ±â ¿ª»ç¸¦ µû¶ó°¡´Â ¹®È­À¯»ê ÄÚ½ºÀÔ´Ï´Ù.',
-        '¹®È­', '¹Ì±¹', 10990000,
+        '[ë¯¸êµ­] ë‰´ìž‰ê¸€ëžœë“œ ë¬¸í™”Â·ì—­ì‚¬ íˆ¬ì–´ 7ì¼',
+        'í•„ë¼ë¸í”¼ì•„Â·ë³´ìŠ¤í„´Â·í•˜ë²„ë“œ ë“± ë¯¸êµ­ ì´ˆê¸° ì—­ì‚¬ë¥¼ ë”°ë¼ê°€ëŠ” ë¬¸í™”ìœ ì‚° ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ë¯¸êµ­', 10990000,
         TO_DATE('2025-10-05','YYYY-MM-DD'), TO_DATE('2025-10-11','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¹Ì±¹] ÇÃ·Î¸®´Ù ÇØº¯ Èú¸µ 6ÀÏ',
-        '¸¶ÀÌ¾Ö¹Ì ÇØº¯¿¡¼­ÀÇ ½ºÆÄ¡¤¸®Á¶Æ® ÈÞ¾ç°ú ¿¡¹ö±Û·¹ÀÌÁî ±¹¸³°ø¿ø Åõ¾î¸¦ °áÇÕÇÑ Èú¸µ ÄÚ½ºÀÔ´Ï´Ù.',
-        'Èú¸µ', '¹Ì±¹', 11990000,
+        '[ë¯¸êµ­] í”Œë¡œë¦¬ë‹¤ í•´ë³€ ížë§ 6ì¼',
+        'ë§ˆì´ì• ë¯¸ í•´ë³€ì—ì„œì˜ ìŠ¤íŒŒÂ·ë¦¬ì¡°íŠ¸ íœ´ì–‘ê³¼ ì—ë²„ê¸€ë ˆì´ì¦ˆ êµ­ë¦½ê³µì› íˆ¬ì–´ë¥¼ ê²°í•©í•œ ížë§ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ë¯¸êµ­', 11990000,
         TO_DATE('2025-11-01','YYYY-MM-DD'), TO_DATE('2025-11-06','YYYY-MM-DD'),
         10, 1);
 
--- ?? Ä³³ª´Ù
+-- ?? ìºë‚˜ë‹¤
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Ä³³ª´Ù] ¹êÇÁ¡¤·¹ÀÌÅ©·çÀÌ½º Å½Çè 7ÀÏ',
-        '·ÎÅ° »ê¸ÆÀÇ ´ëÇ¥ È£¼ö ¹êÇÁ¡¤·¹ÀÌÅ©·çÀÌ½º Æ®·¹Å·°ú ¾ß»ýµ¿¹° °üÂû Æ÷ÇÔ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'Ä³³ª´Ù', 8900000,
+        '[ìºë‚˜ë‹¤] ë°´í”„Â·ë ˆì´í¬ë£¨ì´ìŠ¤ íƒí—˜ 7ì¼',
+        'ë¡œí‚¤ ì‚°ë§¥ì˜ ëŒ€í‘œ í˜¸ìˆ˜ ë°´í”„Â·ë ˆì´í¬ë£¨ì´ìŠ¤ íŠ¸ë ˆí‚¹ê³¼ ì•¼ìƒë™ë¬¼ ê´€ì°° í¬í•¨ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ìºë‚˜ë‹¤', 8900000,
         TO_DATE('2025-07-10','YYYY-MM-DD'), TO_DATE('2025-07-16','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Ä³³ª´Ù] Äùº¤¡¤¸óÆ®¸®¿Ã ¹®È­±âÇà 6ÀÏ',
-        'ÇÁ·»Ä¡ ÄõÅÍ Äùº¤°ú ¸óÆ®¸®¿Ã ±¸½Ã°¡Áö Áß½ÉÀÇ À¯·´ °¨¼º ¹®È­¿©ÇàÀÔ´Ï´Ù.',
-        '¹®È­', 'Ä³³ª´Ù', 7900000,
+        '[ìºë‚˜ë‹¤] í€˜ë²¡Â·ëª¬íŠ¸ë¦¬ì˜¬ ë¬¸í™”ê¸°í–‰ 6ì¼',
+        'í”„ë Œì¹˜ ì¿¼í„° í€˜ë²¡ê³¼ ëª¬íŠ¸ë¦¬ì˜¬ êµ¬ì‹œê°€ì§€ ì¤‘ì‹¬ì˜ ìœ ëŸ½ ê°ì„± ë¬¸í™”ì—¬í–‰ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ìºë‚˜ë‹¤', 7900000,
         TO_DATE('2025-08-05','YYYY-MM-DD'), TO_DATE('2025-08-10','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Ä³³ª´Ù] ¹êÄí¹ö Èú¸µ ¸®Á¶Æ® 5ÀÏ',
-        '¹êÄí¹ö ÀÎ±Ù ¸®Á¶Æ®¿¡¼­ÀÇ ½ºÆÄ¡¤ÀÚ¿¬ÈÞ¾ç°ú ·ÏÅ° ÆÄÅ© ´Ü±â Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'Ä³³ª´Ù', 8200000,
+        '[ìºë‚˜ë‹¤] ë°´ì¿ ë²„ ížë§ ë¦¬ì¡°íŠ¸ 5ì¼',
+        'ë°´ì¿ ë²„ ì¸ê·¼ ë¦¬ì¡°íŠ¸ì—ì„œì˜ ìŠ¤íŒŒÂ·ìžì—°íœ´ì–‘ê³¼ ë¡í‚¤ íŒŒí¬ ë‹¨ê¸° ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ìºë‚˜ë‹¤', 8200000,
         TO_DATE('2025-09-01','YYYY-MM-DD'), TO_DATE('2025-09-05','YYYY-MM-DD'),
         12, 1);
 
--- ?? ¸ß½ÃÄÚ
+-- ?? ë©•ì‹œì½”
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¸ß½ÃÄÚ] Ä­Äï ÇØº¯ Èú¸µ 6ÀÏ',
-        'Ä«¸®ºêÇØ Ä­Äï ¸®Á¶Æ®¿¡¼­ÀÇ ÈÞ¾ç°ú Åõ¸íÇÑ ¹Ù´Ù¿¡¼­ÀÇ ½º³ëÅ¬¸µ ÆÐÅ°ÁöÀÔ´Ï´Ù.',
-        'Èú¸µ', '¸ß½ÃÄÚ', 4500000,
+        '[ë©•ì‹œì½”] ì¹¸ì¿¤ í•´ë³€ ížë§ 6ì¼',
+        'ì¹´ë¦¬ë¸Œí•´ ì¹¸ì¿¤ ë¦¬ì¡°íŠ¸ì—ì„œì˜ íœ´ì–‘ê³¼ íˆ¬ëª…í•œ ë°”ë‹¤ì—ì„œì˜ ìŠ¤ë…¸í´ë§ íŒ¨í‚¤ì§€ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ë©•ì‹œì½”', 4500000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-15','YYYY-MM-DD'),
         15, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¸ß½ÃÄÚ] ¸ß½ÃÄÚ½ÃÆ¼ ¹®È­±âÇà 5ÀÏ',
-        'Å×¿ÀÆ¼¿ì¾ÆÄ­ ÇÇ¶ó¹Ìµå¡¤¼ÒÄ®·Î¡¤ÇÁ¸®´Ù Ä®·Î ¹Ú¹°°ü µî µµ½Ã ¹®È­ÄÚ½ºÀÔ´Ï´Ù.',
-        '¹®È­', '¸ß½ÃÄÚ', 4200000,
+        '[ë©•ì‹œì½”] ë©•ì‹œì½”ì‹œí‹° ë¬¸í™”ê¸°í–‰ 5ì¼',
+        'í…Œì˜¤í‹°ìš°ì•„ì¹¸ í”¼ë¼ë¯¸ë“œÂ·ì†Œì¹¼ë¡œÂ·í”„ë¦¬ë‹¤ ì¹¼ë¡œ ë°•ë¬¼ê´€ ë“± ë„ì‹œ ë¬¸í™”ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ë©•ì‹œì½”', 4200000,
         TO_DATE('2025-11-01','YYYY-MM-DD'), TO_DATE('2025-11-05','YYYY-MM-DD'),
         15, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¸ß½ÃÄÚ] À¯Ä«Åº Á¤±Û Å½Çè 7ÀÏ',
-        'Ä¡Ã¾ÀÌÆ®»ç¿Í Åø·ë °í´ë ¸¶¾ß À¯ÀûÁö Å½Çè, Á¤±Û Æ®·¹Å· ÀÏÁ¤ Æ÷ÇÔÀÔ´Ï´Ù.',
-        'Å½Çè', '¸ß½ÃÄÚ', 4800000,
+        '[ë©•ì‹œì½”] ìœ ì¹´íƒ„ ì •ê¸€ íƒí—˜ 7ì¼',
+        'ì¹˜ì²¸ì´íŠ¸ì‚¬ì™€ íˆ´ë£¸ ê³ ëŒ€ ë§ˆì•¼ ìœ ì ì§€ íƒí—˜, ì •ê¸€ íŠ¸ë ˆí‚¹ ì¼ì • í¬í•¨ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ë©•ì‹œì½”', 4800000,
         TO_DATE('2025-11-10','YYYY-MM-DD'), TO_DATE('2025-11-16','YYYY-MM-DD'),
         15, 1);
 
--- ?? ³²¾ÆÇÁ¸®Ä«°øÈ­±¹
+-- ?? ë‚¨ì•„í”„ë¦¬ì¹´ê³µí™”êµ­
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[³²¾Æ°ø] ÄÉÀÌÇÁÅ¸¿î + °¡µç·çÆ® »çÆÄ¸® 7ÀÏ',
-        'ÄÉÀÌÇÁÅ¸¿î, °¡µç·çÆ®±îÁö µå¶óÀÌºê ÈÄ, Å©·ç°Å ±¹¸³°ø¿ø ¶Ç´Â ¼¤¿Í¸® ¸®Àúºê¿¡¼­ ºò5 »çÆÄ¸®¸¦ Áñ±â´Â ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', '³²¾ÆÇÁ¸®Ä«°øÈ­±¹', 8900000,
+        '[ë‚¨ì•„ê³µ] ì¼€ì´í”„íƒ€ìš´ + ê°€ë“ ë£¨íŠ¸ ì‚¬íŒŒë¦¬ 7ì¼',
+        'ì¼€ì´í”„íƒ€ìš´, ê°€ë“ ë£¨íŠ¸ê¹Œì§€ ë“œë¼ì´ë¸Œ í›„, í¬ë£¨ê±° êµ­ë¦½ê³µì› ë˜ëŠ” ìƒ´ì™€ë¦¬ ë¦¬ì €ë¸Œì—ì„œ ë¹…5 ì‚¬íŒŒë¦¬ë¥¼ ì¦ê¸°ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ë‚¨ì•„í”„ë¦¬ì¹´ê³µí™”êµ­', 8900000,
         TO_DATE('2025-09-01','YYYY-MM-DD'), TO_DATE('2025-09-07','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[³²¾Æ°ø] ÄÉÀÌÇÁÅ¸¿î ¹®È­¡¤¿ÍÀÎ Åõ¾î 5ÀÏ',
-        'Å×ÀÌºí¸¶¿îÆ¾ ÄÉÀÌºíÄ«, ·Îº¥¼¶, ½ºÅÚ·»º¸½¬ ¿ÍÀÌ³Ê¸® Åõ¾î µîÀ» Æ÷ÇÔÇÑ ¹®È­ Èú¸µ ÄÚ½ºÀÔ´Ï´Ù.',
-        '¹®È­', '³²¾ÆÇÁ¸®Ä«°øÈ­±¹', 7200000,
+        '[ë‚¨ì•„ê³µ] ì¼€ì´í”„íƒ€ìš´ ë¬¸í™”Â·ì™€ì¸ íˆ¬ì–´ 5ì¼',
+        'í…Œì´ë¸”ë§ˆìš´í‹´ ì¼€ì´ë¸”ì¹´, ë¡œë²¤ì„¬, ìŠ¤í…”ë Œë³´ì‰¬ ì™€ì´ë„ˆë¦¬ íˆ¬ì–´ ë“±ì„ í¬í•¨í•œ ë¬¸í™” ížë§ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ë‚¨ì•„í”„ë¦¬ì¹´ê³µí™”êµ­', 7200000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-15','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[³²¾Æ°ø] ÇÊ¶ó³×Áî¹ö±× »çÆÄ¸® ¸®Á¶Æ® Èú¸µ 6ÀÏ',
-        '¿äÇÏ³×½º¹ö±× ÀÎ±Ù ¸»¶ó¸®¾Æ ÇÁ¸® »çÆÄ¸® ¸®Á¶Æ®¿¡¼­ ºò5 °ü¶÷°ú ¸®Á¶Æ® ÈÞ¾çÀ» °áÇÕÇÑ Èú¸µ ÆÐÅ°ÁöÀÔ´Ï´Ù.',
-        'Èú¸µ', '³²¾ÆÇÁ¸®Ä«°øÈ­±¹', 8000000,
+        '[ë‚¨ì•„ê³µ] í•„ë¼ë„¤ì¦ˆë²„ê·¸ ì‚¬íŒŒë¦¬ ë¦¬ì¡°íŠ¸ ížë§ 6ì¼',
+        'ìš”í•˜ë„¤ìŠ¤ë²„ê·¸ ì¸ê·¼ ë§ë¼ë¦¬ì•„ í”„ë¦¬ ì‚¬íŒŒë¦¬ ë¦¬ì¡°íŠ¸ì—ì„œ ë¹…5 ê´€ëžŒê³¼ ë¦¬ì¡°íŠ¸ íœ´ì–‘ì„ ê²°í•©í•œ ížë§ íŒ¨í‚¤ì§€ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ë‚¨ì•„í”„ë¦¬ì¹´ê³µí™”êµ­', 8000000,
         TO_DATE('2025-11-05','YYYY-MM-DD'), TO_DATE('2025-11-10','YYYY-MM-DD'),
         10, 1);
 
--- ?? ÀÌÁýÆ®
+-- ?? ì´ì§‘íŠ¸
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÀÌÁýÆ®] Ä«ÀÌ·Î + ±âÀÚ ÇÇ¶ó¹Ìµå Åõ¾î 5ÀÏ',
-        'Ä«ÀÌ·Î ¹ÙÀÚ¸£, ÀÌ½½¶÷ Áö±¸ Å½¹æ ÈÄ ±âÀÚ ÇÇ¶ó¹Ìµå¿Í ½ºÇÎÅ©½º »óÂ¡ ¹æ¹® ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'ÀÌÁýÆ®', 4800000,
+        '[ì´ì§‘íŠ¸] ì¹´ì´ë¡œ + ê¸°ìž í”¼ë¼ë¯¸ë“œ íˆ¬ì–´ 5ì¼',
+        'ì¹´ì´ë¡œ ë°”ìžë¥´, ì´ìŠ¬ëžŒ ì§€êµ¬ íƒë°© í›„ ê¸°ìž í”¼ë¼ë¯¸ë“œì™€ ìŠ¤í•‘í¬ìŠ¤ ìƒì§• ë°©ë¬¸ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì´ì§‘íŠ¸', 4800000,
         TO_DATE('2025-09-15','YYYY-MM-DD'), TO_DATE('2025-09-19','YYYY-MM-DD'),
         15, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÀÌÁýÆ®] ³ªÀÏ°­ Å©·çÁî Èú¸µ 7ÀÏ',
-        '·è¼Ò¸£¡¤¾Æ½º¿Ï ±¸°£ÀÇ ³ªÀÏ°­ Å©·çÁî °´½Ç¿¡¼­ ½ºÆÄ¡¤Àü¸Á°ú ÇÔ²² ÀÏÁ¤À» Áñ±â´Â Èú¸µ ¿©ÇàÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ÀÌÁýÆ®', 6200000,
+        '[ì´ì§‘íŠ¸] ë‚˜ì¼ê°• í¬ë£¨ì¦ˆ ížë§ 7ì¼',
+        'ë£©ì†Œë¥´Â·ì•„ìŠ¤ì™„ êµ¬ê°„ì˜ ë‚˜ì¼ê°• í¬ë£¨ì¦ˆ ê°ì‹¤ì—ì„œ ìŠ¤íŒŒÂ·ì „ë§ê³¼ í•¨ê»˜ ì¼ì •ì„ ì¦ê¸°ëŠ” ížë§ ì—¬í–‰ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì´ì§‘íŠ¸', 6200000,
         TO_DATE('2025-10-01','YYYY-MM-DD'), TO_DATE('2025-10-07','YYYY-MM-DD'),
         15, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÀÌÁýÆ®] ¾ÆºÎ½Éº§¡¤µ¥ÀúÆ® »çÆÄ¸® Å½Çè 6ÀÏ',
-        '¾ÆºÎ½Éº§ »ç¿ø ¹æ¹®, »ç¸· »çÆÄ¸® Ä·ÇÎ + º° °üÂû Æ÷ÇÔ °­·ÄÇÑ Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÀÌÁýÆ®', 5300000,
+        '[ì´ì§‘íŠ¸] ì•„ë¶€ì‹¬ë²¨Â·ë°ì €íŠ¸ ì‚¬íŒŒë¦¬ íƒí—˜ 6ì¼',
+        'ì•„ë¶€ì‹¬ë²¨ ì‚¬ì› ë°©ë¬¸, ì‚¬ë§‰ ì‚¬íŒŒë¦¬ ìº í•‘ + ë³„ ê´€ì°° í¬í•¨ ê°•ë ¬í•œ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì´ì§‘íŠ¸', 5300000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-15','YYYY-MM-DD'),
         15, 1);
 
--- ?? ¸ð·ÎÄÚ
+-- ?? ëª¨ë¡œì½”
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¸ð·ÎÄÚ] ¸¶¶óÄÉ½Ã¡¤»çÇÏ¶ó »ç¸· Åõ¾î 7ÀÏ',
-        '¸¶¶óÄÉ½Ã ½ÃÀå, ¸Þµð³ª Å½¹æ ÈÄ »çÇÏ¶ó »ç¸· Ä·ÇÎ°ú ³«Å¸ Ã¼ÇèÀ» Áñ±â´Â ¹®È­+Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', '¸ð·ÎÄÚ', 5600000,
+        '[ëª¨ë¡œì½”] ë§ˆë¼ì¼€ì‹œÂ·ì‚¬í•˜ë¼ ì‚¬ë§‰ íˆ¬ì–´ 7ì¼',
+        'ë§ˆë¼ì¼€ì‹œ ì‹œìž¥, ë©”ë””ë‚˜ íƒë°© í›„ ì‚¬í•˜ë¼ ì‚¬ë§‰ ìº í•‘ê³¼ ë‚™íƒ€ ì²´í—˜ì„ ì¦ê¸°ëŠ” ë¬¸í™”+íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ëª¨ë¡œì½”', 5600000,
         TO_DATE('2025-09-20','YYYY-MM-DD'), TO_DATE('2025-09-26','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¸ð·ÎÄÚ] ÆäÁî¡¤½¦ÇÁ»þ¿ì¿£ ¹®È­±âÇà 6ÀÏ',
-        '°í´ë µµ½Ã ÆäÁî¿Í ¡®Çª¸¥ µµ½Ã¡¯ ½¦ÇÁ»þ¿ì¿£ Å½¹æ, ÀüÅë °ø¿¹¡¤À½½Ä Ã¼Çè ÄÚ½ºÀÔ´Ï´Ù.',
-        '¹®È­', '¸ð·ÎÄÚ', 5200000,
+        '[ëª¨ë¡œì½”] íŽ˜ì¦ˆÂ·ì‰í”„ìƒ¤ìš°ì—” ë¬¸í™”ê¸°í–‰ 6ì¼',
+        'ê³ ëŒ€ ë„ì‹œ íŽ˜ì¦ˆì™€ â€˜í‘¸ë¥¸ ë„ì‹œâ€™ ì‰í”„ìƒ¤ìš°ì—” íƒë°©, ì „í†µ ê³µì˜ˆÂ·ìŒì‹ ì²´í—˜ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ëª¨ë¡œì½”', 5200000,
         TO_DATE('2025-10-05','YYYY-MM-DD'), TO_DATE('2025-10-10','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¸ð·ÎÄÚ] ¾ÆÆ²¶ó½º »ê¸Æ Èú¸µ ¸®Æ®¸®Æ® 6ÀÏ',
-        '¾ÆÆ²¶ó½º »ê¸Æ ¸®Á¶Æ® ¼÷¹Ú, ÇÏÀÌÅ·°ú º£¸£º£¸£ ¸¶À» ¹®È­±³·ù Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', '¸ð·ÎÄÚ', 5400000,
+        '[ëª¨ë¡œì½”] ì•„í‹€ë¼ìŠ¤ ì‚°ë§¥ ížë§ ë¦¬íŠ¸ë¦¬íŠ¸ 6ì¼',
+        'ì•„í‹€ë¼ìŠ¤ ì‚°ë§¥ ë¦¬ì¡°íŠ¸ ìˆ™ë°•, í•˜ì´í‚¹ê³¼ ë² ë¥´ë² ë¥´ ë§ˆì„ ë¬¸í™”êµë¥˜ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ëª¨ë¡œì½”', 5400000,
         TO_DATE('2025-10-12','YYYY-MM-DD'), TO_DATE('2025-10-17','YYYY-MM-DD'),
         12, 1);
 
--- ?? ÄÉ³Ä
+-- ?? ì¼€ëƒ
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÄÉ³Ä] ¸¶»çÀÌ¸¶¶ó ºò5 »çÆÄ¸® 7ÀÏ',
-        '¼¼·À°ÔÆ¼ ¿¬·Ê ´ëÀÌµ¿ÀÌ °¡´ÉÇÑ ¸¶»çÀÌ¸¶¶ó ±¹¸³°ø¿ø¿¡¼­ ºò5 Æ÷ÇÔ »çÆÄ¸® Áß½É Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÄÉ³Ä', 7800000,
+        '[ì¼€ëƒ] ë§ˆì‚¬ì´ë§ˆë¼ ë¹…5 ì‚¬íŒŒë¦¬ 7ì¼',
+        'ì„¸ë ê²Œí‹° ì—°ë¡€ ëŒ€ì´ë™ì´ ê°€ëŠ¥í•œ ë§ˆì‚¬ì´ë§ˆë¼ êµ­ë¦½ê³µì›ì—ì„œ ë¹…5 í¬í•¨ ì‚¬íŒŒë¦¬ ì¤‘ì‹¬ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì¼€ëƒ', 7800000,
         TO_DATE('2025-11-01','YYYY-MM-DD'), TO_DATE('2025-11-07','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÄÉ³Ä] ³ªÀÌ·Îºñ ¹®È­¡¤º¸Àü Ã¼Çè 5ÀÏ',
-        '³ªÀÌ·Îºñ ±¹¸³°ø¿ø, ¿ÀÇÂ ½ÃÀå¡¤ÇöÁö º¸È£±¸¿ª ¹æ¹® µî ¹®È­¿Í º¸Àü °æÇè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'ÄÉ³Ä', 6500000,
+        '[ì¼€ëƒ] ë‚˜ì´ë¡œë¹„ ë¬¸í™”Â·ë³´ì „ ì²´í—˜ 5ì¼',
+        'ë‚˜ì´ë¡œë¹„ êµ­ë¦½ê³µì›, ì˜¤í”ˆ ì‹œìž¥Â·í˜„ì§€ ë³´í˜¸êµ¬ì—­ ë°©ë¬¸ ë“± ë¬¸í™”ì™€ ë³´ì „ ê²½í—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì¼€ëƒ', 6500000,
         TO_DATE('2025-11-15','YYYY-MM-DD'), TO_DATE('2025-11-19','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÄÉ³Ä] ÇØ¾È ¸®Á¶Æ® Èú¸µ 6ÀÏ',
-        '¸ó¹ß·ç ÇØ¾È°¡ ¸®Á¶Æ®¿¡¼­ÀÇ ÈÞ¾ç°ú ½º³ëÅ¬¸µ, ÇöÁö ¹®È­ Ã¼Çè Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ÄÉ³Ä', 7000000,
+        '[ì¼€ëƒ] í•´ì•ˆ ë¦¬ì¡°íŠ¸ ížë§ 6ì¼',
+        'ëª¬ë°œë£¨ í•´ì•ˆê°€ ë¦¬ì¡°íŠ¸ì—ì„œì˜ íœ´ì–‘ê³¼ ìŠ¤ë…¸í´ë§, í˜„ì§€ ë¬¸í™” ì²´í—˜ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì¼€ëƒ', 7000000,
         TO_DATE('2025-12-01','YYYY-MM-DD'), TO_DATE('2025-12-06','YYYY-MM-DD'),
         10, 1);
 
--- ?? ÅºÀÚ´Ï¾Æ
+-- ?? íƒ„ìžë‹ˆì•„
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÅºÀÚ´Ï¾Æ] Å³¸®¸¸ÀÚ·Î µî¹Ý Å½Çè 9ÀÏ',
-        '¾ÆÇÁ¸®Ä« ÃÖ°íºÀ Å³¸®¸¸ÀÚ·Î Á¤»ó µîÁ¤, »çÆÄ¸® Æ÷ÇÔ Á¤Åë Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÅºÀÚ´Ï¾Æ', 9900000,
+        '[íƒ„ìžë‹ˆì•„] í‚¬ë¦¬ë§Œìžë¡œ ë“±ë°˜ íƒí—˜ 9ì¼',
+        'ì•„í”„ë¦¬ì¹´ ìµœê³ ë´‰ í‚¬ë¦¬ë§Œìžë¡œ ì •ìƒ ë“±ì •, ì‚¬íŒŒë¦¬ í¬í•¨ ì •í†µ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'íƒ„ìžë‹ˆì•„', 9900000,
         TO_DATE('2025-12-01','YYYY-MM-DD'), TO_DATE('2025-12-09','YYYY-MM-DD'),
         8, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÅºÀÚ´Ï¾Æ] ¼¼·À°ÔÆ¼ + ÀÀ°í·Õ°í·Î »çÆÄ¸® 8ÀÏ',
-        '¼¼·À°ÔÆ¼ Æò¿ø°ú ÀÀ°í·Õ°í·Î ºÐÈ­±¸¿¡¼­ÀÇ ºò5 °üÂû ¹× »çÁø ÃÔ¿µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÅºÀÚ´Ï¾Æ', 9200000,
+        '[íƒ„ìžë‹ˆì•„] ì„¸ë ê²Œí‹° + ì‘ê³ ë¡±ê³ ë¡œ ì‚¬íŒŒë¦¬ 8ì¼',
+        'ì„¸ë ê²Œí‹° í‰ì›ê³¼ ì‘ê³ ë¡±ê³ ë¡œ ë¶„í™”êµ¬ì—ì„œì˜ ë¹…5 ê´€ì°° ë° ì‚¬ì§„ ì´¬ì˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'íƒ„ìžë‹ˆì•„', 9200000,
         TO_DATE('2025-12-10','YYYY-MM-DD'), TO_DATE('2025-12-17','YYYY-MM-DD'),
         8, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÅºÀÚ´Ï¾Æ] ÀÜÁö¹Ù¸£ ÇØº¯ Èú¸µ 6ÀÏ',
-        'ÀÜÁö¹Ù¸£ ¼¶ ¸®Á¶Æ®¿¡¼­ÀÇ ÇØº¯ ÈÞ¾ç, ½ºÆÄ¿Í ÇØ¾ç ¾×Æ¼ºñÆ¼ Áß½É ÇØº¯ Èú¸µ ÄÚ½ºÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ÅºÀÚ´Ï¾Æ', 8000000,
+        '[íƒ„ìžë‹ˆì•„] ìž”ì§€ë°”ë¥´ í•´ë³€ ížë§ 6ì¼',
+        'ìž”ì§€ë°”ë¥´ ì„¬ ë¦¬ì¡°íŠ¸ì—ì„œì˜ í•´ë³€ íœ´ì–‘, ìŠ¤íŒŒì™€ í•´ì–‘ ì•¡í‹°ë¹„í‹° ì¤‘ì‹¬ í•´ë³€ ížë§ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ížë§', 'íƒ„ìžë‹ˆì•„', 8000000,
         TO_DATE('2025-12-18','YYYY-MM-DD'), TO_DATE('2025-12-23','YYYY-MM-DD'),
         8, 1);
 
--- ?? ºê¶óÁú
+-- ?? ë¸Œë¼ì§ˆ
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ºê¶óÁú] ¸®¿ì¡¤ÀÌÆÄ³×¸¶ ÇØº¯ Èú¸µ 6ÀÏ',
-        'ÄÚÆÄÄ«¹Ù³ª¡¤ÀÌÆÄ³×¸¶ ÇØº¯¿¡¼­ÀÇ ÇÑÀûÇÑ ÈÞ½Ä°ú º¸»ç³ë¹Ù À½¾Ç, ½ºÆÄ Ã¼Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ºê¶óÁú', 5500000,
+        '[ë¸Œë¼ì§ˆ] ë¦¬ìš°Â·ì´íŒŒë„¤ë§ˆ í•´ë³€ ížë§ 6ì¼',
+        'ì½”íŒŒì¹´ë°”ë‚˜Â·ì´íŒŒë„¤ë§ˆ í•´ë³€ì—ì„œì˜ í•œì í•œ íœ´ì‹ê³¼ ë³´ì‚¬ë…¸ë°” ìŒì•…, ìŠ¤íŒŒ ì²´í—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ë¸Œë¼ì§ˆ', 5500000,
         TO_DATE('2025-09-01','YYYY-MM-DD'), TO_DATE('2025-09-06','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ºê¶óÁú] ÀÌ°ú¼ö ÆøÆ÷ + ÆÄ¶ó³ª ¹®È­Å½Çè 5ÀÏ',
-        'ÀÌ°ú¼ö ¾çÂÊ ±¹¸³°ø¿ø Åõ¾î + ÆÄ¶ó³ªÁÖ ÀüÅë¸¶À»°ú °ÔÀÌ»þ Àü¸Á´ë ¹æ¹® ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'ºê¶óÁú', 6300000,
+        '[ë¸Œë¼ì§ˆ] ì´ê³¼ìˆ˜ í­í¬ + íŒŒë¼ë‚˜ ë¬¸í™”íƒí—˜ 5ì¼',
+        'ì´ê³¼ìˆ˜ ì–‘ìª½ êµ­ë¦½ê³µì› íˆ¬ì–´ + íŒŒë¼ë‚˜ì£¼ ì „í†µë§ˆì„ê³¼ ê²Œì´ìƒ¤ ì „ë§ëŒ€ ë°©ë¬¸ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ë¸Œë¼ì§ˆ', 6300000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-15','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ºê¶óÁú] ÆÇÅ¸³¯ ¾ß»ýµ¿¹° Å½Çè 7ÀÏ',
-        '¼¼°è ÃÖ´ë ½ÀÁö ÆÇÅ¸³¯¿¡¼­ Àç±Ô¾î¡¤Ä«ÇÇ¹Ù¶ó¡¤»õ °üÂû Æ÷ÇÔÇÑ ¾×Æ¼ºê »çÆÄ¸® ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'ºê¶óÁú', 7000000,
+        '[ë¸Œë¼ì§ˆ] íŒíƒ€ë‚  ì•¼ìƒë™ë¬¼ íƒí—˜ 7ì¼',
+        'ì„¸ê³„ ìµœëŒ€ ìŠµì§€ íŒíƒ€ë‚ ì—ì„œ ìž¬ê·œì–´Â·ì¹´í”¼ë°”ë¼Â·ìƒˆ ê´€ì°° í¬í•¨í•œ ì•¡í‹°ë¸Œ ì‚¬íŒŒë¦¬ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ë¸Œë¼ì§ˆ', 7000000,
         TO_DATE('2025-11-05','YYYY-MM-DD'), TO_DATE('2025-11-11','YYYY-MM-DD'),
         12, 1);
 
--- ?? ¾Æ¸£ÇîÆ¼³ª
+-- ?? ì•„ë¥´í—¨í‹°ë‚˜
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¾Æ¸£ÇîÆ¼³ª] ºÎ¿¡³ë½º¾ÆÀÌ·¹½º ÅÊ°í ¹®È­ 5ÀÏ',
-        'ÅÊ°í °ø¿¬°ú Å¬·¡½º¸¦ Æ÷ÇÔÇÑ ºÎ¿¡³ë½º¾ÆÀÌ·¹½º µµ½Ã¹®È­ ÁýÁß ÄÚ½ºÀÔ´Ï´Ù.',
-        '¹®È­', '¾Æ¸£ÇîÆ¼³ª', 4900000,
+        '[ì•„ë¥´í—¨í‹°ë‚˜] ë¶€ì—ë…¸ìŠ¤ì•„ì´ë ˆìŠ¤ íƒ±ê³  ë¬¸í™” 5ì¼',
+        'íƒ±ê³  ê³µì—°ê³¼ í´ëž˜ìŠ¤ë¥¼ í¬í•¨í•œ ë¶€ì—ë…¸ìŠ¤ì•„ì´ë ˆìŠ¤ ë„ì‹œë¬¸í™” ì§‘ì¤‘ ì½”ìŠ¤ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì•„ë¥´í—¨í‹°ë‚˜', 4900000,
         TO_DATE('2025-09-15','YYYY-MM-DD'), TO_DATE('2025-09-19','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¾Æ¸£ÇîÆ¼³ª] Æä¸®Åä¸ð·¹³ë¡¤ºùÇÏ Å½Çè 6ÀÏ',
-        '¿¤Ä®¶óÆÄÅ× Áß½ÉÀ¸·Î Æä¸®Åä ¸ð·¹³ë ºùÇÏ º¸Æ® Å©·çÁî + ¾ÆÀÌ½º Æ®·¹Å· Æ÷ÇÔ Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', '¾Æ¸£ÇîÆ¼³ª', 7200000,
+        '[ì•„ë¥´í—¨í‹°ë‚˜] íŽ˜ë¦¬í† ëª¨ë ˆë…¸Â·ë¹™í•˜ íƒí—˜ 6ì¼',
+        'ì—˜ì¹¼ë¼íŒŒí…Œ ì¤‘ì‹¬ìœ¼ë¡œ íŽ˜ë¦¬í†  ëª¨ë ˆë…¸ ë¹™í•˜ ë³´íŠ¸ í¬ë£¨ì¦ˆ + ì•„ì´ìŠ¤ íŠ¸ë ˆí‚¹ í¬í•¨ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì•„ë¥´í—¨í‹°ë‚˜', 7200000,
         TO_DATE('2025-10-01','YYYY-MM-DD'), TO_DATE('2025-10-06','YYYY-MM-DD'),
         10, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[¾Æ¸£ÇîÆ¼³ª] ¸àµµ»ç ¿ÍÀÎ Èú¸µ 5ÀÏ',
-        '¾Èµ¥½º »ê¸Æ ¾Æ·¡ ¿ÍÀÌ³Ê¸® Åõ¾î¿Í ¸»º¤ ¿ÍÀÎ Å×ÀÌ½ºÆÃ, ¸®Á¶Æ® Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', '¾Æ¸£ÇîÆ¼³ª', 6500000,
+        '[ì•„ë¥´í—¨í‹°ë‚˜] ë©˜ë„ì‚¬ ì™€ì¸ ížë§ 5ì¼',
+        'ì•ˆë°ìŠ¤ ì‚°ë§¥ ì•„ëž˜ ì™€ì´ë„ˆë¦¬ íˆ¬ì–´ì™€ ë§ë²¡ ì™€ì¸ í…Œì´ìŠ¤íŒ…, ë¦¬ì¡°íŠ¸ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì•„ë¥´í—¨í‹°ë‚˜', 6500000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-14','YYYY-MM-DD'),
         10, 1);
 
--- ?? Æä·ç
+-- ?? íŽ˜ë£¨
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Æä·ç] Äí½ºÄÚ¡¤¸¶ÃßÇÈÃß ¹®È­Å½Çè 6ÀÏ',
-        'Äí½ºÄÚ À¯Àû+¼º¹ë¸® Åõ¾î¿Í ÀüÅë Á÷Á¶ Ã¼Çè ¹× ¸¶ÃßÇÈÃß ÀüÀÏ °¡ÀÌµå ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'Æä·ç', 5400000,
+        '[íŽ˜ë£¨] ì¿ ìŠ¤ì½”Â·ë§ˆì¶”í”½ì¶” ë¬¸í™”íƒí—˜ 6ì¼',
+        'ì¿ ìŠ¤ì½” ìœ ì +ì„±ë°¸ë¦¬ íˆ¬ì–´ì™€ ì „í†µ ì§ì¡° ì²´í—˜ ë° ë§ˆì¶”í”½ì¶” ì „ì¼ ê°€ì´ë“œ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'íŽ˜ë£¨', 5400000,
         TO_DATE('2025-09-05','YYYY-MM-DD'), TO_DATE('2025-09-10','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Æä·ç] ³ª½ºÄ«¡¤Æ¼Æ¼Ä«Ä«¡¤È£¼ö Èú¸µ 7ÀÏ',
-        '³ª½ºÄ« ¶óÀÎ ºñÇà ÈÄ Æ¼Æ¼Ä«Ä« È£¼ö À¯¶÷°ú È£¼ö À§ ¸®Á¶Æ® Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'Æä·ç', 5800000,
+        '[íŽ˜ë£¨] ë‚˜ìŠ¤ì¹´Â·í‹°í‹°ì¹´ì¹´Â·í˜¸ìˆ˜ ížë§ 7ì¼',
+        'ë‚˜ìŠ¤ì¹´ ë¼ì¸ ë¹„í–‰ í›„ í‹°í‹°ì¹´ì¹´ í˜¸ìˆ˜ ìœ ëžŒê³¼ í˜¸ìˆ˜ ìœ„ ë¦¬ì¡°íŠ¸ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'íŽ˜ë£¨', 5800000,
         TO_DATE('2025-10-01','YYYY-MM-DD'), TO_DATE('2025-10-07','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Æä·ç] ¾Èµ¥½º °í»ê Æ®·¹Å· Å½Çè 8ÀÏ',
-        'ÇÁ·¹Áî³ë Æ®·¹Å· ·çÆ® + ¾Èµ¥½º °í»ê¼÷¹Ú, ¾îµåº¥Ã³ Áß½É ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'Æä·ç', 6200000,
+        '[íŽ˜ë£¨] ì•ˆë°ìŠ¤ ê³ ì‚° íŠ¸ë ˆí‚¹ íƒí—˜ 8ì¼',
+        'í”„ë ˆì¦ˆë…¸ íŠ¸ë ˆí‚¹ ë£¨íŠ¸ + ì•ˆë°ìŠ¤ ê³ ì‚°ìˆ™ë°•, ì–´ë“œë²¤ì²˜ ì¤‘ì‹¬ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'íŽ˜ë£¨', 6200000,
         TO_DATE('2025-10-15','YYYY-MM-DD'), TO_DATE('2025-10-22','YYYY-MM-DD'),
         12, 1);
 
--- ?? Ä¥·¹
+-- ?? ì¹ ë ˆ
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Ä¥·¹] »êÆ¼¾Æ°í¡¤¹ßÆÄ¶óÀÌ¼Ò ¹®È­ Åõ¾î 5ÀÏ',
-        '»êÆ¼¾Æ°í ½Ã³» + À¯³×½ºÄÚ ÁöÁ¤ ¹ßÆÄ¶óÀÌ¼Ò ¿¹¼ú¸¶À» Å½¹æ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'Ä¥·¹', 5200000,
+        '[ì¹ ë ˆ] ì‚°í‹°ì•„ê³ Â·ë°œíŒŒë¼ì´ì†Œ ë¬¸í™” íˆ¬ì–´ 5ì¼',
+        'ì‚°í‹°ì•„ê³  ì‹œë‚´ + ìœ ë„¤ìŠ¤ì½” ì§€ì • ë°œíŒŒë¼ì´ì†Œ ì˜ˆìˆ ë§ˆì„ íƒë°© ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì¹ ë ˆ', 5200000,
         TO_DATE('2025-09-20','YYYY-MM-DD'), TO_DATE('2025-09-24','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Ä¥·¹] ÆÄÅ¸°í´Ï¾Æ Åä·¹½ºµ¨ÆÄÀÌ³× Å½Çè 7ÀÏ',
-        'Åä·¹½º µ¨ ÆÄÀÌ³× ±¹¸³°ø¿ø Æ®·¹Å·°ú ¾ÆÀÌ½ºÇÊµå(Æä¸®Åä ¸ð·¹³ë) ´çÀÏÅõ¾î Æ÷ÇÔ Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'Ä¥·¹', 8000000,
+        '[ì¹ ë ˆ] íŒŒíƒ€ê³ ë‹ˆì•„ í† ë ˆìŠ¤ë¸íŒŒì´ë„¤ íƒí—˜ 7ì¼',
+        'í† ë ˆìŠ¤ ë¸ íŒŒì´ë„¤ êµ­ë¦½ê³µì› íŠ¸ë ˆí‚¹ê³¼ ì•„ì´ìŠ¤í•„ë“œ(íŽ˜ë¦¬í†  ëª¨ë ˆë…¸) ë‹¹ì¼íˆ¬ì–´ í¬í•¨ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì¹ ë ˆ', 8000000,
         TO_DATE('2025-10-05','YYYY-MM-DD'), TO_DATE('2025-10-11','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[Ä¥·¹] ¹ßµðºñ¾Æ ¿ÍÀÎ + ÈÞ¾ç Èú¸µ 6ÀÏ',
-        '¹ßµðºñ¾Æ ÀÎ±Ù ¿ÍÀÌ³Ê¸® Åõ¾î + ÇØº¯ ¸®Á¶Æ® ÈÞ¾ç ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'Ä¥·¹', 6100000,
+        '[ì¹ ë ˆ] ë°œë””ë¹„ì•„ ì™€ì¸ + íœ´ì–‘ ížë§ 6ì¼',
+        'ë°œë””ë¹„ì•„ ì¸ê·¼ ì™€ì´ë„ˆë¦¬ íˆ¬ì–´ + í•´ë³€ ë¦¬ì¡°íŠ¸ íœ´ì–‘ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì¹ ë ˆ', 6100000,
         TO_DATE('2025-10-12','YYYY-MM-DD'), TO_DATE('2025-10-17','YYYY-MM-DD'),
         12, 1);
 
--- ?? ÄÝ·Òºñ¾Æ
+-- ?? ì½œë¡¬ë¹„ì•„
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÄÝ·Òºñ¾Æ] º¸°íÅ¸¡¤Ä«¸£Å¸Çì³ª ¹®È­¿©Çà 6ÀÏ',
-        'º¸°íÅ¸ ½Ã³» À¯Àû, °ñ¸ñ ¿¹¼ú Åõ¾î ÈÄ Ä«¸£Å¸Çì³ª ¿ÃµåÅ¸¿î ¹®È­ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'ÄÝ·Òºñ¾Æ', 4800000,
+        '[ì½œë¡¬ë¹„ì•„] ë³´ê³ íƒ€Â·ì¹´ë¥´íƒ€í—¤ë‚˜ ë¬¸í™”ì—¬í–‰ 6ì¼',
+        'ë³´ê³ íƒ€ ì‹œë‚´ ìœ ì , ê³¨ëª© ì˜ˆìˆ  íˆ¬ì–´ í›„ ì¹´ë¥´íƒ€í—¤ë‚˜ ì˜¬ë“œíƒ€ìš´ ë¬¸í™” ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'ì½œë¡¬ë¹„ì•„', 4800000,
         TO_DATE('2025-09-10','YYYY-MM-DD'), TO_DATE('2025-09-15','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÄÝ·Òºñ¾Æ] ÄÚ½ºÅ¸¸®Ä« Ä¿ÇÇ³óÀå Èú¸µ 5ÀÏ',
-        'ÄÝ·Òºñ¾Æ °íÁö´ë Ä¿ÇÇ³óÀå ¹æ¹® ¹× ¼÷¹Ú, ÀüÅë Ä¿ÇÇÃ¼Çè°ú »êÃÌ Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'ÄÝ·Òºñ¾Æ', 5100000,
+        '[ì½œë¡¬ë¹„ì•„] ì½”ìŠ¤íƒ€ë¦¬ì¹´ ì»¤í”¼ë†ìž¥ ížë§ 5ì¼',
+        'ì½œë¡¬ë¹„ì•„ ê³ ì§€ëŒ€ ì»¤í”¼ë†ìž¥ ë°©ë¬¸ ë° ìˆ™ë°•, ì „í†µ ì»¤í”¼ì²´í—˜ê³¼ ì‚°ì´Œ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'ì½œë¡¬ë¹„ì•„', 5100000,
         TO_DATE('2025-10-01','YYYY-MM-DD'), TO_DATE('2025-10-05','YYYY-MM-DD'),
         12, 1);
 
 INSERT INTO tbl_product(p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
 VALUES (pro_seq.nextval, 1,
-        '[ÄÝ·Òºñ¾Æ] Å¸ÀÌ·Î³ª ±¹¸³°ø¿ø Å½Çè 6ÀÏ',
-        'Ä«¸®ºêÇØ ÄÚ½ºÅ¸ Å¸ÀÌ·Î³ª ±¹¸³°ø¿ø Æ®·¹Å·+ÇØº¯ Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'ÄÝ·Òºñ¾Æ', 5600000,
+        '[ì½œë¡¬ë¹„ì•„] íƒ€ì´ë¡œë‚˜ êµ­ë¦½ê³µì› íƒí—˜ 6ì¼',
+        'ì¹´ë¦¬ë¸Œí•´ ì½”ìŠ¤íƒ€ íƒ€ì´ë¡œë‚˜ êµ­ë¦½ê³µì› íŠ¸ë ˆí‚¹+í•´ë³€ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'ì½œë¡¬ë¹„ì•„', 5600000,
         TO_DATE('2025-10-10','YYYY-MM-DD'), TO_DATE('2025-10-15','YYYY-MM-DD'),
         12, 1);
 
 
--- ÇÁ¶û½º ¿©Çà »óÇ° µî·Ï
+-- í”„ëž‘ìŠ¤ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÇÁ¶û½º] ÆÄ¸® ¹®È­ Å½¹æ 5ÀÏ', '·çºê¸£ ¹Ú¹°°ü, ¿¡ÆçÅ¾ µî ÆÄ¸®ÀÇ ´ëÇ¥ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', 'ÇÁ¶û½º', 2500000, TO_DATE('2025-08-01', 'YYYY-MM-DD'), TO_DATE('2025-08-05', 'YYYY-MM-DD'), 15, 1);
+VALUES (pro_seq.nextval, 1, '[í”„ëž‘ìŠ¤] íŒŒë¦¬ ë¬¸í™” íƒë°© 5ì¼', 'ë£¨ë¸Œë¥´ ë°•ë¬¼ê´€, ì—íŽ íƒ‘ ë“± íŒŒë¦¬ì˜ ëŒ€í‘œ ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'í”„ëž‘ìŠ¤', 2500000, TO_DATE('2025-08-01', 'YYYY-MM-DD'), TO_DATE('2025-08-05', 'YYYY-MM-DD'), 15, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÇÁ¶û½º] ÇÁ·Î¹æ½º ¿ÍÀÎ Åõ¾î 6ÀÏ', 'ÇÁ·Î¹æ½º Áö¿ªÀÇ ¿ÍÀÌ³Ê¸® Åõ¾î¿Í ¹Ì½Ä ¿©ÇàÀ» Áñ±â´Â ÄÚ½ºÀÔ´Ï´Ù.', '¹Ì½Ä', 'ÇÁ¶û½º', 3200000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-15', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[í”„ëž‘ìŠ¤] í”„ë¡œë°©ìŠ¤ ì™€ì¸ íˆ¬ì–´ 6ì¼', 'í”„ë¡œë°©ìŠ¤ ì§€ì—­ì˜ ì™€ì´ë„ˆë¦¬ íˆ¬ì–´ì™€ ë¯¸ì‹ ì—¬í–‰ì„ ì¦ê¸°ëŠ” ì½”ìŠ¤ìž…ë‹ˆë‹¤.', 'ë¯¸ì‹', 'í”„ëž‘ìŠ¤', 3200000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-15', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÇÁ¶û½º] ´Ï½º ÇØº¯ ÈÞ¾ç 4ÀÏ', '´Ï½ºÀÇ ¾Æ¸§´Ù¿î ÇØº¯¿¡¼­ ¿©À¯·Î¿î ÈÞ½ÄÀ» Áñ±â´Â ÀÏÁ¤ÀÔ´Ï´Ù.', 'ÈÞ¾ç', 'ÇÁ¶û½º', 2800000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-23', 'YYYY-MM-DD'), 10, 1);
+VALUES (pro_seq.nextval, 1, '[í”„ëž‘ìŠ¤] ë‹ˆìŠ¤ í•´ë³€ íœ´ì–‘ 4ì¼', 'ë‹ˆìŠ¤ì˜ ì•„ë¦„ë‹¤ìš´ í•´ë³€ì—ì„œ ì—¬ìœ ë¡œìš´ íœ´ì‹ì„ ì¦ê¸°ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'íœ´ì–‘', 'í”„ëž‘ìŠ¤', 2800000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-23', 'YYYY-MM-DD'), 10, 1);
 
--- ÀÌÅ»¸®¾Æ ¿©Çà »óÇ° µî·Ï
+-- ì´íƒˆë¦¬ì•„ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÀÌÅ»¸®¾Æ] ·Î¸¶ ¿ª»ç Å½¹æ 5ÀÏ', 'ÄÝ·Î¼¼¿ò, ¹ÙÆ¼Ä­ ½Ã±¹ µî ·Î¸¶ÀÇ ¿ª»çÀûÀÎ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', 'ÀÌÅ»¸®¾Æ', 2700000, TO_DATE('2025-08-05', 'YYYY-MM-DD'), TO_DATE('2025-08-09', 'YYYY-MM-DD'), 15, 1);
-
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÀÌÅ»¸®¾Æ] º£³×Ä¡¾Æ ¼ö»ó ¿©Çà 4ÀÏ', 'º£³×Ä¡¾ÆÀÇ ¿îÇÏ¸¦ µû¶ó °ïµ¹¶ó¸¦ Å¸°í ¿©ÇàÇÏ´Â ÄÚ½ºÀÔ´Ï´Ù.', 'Èú¸µ', 'ÀÌÅ»¸®¾Æ', 3000000, TO_DATE('2025-08-12', 'YYYY-MM-DD'), TO_DATE('2025-08-15', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ì´íƒˆë¦¬ì•„] ë¡œë§ˆ ì—­ì‚¬ íƒë°© 5ì¼', 'ì½œë¡œì„¸ì›€, ë°”í‹°ì¹¸ ì‹œêµ­ ë“± ë¡œë§ˆì˜ ì—­ì‚¬ì ì¸ ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ì´íƒˆë¦¬ì•„', 2700000, TO_DATE('2025-08-05', 'YYYY-MM-DD'), TO_DATE('2025-08-09', 'YYYY-MM-DD'), 15, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÀÌÅ»¸®¾Æ] ÇÇ·»Ã¼ ¹Ì¼ú Å½¹æ 5ÀÏ', '¿ìÇÇÄ¡ ¹Ì¼ú°ü µî ÇÇ·»Ã¼ÀÇ ¹Ì¼ú ÀÛÇ°À» °¨»óÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', 'ÀÌÅ»¸®¾Æ', 2900000, TO_DATE('2025-08-17', 'YYYY-MM-DD'), TO_DATE('2025-08-21', 'YYYY-MM-DD'), 10, 1);
-
--- ½ºÆäÀÎ ¿©Çà »óÇ° µî·Ï
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[½ºÆäÀÎ] ¹Ù¸£¼¿·Î³ª ¹®È­ Å½¹æ 5ÀÏ', '»ç±×¶ó´Ù ÆÄ¹Ð¸®¾Æ ¼º´ç µî ¹Ù¸£¼¿·Î³ªÀÇ ¹®È­ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', '½ºÆäÀÎ', 2600000, TO_DATE('2025-08-08', 'YYYY-MM-DD'), TO_DATE('2025-08-12', 'YYYY-MM-DD'), 15, 1);
+VALUES (pro_seq.nextval, 1, '[ì´íƒˆë¦¬ì•„] ë² ë„¤ì¹˜ì•„ ìˆ˜ìƒ ì—¬í–‰ 4ì¼', 'ë² ë„¤ì¹˜ì•„ì˜ ìš´í•˜ë¥¼ ë”°ë¼ ê³¤ëŒë¼ë¥¼ íƒ€ê³  ì—¬í–‰í•˜ëŠ” ì½”ìŠ¤ìž…ë‹ˆë‹¤.', 'ížë§', 'ì´íƒˆë¦¬ì•„', 3000000, TO_DATE('2025-08-12', 'YYYY-MM-DD'), TO_DATE('2025-08-15', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[½ºÆäÀÎ] ¸¶µå¸®µå ¿ª»ç Å½¹æ 4ÀÏ', 'ÇÁ¶óµµ ¹Ì¼ú°ü µî ¸¶µå¸®µåÀÇ ¿ª»çÀûÀÎ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÄÚ½ºÀÔ´Ï´Ù.', '¹®È­', '½ºÆäÀÎ', 2500000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-23', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ì´íƒˆë¦¬ì•„] í”¼ë Œì²´ ë¯¸ìˆ  íƒë°© 5ì¼', 'ìš°í”¼ì¹˜ ë¯¸ìˆ ê´€ ë“± í”¼ë Œì²´ì˜ ë¯¸ìˆ  ìž‘í’ˆì„ ê°ìƒí•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ì´íƒˆë¦¬ì•„', 2900000, TO_DATE('2025-08-17', 'YYYY-MM-DD'), TO_DATE('2025-08-21', 'YYYY-MM-DD'), 10, 1);
+
+-- ìŠ¤íŽ˜ì¸ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[ìŠ¤íŽ˜ì¸] ë°”ë¥´ì…€ë¡œë‚˜ ë¬¸í™” íƒë°© 5ì¼', 'ì‚¬ê·¸ë¼ë‹¤ íŒŒë°€ë¦¬ì•„ ì„±ë‹¹ ë“± ë°”ë¥´ì…€ë¡œë‚˜ì˜ ë¬¸í™” ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ìŠ¤íŽ˜ì¸', 2600000, TO_DATE('2025-08-08', 'YYYY-MM-DD'), TO_DATE('2025-08-12', 'YYYY-MM-DD'), 15, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[½ºÆäÀÎ] ¹ß·»½Ã¾Æ ÇØº¯ ÈÞ¾ç 5ÀÏ', '¹ß·»½Ã¾ÆÀÇ ÇØº¯¿¡¼­ ¿©À¯·Î¿î ÈÞ½ÄÀ» Áñ±â´Â ÀÏÁ¤ÀÔ´Ï´Ù.', 'ÈÞ¾ç', '½ºÆäÀÎ', 2800000, TO_DATE('2025-08-25', 'YYYY-MM-DD'), TO_DATE('2025-08-29', 'YYYY-MM-DD'), 10, 1);
-
--- ¿µ±¹ ¿©Çà »óÇ° µî·Ï
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[¿µ±¹] ·±´ø ¿ª»ç Å½¹æ 5ÀÏ', '¹öÅ·¾ö ±ÃÀü, ´ë¿µ ¹Ú¹°°ü µî ·±´øÀÇ ¿ª»çÀûÀÎ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', '¿µ±¹', 2700000, TO_DATE('2025-08-03', 'YYYY-MM-DD'), TO_DATE('2025-08-07', 'YYYY-MM-DD'), 15, 1);
+VALUES (pro_seq.nextval, 1, '[ìŠ¤íŽ˜ì¸] ë§ˆë“œë¦¬ë“œ ì—­ì‚¬ íƒë°© 4ì¼', 'í”„ë¼ë„ ë¯¸ìˆ ê´€ ë“± ë§ˆë“œë¦¬ë“œì˜ ì—­ì‚¬ì ì¸ ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì½”ìŠ¤ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ìŠ¤íŽ˜ì¸', 2500000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-23', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[¿µ±¹] ¿¡µç¹ö·¯ ¹®È­ Å½¹æ 4ÀÏ', '¿¡µç¹ö·¯ ¼º, ¿Õ½Ç º¸¼® µî ¿¡µç¹ö·¯ÀÇ ¹®È­ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÄÚ½ºÀÔ´Ï´Ù.', '¹®È­', '¿µ±¹', 2500000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-13', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ìŠ¤íŽ˜ì¸] ë°œë Œì‹œì•„ í•´ë³€ íœ´ì–‘ 5ì¼', 'ë°œë Œì‹œì•„ì˜ í•´ë³€ì—ì„œ ì—¬ìœ ë¡œìš´ íœ´ì‹ì„ ì¦ê¸°ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'íœ´ì–‘', 'ìŠ¤íŽ˜ì¸', 2800000, TO_DATE('2025-08-25', 'YYYY-MM-DD'), TO_DATE('2025-08-29', 'YYYY-MM-DD'), 10, 1);
+
+-- ì˜êµ­ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[ì˜êµ­] ëŸ°ë˜ ì—­ì‚¬ íƒë°© 5ì¼', 'ë²„í‚¹ì—„ ê¶ì „, ëŒ€ì˜ ë°•ë¬¼ê´€ ë“± ëŸ°ë˜ì˜ ì—­ì‚¬ì ì¸ ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ì˜êµ­', 2700000, TO_DATE('2025-08-03', 'YYYY-MM-DD'), TO_DATE('2025-08-07', 'YYYY-MM-DD'), 15, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[¿µ±¹] ¿Á½ºÆÛµå ´ëÇÐ Å½¹æ 5ÀÏ', '¿Á½ºÆÛµå ´ëÇÐÀÇ ¿ª»çÀûÀÎ °ÇÃà¹°°ú Ä·ÆÛ½º¸¦ Å½¹æÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', '¿µ±¹', 2900000, TO_DATE('2025-08-15', 'YYYY-MM-DD'), TO_DATE('2025-08-19', 'YYYY-MM-DD'), 10, 1);
-
--- ½ºÀ§½º ¿©Çà »óÇ° µî·Ï
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[½ºÀ§½º] ÀÎÅÍ¶óÄË ÀÚ¿¬ Å½¹æ 5ÀÏ', 'À¶ÇÁ¶ó¿ì µî ¾ËÇÁ½º »ê¸ÆÀÇ ÀÚ¿¬À» Å½¹æÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', 'Å½Çè', '½ºÀ§½º', 3100000, TO_DATE('2025-08-05', 'YYYY-MM-DD'), TO_DATE('2025-08-09', 'YYYY-MM-DD'), 15, 1);
+VALUES (pro_seq.nextval, 1, '[ì˜êµ­] ì—ë“ ë²„ëŸ¬ ë¬¸í™” íƒë°© 4ì¼', 'ì—ë“ ë²„ëŸ¬ ì„±, ì™•ì‹¤ ë³´ì„ ë“± ì—ë“ ë²„ëŸ¬ì˜ ë¬¸í™” ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì½”ìŠ¤ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ì˜êµ­', 2500000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-13', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[½ºÀ§½º] Ãë¸®È÷ ¹®È­ Å½¹æ 4ÀÏ', 'Ãë¸®È÷ ¹Ì¼ú°ü, ±¸½Ã°¡Áö µî Ãë¸®È÷ÀÇ ¹®È­ ¸í¼Ò¸¦ Å½¹æÇÏ´Â ÄÚ½ºÀÔ´Ï´Ù.', '¹®È­', '½ºÀ§½º', 2800000, TO_DATE('2025-08-12', 'YYYY-MM-DD'), TO_DATE('2025-08-15', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ì˜êµ­] ì˜¥ìŠ¤í¼ë“œ ëŒ€í•™ íƒë°© 5ì¼', 'ì˜¥ìŠ¤í¼ë“œ ëŒ€í•™ì˜ ì—­ì‚¬ì ì¸ ê±´ì¶•ë¬¼ê³¼ ìº í¼ìŠ¤ë¥¼ íƒë°©í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ì˜êµ­', 2900000, TO_DATE('2025-08-15', 'YYYY-MM-DD'), TO_DATE('2025-08-19', 'YYYY-MM-DD'), 10, 1);
+
+-- ìŠ¤ìœ„ìŠ¤ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[ìŠ¤ìœ„ìŠ¤] ì¸í„°ë¼ì¼„ ìžì—° íƒë°© 5ì¼', 'ìœµí”„ë¼ìš° ë“± ì•Œí”„ìŠ¤ ì‚°ë§¥ì˜ ìžì—°ì„ íƒë°©í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'íƒí—˜', 'ìŠ¤ìœ„ìŠ¤', 3100000, TO_DATE('2025-08-05', 'YYYY-MM-DD'), TO_DATE('2025-08-09', 'YYYY-MM-DD'), 15, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[½ºÀ§½º] ·çÃ¼¸¥ È£¼ö ÈÞ¾ç 5ÀÏ', '·çÃ¼¸¥ È£¼ö¿¡¼­ÀÇ ¿©À¯·Î¿î ÈÞ½ÄÀ» Áñ±â´Â ÀÏÁ¤ÀÔ´Ï´Ù.', 'ÈÞ¾ç', '½ºÀ§½º', 3000000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-24', 'YYYY-MM-DD'), 10, 1);
-
--- È£ÁÖ ¿©Çà »óÇ° µî·Ï (Èú¸µ Å×¸¶)
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[È£ÁÖ] ±×·¹ÀÌÆ® ¿À¼Ç ·Îµå µå¶óÀÌºê + ÇØº¯ ÈÞ¾ç 5ÀÏ',
-        'ºòÅä¸®¾ÆÁÖÀÇ ±×·¹ÀÌÆ® ¿À¼Ç ·Îµå¸¦ µû¶ó ÆîÃÄÁö´Â µå¶óÀÌºê ÄÚ½º¿Í ÇÔ²², ·ÎÅ© ¾Æµå ÇØº¯¿¡¼­ÀÇ ¿©À¯·Î¿î ÈÞ½Ä°ú ½ºÆÄ¸¦ Áñ±â´Â ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Èú¸µ', 'È£ÁÖ', 3200000, TO_DATE('2025-08-01', 'YYYY-MM-DD'), TO_DATE('2025-08-05', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ìŠ¤ìœ„ìŠ¤] ì·¨ë¦¬ížˆ ë¬¸í™” íƒë°© 4ì¼', 'ì·¨ë¦¬ížˆ ë¯¸ìˆ ê´€, êµ¬ì‹œê°€ì§€ ë“± ì·¨ë¦¬ížˆì˜ ë¬¸í™” ëª…ì†Œë¥¼ íƒë°©í•˜ëŠ” ì½”ìŠ¤ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ìŠ¤ìœ„ìŠ¤', 2800000, TO_DATE('2025-08-12', 'YYYY-MM-DD'), TO_DATE('2025-08-15', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[È£ÁÖ] ½Ãµå´Ï ¹®È­ Å½¹æ + ¿øÁÖ¹Î Ã¼Çè 4ÀÏ',
-        '½Ãµå´ÏÀÇ ¿ÀÆä¶ó ÇÏ¿ì½º, ÇÏ¹ö ºê¸®Áö µî ´ëÇ¥ÀûÀÎ ¹®È­ À¯»êÀ» Å½¹æÇÏ°í, ¿øÁÖ¹Î ¹®È­ Ã¼Çè°ú ÀüÅë ¿¹¼ú °ø¿¬À» Áñ±â´Â ÀÏÁ¤ÀÔ´Ï´Ù.',
-        '¹®È­', 'È£ÁÖ', 2800000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-13', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ìŠ¤ìœ„ìŠ¤] ë£¨ì²´ë¥¸ í˜¸ìˆ˜ íœ´ì–‘ 5ì¼', 'ë£¨ì²´ë¥¸ í˜¸ìˆ˜ì—ì„œì˜ ì—¬ìœ ë¡œìš´ íœ´ì‹ì„ ì¦ê¸°ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'íœ´ì–‘', 'ìŠ¤ìœ„ìŠ¤', 3000000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-24', 'YYYY-MM-DD'), 10, 1);
+
+-- í˜¸ì£¼ ì—¬í–‰ ìƒí’ˆ ë“±ë¡ (ížë§ í…Œë§ˆ)
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[í˜¸ì£¼] ê·¸ë ˆì´íŠ¸ ì˜¤ì…˜ ë¡œë“œ ë“œë¼ì´ë¸Œ + í•´ë³€ íœ´ì–‘ 5ì¼',
+        'ë¹…í† ë¦¬ì•„ì£¼ì˜ ê·¸ë ˆì´íŠ¸ ì˜¤ì…˜ ë¡œë“œë¥¼ ë”°ë¼ íŽ¼ì³ì§€ëŠ” ë“œë¼ì´ë¸Œ ì½”ìŠ¤ì™€ í•¨ê»˜, ë¡œí¬ ì•„ë“œ í•´ë³€ì—ì„œì˜ ì—¬ìœ ë¡œìš´ íœ´ì‹ê³¼ ìŠ¤íŒŒë¥¼ ì¦ê¸°ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ížë§', 'í˜¸ì£¼', 3200000, TO_DATE('2025-08-01', 'YYYY-MM-DD'), TO_DATE('2025-08-05', 'YYYY-MM-DD'), 12, 1);
+
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[í˜¸ì£¼] ì‹œë“œë‹ˆ ë¬¸í™” íƒë°© + ì›ì£¼ë¯¼ ì²´í—˜ 4ì¼',
+        'ì‹œë“œë‹ˆì˜ ì˜¤íŽ˜ë¼ í•˜ìš°ìŠ¤, í•˜ë²„ ë¸Œë¦¬ì§€ ë“± ëŒ€í‘œì ì¸ ë¬¸í™” ìœ ì‚°ì„ íƒë°©í•˜ê³ , ì›ì£¼ë¯¼ ë¬¸í™” ì²´í—˜ê³¼ ì „í†µ ì˜ˆìˆ  ê³µì—°ì„ ì¦ê¸°ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.',
+        'ë¬¸í™”', 'í˜¸ì£¼', 2800000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-13', 'YYYY-MM-DD'), 12, 1);
         
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[È£ÁÖ] ºí·ç ¸¶¿îÆ¾ ÇÏÀÌÅ· + ÀÚ¿¬ Å½Çè 6ÀÏ',
-        'ºí·ç ¸¶¿îÆ¾ ±¹¸³°ø¿øÀÇ ´Ù¾çÇÑ ÇÏÀÌÅ· ÄÚ½º¸¦ µû¶ó °¡ÀÌµå¿Í ÇÔ²² ÀÚ¿¬À» Å½ÇèÇÏ°í, ¾ß»ý µ¿¹° °üÂû ¹× Ä·ÇÎÀ» °æÇèÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.',
-        'Å½Çè', 'È£ÁÖ', 3500000, TO_DATE('2025-08-15', 'YYYY-MM-DD'), TO_DATE('2025-08-20', 'YYYY-MM-DD'), 10, 1);
+VALUES (pro_seq.nextval, 1, '[í˜¸ì£¼] ë¸”ë£¨ ë§ˆìš´í‹´ í•˜ì´í‚¹ + ìžì—° íƒí—˜ 6ì¼',
+        'ë¸”ë£¨ ë§ˆìš´í‹´ êµ­ë¦½ê³µì›ì˜ ë‹¤ì–‘í•œ í•˜ì´í‚¹ ì½”ìŠ¤ë¥¼ ë”°ë¼ ê°€ì´ë“œì™€ í•¨ê»˜ ìžì—°ì„ íƒí—˜í•˜ê³ , ì•¼ìƒ ë™ë¬¼ ê´€ì°° ë° ìº í•‘ì„ ê²½í—˜í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.',
+        'íƒí—˜', 'í˜¸ì£¼', 3500000, TO_DATE('2025-08-15', 'YYYY-MM-DD'), TO_DATE('2025-08-20', 'YYYY-MM-DD'), 10, 1);
         
--- ´ºÁú·£µå ¿©Çà »óÇ° µî·Ï
+-- ë‰´ì§ˆëžœë“œ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[´ºÁú·£µå] ·ÎÅä·ç¾Æ ¿ÂÃµ Èú¸µ 5ÀÏ', '·ÎÅä·ç¾ÆÀÇ Áö¿­ ¿ÂÃµ¿¡¼­ ÈÞ½ÄÀ» ÃëÇÏ¸ç Rongo? ÀüÅë Ä¡À¯¸¦ Ã¼ÇèÇÏ´Â ÀÏÁ¤ÀÔ´Ï´Ù.', 'Èú¸µ', '´ºÁú·£µå', 2800000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-14', 'YYYY-MM-DD'), 12, 1);
-
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[´ºÁú·£µå] ¸¶¿À¸® ¹®È­ Å½¹æ 4ÀÏ', '·ÎÅä·ç¾Æ¿¡¼­ ¸¶¿À¸® ÀüÅë ¸¶¶ó¿¡ ¹æ¹®°ú ÇÏÄ« °ø¿¬À» Æ÷ÇÔÇÑ ¹®È­ Ã¼Çè ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', '´ºÁú·£µå', 2600000, TO_DATE('2025-08-15', 'YYYY-MM-DD'), TO_DATE('2025-08-18', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ë‰´ì§ˆëžœë“œ] ë¡œí† ë£¨ì•„ ì˜¨ì²œ ížë§ 5ì¼', 'ë¡œí† ë£¨ì•„ì˜ ì§€ì—´ ì˜¨ì²œì—ì„œ íœ´ì‹ì„ ì·¨í•˜ë©° Rongo? ì „í†µ ì¹˜ìœ ë¥¼ ì²´í—˜í•˜ëŠ” ì¼ì •ìž…ë‹ˆë‹¤.', 'ížë§', 'ë‰´ì§ˆëžœë“œ', 2800000, TO_DATE('2025-08-10', 'YYYY-MM-DD'), TO_DATE('2025-08-14', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[´ºÁú·£µå] Åë°¡¸®·Î ¾ËÆÄÀÎ Å©·Î½Ì Å½Çè 5ÀÏ', '¼¼°èÀûÀÎ ÇÏÀÌÅ· ÄÚ½ºÀÎ Åë°¡¸®·Î ¾ËÆÄÀÎ Å©·Î½ÌÀ» Æ÷ÇÔÇÑ ÀÚ¿¬ Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.', 'Å½Çè', '´ºÁú·£µå', 3000000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-24', 'YYYY-MM-DD'), 10, 1);
-
--- ÇÇÁö ¿©Çà »óÇ° µî·Ï
-INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÇÇÁö] ·Îºó½¼ Å©·ç¼Ò ¼¶ Èú¸µ 4ÀÏ', '·Îºó½¼ Å©·ç¼Ò ¼¶¿¡¼­ ½º³ëÅ¬¸µ, ½ºÆÄ, ÀüÅë ¸¶À» ¹æ¹®À» Æ÷ÇÔÇÑ Èú¸µ ÀÏÁ¤ÀÔ´Ï´Ù.', 'Èú¸µ', 'ÇÇÁö', 2700000, TO_DATE('2025-08-05', 'YYYY-MM-DD'), TO_DATE('2025-08-08', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ë‰´ì§ˆëžœë“œ] ë§ˆì˜¤ë¦¬ ë¬¸í™” íƒë°© 4ì¼', 'ë¡œí† ë£¨ì•„ì—ì„œ ë§ˆì˜¤ë¦¬ ì „í†µ ë§ˆë¼ì— ë°©ë¬¸ê³¼ í•˜ì¹´ ê³µì—°ì„ í¬í•¨í•œ ë¬¸í™” ì²´í—˜ ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'ë‰´ì§ˆëžœë“œ', 2600000, TO_DATE('2025-08-15', 'YYYY-MM-DD'), TO_DATE('2025-08-18', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÇÇÁö] ÀüÅë ¸¶À» ¹®È­ Å½¹æ 3ÀÏ', 'ÇÇÁö ÀüÅë ¸¶À»¿¡¼­ Kava ÀÇ½Ä, Meke °ø¿¬, ·Îº¸ ¿ä¸® Ã¼ÇèÀ» Æ÷ÇÔÇÑ ¹®È­ ÀÏÁ¤ÀÔ´Ï´Ù.', '¹®È­', 'ÇÇÁö', 2500000, TO_DATE('2025-08-12', 'YYYY-MM-DD'), TO_DATE('2025-08-14', 'YYYY-MM-DD'), 12, 1);
+VALUES (pro_seq.nextval, 1, '[ë‰´ì§ˆëžœë“œ] í†µê°€ë¦¬ë¡œ ì•ŒíŒŒì¸ í¬ë¡œì‹± íƒí—˜ 5ì¼', 'ì„¸ê³„ì ì¸ í•˜ì´í‚¹ ì½”ìŠ¤ì¸ í†µê°€ë¦¬ë¡œ ì•ŒíŒŒì¸ í¬ë¡œì‹±ì„ í¬í•¨í•œ ìžì—° íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.', 'íƒí—˜', 'ë‰´ì§ˆëžœë“œ', 3000000, TO_DATE('2025-08-20', 'YYYY-MM-DD'), TO_DATE('2025-08-24', 'YYYY-MM-DD'), 10, 1);
+
+-- í”¼ì§€ ì—¬í–‰ ìƒí’ˆ ë“±ë¡
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[í”¼ì§€] ë¡œë¹ˆìŠ¨ í¬ë£¨ì†Œ ì„¬ ížë§ 4ì¼', 'ë¡œë¹ˆìŠ¨ í¬ë£¨ì†Œ ì„¬ì—ì„œ ìŠ¤ë…¸í´ë§, ìŠ¤íŒŒ, ì „í†µ ë§ˆì„ ë°©ë¬¸ì„ í¬í•¨í•œ ížë§ ì¼ì •ìž…ë‹ˆë‹¤.', 'ížë§', 'í”¼ì§€', 2700000, TO_DATE('2025-08-05', 'YYYY-MM-DD'), TO_DATE('2025-08-08', 'YYYY-MM-DD'), 12, 1);
 
 INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
-VALUES (pro_seq.nextval, 1, '[ÇÇÁö] ºÎÅ°´Ï ¼¶ Å½Çè 5ÀÏ', 'ÇÇÁö ºÎÅ°´Ï ¼¶¿¡¼­ Ä«¾à, ºô¸®ºô¸® ·¡ÇÁÆÃ, ÆøÆ÷ ¼ö¿µÀ» Æ÷ÇÔÇÑ Å½Çè ÀÏÁ¤ÀÔ´Ï´Ù.', 'Å½Çè', 'ÇÇÁö', 2900000, TO_DATE('2025-08-18', 'YYYY-MM-DD'), TO_DATE('2025-08-22', 'YYYY-MM-DD'), 10, 1);
+VALUES (pro_seq.nextval, 1, '[í”¼ì§€] ì „í†µ ë§ˆì„ ë¬¸í™” íƒë°© 3ì¼', 'í”¼ì§€ ì „í†µ ë§ˆì„ì—ì„œ Kava ì˜ì‹, Meke ê³µì—°, ë¡œë³´ ìš”ë¦¬ ì²´í—˜ì„ í¬í•¨í•œ ë¬¸í™” ì¼ì •ìž…ë‹ˆë‹¤.', 'ë¬¸í™”', 'í”¼ì§€', 2500000, TO_DATE('2025-08-12', 'YYYY-MM-DD'), TO_DATE('2025-08-14', 'YYYY-MM-DD'), 12, 1);
+
+INSERT INTO tbl_product (p_code, user_no, title, description, theme, country, price, start_day, end_day, max_qty, status)
+VALUES (pro_seq.nextval, 1, '[í”¼ì§€] ë¶€í‚¤ë‹ˆ ì„¬ íƒí—˜ 5ì¼', 'í”¼ì§€ ë¶€í‚¤ë‹ˆ ì„¬ì—ì„œ ì¹´ì•½, ë¹Œë¦¬ë¹Œë¦¬ ëž˜í”„íŒ…, í­í¬ ìˆ˜ì˜ì„ í¬í•¨í•œ íƒí—˜ ì¼ì •ìž…ë‹ˆë‹¤.', 'íƒí—˜', 'í”¼ì§€', 2900000, TO_DATE('2025-08-18', 'YYYY-MM-DD'), TO_DATE('2025-08-22', 'YYYY-MM-DD'), 10, 1);
 
 
--- ¿¹¾àÁ¤º¸ Å×ÀÌºí
+-- ì˜ˆì•½ì •ë³´ í…Œì´ë¸”
 CREATE SEQUENCE res_seq;
 
 CREATE TABLE tbl_reservation(r_code NUMBER NOT NULL
@@ -679,7 +679,7 @@ select * from tbl_reservation;
 
 
                          
--- Âò Å×ÀÌºí
+-- ì°œ í…Œì´ë¸”
 CREATE TABLE tbl_wish(user_no NUMBER NOT NULL
                   , p_code NUMBER NOT NULL);
                   
@@ -692,7 +692,7 @@ VALUES (1, 2);
 INSERT INTO tbl_wish
 VALUES (1, 3);
                   
--- QnA Å×ÀÌºí
+-- QnA í…Œì´ë¸”
 CREATE SEQUENCE qna_seq;
 
 CREATE TABLE tbl_qna(q_code NUMBER NOT NULL PRIMARY KEY
@@ -705,7 +705,7 @@ CREATE TABLE tbl_qna(q_code NUMBER NOT NULL PRIMARY KEY
                  , q_date DATE DEFAULT SYSDATE NOT NULL);
 
 
--- ¸®ºä Å×ÀÌºí
+-- ë¦¬ë·° í…Œì´ë¸”
 CREATE SEQUENCE rev_seq;
 CREATE TABLE tbl_review(rev_code NUMBER NOT NULL PRIMARY KEY
                     , user_no NUMBER NOT NULL
@@ -719,7 +719,7 @@ CREATE TABLE tbl_review(rev_code NUMBER NOT NULL PRIMARY KEY
 INSERT INTO tbl_review (
     rev_code, user_no, p_code, title, content, star, created_at
 ) VALUES (
-    rev_seq.NEXTVAL, 1, 2, 'ÁÁ¾Æ¿ä', 'Á¤¸» ¸¸Á·ÇØ¿ä!', 5, SYSDATE
+    rev_seq.NEXTVAL, 1, 2, 'ì¢‹ì•„ìš”', 'ì •ë§ ë§Œì¡±í•´ìš”!', 5, SYSDATE
 );
 
 
@@ -731,3 +731,11 @@ SELECT * FROM tbl_product ORDER BY p_code;
 SELECT * FROM tbl_review;
 SELECT * FROM tbl_reservation;
 SELECT * FROM tbl_wish;
+
+ALTER TABLE tbl_reservation
+ADD t_price NUMBER DEFAULT 100;
+
+ALTER TABLE tbl_reservation
+MODIFY t_price NOT NULL;
+
+commit;
