@@ -28,6 +28,7 @@
 		<put-attribute name="body" value="/WEB-INF/layout/user/body.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/layout/user/footer.jsp" />
 	</definition>
+	
 
 	<!-- ADMIN -->
 	<definition name="admin" template="/WEB-INF/layout/admin/template.jsp">
@@ -40,11 +41,6 @@
 
 	<definition name="WILDCARD:user/*" extends="user">
 		<put-attribute name="body" value="/WEB-INF/jsp/user/{1}.jsp" />
-	</definition>
-	
-	<definition name="WILDCARD:support/*" extends="user">
-		<put-attribute name="header" value="/WEB-INF/layout/user/support/header.jsp" />
-		<put-attribute name="body" value="/WEB-INF/jsp/user/support/{1}.jsp" />
 	</definition>
 
 	<definition name="WILDCARD:admin/*" extends="admin">

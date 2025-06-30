@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    background-color: #f5f5f7;
+    letter-spacing: -0.04em;
+    color: #1d1d1f;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0c5dc6;
+    color: #fff;
+    letter-spacing: -0.04em;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 36px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0a4aa1;
+}
+
+.page-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 96px auto 48px auto;
+    padding: 0 24px;
+}
+
+.sidebar {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: fixed;
+    top: 96px;
+    width: calc( (1200px - 24px * 11) / 12 * 3 + 24px * 2 );
+    left: calc( (100vw - 1200px) / 2 + 24px );
+    z-index: 100;
+}
+
+#subnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#subnav li {
+    margin-bottom: 12px;
+}
+
+#subnav a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#subnav a:hover {
+    background-color: #e0f0ff;
+    color: #0c5dc6;
+}
+
+#subnav a.active-nav-item {
+    background-color: #0c5dc6;
+    color: #fff;
+    font-weight: 700;
+}
+
+#subnav a.active-nav-item:hover {
+    background-color: #0c5dc6;
+    color: #fff;
+}
+
+.main-content {
+    grid-column: 4 / span 9;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#search {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#search:focus {
+    border-color: #0c5dc6;
+}
+
+#btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #0c5dc6;
+    color: #fff;
+    border: none;
+}
+
+#target {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#target th, #target td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#target th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+    color: #555;
+    font-size: 15px;
+}
+
+#target tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+#target td {
+    font-size: 14px;
+    color: #333;
+}
+
+#target td a {
+    color: #0c5dc6;
+    font-weight: 500;
+}
+
+#target td a:hover {
+    text-decoration: underline;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+#target td a[href="answer.do"] {
+    color: #28a745;
+    font-weight: bold;
+}
+
+#target td a[href="qnalist.do"] {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.main-content form #target {
+    margin-bottom: 20px;
+}
+
+.main-content form input[type="text"],
+.main-content form textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.main-content form input[type="text"]:focus,
+.main-content form textarea:focus {
+    border-color: #0c5dc6;
+}
+
+.main-content form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.form-actions li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.form-actions li button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.form-actions li .cancel-button {
+    background-color: #6c757d;
+}
+
+.form-actions li .cancel-button:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        position: static;
+        grid-column: span 12;
+        width: auto;
+        left: auto;
+        top: auto;
+        margin-bottom: 24px;
+    }
+
+    .main-content {
+        grid-column: span 12;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .sidebar, .main-content {
+        grid-column: 1 / -1;
+    }
+
+    .sidebar {
+        padding: 16px;
+    }
+
+    .main-content {
+        padding: 24px;
+    }
+}

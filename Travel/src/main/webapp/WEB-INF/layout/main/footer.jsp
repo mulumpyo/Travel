@@ -35,8 +35,15 @@
 	    </div>
 	</footer>
 
-    <c:if test="${isLogin == true}">
+    <c:choose>
+    <c:when  test="${isLogin == true}">
 	    <button class="logout-button" onclick="location.href='signout.do'">
 	    	<i class="fas fa-sign-out-alt"></i>
 	    </button>
-    </c:if>
+	    </c:when>
+	    <c:otherwise>
+	    	<button class="login-button" onclick="location.href='login.do'">
+	    	<i class="fas fa-lock"></i>
+	    </button>
+	    </c:otherwise>
+    </c:choose>

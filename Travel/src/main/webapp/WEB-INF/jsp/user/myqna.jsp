@@ -2,19 +2,18 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-
-  <aside>
+<div class="page-container">
+  <aside class="sidebar">
    <div id="subnav">
       <ul>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">문의하기</a></li>
-        <li><a href="#">문의목록</a></li>
+        <li><a href="faq.do">FAQ</a></li>
+        <li><a href="qna.do">1:1  문의</a></li>
+        <li><a href="qnalist.do" class="active-nav-item">문의 내역</a></li>
       </ul>
     </div>
   </aside>
 
-<main>
-
+<main class="main-content">
 	<form action="myqnaModifySuccess.do" method="post">
 	<input type="hidden" name="qCode" value="${qna.QCode }"/>
 	
@@ -32,15 +31,15 @@
 			<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy-MM-dd" /></td>
 		</tr>
 	</table>
-	<ul>
-		<li style="list-style:none;">
+	<ul class="form-actions">
+		<li>
 			<button type="submit" onclick="alert('수정되었습니다')">수정</button>
-			
-			<a href="qnalist.do"><button type="button">취소</button></a>
+			<a href="qnalist.do"><button type="button" class="cancel-button">취소</button></a>
 		</li>
 	</ul>
 </form>
 </main>
+</div>
 
 <script>
 let msg = "${param.msg}";
