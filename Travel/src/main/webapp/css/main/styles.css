@@ -719,3 +719,41 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
+
+.login-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    
+    background-color: #0c5dc6;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.login-button i {
+    font-size: 18px;
+}
+
+.login-button:hover {
+    background-color: #0c5dc6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}

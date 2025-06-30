@@ -60,14 +60,15 @@
 			        </div>
 			    </c:if>
 			</c:forEach>
-
+			<c:if test="${wishlist.size() > 3}">
         <div class="product-card product-card-more">
-            <a href="wishlist.do" class="card-link"></a>
+            <a href="wishlistpage.do" class="card-link"></a>
             <div class="more-content">
                 <i class="fas fa-plus"></i>
                 <span>더 보기</span>
             </div>
         </div>
+        </c:if>
 				
 			</div>
 		</div>

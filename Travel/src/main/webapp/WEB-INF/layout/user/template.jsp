@@ -26,6 +26,7 @@
         <link href="css/nav.css" rel="stylesheet" />
         <link href="css/footer.css" rel="stylesheet" />
         <link href="css/detailpage.css" rel="stylesheet" />
+        <link href="css/customer.css" rel="stylesheet" />
         
     </head>
     <body>
