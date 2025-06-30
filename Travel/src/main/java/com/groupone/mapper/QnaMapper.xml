@@ -25,6 +25,7 @@
 	<!-- qnaList 목록보기 -->
 	<select id="selectQnaList" resultType="Qna">
 	  select q_code as "qCode",
+	  		 user_no as "userNo",
 	  		 type,
 	         title,
 	         q_date as "qDate",

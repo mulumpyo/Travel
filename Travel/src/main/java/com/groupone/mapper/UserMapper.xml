@@ -10,6 +10,7 @@
 		WHERE user_no = #{userNo}
 	</select>
 
+
 	<select id="selectUser" resultType="User">
 		SELECT *
 		FROM tbl_user

@@ -12,28 +12,36 @@
   </div>
 </aside>
 <main>
-  <label for="select">분류</label>
-  <select id="select">
-    <option value="상품문의">상품문의</option>
-    <option value="예약문의">예약문의</option>
-    <option value="기타문의">기타문의</option>
-  </select>
-  <form>
+
+  <form action="answerSuccess.do">
+  <li>
+  	<label for="type">분류</label>
+    <input type="text" id="type" size="60" readonly value="${answer.type }">
+  </li>
+  <li>
+  	<label for="type">질문번호</label>
+    <input type="text" id="type" size="60" readonly value="${answer.type }">
+  	<label for="type">사용자</label>
+    <input type="text" id="type" size="60" readonly value="${answer.type }">
+  </li>
   <li>
   	<label for="question">질문</label>
-    <input type="question" id="question" size="60" readonly>
+    <input type="text" id="question" size="60" value="${answer.question}" readonly>
   </li>
   <li>
-  	<label for="question">답변내용</label>
-    <textarea id="question" cols="60" rows="5"></textarea>
+  	<label for="answer">답변내용</label>
+    <textarea id="text" cols="60" rows="5"></textarea>
   </li>
   <li>
-    <p>등록된 문의는 "메인>고객센터>문의내역"에서 확인할수 있습니다.</p>
+  	<label for="writer">담당자</label>
+    <input type="text">
   </li>
+  
+
   <li>
-    <button id="back"  onclick="location.href='faq.do'">취소</button>
-    <button id="insert">등록</button>
+    <button id="back"  onclick="location.href='qnalist.do'">취소</button>
+    <button type="submit" id="insert">등록</button>
   </li>
+  </form>
 </main>
 
-<script src="js/qna.js"></script>
