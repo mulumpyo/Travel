@@ -21,7 +21,7 @@
   <form>
   <li>
   	<label for="question">질문</label>
-    <input type="question" id="question" size="60" value="${ }"readonly>
+    <input type="question" id="question" size="60" readonly>
   </li>
   <li>
   	<label for="question">답변내용</label>

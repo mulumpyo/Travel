@@ -33,19 +33,7 @@ public class AnswerControl implements Control {
 		qnaList.setAnswer(answer);
 		qnaList.setADate(null);
 		
-		List<VO> list = svc.productList(search);
-		List<String> tlist = svc.themeList();
-		List<String> clist = svc.countryList();
 
-		req.setAttribute("productList", list);
-		req.setAttribute("themeList", tlist);
-		req.setAttribute("countryList", clist);
-		
-		
-		// theme, country를 parameter로 사용하기 위해서 attribute에 지정.
-		req.setAttribute("theme", theme);
-		req.setAttribute("country", country);
-		req.setAttribute("keyword", keyword);
 		
 
 	    req.getRequestDispatcher("admin/answer.tiles").forward(req, res);
