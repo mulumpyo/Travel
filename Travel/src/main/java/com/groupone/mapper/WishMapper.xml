@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.groupone.mapper.WishMapper">
+
+	<select id="selectWishList" parameterType="int" resultType="Product">
+		select *
+		from tbl_product
+		where p_code in (select p_code
+						 from tbl_wish
+						 where user_no = #{userNo})
+		and status = 1
+	</select>
+	
+	<insert id="insertWish" parameterType="Wish">
+		insert into tbl_wish
+		values(#{userNo}, #{pCode})
+	</insert>
+	
+	<delete id="deleteWish">
+		delete tbl_wish
+		where user_no = #{userNo}
+		and p_code = #{pCode}
+	</delete>
+	
+</mapper>

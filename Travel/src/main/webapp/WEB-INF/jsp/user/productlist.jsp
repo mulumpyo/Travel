@@ -90,9 +90,34 @@
                             	</div>
                             </div>
                         </a>
-                        <div class="wish-button">
-                            <i class="fas fa-heart"></i>
-                        </div>
+												<div class="wish-button-container">
+												    <c:set var="isWished" value="false" />
+												
+												    <c:forEach var="wishItem" items="${wishlist}">
+												        <c:if test="${product.PCode == wishItem.PCode}">
+												            <c:set var="isWished" value="true" />
+												        </c:if>
+												    </c:forEach>
+												
+												    <c:choose>
+												        <c:when test="${isWished}">
+
+												            <a href="removewish.do?pCode=${product.PCode}" class="wish-link">
+												                <div class="wish-button active">
+												                    <i class="fas fa-heart"></i>
+												                </div>
+												            </a>
+												        </c:when>
+												        <c:otherwise>
+												            <a href="addwish.do?pCode=${product.PCode}" class="wish-link">
+												                <div class="wish-button">
+												                    <i class="far fa-heart"></i>
+												                </div>
+												            </a>
+												        </c:otherwise>
+												    </c:choose>
+												</div>
+
                     </div>
                     </c:forEach>
                 </c:otherwise>

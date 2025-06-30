@@ -67,12 +67,6 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> getWishList(int userNo) {
-		
-		return mapper.selectWishList(userNo);
-	}
-
-	@Override
 	public List<ProductVO> newProductList() {
 		return mapper.selectNewProductList();
 	}

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.groupone.control.AdminControl;
 import com.groupone.control.ChangePwControl;
+import com.groupone.control.RemoveWishControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
 import com.groupone.control.FindPwControl;
@@ -31,6 +32,7 @@ import com.groupone.control.SignOutControl;
 import com.groupone.control.WishListPageControl;
 import com.groupone.control.userInfoModifyControl;
 import com.groupone.control.userInfoSuccessControl;
+import com.groupone.control.AddWishControl;
 import com.groupone.control.ChangeLoginPw;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
@@ -54,6 +56,8 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainControl()); // 메인페이지
 		map.put("/admin.do", new AdminControl()); // 어드민페이지
 		map.put("/signout.do", new SignOutControl()); // 로그아웃 기능
+		map.put("/addwish.do", new AddWishControl());
+		map.put("/removewish.do", new RemoveWishControl());
 		
 		
 		/* 은경 */
