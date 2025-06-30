@@ -3,6 +3,12 @@
  */
   
 let submit = "";
-
-const table = document.querySelectorAll('adminAnswer.target');
-console.log(table);
+ 
+ submit = document.querySelector('adminAnswer.answer');
+ console.log(submit);
+ 
+ submit.forEach(event => {
+	event.addEventListener('click', function(e){
+		location.href ="answer.do?"
+	})
+ })

@@ -6,8 +6,8 @@
 
 
 
-<div class="adminAnswer">
-	<table align="center" id="target">
+<div class="adminAnswer" id="adminAnswer">
+	<table align="center">
 		<thead>
 			<th style="text-align: center">순서</th>
 			<th style="text-align: center">유형</th>
@@ -24,7 +24,7 @@
 				<td>${qna.title}</td>
 				<td><fmt:formatDate value='${qna.QDate}' pattern='yyyy-MM-dd' /></td>
 				<td>${qna.status}</td>
-				<td><a href="answer.do">답변등록</a></td>
+				<td><a href="answer.do" id="answer">답변등록</a></td>
 			</tr>
 		</c:forEach>
 		</table>
