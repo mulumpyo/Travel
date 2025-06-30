@@ -29,8 +29,8 @@ public class QnaServiceImpl implements QnaService{
 	}
 
 	@Override
-	public List<QnaVO> getqna(String kw) {
-		return mapper.selectKeyword(kw);
+	public List<QnaVO> getqna(int userNo, String kw) {
+		return mapper.selectKeyword(userNo, kw);
 	}
 	
 	@Override

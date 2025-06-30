@@ -88,7 +88,7 @@ public class UserInfoControl implements Control {
 		}
 		List<UserVO> userList = userService.getUserList();
 		req.setAttribute("userList", userList);
-		req.getRequestDispatcher("admin/userList.tiles").forward(req, res);
+		req.getRequestDispatcher("user/userInfo.tiles").forward(req, res);
 	}
 	
 }}

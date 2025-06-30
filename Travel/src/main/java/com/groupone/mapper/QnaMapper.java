@@ -2,6 +2,8 @@ package com.groupone.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.groupone.vo.QnaVO;
 
 public interface QnaMapper {
@@ -12,7 +14,7 @@ public interface QnaMapper {
 	public int selectTotal();
 	public List<QnaVO> selectQnaList();
 
-	public List<QnaVO> selectKeyword(String kw);
+	public List<QnaVO> selectKeyword(@Param("userNo") int userNo, @Param("keyword") String keyword);
 	public QnaVO selectMyQna(int pCode);
 	public int updateQna(QnaVO qna);
 	

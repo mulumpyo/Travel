@@ -35,6 +35,7 @@ document.getElementById("btn").addEventListener("click", function() {
 				str += `<td><a href="myqna.do?qCode=${qna.qCode}">${qna.title}</a></td>`;
 				str += "<td>" + formattedDate + "</td>";
 				str += "<td>" + qna.status + "</td>";
+				str += `<td><button class="btn-delete" type="button">삭제</button></td>`
 				str += "</tr>";
 			}
 			

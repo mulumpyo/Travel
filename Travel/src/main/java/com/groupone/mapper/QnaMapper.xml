@@ -33,7 +33,7 @@
 	  order by q_code desc
 	</select>
 	
-	<select id="selectKeyword" parameterType="String" resultType="Qna">
+	<select id="selectKeyword" resultType="Qna">
 	  select  q_code as "qCode",
 	  		 type,
 	         title,
@@ -41,6 +41,7 @@
 	         status
 	  from tbl_qna 
 	  where title like '%'||#{keyword}||'%' 
+	  and user_no = #{userNo}
 	  order by q_code
 	</select>
 	

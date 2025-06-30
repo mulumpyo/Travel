@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,7 +27,9 @@ public class QnaControl implements Control {
 			req.getRequestDispatcher("user/qna.tiles").forward(req, resp);
 		} else if(req.getMethod().equals("POST")) {
 			
-			int userNo = 1; // 임시로 유저 고유 번호는 1
+			HttpSession session = req.getSession();
+			
+			int userNo = (int) session.getAttribute("userNo");
 			String type = req.getParameter("type");
 			String title = req.getParameter("title");
 			String question = req.getParameter("question");

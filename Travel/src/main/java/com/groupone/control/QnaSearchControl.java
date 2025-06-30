@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -20,12 +21,15 @@ public class QnaSearchControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("text/json;charset=utf-8"); // 한글 번역
 
+		HttpSession session = req.getSession();
+		
 		// 검색기능
 		String kw = req.getParameter("keyword");
+		int userNo = (int) session.getAttribute("userNo");
 		
 		// 데이터처리
 		QnaService svc = new QnaServiceImpl();
-		List<QnaVO> list = svc.getqna(kw);
+		List<QnaVO> list = svc.getqna(userNo, kw);
 		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String json = gson.toJson(list);
