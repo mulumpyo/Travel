@@ -13,7 +13,7 @@ public class ProductInsertFormControl implements com.groupone.common.Control {
         Boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
 
         if (isLogin != null && isLogin && isAdmin != null && isAdmin) {
-            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/admin/productInsert.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("admin/productInsert.tiles");
             rd.forward(req, res);
         } else {
             res.sendRedirect("main.do"); // 또는 로그인 페이지로

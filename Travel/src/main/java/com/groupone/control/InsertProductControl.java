@@ -69,7 +69,7 @@ public class InsertProductControl implements com.groupone.common.Control {
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("error", "exception");
-            req.getRequestDispatcher("/WEB-INF/jsp/admin/productInsert.jsp").forward(req, res);
+            req.getRequestDispatcher("admin/productInsert.tiles").forward(req, res);
         }
     }
 }
