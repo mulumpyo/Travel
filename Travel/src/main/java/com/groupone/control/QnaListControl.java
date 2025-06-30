@@ -32,6 +32,15 @@ public class QnaListControl implements Control {
 		// 세션에서 값을 가져오기 위한 준비
 		HttpSession session = req.getSession();
 		
+		int qCode = 0;
+		if(req.getParameter("qCode") != null) {
+			qCode = Integer.parseInt(req.getParameter("qCode"));
+		} else {
+			System.out.println("없습니다");
+		}
+		
+		
+		
 		// 값이 null이 아니고 값이 true이면 true 아니면 false 
 		boolean isLogin = session.getAttribute("isLogin") != null 
 				? (boolean) session.getAttribute("isLogin") : false;
@@ -44,11 +53,13 @@ public class QnaListControl implements Control {
 			// 사용자의 고유 번호 Session에서 가져오기
 			int userNo = (int) session.getAttribute("userNo");
 			
+			
 			// QnaService 사용할 준비
 			QnaService svc = new QnaServiceImpl();
 			
 			// QnaVo 객체가 담김 컬렉션 리스트 "qnaList" 생성하고 Service의 메소드 호출하여 리턴된 값을 저장
 			List<QnaVO> qnaList = svc.qnaListWithUserNo(userNo);
+			svc.removeQna(qCode);
 			
 			// request "qnaList" 속성에 qnaList 저장
 			req.setAttribute("qnaList", qnaList);

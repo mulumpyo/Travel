@@ -35,6 +35,7 @@ public class MyQnaControl implements Control {
 
 		// qCode로 단건조회
 		QnaVO qna = svc.getQnaOne(qCode);
+		
 
 		// 질문 작성자 고유번호 가져오기
 		int writer = qna.getUserNo();

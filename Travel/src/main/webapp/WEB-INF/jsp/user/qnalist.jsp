@@ -10,9 +10,9 @@
   <aside>
    <div id="subnav">
       <ul>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">문의하기</a></li>
-        <li><a href="#">문의목록</a></li>
+        <li style="list-style:none;"><a href="#">FAQ</a></li>
+        <li style="list-style:none;"><a href="#">문의하기</a></li>
+        <li style="list-style:none;"><a href="#">문의목록</a></li>
       </ul>
     </div>
   </aside>
@@ -38,7 +38,15 @@
 					<!-- myqna.do?qCode={qCode} 링크로 사용자가 클릭시 이동 -->
 					<td><a href="myqna.do?qCode=${qna.QCode}">${qna.title }</a></td>
 					<td><fmt:formatDate value="${qna.QDate }" pattern="yyyy.MM.dd" /></td>
-					<td>${qna.status }</td>
+					<c:choose>
+					  <c:when test="${qna.status != 1}">
+					    <td><a href ="answer.do">답변완료</a></td>
+					  </c:when>
+					  
+					  <c:otherwise>
+					   <td><a href ="qnalist.do">답변대기</a></td>
+					   </c:otherwise>
+					</c:choose>
 					<td><button class="btn-delete" type="button">삭제</button></td>
 				</tr>
 			</c:forEach>
