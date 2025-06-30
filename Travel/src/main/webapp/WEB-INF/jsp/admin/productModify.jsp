@@ -5,91 +5,77 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
-
-
 <body>
 
-<div id="container" align="center">
-<form action="productModifySuccess.do" method="post">
-   <input type="hidden" name="action" value="update">
-    <table>
-      <tr>
-        <td>상품번호</td>
-        <td><input type="text" name="pCode" id="pCode" value="${product.PCode }" size=100 readonly></td>
-      </tr>
-      <tr>
-        <td>상품명</td>
-        <td><input type="text" name="title" id="title" value="${product.title }" size=100></td>
-      </tr>
-      <tr>
-        <td>상품설명</td>
-        <td>
-        <textarea name="description" id="description" cols="60" rows="5" value="${product.description}">${product.description}</textarea>
-      </tr>
-      <tr>
-        <td>테마</td>
-        <td>
-			<input type='radio' name='theme' value='문화' <c:if test="${product.theme == '문화'}">checked</c:if> />문화
-			<input type='radio' name='theme' value='힐링' <c:if test="${product.theme == '힐링'}">checked</c:if> />힐링
-			<input type='radio' name='theme' value='탐험' <c:if test="${product.theme == '탐험'}">checked</c:if> />탐험
-			<input type='radio' name='theme' value='휴양' <c:if test="${product.theme == '휴양'}">checked</c:if> />휴양
-			<input type='radio' name='theme' value='미식' <c:if test="${product.theme == '미식'}">checked</c:if> />미식
-        </td>
-      </tr>
-      <tr>
-        <td>나라</td>
-        <td><input type="text" name="country" value="${product.country}" size=100></td>
-      </tr>
-      <tr>
-        <td>가격</td>
-        <td><input type="text" name="price" value="${product.price}" size=100></td>
-      </tr>
-	  <tr>
-		  <td>시작날짜</td>
-		  <td>
-		    <input type="date" name="startDay" 
-		           value="<fmt:formatDate value='${product.startDay}' pattern='yyyy-MM-dd'/>"
-		           style="width: 200px;">
-		  </td>
-	  </tr>
-	  <tr>
-		  <td>종료날짜</td>
-		  <td>
-		    <input type="date" name="endDay" 
-		           value="<fmt:formatDate value='${product.endDay}' pattern='yyyy-MM-dd'/>"
-		           style="width: 200px;">
-		  </td>
-	  </tr>
-      <tr>
-        <td>판매가능인원</td>
-        <td><input type="number" name="maxQty" value="${product.maxQty}" size=100 min=0></td>
-      </tr>
-      
-      
-	  <tr>
-		  <td>사용자 노출 여부</td>
-		  <td>
-		    <select name="status">
-		      <option value="1">상품 노출</option>
-		      <option value="0">상품 숨김</option>
-		    </select>
-		  </td>
-	  </tr>
-    </table>
-   <div>
-   <button type="submit" class="btnSubmit">수정</button>
-   <button type="reset" class="btnReset" >취소</button>
-	</div>
-</form>
+<div>
 
+  <h3>✏️ 상품 수정</h3>
 
+  <form action="productModifySuccess.do" method="post">
+    <input type="hidden" name="action" value="update">
 
+    <div>
+      <label for="pCode">상품번호</label>
+      <input type="text" id="pCode" name="pCode" value="${product.PCode}" readonly>
+    </div>
 
+    <div>
+      <label for="title">상품명</label>
+      <input type="text" id="title" name="title" value="${product.title}">
+    </div>
+
+    <div>
+      <label for="description">상품설명</label>
+      <textarea id="description" name="description" rows="4">${product.description}</textarea>
+    </div>
+
+    <div>
+      <label>테마</label>
+      <c:forEach var="t" items="${['문화','힐링','탐험','휴양','미식']}">
+        <input type="radio" name="theme" id="theme_${t}" value="${t}" <c:if test="${product.theme == t}">checked</c:if>>
+        <label for="theme_${t}">${t}</label>
+      </c:forEach>
+    </div>
+
+    <div>
+      <label for="country">나라</label>
+      <input type="text" id="country" name="country" value="${product.country}">
+    </div>
+
+    <div>
+      <label for="price">가격</label>
+      <input type="number" id="price" name="price" value="${product.price}">
+    </div>
+
+    <div>
+      <div>
+        <label for="startDay">시작날짜</label>
+        <input type="date" id="startDay" name="startDay" value="<fmt:formatDate value='${product.startDay}' pattern='yyyy-MM-dd'/>">
+      </div>
+      <div>
+        <label for="endDay">종료날짜</label>
+        <input type="date" id="endDay" name="endDay" value="<fmt:formatDate value='${product.endDay}' pattern='yyyy-MM-dd'/>">
+      </div>
+    </div>
+
+    <div>
+      <label for="maxQty">판매 가능 인원</label>
+      <input type="number" id="maxQty" name="maxQty" min="0" value="${product.maxQty}">
+    </div>
+
+    <div>
+      <label for="status">노출 상태</label>
+      <select id="status" name="status">
+        <option value="1" <c:if test="${product.status == 1}">selected</c:if>>상품 노출</option>
+        <option value="0" <c:if test="${product.status == 0}">selected</c:if>>상품 숨김</option>
+      </select>
+    </div>
+
+    <div>
+      <button type="submit">수정</button>
+      <button type="reset">취소</button>
+    </div>
+  </form>
 </div>
 
-
-
 </body>
-
-
