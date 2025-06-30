@@ -64,7 +64,7 @@ public class userInfoSuccessControl implements Control {
 
 		
 		
-		req.getRequestDispatcher("admin/productModifySuccess.tiles").forward(req, res);
+		req.getRequestDispatcher("admin/userModifySuccess.tiles").forward(req, res);
 	}
 
 }
