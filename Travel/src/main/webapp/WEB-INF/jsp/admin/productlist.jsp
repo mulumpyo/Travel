@@ -49,7 +49,8 @@ Boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
     		</c:choose>
     		<td><fmt:formatDate value='${product.createdAt}' pattern='yyyy-MM-dd'/></td>
     		<td><button class="btn-delete" type="button">삭제</button></td>
-    		<td><button class="btn-modify" type="button">수정</button></td>
+    		
+    		<td><a href="productModify.do"><button class="btn-modify" type="button">수정</button></a></td>
     	</tr>
     </c:forEach>
   </table>

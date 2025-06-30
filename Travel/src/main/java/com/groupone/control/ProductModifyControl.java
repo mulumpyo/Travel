@@ -30,8 +30,10 @@ public class ProductModifyControl implements Control {
 			req.setAttribute("product", product);
 			
 		}
-		
 		req.getRequestDispatcher("admin/productModify.tiles").forward(req, res);
+		
+		
+		
 		
 
 	}
