@@ -9,7 +9,7 @@
                 <h1 class="logo"><a href="main.do">GROUPONE</a></h1>
                 <div class="search-box">
 	                <form action="productList.do" method="get">
-	                    <input type="text" placeholder="가고싶은 곳을 입력하세요" value="${desiredUrlPart}">
+	                    <input type="text" name="keyword" placeholder="가고싶은 곳을 입력하세요">
 	                    <button class="search-btn"><i class="fas fa-search search-icon"></i></button>
                 	</form>
                 </div>

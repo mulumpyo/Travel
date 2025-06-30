@@ -130,15 +130,6 @@
 			, #{status}
 		)
 	</insert>
-	
-	<select id="selectWishList" parameterType="int">
-		select *
-		from tbl_product
-		where p_code in (select p_code
-						 from tbl_wish
-						 where user_no = #{userNo})
-		and status = 1
-	</select>
 
 	<select id="selectNewProductList" resultType="Product">
 		select *

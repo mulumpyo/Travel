@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import com.groupone.common.Control;
 import com.groupone.service.ProductService;
 import com.groupone.service.ProductServiceImpl;
+import com.groupone.service.WishService;
+import com.groupone.service.WishServiceImpl;
 import com.groupone.vo.ProductVO;
 
 public class MainControl implements Control {
@@ -21,6 +23,7 @@ public class MainControl implements Control {
 		res.setContentType("text/json;charset=utf-8");
 		
 		ProductService svc = new ProductServiceImpl();
+		WishService wishSvc = new WishServiceImpl();
 		
 		List<ProductVO> newlist = svc.newProductList();
 		req.setAttribute("newlist", newlist);
@@ -29,7 +32,7 @@ public class MainControl implements Control {
 		
 		if (session.getAttribute("isLogin") != null) {
 			int userNo = (int) session.getAttribute("userNo");
-			List<ProductVO> wishlist = svc.getWishList(userNo);
+			List<ProductVO> wishlist = wishSvc.getWishList(userNo);
 			req.setAttribute("wishlist", wishlist);
 		}
 		

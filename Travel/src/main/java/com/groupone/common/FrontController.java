@@ -13,14 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.groupone.control.AdminControl;
 import com.groupone.control.AnswerControl;
 import com.groupone.control.ChangePwControl;
+import com.groupone.control.RemoveWishControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
 import com.groupone.control.FindPwControl;
+import com.groupone.control.InsertProductControl;
 import com.groupone.control.ReservationControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
 import com.groupone.control.MyQnaControl;
 import com.groupone.control.MyQnaModifySuccessControl;
+import com.groupone.control.ProductInsertFormControl;
 import com.groupone.control.ProductListControl;
 import com.groupone.control.ProductModifyControl;
 import com.groupone.control.ProductModifySuccessControl;
@@ -32,6 +35,7 @@ import com.groupone.control.SignOutControl;
 import com.groupone.control.WishListPageControl;
 import com.groupone.control.userInfoModifyControl;
 import com.groupone.control.userInfoSuccessControl;
+import com.groupone.control.AddWishControl;
 import com.groupone.control.ChangeLoginPw;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
@@ -55,6 +59,8 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainControl()); // 메인페이지
 		map.put("/admin.do", new AdminControl()); // 어드민페이지
 		map.put("/signout.do", new SignOutControl()); // 로그아웃 기능
+		map.put("/addwish.do", new AddWishControl());
+		map.put("/removewish.do", new RemoveWishControl());
 		
 		
 		/* 은경 */
@@ -63,6 +69,9 @@ public class FrontController extends HttpServlet {
 		map.put("/wishlistpage.do", new WishListPageControl()); // 찜목록페이지
 		map.put("/reservationList.do", new ReservationListControl()); // 예약목록페이지
 		map.put("/Reservation.do", new ReservationControl());
+		map.put("/InsertProduct.do", new InsertProductControl());
+		map.put("/productInsertForm.do", new ProductInsertFormControl());
+
 
 		
 		// 해민님하고 은경 누나는 같이 mapper 파일 sql 쿼리도 이야기 나누어보시고

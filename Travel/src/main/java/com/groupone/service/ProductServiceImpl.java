@@ -58,18 +58,12 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public boolean addProduct(ProductVO product) {
-		
-		int r = mapper.insertProduct(product);
-		if (r == 1) {
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public List<ProductVO> getWishList(int userNo) {
-		
-		return mapper.selectWishList(userNo);
+	    int r = mapper.insertProduct(product);
+	    if (r == 1) {
+	        sqlSession.commit(); // 트랜잭션 커밋
+	        return true;
+	    }
+	    return false;
 	}
 
 	@Override

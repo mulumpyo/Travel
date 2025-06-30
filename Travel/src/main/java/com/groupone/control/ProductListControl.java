@@ -6,12 +6,16 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.groupone.common.Control;
 import com.groupone.common.SearchDTO;
 import com.groupone.service.ProductService;
 import com.groupone.service.ProductServiceImpl;
+import com.groupone.service.WishService;
+import com.groupone.service.WishServiceImpl;
 import com.groupone.vo.ProductVO;
+import com.groupone.vo.WishVO;
 
 public class ProductListControl implements Control {
 
@@ -19,6 +23,19 @@ public class ProductListControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ProductService svc = new ProductServiceImpl();
 
+		HttpSession session = req.getSession();
+		
+		boolean isLogin = session.getAttribute("isLogin") != null
+									? (boolean) session.getAttribute("isLogin") : false;
+		
+		if (isLogin) {
+			int userNo = (int) session.getAttribute("userNo");
+			WishService wishSvc = new WishServiceImpl();
+			List<ProductVO> wishlist = wishSvc.getWishList(userNo);
+			req.setAttribute("wishlist", wishlist);
+		}
+		
+		
 		String theme = req.getParameter("theme");
 		String country = req.getParameter("country");
 		String keyword = req.getParameter("keyword");

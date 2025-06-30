@@ -11,6 +11,10 @@ a {
 	text-decoration: none;
 }
 
+.wish-button .active > i{
+    color: #ff4d4d;
+}
+
 button {
 	padding: 8px 16px;
 	background-color: #0c5dc6;
@@ -184,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 5;
 }
 
 .card-list .badge-container {
