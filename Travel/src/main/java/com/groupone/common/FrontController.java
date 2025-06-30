@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.groupone.control.AdminControl;
+import com.groupone.control.AnswerControl;
 import com.groupone.control.ChangePwControl;
 import com.groupone.control.RemoveWishControl;
 import com.groupone.control.DetailPageControl;
@@ -85,6 +86,7 @@ public class FrontController extends HttpServlet {
 		map.put("/userInfoModify.do", new userInfoModifyControl());
 		map.put("/userInfoSuccess.do", new userInfoSuccessControl());
 		map.put("/admin.do", new AdminControl());
+		map.put("/answer.do", new AnswerControl());
 		
 		/* 유경 */
 		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요
@@ -104,7 +106,6 @@ public class FrontController extends HttpServlet {
 		map.put("/qna.do", new QnaControl());   // QnA
 		map.put("/qnalist.do", new QnaListControl());  // QnaList
 		map.put("/qnasearch.do", new QnaSearchControl());  // QnaList
-		
 		map.put("/myqna.do", new MyQnaControl());  // 문의내역
 		map.put("/myqnaModifySuccess.do", new MyQnaModifySuccessControl());  // 문의내역
 		

@@ -50,10 +50,16 @@ document.getElementById("btn").addEventListener("click", function() {
 const btnDelete = document.querySelectorAll('button.btn-delete');
 console.log(btnDelete);
 
-let pCode = "";
+let qCode = "";
 
 btnDelete.forEach(event => {
 	event.addEventListener('click', function(e){
+	qCode = e.target.parentElement.parentElement.firstElementChild.innerHTML;
+	console.log(e.target.parentElement.parentElement.firstElementChild.innerHTML);
+	
+	
+	location.href = 'qnalist.do?qCode=' + qCode;
+	 
 	const isdelete = confirm("삭제하시겠습니까?");
 	console.log(isdelete);
 	if(isdelete == true) {
@@ -67,3 +73,5 @@ btnDelete.forEach(event => {
 		
 	})
 })
+
+

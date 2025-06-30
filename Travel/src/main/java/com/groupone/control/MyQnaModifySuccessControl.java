@@ -35,7 +35,7 @@ public class MyQnaModifySuccessControl implements Control {
 		QnaService svc = new QnaServiceImpl();
 		
 		if(svc.modifyqna(modify)) {
-			res.sendRedirect("myqna.do?qCode=" + qCode + "&msg=success");
+			res.sendRedirect("qnalist.do");
 		} else {
 			res.sendRedirect("myqna.do?qCode=" + qCode + "&msg=fail");
 		}

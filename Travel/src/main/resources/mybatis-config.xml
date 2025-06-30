@@ -14,6 +14,7 @@
     <typeAlias alias="Qna" type="com.groupone.vo.QnaVO"/>
     <typeAlias alias="Reservation" type="com.groupone.vo.ReservationVO"/>
     <typeAlias alias="Review" type="com.groupone.vo.ReviewVO"/>
+    <typeAlias alias="Answer" type="com.groupone.vo.AnswerVO"/>
     <typeAlias alias="Wish" type="com.groupone.vo.WishVO"/>
   </typeAliases>
   
