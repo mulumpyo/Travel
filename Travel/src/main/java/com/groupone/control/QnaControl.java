@@ -23,7 +23,6 @@ public class QnaControl implements Control {
 		req.setCharacterEncoding("utf-8");
 		
 		if(req.getMethod().equals("GET")) {
-			
 			req.getRequestDispatcher("user/qna.tiles").forward(req, resp);
 		} else if(req.getMethod().equals("POST")) {
 			
@@ -42,27 +41,18 @@ public class QnaControl implements Control {
 			qna.setType(type);
 			qna.setTitle(title);
 			qna.setQuestion(question);
-			
-			Map<String, Object> map = new HashMap<>();
-			Gson gson = new GsonBuilder().create();
+
 			
 			// 정의해둔 기능 사용할 준비
 			QnaService svc = new QnaServiceImpl();
 			
 			// 기능 실행
 			if (svc.addQna(qna)) {
-				map.put("retVal", qna);
-				map.put("retCode", "Success");  // "retCode" : "Success"
+				resp.sendRedirect("qnalist.do");
 			} else {
-				map.put("retCode", "Fail");
+				req.getRequestDispatcher("user/qna.tiles").forward(req, resp);
 			}
 			
-			// retCode : 성공했나요?
-			
-			// Success 면 retVal 값을 담아서 json을 만들어서 ajax 답장해주세요.
-			String json = gson.toJson(map);
-			System.out.println(json);
-			resp.getWriter().print(json);
 		}
 		
 

@@ -20,8 +20,13 @@ function insert(e) {
 		headers: {'Content-Type':  'application/x-www-form-urlencoded' },
 		body: 'type=' + type + '&title=' + title + '&question=' + question
 	})
-	.then(json => json.json())
+	.then(json => {
+		json.json()
+		console.log(json.json());
+		}
+	)
 	.then(result => {
+
 		if(result.retCode == 'Success') {
 			alert('등록되었습니다');
 			let tr = makeRow(result.retVal);

@@ -13,6 +13,7 @@
     List<ProductVO> list = (List<ProductVO>) request.getAttribute("wishlist");
 %>
 
+<div class="product-list">
 <h2>찜 목록</h2>
 <% if (list != null && !list.isEmpty()) { %>
     <ul>
@@ -28,3 +29,4 @@
 <% } else { %>
     <p>찜한 상품이 없습니다.</p>
 <% } %>
+</div>
