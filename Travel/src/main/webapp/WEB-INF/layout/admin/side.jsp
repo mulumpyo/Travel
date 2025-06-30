@@ -7,7 +7,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 상품관리
                             </a>
-                            <a class="nav-link" href="userInfoModify.do">
+                            <a class="nav-link" href="userList.do">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 고객관리
                             </a>
