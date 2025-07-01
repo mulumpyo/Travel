@@ -45,9 +45,11 @@ public class userInfoSuccessControl implements Control {
 		
 		int userNo = Integer.parseInt(req.getParameter("userNo"));
 		String userId = req.getParameter("userId");
+		System.out.println(userId);
 		String userPw= req.getParameter("userPw");
 		String userName= req.getParameter("userName");
 		String userPhone= req.getParameter("userPhone");
+		System.out.println(userPhone);
 		
 		UserVO user = new UserVO();
 		user.setUserNo(userNo);
@@ -64,7 +66,7 @@ public class userInfoSuccessControl implements Control {
 
 		
 		
-		req.getRequestDispatcher("admin/productModifySuccess.tiles").forward(req, res);
+		req.getRequestDispatcher("admin/UserInfoModifySuccess.tiles").forward(req, res);
 	}
 
 }
