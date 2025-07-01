@@ -1,6 +1,7 @@
 package com.groupone.control;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,20 +17,32 @@ public class UserInfoControl implements Control {
 
     @Override
     public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        HttpSession session = req.getSession(false);
         
+    	
+    	req.setCharacterEncoding("UTF-8");
+        HttpSession session = req.getSession(false);
+        UserService userService = new UserServiceImpl();
+		
+        boolean isAdmin = session.getAttribute("isAdmin") != null 
+				? (boolean) session.getAttribute("isAdmin") : false;
+		
+		if(isAdmin) { 
+			List<UserVO> userList = userService.getUserList();
+			req.setAttribute("userList", userList);
+            req.getRequestDispatcher("/admin/userList.tiles").forward(req, res);
+		}
       
         //로그인 확인
         if (session == null || session.getAttribute("userNo") == null) {
             res.sendRedirect("login.do");
             return;
         }
-
+        
+        
+        
         int userNo = (int) session.getAttribute("userNo");
         String action = req.getParameter("action");
 
-        UserService userService = new UserServiceImpl();
         UserVO loginUser = userService.getUserInfo(userNo);
 
         if (loginUser == null) {

@@ -11,13 +11,15 @@
 
 <table align="center">
   	<thead>
-  		<th style="text-align: center">사용자번호</th>
-  		<th style="text-align: center">아이디</th>
-  		<th style="text-align: center">비밀번호</th>
-  		<th style="text-align: center">이름</th>
-  		<th style="text-align: center">생년월일</th>
-  		<th style="text-align: center">전화번호</th>
-  		<th style="text-align: center">권한</th>
+  		<th>사용자번호</th>
+  		<th>아이디</th>
+  		<th>비밀번호</th>
+  		<th>이름</th>
+  		<th>생년월일</th>
+  		<th>전화번호</th>
+  		<th>권한</th>
+  		<th>삭제</th>
+  		<th>수정</th>
   	</thead>
   	
   <c:forEach var="user" items="${userList}">

@@ -18,6 +18,7 @@ import com.groupone.common.Control;
 import com.groupone.service.QnaService;
 import com.groupone.service.QnaServiceImpl;
 import com.groupone.vo.QnaVO;
+import com.groupone.vo.UserVO;
 
 public class QnaListControl implements Control {
 
@@ -31,6 +32,21 @@ public class QnaListControl implements Control {
 		
 		// 세션에서 값을 가져오기 위한 준비
 		HttpSession session = req.getSession();
+		
+		// QnaService 사용할 준비
+		QnaService svc = new QnaServiceImpl();
+		
+        boolean isAdmin = session.getAttribute("isAdmin") != null 
+				? (boolean) session.getAttribute("isAdmin") : false;
+		
+		if(isAdmin) { 
+			List<QnaVO> qnaList = svc.qnaList();
+			req.setAttribute("qnaList", qnaList);
+            req.getRequestDispatcher("/admin/qnalist.tiles").forward(req, resp);
+		}
+      
+		
+		
 		
 		int qCode = 0;
 		if(req.getParameter("qCode") != null) {
@@ -53,8 +69,6 @@ public class QnaListControl implements Control {
 			int userNo = (int) session.getAttribute("userNo");
 			
 			
-			// QnaService 사용할 준비
-			QnaService svc = new QnaServiceImpl();
 			
 			// QnaVo 객체가 담김 컬렉션 리스트 "qnaList" 생성하고 Service의 메소드 호출하여 리턴된 값을 저장
 			List<QnaVO> qnaList = svc.qnaListWithUserNo(userNo);

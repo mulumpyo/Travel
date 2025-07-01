@@ -29,15 +29,15 @@ public class ReservationAdminControl implements Control {
 		boolean isAdmin = session.getAttribute("isAdmin") != null 
 				? (boolean) session.getAttribute("isAdmin") : false;
 		
-		if (!(isLogin && isAdmin)) {
-			return;
+		if (isAdmin) {
+			ReservationService svc = new ReservationServiceImpl();
+			List<ReservationVO> reservation = svc.getReservationAdmin();
+			
+			req.setAttribute("rList", reservation);
+			req.getRequestDispatcher("admin/reservationAdmin.tiles").forward(req, res);
+			
 		}
 		
-		ReservationService svc = new ReservationServiceImpl();
-		List<ReservationVO> reservation = svc.getReservationAdmin();
-		
-		req.setAttribute("reservation", reservation);
-		req.getRequestDispatcher("admin/reservationAdmin.tiles").forward(req, res);
 		
 	}
 

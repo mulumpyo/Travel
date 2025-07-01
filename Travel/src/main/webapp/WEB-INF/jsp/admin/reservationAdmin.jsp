@@ -18,26 +18,29 @@
                     <th>상품 코드</th>
                     <th>상품명</th>
                     <th>예약 상태</th>
-                    <th>금액</th>
+                    <th>예약인원</th>
                     <th>총 가격</th>
-                    <th>시작 날짜</th>
-                    <th>종료 날짜</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- 예약 정보 리스트 출력 -->
-                <c:forEach var="reservation" items="${reservations}">
+                <c:forEach var="reservation" items="${rList}">
                     <tr>
-                        <td>${reservation.rCode}</td>
+                        <td>${reservation.RCode}</td>
                         <td>${reservation.userId}</td>
                         <td>${reservation.userName}</td>
-                        <td>${reservation.pCode}</td>
+                        <td>${reservation.PCode}</td>
                         <td>${reservation.title}</td>
-                        <td>${reservation.status}</td>
+                        <c:choose>
+                        	<c:when test="${reservation.status eq 1}">
+                        		<td>예약확정</td>
+                        	</c:when>
+                        	<c:otherwise>
+                        		<td>예약대기</td>
+                        	</c:otherwise>
+                        </c:choose>
                         <td>${reservation.amount}</td>
-                        <td>${reservation.tPrice}</td>
-                        <td>${reservation.startDay}</td>
-                        <td>${reservation.endDay}</td>
+                        <td>${reservation.TPrice}</td>
                     </tr>
                 </c:forEach>
             </tbody>

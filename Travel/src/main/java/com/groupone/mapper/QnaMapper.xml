@@ -27,6 +27,7 @@
 	  select q_code as "qCode",
 	  		 type,
 	         title,
+	         question,
 	         q_date as "qDate",
 	         status
 	  from tbl_qna 
