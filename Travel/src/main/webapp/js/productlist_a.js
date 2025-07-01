@@ -10,7 +10,7 @@ function removeProduct(e, pCode) {
 		.then(json => json.json())
 		.then(data => {
 			if (data.retCode == 'Success') {
-				e.target.parentElement.parentElement.parentElement.remove();
+				e.target.parentElement.parentElement.remove();
 				alert("삭제하였습니다.")
 			} else if (data.retCode == 'Fail') {
 				alert("실패하였습니다.")
