@@ -26,7 +26,7 @@ public class ProductModifyControl implements Control {
 		int pCode = 0;
 		if (req.getParameter("pCode")!=null) {
 			pCode = Integer.parseInt(req.getParameter("pCode"));
-			ProductVO product = svc.getProduct(pCode);
+			ProductVO product = svc.getProductAdmin(pCode);
 			req.setAttribute("product", product);
 			
 		}

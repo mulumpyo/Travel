@@ -14,6 +14,7 @@ import com.groupone.control.AdminControl;
 import com.groupone.control.AnswerControl;
 import com.groupone.control.ChangePwControl;
 import com.groupone.control.RemoveWishControl;
+import com.groupone.control.ReservationAdminControl;
 import com.groupone.control.DetailPageControl;
 import com.groupone.control.FaqControl;
 import com.groupone.control.FindPwControl;
@@ -21,6 +22,7 @@ import com.groupone.control.InsertProductControl;
 import com.groupone.control.ReservationControl;
 import com.groupone.control.LoginControl;
 import com.groupone.control.MainControl;
+import com.groupone.control.MyPageControl;
 import com.groupone.control.MyQnaControl;
 import com.groupone.control.MyQnaModifySuccessControl;
 import com.groupone.control.ProductInsertFormControl;
@@ -39,6 +41,8 @@ import com.groupone.control.AddWishControl;
 import com.groupone.control.ChangeLoginPw;
 import com.groupone.control.RealLoginControl;
 import com.groupone.control.RegisterControl;
+import com.groupone.control.RemoveProductControl;
+import com.groupone.control.RemoveQnaControl;
 import com.groupone.control.TestControl;
 import com.groupone.control.UserInfoControl;
 
@@ -57,10 +61,10 @@ public class FrontController extends HttpServlet {
 		// main.do 기능 구현, faq 사이드메뉴
 		map.put("/test.do", new TestControl()); // 타일즈 테스트
 		map.put("/main.do", new MainControl()); // 메인페이지
-		map.put("/admin.do", new AdminControl()); // 어드민페이지
 		map.put("/signout.do", new SignOutControl()); // 로그아웃 기능
 		map.put("/addwish.do", new AddWishControl());
 		map.put("/removewish.do", new RemoveWishControl());
+		map.put("/mypage.do", new MyPageControl());
 		
 		
 		/* 은경 */
@@ -71,15 +75,9 @@ public class FrontController extends HttpServlet {
 		map.put("/Reservation.do", new ReservationControl());
 		map.put("/InsertProduct.do", new InsertProductControl());
 		map.put("/productInsertForm.do", new ProductInsertFormControl());
-
-
-		
-		// 해민님하고 은경 누나는 같이 mapper 파일 sql 쿼리도 이야기 나누어보시고
-		// 필요한 기능들 미리 구상해두시면 좋을거 같아요
-
+		map.put("/reservationAdmin.do", new ReservationAdminControl());
 		
 		/* 해민 */
-		// 06/25 productList.do 카드리스트 구현해두었습니다. 계속 진행 부탁드릴게요.
 		map.put("/productList.do", new ProductListControl());
 		map.put("/productModify.do", new ProductModifyControl());
 		map.put("/productModifySuccess.do", new ProductModifySuccessControl());
@@ -87,10 +85,9 @@ public class FrontController extends HttpServlet {
 		map.put("/userInfoSuccess.do", new userInfoSuccessControl());
 		map.put("/admin.do", new AdminControl());
 		map.put("/answer.do", new AnswerControl());
+		map.put("/removeProduct.do", new RemoveProductControl());
 		
 		/* 유경 */
-		// 06/25 login.do 코드 확인 후 다음 페이지 흐름에 맞게 기능 구현부탁드려요
-		// login_password.jsp, register.jsp 파일 만들고 작업하시면 될거 같아요.
 		map.put("/login.do", new LoginControl());
 		map.put("/realLogin.do", new RealLoginControl());
 		map.put("/register.do", new RegisterControl());
@@ -100,18 +97,13 @@ public class FrontController extends HttpServlet {
 		map.put("/changeLoginPw.do", new ChangeLoginPw());
 
 		/* 이영 */
-		// 06/25 1:1 문의 기능 구현 부탁드려요. 최대한 자신감 가지고 막 눌러주세요.
-		// 늦어져도 괜찮으니 천천히 작업해주세요.
 		map.put("/faq.do", new FaqControl());   // FAQ 메인페이지
 		map.put("/qna.do", new QnaControl());   // QnA
 		map.put("/qnalist.do", new QnaListControl());  // QnaList
 		map.put("/qnasearch.do", new QnaSearchControl());  // QnaList
 		map.put("/myqna.do", new MyQnaControl());  // 문의내역
 		map.put("/myqnaModifySuccess.do", new MyQnaModifySuccessControl());  // 문의내역
-		
-  		
-		
-
+		map.put("/removeQna.do", new RemoveQnaControl());
 	}
 
 	@Override

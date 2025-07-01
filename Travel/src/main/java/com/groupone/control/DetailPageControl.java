@@ -6,12 +6,15 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.groupone.common.Control;
 import com.groupone.service.ProductService;
 import com.groupone.service.ProductServiceImpl;
 import com.groupone.service.ReviewService;
 import com.groupone.service.ReviewServiceImpl;
+import com.groupone.service.WishService;
+import com.groupone.service.WishServiceImpl;
 import com.groupone.vo.ProductVO;
 import com.groupone.vo.ReviewVO;
 
@@ -20,25 +23,39 @@ public class DetailPageControl implements Control {
     @Override
     public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         // 1. 파라미터 받기
+    	HttpSession session = req.getSession();
+    	
+    	boolean isLogin = session.getAttribute("isLogin") != null 
+    						? (boolean) session.getAttribute("isLogin") : false;
     	int pcode = Integer.parseInt(req.getParameter("pcode"));
-        
-        // 2. 서비스 객체 생성
+    	boolean isWished = false;
+    	
         ProductService service = new ProductServiceImpl();
-        ReviewService reviewService = new ReviewServiceImpl();  // 리뷰 서비스 추가
-        
-        
-        // 3. 해당 상품 상세 정보 조회
+        ReviewService reviewService = new ReviewServiceImpl();
+
         ProductVO product = service.getProduct(pcode);
-       
         List<ReviewVO> reviewList = reviewService.getReview(pcode);
-        
-        
-        // 4. 조회된 정보 JSP에 전달
+    	
+
+    	
+    	if(isLogin) {
+    		
+    		int userNo = (int) session.getAttribute("userNo");
+            WishService wishService = new WishServiceImpl();
+            List<ProductVO> wishlist = wishService.getWishList(userNo);
+            
+            for(ProductVO wish : wishlist) {
+                if (product.getPCode() == wish.getPCode()) {
+                    isWished = true;
+                    break;
+                }
+            }
+    	}
+    	
+        req.setAttribute("isWished", isWished);
         req.setAttribute("product", product);
-        req.setAttribute("reviewList", reviewList);  // 리뷰도 전달
+        req.setAttribute("reviewList", reviewList);
         
-        
-        // 5. detailpage.tiles로 포워드
         req.getRequestDispatcher("user/detailpage.tiles").forward(req, res);
     }
     

@@ -19,12 +19,16 @@ import com.groupone.vo.ProductVO;
 public class AdminControl implements Control {
 
 	@Override
-	public void exec(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	public void exec(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
 
-		boolean isLogin = session.getAttribute("isLogin") != null ? (boolean) session.getAttribute("isLogin") : false;
-		boolean isAdmin = session.getAttribute("isAdmin") != null ? (boolean) session.getAttribute("isAdmin") : false;
+		boolean isLogin = session.getAttribute("isLogin") != null 
+				? (boolean) session.getAttribute("isLogin") : false;
+		
+		boolean isAdmin = session.getAttribute("isAdmin") != null 
+				? (boolean) session.getAttribute("isAdmin") : false;
 		
 		if(isLogin && isAdmin) {
 			ProductService svc = new ProductServiceImpl();
@@ -33,33 +37,15 @@ public class AdminControl implements Control {
 			String country = req.getParameter("country");
 			String keyword = req.getParameter("keyword");
 			
-			
-			int pCode = 0;
-			if (req.getParameter("pCode")!=null) {
-				pCode = Integer.parseInt(req.getParameter("pCode"));
-				System.out.println("pCode는"+pCode);
-				svc.removeProduct(pCode);
-				
-			}
-			
-			
 			SearchDTO search = new SearchDTO();
 			search.setTheme(theme);
 			search.setCountry(country);
 			search.setKeyword(keyword);
-			
-			System.out.println(search);
 
-			List<ProductVO> list = svc.productList(search);
-			List<String> tlist = svc.themeList();
-			List<String> clist = svc.countryList();
+			List<ProductVO> list = svc.productListAll(search);
 
 			req.setAttribute("productList", list);
-			req.setAttribute("themeList", tlist);
-			req.setAttribute("countryList", clist);
 			
-			
-
 			req.setAttribute("theme", theme);
 			req.setAttribute("country", country);
 			req.setAttribute("keyword", keyword);

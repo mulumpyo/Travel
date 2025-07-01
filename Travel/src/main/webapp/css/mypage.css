@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@charset "UTF-8";
+
 body {
     font-family: 'Pretendard', sans-serif;
     margin: 0;
@@ -12,22 +14,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
-.wish-delete-btn {
-  margin-top: 10px;
-  padding: 6px 10px;
-  background-color: #ff4d4f;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-.wish-delete-btn:hover {
-  background-color: #d9363e;
-}
-
-
 
 button {
     padding: 8px 16px;
@@ -63,8 +49,8 @@ button:hover {
     height: fit-content;
     position: fixed;
     top: 96px;
-    width: calc((1200px - 24px * 11) / 12 * 3 + 24px * 2);
-    left: calc((100vw - 1200px) / 2 + 24px);
+    width: calc( (1200px - 24px * 11) / 12 * 3 + 24px * 2 );
+    left: calc( (100vw - 1200px) / 2 + 24px );
     z-index: 100;
 }
 
@@ -105,7 +91,6 @@ button:hover {
 }
 
 .main-content {
-	min-height: 600px;
     grid-column: 4 / span 9;
     background-color: #fff;
     border-radius: 12px;
@@ -261,7 +246,21 @@ button:hover {
 }
 
 #faq-table thead th {
-    display: none;
+    text-align: left;
+    padding: 25px 20px;
+    background: linear-gradient(to right, #0c5dc6, #0a4aa1);
+    color: #fff;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#faq-table thead h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 #faq-table tbody tr:not(.faq-answer-row) {
@@ -287,10 +286,6 @@ button:hover {
     color: #333;
 }
 
-.faq-answer-row {
-    display: none;
-}
-
 #faq-table .faq-answer-row td {
     background-color: #f8f9fa;
     padding: 20px 30px;
@@ -300,31 +295,36 @@ button:hover {
     border-bottom: none;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.faq-btn-cell {
-    text-align: right;
-    width: 50px;
+    overflow: hidden;
 }
 
 #faq-table .faq-btn {
-    background-color: transparent;
-    color: #000;
+    background-color: #e0f0ff;
+    color: #0c5dc6;
     font-size: 18px;
     padding: 0;
-    width: auto;
-    height: auto;
-    border: none;
-    border-radius: 0;
-    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #0c5dc6;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    transition: none;
+    transition: all 0.3s ease;
 }
 
 #faq-table .faq-btn:hover {
-    background-color: transparent;
-    color: #000;
+    background-color: #0c5dc6;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+#faq-table .faq-btn i {
+    transition: transform 0.3s ease;
+}
+
+#faq-table .faq-btn.active i {
+    transform: rotate(45deg);
 }
 
 .form-group {
@@ -405,6 +405,7 @@ button:hover {
     background-color: #5a6268;
 }
 
+/* MyPage Specific Styles */
 .mypage-main-title {
     font-size: 28px;
     font-weight: 800;
@@ -417,13 +418,13 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 40px; /* 프로필 카드와의 간격 */
 }
 
 .mypage-card {
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -474,15 +475,16 @@ button:hover {
     transform: translateY(-2px);
 }
 
+/* User Profile Card Styles */
 .user-profile-card {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     padding: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* 아래 마이페이지 카드 그리드와의 간격 */
     text-align: center;
 }
 
@@ -492,14 +494,14 @@ button:hover {
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 20px;
-    border: 4px solid #0c5dc6;
-    box-shadow: 0 0 0 5px rgba(12, 93, 198, 0.1);
+    border: 4px solid #0c5dc6; /* 테두리 추가 */
+    box-shadow: 0 0 0 5px rgba(12, 93, 198, 0.1); /* 은은한 외곽 그림자 */
 }
 
 .profile-avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 이미지 비율 유지하며 채우기 */
 }
 
 .profile-info {
@@ -519,15 +521,15 @@ button:hover {
 }
 
 .profile-actions {
-    width: 100%;
+    width: 100%; /* 버튼이 부모 너비를 차지하도록 */
 }
 
 .profile-edit-button {
-    display: inline-flex;
+    display: inline-flex; /* 아이콘과 텍스트 정렬 */
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
-    color: #555;
+    background-color: #f0f0f0; /* 배경색 변경 */
+    color: #555; /* 글자색 변경 */
     padding: 12px 25px;
     border-radius: 30px;
     font-weight: 600;
@@ -536,7 +538,7 @@ button:hover {
 }
 
 .profile-edit-button i {
-    margin-right: 8px;
+    margin-right: 8px; /* 아이콘과 텍스트 사이 간격 */
     font-size: 16px;
 }
 
@@ -545,6 +547,7 @@ button:hover {
     color: #333;
     transform: translateY(-2px);
 }
+
 
 @media (max-width: 1200px) {
     .sidebar {
@@ -583,6 +586,10 @@ button:hover {
 
     .main-content {
         padding: 24px;
+    }
+
+    #faq-table thead h2 {
+        font-size: 22px;
     }
 
     .mypage-main-title {

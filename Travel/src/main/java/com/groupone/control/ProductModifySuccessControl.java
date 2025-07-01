@@ -55,16 +55,16 @@ public class ProductModifySuccessControl implements Control {
 		System.out.println("status              "+status);
 		
 		ProductVO product = new ProductVO();
-//		product.setPCode(pCode);
-//		product.setTitle(title);
-//		product.setDescription(description);
-//		product.setTheme(theme);
-//		product.setCountry(country);
-//		product.setPrice(price);
-//		product.setStartDay(startDate);
-//		product.setEndDay(endDate);
-//		product.setMaxQty(maxQty);
-//		product.setStatus(status);
+		product.setPCode(pCode);
+		product.setTitle(title);
+		product.setDescription(description);
+		product.setTheme(theme);
+		product.setCountry(country);
+		product.setPrice(price);
+		product.setStartDay(startDate);
+		product.setEndDay(endDate);
+		product.setMaxQty(maxQty);
+		product.setStatus(status);
 		
 		svc.modifyProduct(product);
 		

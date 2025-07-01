@@ -48,3 +48,28 @@ if (country) {
 	const activeCountry = [...document.querySelectorAll('li.filter-country')].find(li => li.textContent.trim() === country);
 	if (activeCountry) activeCountry.firstElementChild.style.backgroundColor = 'gray';
 }
+
+function toggleWish(pCode, isWished) {
+  let url = isWished ? 'removewish.do' : 'addwish.do';
+
+  fetch(`${url}?pCode=${pCode}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.retCode == 'Success') {
+       	let icon = document.querySelector(`#heart-${pCode}`);
+        if (isWished) {
+          icon.style.color = '#fff';
+          icon.setAttribute('onclick', `toggleWish(${pCode}, false)`);
+        } else {
+          icon.style.color = '#e84118';
+          icon.setAttribute('onclick', `toggleWish(${pCode}, true)`);
+        }
+      } else if (data.retCode === 'NotLoggedIn') {
+        alert('로그인이 필요합니다.');
+        location.href = 'login.do';
+      } else {
+        alert('처리 실패');
+      }
+    })
+    .catch(err => console.error(err));
+}

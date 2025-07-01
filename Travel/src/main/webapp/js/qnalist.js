@@ -1,77 +1,70 @@
-/**
- *  qnalist.js
- */
+Date.prototype.format = function () {
+  const yyyy = this.getFullYear();
+  const MM = ('0' + (this.getMonth() + 1)).slice(-2);
+  const dd = ('0' + this.getDate()).slice(-2);
+  return `${yyyy}.${MM}.${dd}`;
+};
 
+const searchInput = document.getElementById("search");
+const searchBtn = document.getElementById("btn");
 
-Date.prototype.format = function() {
-	let yyyy = this.getFullYear();
-	let MM = this.getMonth();
-	let dd = this.getDate();
+function performSearch() {
+  const keyword = searchInput.value.trim();
+  if (!keyword) return;
 
-	return yyyy + '.' + ('0' + MM).slice(-2) + '.' + ('0' + dd).slice(-2);
+  fetch("qnasearch.do?keyword=" + encodeURIComponent(keyword))
+    .then((res) => res.json())
+    .then((result) => {
+      const tbody = document.querySelector("#target tbody");
+      tbody.innerHTML = "";
+
+      for (let qna of result) {
+        const dateObj = new Date(qna.qDate);
+        const formattedDate = dateObj.format();
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${qna.qCode}</td>
+          <td>${qna.type}</td>
+          <td><a href="myqna.do?qCode=${qna.qCode}">${qna.title}</a></td>
+          <td>${formattedDate}</td>
+          ${
+            qna.status != 1
+              ? `<td><a href="answer.do">답변완료</a></td>`
+              : `<td><a href="qnalist.do">답변대기</a></td>`
+          }
+          <td><button class="btn-delete" type="button">삭제</button></td>
+        `;
+        tbody.appendChild(row);
+      }
+    })
+    .catch((error) => {
+      console.error("검색 중 오류 발생:", error);
+    });
 }
 
-document.getElementById("btn").addEventListener("click", function() {
-	const keyword = document.getElementById("search").value;
-
-	let str = `	<tr>
-	     <th>순서</th>
-	     <th>유형</th>
-	     <th>제목</th>
-	     <th>작성일</th>
-	     <th>답변상태</th>
-	   </tr>`;
-	fetch('qnasearch.do?keyword=' + keyword)
-		.then(json => json.json())
-		.then(result => {
-			document.querySelector("#target").innerHTML = "";
-			for(let qna of result) {
-				let dateObj = new Date(qna.qDate);   // 문자열 → Date 객체
-				let formattedDate = dateObj.format();
-				
-				str += "<tr>";
-				str += "<td>" + qna.qCode + "</td>";
-				str += "<td>" + qna.type + "</td>";
-				str += `<td><a href="myqna.do?qCode=${qna.qCode}">${qna.title}</a></td>`;
-				str += "<td>" + formattedDate + "</td>";
-				str += "<td>" + qna.status + "</td>";
-				str += `<td><button class="btn-delete" type="button">삭제</button></td>`
-				str += "</tr>";
-			}
-			
-			document.querySelector("#target").innerHTML = str;
-		})
-		.catch(error => {
-			console.error(error);
-		})
-})
+searchBtn.addEventListener("click", performSearch);
 
 
-const btnDelete = document.querySelectorAll('button.btn-delete');
-console.log(btnDelete);
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    performSearch();
+  }
+});
 
-let qCode = "";
-
-btnDelete.forEach(event => {
-	event.addEventListener('click', function(e){
-	qCode = e.target.parentElement.parentElement.firstElementChild.innerHTML;
-	console.log(e.target.parentElement.parentElement.firstElementChild.innerHTML);
-	
-	
-
-	 
-	const isdelete = confirm("삭제하시겠습니까?");
-	console.log(isdelete);
-	if(isdelete == true) {
-		const tr = e.target.closest('tr');
-		console.log(tr);
-		tr.remove();
-		
-	} else {
-		return;
-	}
-		
-	})
-})
-
-
+document.querySelector("#target tbody").addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-delete")) {
+    const tr = e.target.closest("tr");
+    const qCode = tr.querySelector("td").innerText;
+    const confirmDelete = confirm("삭제하시겠습니까?");
+    if (confirmDelete) {
+      fetch("removeQna.do?qCode=" + qCode)
+        .then(() => {
+          tr.remove();
+        })
+        .catch((err) => {
+          console.error("삭제 실패:", err);
+        });
+    }
+  }
+});

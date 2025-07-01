@@ -12,7 +12,7 @@
     </div>
   </aside>
   <main class="main-content">
-    <form action="qnalist.do" method="post">
+    <form action="qna.do" method="post">
       <div class="form-group">
         <label for="type">분류</label>
         <select id="type" name="type" required>

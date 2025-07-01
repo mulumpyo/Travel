@@ -1,12 +1,9 @@
-@charset "UTF-8";
-
 body {
   font-family: 'Pretendard', sans-serif;
-  letter-spacing: -0.04em;
   margin: 0;
-  background-color: #f8f8f8;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #f5f5f7;
+  letter-spacing: -0.04em;
+  color: #1d1d1f;
 }
 
 a {
@@ -14,427 +11,242 @@ a {
   color: inherit;
 }
 
-button {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  letter-spacing: -0.04em;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+.like-icon-btn.wished i{
+  color: #e84118;
+}
+.like-icon-btn.not-wished i{
+  color: #bbb;
 }
 
-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-1px);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  color: #1d1d1f;
-}
-
-/* 메인 컨테이너 */
-.container {
+.page-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   max-width: 1200px;
-  margin: 96px auto 48px auto; /* 상단 마진은 네비바 높이 고려 */
-  gap: 40px; /* 주요 섹션 간 간격 */
-  padding: 0 24px;
+  margin: 96px auto 72px auto;
+  padding: 0 20px;
+  gap: 40px;
   box-sizing: border-box;
 }
 
-/* 왼쪽 상품 메인 콘텐츠 (썸네일 + 기본 정보) */
-.product-main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* 썸네일과 정보 섹션 간 간격 */
+.main-content-area {
+  flex: 2;
 }
 
-.thumbnail-section {
-  width: 100%; /* 부모 너비에 맞춤 */
-  height: 500px; /* 고정 높이 */
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+.detail-side-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .thumbnail-section img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  height: auto;
+  border-radius: 20px;
 }
 
-.product-info-section {
+.product-info {
   background-color: #fff;
+  padding: 32px;
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.info-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.breadcrumbs {
-  font-size: 12px;
-  color: #999;
-}
-
-.share {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #6e6e73;
-  font-size: 14px;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.share:hover {
+  margin: 24px 0 0 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   color: #1d1d1f;
 }
 
-.share i {
-  font-size: 16px;
-}
-
-.product-info-section .title {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 15px;
-  line-height: 1.3;
-}
-
-.product-info-section .description {
-  font-size: 16px;
-  color: #6e6e73;
-  line-height: 1.5;
-  margin-bottom: 25px;
+.detail-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 24px 0 8px;
+  color: #000;
 }
 
 .price-info {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007bff;
-  margin-bottom: 15px;
-}
-
-.price-info .price-label {
-  color: #1d1d1f;
-  font-size: 18px;
-}
-
-.price-info .price-currency {
-  font-size: 18px;
-  color: #1d1d1f;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 12px;
 }
 
 .date-info {
-  font-size: 14px;
-  color: #1d1d1f;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.date-info .date-label {
   color: #6e6e73;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
 }
 
-.date-info .date-range {
-  font-weight: 500;
-}
-
-/* 오른쪽 사이드바 (상세 설명, 리뷰, 예약) */
-.product-sidebar {
-  flex-shrink: 0;
-  width: 380px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* 사이드바 내부 섹션 간 간격 */
-}
-
-.product-detail-description-section,
-.review-section,
-.reservation-section {
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  padding: 30px;
-  box-sizing: border-box;
+.detail-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  margin: 24px 0;
 }
 
 .section-sub-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1d1d1f;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 40px 0 16px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
 }
 
-.product-detail-description-section .detail-image {
-  width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.review-section,
+.reservation-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 
-.product-detail-description-section .detail-description-text {
-  font-size: 15px;
-  color: #6e6e73;
-  line-height: 1.6;
+.review-section{
+	margin: 0 0 24px 0;
 }
 
-/* 리뷰 스타일 */
 .review-card {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px dashed #eee;
-}
-
-.review-card:last-of-type {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .review-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.review-user {
-  font-size: 14px;
-  font-weight: 500;
-  color: #1d1d1f;
+.stars {
+  color: #ffcc00;
 }
 
-.review-card .stars {
-  font-size: 18px;
-  letter-spacing: 2px;
+.review-title {
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
-.review-card .review-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #1d1d1f;
-  margin-bottom: 5px;
+.review-content {
+  font-size: 0.95rem;
+  color: #333;
 }
 
-.review-card .review-content {
-  font-size: 14px;
-  color: #6e6e73;
-  line-height: 1.4;
-  margin-bottom: 10px;
+.review-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 8px;
 }
 
-.review-card .review-date {
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-}
-
-/* 인원 선택 및 예약 스타일 */
 .person-selector-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  font-size: 15px;
-  color: #1d1d1f;
+  margin: 14px 0;
+  font-size: 0.95rem;
 }
 
-.person-selector-row .person-type {
-  font-weight: 500;
-}
-
-.person-selector-row .counter {
+.counter {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.person-selector-row .counter button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #f0f2f5;
-  color: #1d1d1f;
-  font-size: 18px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
+.counter button {
+  width: 26px;
+  height: 26px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: background-color 0.2s ease;
-}
-
-.person-selector-row .counter button:hover {
-  background-color: #e0e2e5;
-}
-
-.person-selector-row .counter span {
-  min-width: 25px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.divider {
+  justify-content: center;
+  background-color: #eaeaea;
   border: none;
-  border-top: 1px solid #eee;
-  margin: 25px 0;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.counter button:hover {
+  background-color: #d0d0d0;
+}
+
+.counter button i {
+  font-size: 12px;
+  color: #333;
 }
 
 .total-price-display {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.total-price-label {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1d1d1f;
-}
-
-.total-price-value {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007bff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 24px;
 }
 
 .reserve-info-text {
-  font-size: 14px;
-  font-weight: normal;
-  color: #6e6e73;
-  text-align: right;
-  margin-top: -5px; /* 총 가격과의 간격 조절 */
-  margin-bottom: 15px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 6px;
 }
 
-.payment-option-select {
-  width: 100%;
-  padding: 10px 15px;
-  margin-top: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #1d1d1f;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="%236e6e73" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 16px;
-  cursor: pointer;
-}
-
-.payment-option-select:focus {
-  border-color: #007bff;
-  outline: none;
+.button-row {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .reserve-btn {
-  width: 100%;
-  padding: 15px;
-  margin-top: 25px;
-  font-size: 16px;
-  font-weight: bold;
+  flex: 1;
+  padding: 14px 0;
+  background-color: #0071e3;
+  color: white;
+  border: none;
   border-radius: 12px;
-  background-color: #007bff;
-  color: #fff;
-}
-
-.like-btn-wrapper {
-  display: flex;
-  justify-content: flex-end; /* 오른쪽 정렬 */
-  margin-top: 20px;
-}
-
-.like-btn {
-  font-size: 30px;
-  color: #ccc;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s;
 }
 
-.like-btn.liked {
-  color: #ff4d4d;
+.reserve-btn:hover {
+  background-color: #005bb5;
 }
 
-.like-btn:hover {
-  transform: scale(1.1);
+.like-icon-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0 10px;
 }
 
-/* 토스트 메시지 */
+.like-icon-btn i {
+  font-size: 22px;
+  color: #bbb; /* 기본 회색 */
+}
+
+.like-icon-btn:hover {
+	  background: none;
+	  font-size: 22px;
+	  color: #bbb; /* 기본 회색 */
+}
+
 .toast {
-  visibility: hidden;
-  min-width: 250px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  padding: 16px;
   position: fixed;
-  z-index: 1000;
+  bottom: 40px;
   left: 50%;
-  bottom: 30px;
   transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
 .toast.show {
-  visibility: visible;
   opacity: 1;
-}
-
-/* 채팅 아이콘 */
-.chat-icon {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #28a745;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 999;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.chat-icon:hover {
-  background-color: #218838;
-  transform: translateY(-3px);
 }

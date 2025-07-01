@@ -101,19 +101,14 @@
 												
 												    <c:choose>
 												        <c:when test="${isWished}">
-
-												            <a href="removewish.do?pCode=${product.PCode}" class="wish-link">
-												                <div class="wish-button active">
-												                    <i class="fas fa-heart"></i>
-												                </div>
-												            </a>
+															<div class="wish-button active">
+															  <i id="heart-${product.PCode}" class="fas fa-heart" onclick="toggleWish(${product.PCode}, true)"></i>
+															</div>
 												        </c:when>
 												        <c:otherwise>
-												            <a href="addwish.do?pCode=${product.PCode}" class="wish-link">
-												                <div class="wish-button">
-												                    <i class="far fa-heart"></i>
-												                </div>
-												            </a>
+												         	<div class="wish-button">
+															  <i id="heart-${product.PCode}" class="fas fa-heart" onclick="toggleWish(${product.PCode}, false)"></i>
+															</div>
 												        </c:otherwise>
 												    </c:choose>
 												</div>

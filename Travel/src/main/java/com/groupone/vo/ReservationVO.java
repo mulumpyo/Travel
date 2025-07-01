@@ -15,6 +15,7 @@ public class ReservationVO {
     private String title;
     private Date startDay;
     private Date endDay;
-
-    // 게터/세터 생략
+    
+    private String userId;
+    private String userName;
 }

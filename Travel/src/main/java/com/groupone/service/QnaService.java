@@ -22,6 +22,7 @@ public interface QnaService {
 	// UserNo의 Qna List를 반환
 	public List<QnaVO> qnaListWithUserNo(int userNo); 
 	
+	
 	//삭제
 	public boolean removeQna(int qCode);
 	
