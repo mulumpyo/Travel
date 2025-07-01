@@ -16,7 +16,7 @@ Boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
   <% if (isAdmin != null && isAdmin) { %>
     <div style="text-align: right; margin: 10px 20px;">
         <a href="InsertProduct.do" style="padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
-            + 게시물 작성
+            + 상품등록
         </a>
     </div>
   <% } %>
